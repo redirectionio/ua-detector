@@ -138,6 +138,30 @@ rather than to an operation sampled ten times, which is what the `memory` exampl
 
 `cargo build` does not rebuild examples, so pass `--examples` when you mean to.
 
+## Two caches, and what they are for
+
+`Detector::cache` and `Detector::warm` compile regexes; `Detector::cache_answers` keeps whole
+detections. They answer different halves of the traffic and both are wanted.
+
+Measured against a stream drawn from the shape of real traffic -- 200 000 requests over 500 000
+distinct user agents, 24 threads, 20 000 answers kept:
+
+```
+answers only, no regexes compiled        22 000 req/s   1086 µs   +0 MiB
+answers, 10 000 compiled blind           82 000 req/s    293 µs   +312 MiB
+answers, warmed on the 1 000 heaviest   231 000 req/s    104 µs   +34 MiB
+no answers, warmed on the 1 000 heaviest 47 000 req/s    509 µs   +34 MiB
+```
+
+Warming beats a blind budget seven times over on memory and three times on speed: it compiles the
+1 314 regexes those user agents reach rather than the first 10 000 the index offers. Any budget
+beyond what the walk spends is free, so `warm(top_1000, 2_000)` and `warm(top_1000, 10_000)` are
+the same thing.
+
+The answers carry the rest: 93% of that stream never reaches the detector at all. `shared()` has
+no traffic to warm on, so it takes a modest blind budget; a caller with a dump of its own should
+build its own detector and warm it.
+
 `tests/pinned/production.rs` is written by hand: it pins user agents the corpus shows once, or
 not at all. Add a case there when a production divergence is fixed, and check the case fails
 against the database as it was.

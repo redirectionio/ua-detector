@@ -89,6 +89,37 @@ memory, everything compiled    1.3 GiB
 the budget is compiled again at every lookup that reaches it, so a budget too small to cover what
 you actually match costs far more than the memory it saves.
 
+A budget spent blind is mostly spent wrong: `Detector::warm` walks the index for user agents you
+hand it and pays for exactly the regexes they reach. A thousand of your own is worth more than
+ten times the budget spent guessing.
+
+## Repeat traffic
+
+A detection walks the whole index; reading an answer back does not. Traffic is Zipf shaped -- a
+thousand user agents carry nine requests in ten -- so keeping the answers to a few thousand of
+them turns almost every request into a hash lookup:
+
+```rust
+let detector = {
+    let mut detector = Detector::new();
+    detector.warm(your_thousand_heaviest_user_agents, 2_000);
+    detector.cache_answers(20_000);
+    detector
+};
+
+let found = detector.detect_cached(user_agent);   // Option<Arc<Detection>>
+```
+
+```
+detection                      200 µs
+cached answer                   40 ns
+```
+
+One detector for the whole process, shared by `Arc` or through `shared()`: detection reads and
+never writes, so nothing contends, and a detector of its own per thread would multiply a hundred
+megabytes by the thread count. The cache is shared for the same reason -- one of a given size
+answers for more of the traffic than the same memory split between threads.
+
 ## The corpus
 
 What a user agent means is not something this library decides. It is taken from the test fixtures

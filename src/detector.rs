@@ -42,6 +42,18 @@ struct Rule {
     detection: Partial,
 }
 
+/// Answers kept for the user agents seen most often.
+///
+/// A detection walks the whole index and costs about two hundred microseconds; reading one back
+/// costs forty nanoseconds. Traffic is Zipf shaped -- a thousand user agents carry nine requests
+/// in ten -- so a cache of a few thousand answers is the difference between the two for almost
+/// everything, at some six hundred bytes an entry.
+///
+/// Admission matters more than size: the tail is a scan over millions of user agents seen once,
+/// and a plain LRU would let it evict the hot set. `quick_cache` admits on frequency instead.
+#[cfg(feature = "cache")]
+type Answers = quick_cache::sync::Cache<Box<str>, Option<std::sync::Arc<Detection>>>;
+
 pub struct Detector {
     /// Every entry, in the order they were read.
     rules: Vec<Rule>,
@@ -49,16 +61,27 @@ pub struct Detector {
     /// scan over every rule gives the same answer. An entry sits under every key it may be
     /// reached by, so one lookup can offer it more than once.
     tree: RegexTreeMap<usize>,
+    /// What [`Detector::detect_cached`] reads and fills. Shared, not per thread: one cache
+    /// answers for more of the traffic than the same memory split between threads.
+    #[cfg(feature = "cache")]
+    answers: Option<Answers>,
 }
 
 /// How many times [`Detector::trace`] runs what it measures plainly, keeping the quickest.
 const PASSES: usize = 3;
 
 /// Shared detector, so callers do not pay for loading the entries more than once.
+///
+/// One for the whole process, whatever the number of threads: detection reads and never writes,
+/// so nothing here contends, and a detector of its own per thread would multiply a hundred
+/// megabytes by the thread count.
 pub fn shared() -> &'static Detector {
     static SHARED: LazyLock<Detector> = LazyLock::new(|| {
         let mut detector = Detector::new();
-        detector.cache(20000);
+        detector.cache(2_000);
+
+        #[cfg(feature = "cache")]
+        detector.cache_answers(20_000);
 
         detector
     });
@@ -72,17 +95,77 @@ impl Detector {
         // on `token` alone. Case is ignored: roughly one request in ten arrives lowercased.
         let mut tree = RegexTreeMap::new(RegexOptions::search(true));
 
-        let mut rules = Vec::new();
+        let entries: Vec<(String, Entry)> = load();
+        let keys: Vec<Vec<String>> =
+            entries.iter().map(|(_, entry)| crate::index::keys(&entry.regex)).collect();
+        let mut rules: Vec<Rule> = entries
+            .into_iter()
+            .enumerate()
+            .map(|(index, (source, entry))| build(index, &source, entry))
+            .collect();
 
-        for (index, (source, entry)) in load().into_iter().enumerate() {
-            for (branch, key) in crate::index::keys(&entry.regex).iter().enumerate() {
-                tree.insert(key, &format!("{index}/{branch}"), index);
-            }
+        // Sorted by where they go in the merge, so the index a key holds is also the order the
+        // rule is applied in: a lookup then only has to sort the indices it collected.
+        let mut order: Vec<usize> = (0..rules.len()).collect();
+        order.sort_unstable_by_key(|index| rules[*index].order);
 
-            rules.push(build(index, &source, entry));
+        let mut placed = vec![0usize; rules.len()];
+
+        for (position, index) in order.iter().enumerate() {
+            placed[*index] = position;
         }
 
-        Detector { rules, tree }
+        rules.sort_unstable_by_key(|rule| rule.order);
+
+        for (index, keys) in keys.iter().enumerate() {
+            for (branch, key) in keys.iter().enumerate() {
+                tree.insert(key, &format!("{index}/{branch}"), placed[index]);
+            }
+        }
+
+        Detector {
+            rules,
+            tree,
+            #[cfg(feature = "cache")]
+            answers: None,
+        }
+    }
+
+    /// Keeps the answers to `entries` user agents, which [`Detector::detect_cached`] then reads
+    /// instead of detecting. Called once, before the detector is shared.
+    #[cfg(feature = "cache")]
+    pub fn cache_answers(&mut self, entries: usize) {
+        self.answers = (entries > 0).then(|| Answers::new(entries));
+    }
+
+    /// Whether the cache already holds an answer for this user agent. For measurement.
+    #[cfg(feature = "cache")]
+    pub fn answers_hold(&self, user_agent: &str) -> bool {
+        self.answers.as_ref().is_some_and(|answers| answers.peek(user_agent).is_some())
+    }
+
+    /// The same answer as [`Detector::detect`], kept for the next user agent that asks for it.
+    ///
+    /// The answer is shared rather than cloned: a [`Detection`] is ten strings, and copying them
+    /// out costs several times what reading the cache does. Without [`Detector::cache_answers`]
+    /// this is [`Detector::detect`] with an allocation on top.
+    #[cfg(feature = "cache")]
+    pub fn detect_cached(&self, user_agent: &str) -> Option<std::sync::Arc<Detection>> {
+        let Some(answers) = &self.answers else {
+            return self.detect(user_agent).map(std::sync::Arc::new);
+        };
+
+        if let Some(answer) = answers.get(user_agent) {
+            return answer;
+        }
+
+        let answer = self.detect(user_agent).map(std::sync::Arc::new);
+
+        // A user agent nothing answers for is worth keeping too: most of them are one crawler
+        // sending the same broken string over and over.
+        answers.insert(Box::from(user_agent), answer.clone());
+
+        answer
     }
 
     /// Compiles up to `limit` regexes, guessing at which ones a caller will reach.
@@ -187,14 +270,7 @@ impl Detector {
     /// The rules worth trying, in the order they are applied. An entry indexed under several
     /// keys is offered once per key its haystack reached.
     fn candidates_of(&self, user_agent: &str) -> Vec<&Rule> {
-        let mut candidates: Vec<&Rule> = self
-            .reached_by(user_agent)
-            .into_iter()
-            .map(|index| &self.rules[index])
-            .collect();
-        candidates.sort_unstable_by_key(|rule| rule.order);
-
-        candidates
+        self.reached_by(user_agent).into_iter().map(|index| &self.rules[index]).collect()
     }
 
     /// Where in `rules` the index sends this user agent, each entry once.
@@ -645,6 +721,28 @@ mod tests {
         warmed.cache(2_000);
 
         assert_eq!(cold.detect(user_agent), warmed.detect(user_agent));
+    }
+
+    /// A cached answer is the answer, and the second one is the first one over again rather
+    /// than a second detection.
+    #[cfg(feature = "cache")]
+    #[test]
+    fn a_cached_answer_is_the_same_answer() {
+        let user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 \
+            (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+        let mut detector = Detector::new();
+        detector.cache_answers(16);
+
+        let first = detector.detect_cached(user_agent).expect("an answer");
+        let second = detector.detect_cached(user_agent).expect("an answer");
+
+        assert_eq!(*first, detector.detect(user_agent).expect("an answer"));
+        assert!(std::sync::Arc::ptr_eq(&first, &second), "the answer was detected twice");
+
+        // Nothing kept, and it still answers.
+        let plain = Detector::new();
+
+        assert_eq!(plain.detect_cached(user_agent).map(|answer| (*answer).clone()), plain.detect(user_agent));
     }
 
     /// A user agent the regex matches, built by keeping only its literal parts. Returns `None`

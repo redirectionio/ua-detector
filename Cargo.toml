@@ -17,11 +17,16 @@ exclude = ["tests/", "benches/", ".github/", "castor.php", "castor.composer.*", 
 # directory of yaml before it answers anything is no use to a dependant. Off, the files are read
 # at startup instead, which is what makes a corpus run cost its twenty seconds of assertions
 # rather than the two minutes of rebuild that embedding them costs on every change.
-default = ["embed"]
+default = ["embed", "cache"]
 embed = ["dep:include_dir"]
+# Answers kept for the user agents seen most often. A detection costs about two hundred
+# microseconds and a cached answer forty nanoseconds, so this is the difference between a
+# database lookup and a hash lookup for whatever repeats.
+cache = ["dep:quick_cache"]
 
 [dependencies]
 include_dir = { version = "0.7.4", optional = true }
+quick_cache = { version = "0.7.0", optional = true }
 regex = "1.12.2"
 regex-automata = { version = "0.4", features = ["meta", "syntax", "perf", "unicode", "nfa", "dfa", "hybrid"] }
 serde = { version = "1.0.228", features = ["derive"] }

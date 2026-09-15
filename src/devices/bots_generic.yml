@@ -1,0 +1,216 @@
+---
+
+# The tokens a crawler gives itself away with, one entry each so the tree can prune them by
+# their own literal, all below every named bot.
+#
+# The lookarounds matomo writes them with -- `(?<!cu)bot`, `spider(?! 8)` -- are written out as
+# the alternation of everything they leave: a prefix that does not end with `cu`, a suffix that
+# does not open on ` 8`. The trailing `(?:|[^a-z].*)` is the word end, without which `bot` reads
+# the `botox` in a clinic's user agent.
+
+-
+  regex: '(?:|.*[^ _u]|(?:|.*[^mr]|(?:|.*[^e]|(?:|.*[^w]|(?:|.*[^o]|(?:|.*[^p])o)w)e)r) |(?:|.*[^mr]|(?:|.*[^e]|(?:|.*[^w]|(?:|.*[^o]|(?:|.*[^p])o)w)e)r)_|(?:|.*[^Hc])u)bot(?:|[^a-z 5_].*| (?:|[^5JST].*|5(?:|[^0123456789].*)|J(?:|[^u].*|u(?:|[^n].*|n(?:|[^i].*|i(?:|[^o].*|o(?:|[^r].*)))))|S(?:|[^e].*|e(?:|[^n].*|n(?:|[^i].*|i(?:|[^o].*|o(?:|[^r].*)))))|T(?:|[^A].*|A(?:|[^B].*)))|5(?:|[^0123456789].*)|_(?:|[^5JST].*|5(?:|[^0123456789].*)|J(?:|[^u].*|u(?:|[^n].*|n(?:|[^i].*|i(?:|[^o].*|o(?:|[^r].*)))))|S(?:|[^e].*|e(?:|[^n].*|n(?:|[^i].*|i(?:|[^o].*|o(?:|[^r].*)))))|T(?:|[^A].*|A(?:|[^B].*))))'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^-]|(?:|.*[^ent]|(?:|.*[^d]|(?:|.*[^o]|(?:|.*[^n])o)d)e|(?:|.*[^o]|(?:|.*[^r]|(?:|.*[^t]|(?:|.*[^c]|(?:|.*[^e]|(?:|.*[^l]|(?:|.*[^e])l)e)c)t)r)o)n|(?:|.*[^n]|(?:|.*[^e]|(?:|.*[^i]|(?:|.*[^l]|(?:|.*[^c]|(?:|.*[^u])c)l)i)e)n)t)-)fetch(?:er)?(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^l]|(?:|.*[^r]|(?:|.*[^u])r)l)grabber(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^ -]|(?:|.*[^t]|(?:|.*[^f]|(?:|.*[^o]|(?:|.*[^s]|(?:|.*[^o]|(?:|.*[^r]|(?:|.*[^c]|(?:|.*[^i]|(?:|.*[^M])i)c)r)o)s)o)f)t) |(?:|.*[^e]|(?:|.*[^e]|(?:|.*[^h]|(?:|.*[^s]|(?:|.*[^n]|(?:|.*[^a]|(?:|.*[^b])a)n)s)h)e)e)-)project(?:|[^a-zo].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^ ]|(?:|.*[^;ep]|(?:|.*[^e]|(?:|.*[^d]|(?:|.*[^o]|(?:|.*[^M]|(?:|.*[^d]|(?:|.*[^e]|(?:|.*[^e]|(?:|.*[^p]|(?:|.*[^S])p)e)e)d)M)o)d)e);|(?:|.*[^u]|(?:|.*[^l]|(?:|.*[^B])l)u)e|(?:|.*[^a]|(?:|.*[^W]|(?:|.*[^ ]|(?:|.*[^e]|(?:|.*[^l]|(?:|.*[^g]|(?:|.*[^o]|(?:|.*[^o]|(?:|.*[^G])o)o)g)l)e) )W)a)p) )proxy(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^P])research(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^m]|(?:|.*[^a]|(?:|.*[^C])a)m)scanner(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '(?:|.*[^-])security(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*spider(?:|[^a-z ].*| (?:|[^8].*))'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*analyzer(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*appengine(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*archiver?(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*check(?:er)?(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*collector(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*crawl(?:er)?(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*indexer(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*inspector(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*lookup(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*monitor(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*probe(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*resolver(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*robots(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*scraper(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*script(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*searcher(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*study(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*transcoder(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*uptime(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*user[ _]?agent(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*validator(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: '.*-(?:AI|Extended|User)/(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+-
+  regex: 'parser(?:|[^a-z].*)'
+  priority: -4
+  bot:
+    name: Generic Bot
+
+# The convention a crawler names itself in: the compatibility comment, a token with a version,
+# and the address of a page explaining what it is --
+#
+#   Mozilla/5.0 (compatible; Diffbot/1.0; +https://diffbot.com)
+#
+# Last at this priority, so it beats the tokens above -- a name is worth more than the `bot` in
+# it -- and below every named bot, which spells it better. The address is required, and is what
+# keeps browsers out: no comment a browser writes names a page.
+-
+  regex: '.*\(compatible; (?<bot_name>[A-Za-z][\w.-]*)(?:/[\d.]+)?;\s*\+?(?<bot_url>https?://[^);\s]+).*'
+  priority: -4
+  bot:
+    name: '{bot_name}'
+    url: '{bot_url}'

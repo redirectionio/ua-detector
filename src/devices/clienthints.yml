@@ -1,0 +1,1551 @@
+---
+
+# Chrome on Android 10+ freezes its user agent to `Android 10; K` and moves the real operating
+# system version and device model into client hints, so every entry below matches the very
+# same user agent and is told apart by its headers alone.
+
+# DuckDuckGo announces itself in the brand list while still calling itself Chrome in the user
+# agent, so it has to come before the plain Chrome entries.
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua: 'DuckDuckGo'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^DG101HSTB$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tablet, brand: DGTEC, model: DG101HSTB}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua: 'DuckDuckGo'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^SCG22$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: phablet, brand: Samsung, model: Galaxy Z Fold 5}
+  os_family: Android
+  browser_family: Chrome
+
+# When the platform version hint is empty the user agent keeps the last word
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^22071219CG$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: POCO, model: M5}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Mi 9 SE)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Xiaomi, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?:24048RN6CI|24044RN32L)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Xiaomi, model: Redmi A3x}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^24053PY09I$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Xiaomi, model: 14 Civi}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^22081212R$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Xiaomi, model: 12T Pro}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^22071219CG$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: POCO, model: M5}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SM-A105F$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A10}
+  os_family: Android
+  browser_family: Chrome
+
+# Samsung's Japanese carrier models, whose SCG code says nothing about the name
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SCG23$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: phablet, brand: Samsung, model: Galaxy Z Flip 5}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SCG24$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy S23 FE}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SCG25$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy S24}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SCG26$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy S24 Ultra}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SCG27$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A55 5G}
+  os_family: Android
+  browser_family: Chrome
+
+# Japanese carrier codes of other makers
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^A301KC$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Kyocera, model: DuraForce EX}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^A302SH$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Sharp, model: Aquos wish3}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^A302SO$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Sony, model: Xperia 10 V}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^A303ZT$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: ZTE, model: Anshin Family}
+  os_family: Android
+  browser_family: Chrome
+
+# Makers whose hint carries the model as it is reported
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>BV8900)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Blackview, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Explr 9)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: ComTrade Tesla, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^FOXXD (?<model>C65)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: FoxxD, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Black[ _](?:1|3|C))$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Kalley, model: "{model|spaces}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^Black_C_PRO$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Kalley, model: Black C Pro}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^CAMON (?<model>20 Pro)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Tecno Mobile, model: "Camon {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>LIV_3S)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Yezz, model: "{model|spaces}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^LS1542QW$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Jio, model: JioPhone Next}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^M-KOPA (?<model>X\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: M-KOPA, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^MEP2Q421G$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Mode Mobile, model: EarnPhone}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^MobileMapper(?<model>\d+)_\d+$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Trimble, model: "MobileMapper {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^Okapi(?<model>\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Okapi, model: "Okapi {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^Rugged(?<model>\d+Q)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: OpelMobile, model: "Rugged {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>RxIS\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Realix, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^EBY33$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Stylo, model: Horizon}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Elio)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Logicom, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>EA520)(?:_US)?$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Unitech, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>E01\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: Everis, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>100092980)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: ONN, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^GRAVITY_3_MINI$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: SPC, model: Gravity 3 Mini}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>HD\d+[iL]?)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Vortex, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>MS\d+G)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Maze Speed, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>4063T)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Alcatel, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^9009F$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: Alcatel, model: '1T 7" 3G'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^ILA (?<model>X\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: iLA, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Stellar-X\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Crosscall, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>SS5724G|S1586K)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Soho Style, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^XMOBILE (?<model>X\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: X-Mobile, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^GR0006$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: console, brand: Logitech, model: G Cloud}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^Retroid Pocket 2\+$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: console, brand: Retroid Pocket, model: 2 Plus}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SENS (?<model>M\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Zuum, model: "Sens {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^Z6255CA$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Nubia, model: Blade A72}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^XANON (?<model>X\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Walton, model: "Xanon {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Model S(?: 4G)?)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Sunmax, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^Model_(?<model>\d+)_pro_4G$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Sunmax, model: "Model {model} Pro 4G"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>LECT-TAB\w+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: Lectrus, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+# No model hint at all: the user agent keeps the last word and the device stays unknown
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-model: '^$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: "", model: ""}
+  os_family: Android
+  browser_family: Chrome
+
+# Tablets and set top boxes on the same frozen user agent, told apart by their model hint.
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua: 'DuckDuckGo'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^OPD2202$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tablet, brand: 'OPPO', model: 'Pad 2'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua: 'DuckDuckGo'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^CP20_Gold$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tablet, brand: 'Atozee', model: 'CP20 Gold'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua: 'DuckDuckGo'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^2405CRPFDC$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tablet, brand: 'Xiaomi', model: 'Redmi Pad Pro'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^GACRUX$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Ceibal', model: 'Gacrux'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^BrailleNote Touch$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Humanware', model: 'BrailleNote Touch'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^BrailleNote Touch \+$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Humanware', model: 'BrailleNote Touch Plus'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>LRNS\w+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: "BYJU'S", model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^meanIT_(?<model>X\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'meanIT', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^NOGAPC ULTRA$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tv, brand: 'NOGA', model: 'PC Ultra'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>Ocean K\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Olax', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^ELE-GATE$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tv, brand: 'ELE-GATE', model: 'TV Box'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^ELN-L03$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Honor', model: 'Pad X9 11.5" LTE'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>E01\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Everis', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>CP\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Atozee', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>100135923|100110027|100071483A|100071485A|100044018|100011886CA)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'ONN', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>100011886)_GTW$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'ONN', model: '{model} GTW'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^GRAVITY ULTIMATE 2$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'SPC', model: 'Gravity Ultimate 2'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^GRAVITY_3$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'SPC', model: 'Gravity 3'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^GRAVITY_3_SE$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'SPC', model: 'Gravity 3 SE'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>MX101M\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'RCT', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^SILVERSTONE-(?<model>T5A)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Packard Bell', model: 'Silverstone {model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>TM-MID\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Touchmate', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^VEIDOO_(?<model>T60_PLUS)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Veidoo', model: 'T60 Plus'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^ZKEMPLER PLUS$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'Kempler & Strauss', model: 'ZKempler Plus'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>AWTX\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tv, brand: 'Aiwa', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>HN2-\w+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: 'INSYS', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>HK1RBOX-\w+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tv, brand: '', model: '{model}'}
+  os_family: Android
+  browser_family: Chrome
+
+# Asus ZenFone, seen through three different browsers
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; ZC554KL\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Asus, model: ZenFone 4 Max}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android [\d.]+; ZC554KL\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/[\d.]+ YaSearchBrowser/[\d.]+ BroPP/[\d.]+ SA/\d+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Yandex Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Asus, model: ZenFone 4 Max}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; ZC554KL\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Opera Mobile, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Asus, model: ZenFone 4 Max}
+  os_family: Android
+  browser_family: Opera
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; DN2103\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: OnePlus, model: Nord 2 5G}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; (?<model>X30)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: "", model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; SGIN_(?<model>E10M)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tablet, brand: SGIN, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; iQ&T N8\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: iQ&T, model: N8}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; HLTE239E\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Hisense, model: E50s}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; Model (?<model>[A-Z0-9])\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: Sunmax, model: "Model {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+# Amazon tablets, whose KF code is the only sign it is not plain Android
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; KFKAWI\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Silk/(?<client_version>[\d.]+) like Chrome/(?<engine_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^9\.0\.0$'
+  os: {name: Fire OS, version: "7", platform: ""}
+  client: {type: browser, name: Mobile Silk, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tablet, brand: Amazon, model: Fire HD 8 (2018)}
+  os_family: Android
+  browser_family: Chrome
+
+# Aloha announces itself through the app that requested the page
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36 AlohaBrowser/(?<client_version>[\d.]+)'
+  headers:
+    http-x-requested-with: '^AlohaBrowser$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^Fairphone (?<model>FP\d+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Aloha Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Fairphone, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+# Avast on Android, whose user agent carries a scrambled model
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; \w+; U; [a-z]{2}\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile AvastSecureBrowser/(?<client_version>[\d.]+) Build/\d+ Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Avast Secure Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: "", model: ""}
+  os_family: Android
+  browser_family: Chrome
+
+# No user agent at all, everything comes from the hints
+-
+  regex: ''
+  headers:
+    sec-ch-ua: '"AvastSecureBrowser";v="(?<client_version>[\d.]+)"'
+    sec-ch-ua-platform: '^Android$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Avast Secure Browser, version: "{client_version}", engine: Blink, engine_version: "98.0.4758.101"}
+  device: {}
+  os_family: Android
+  browser_family: Chrome
+
+# Desktop Chromium forks: the user agent only says Chrome, the brand list says which fork.
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua: '"(?<client_name>AVG Secure Browser|Avast Secure Browser|Gener8)";v='
+    sec-ch-ua-platform-version: '^10\.0\.0$'
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: browser, name: "{client_name}", version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua: '"CCleaner Browser";v='
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: browser, name: CCleaner, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+# Windows 11 still calls itself NT 10.0, only the platform version hint tells them apart
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.3'
+  headers:
+    sec-ch-ua-platform-version: '^1[3-9]\.'
+  os: {name: Windows, version: "11", platform: x64}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.3'
+  # `platform: Windows` on its own is a weaker claim than a platform version, and both
+  # match: this one is the fallback for when the version says nothing useful.
+  priority: -1
+  headers:
+    sec-ch-ua-platform: '^Windows$'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 Edg/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua-platform-version: '^1[3-9]\.'
+    sec-ch-ua-model: '^Xbox$'
+  os: {name: Windows, version: "11", platform: x64}
+  client: {type: browser, name: Microsoft Edge, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: desktop, brand: "", model: Xbox}
+  os_family: Windows
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 Edg/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua-platform-version: '^1[3-9]\.'
+  os: {name: Windows, version: "11", platform: x64}
+  client: {type: browser, name: Microsoft Edge, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 Edg/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua-arch: '^x86$'
+    sec-ch-ua-bitness: '^32$'
+  os: {name: Windows, version: "10", platform: x86}
+  client: {type: browser, name: Microsoft Edge, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua: '"Opera";v='
+    sec-ch-ua-platform-version: '^10\.0\.0$'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: browser, name: Opera, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Opera
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36 OPR/[\d.]+ \(Edition developer\)'
+  headers:
+    sec-ch-ua: '"Opera Crypto";v='
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: browser, name: Opera Crypto, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Opera
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36 Avira/[\d.]+'
+  headers:
+    sec-ch-ua: '"Avira Secure Browser";v='
+    sec-ch-ua-full-version: '^(?<client_version>[\d.]+)$'
+  os: {name: Windows, version: "11", platform: x64}
+  client: {type: browser, name: Avira Secure Browser, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+# The platform hint can contradict the user agent outright
+-
+  regex: 'Mozilla/5\.0 \(Macintosh; Intel Mac OS X [\d_]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-platform: '^Windows$'
+    sec-ch-ua-full-version: '^\?\d$'
+  os: {name: Windows, version: "", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Macintosh; Intel Mac OS X [\d_]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-platform: '^macOS$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-bitness: '^64$'
+  os: {name: Mac, version: "{os_version}", platform: x64}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: Apple, model: ""}
+  os_family: Mac
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Macintosh; Intel Mac OS X [\d_]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua-platform: '^macOS$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-arch: '^arm$'
+  os: {name: Mac, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Opera, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: desktop, brand: Apple, model: ""}
+  os_family: Mac
+  browser_family: Opera
+
+# On Linux the platform version hint carries the kernel release
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-platform: '^Linux$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-bitness: '^64$'
+  os: {name: GNU/Linux, version: "{os_version}", platform: x64}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: GNU/Linux
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Fedora; Linux x86_64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+  os: {name: Fedora, version: "{os_version}", platform: x64}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: GNU/Linux
+  browser_family: Chrome
+
+# Chrome OS builds, where `Chromium OS` and `Linux` are both reported for the same family
+-
+  regex: 'Mozilla/5\.0 \(X11; CrOS x86_64 (?<os_version>[\d.]+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-platform: '^Chromium OS$'
+  os: {name: Chromium OS, version: "{os_version}", platform: x64}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Chrome OS
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; CrOS armv7l (?<os_version>[\d.]+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  headers:
+    sec-ch-ua-arch: '^arm$'
+  os: {name: Chrome OS, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Chrome OS
+  browser_family: Chrome
+
+# Browsers that only identify themselves through the Android app that asked for the page
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.seraphic\.openinet\.pre$'
+  os: {name: Android, version: "", platform: x64}
+  client: {type: browser, name: Open Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tablet, brand: "", model: ""}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.tv\.browser\.open$'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: browser, name: Open TV Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tv, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.internet\.tvbrowser$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: LUJO TV Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tv, brand: "", model: ""}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux i686\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.logicui\.tvbrowser2$'
+  os: {name: GNU/Linux, version: "", platform: x86}
+  client: {type: browser, name: LogicUI TV Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tv, brand: "", model: ""}
+  os_family: GNU/Linux
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MRD-LX1 Build/[\w-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 PiBrowser/(?<client_version>[\d.]+)'
+  headers:
+    x-requested-with: '^pi\.browser$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Pi Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Huawei, model: Y6 (2019)}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; SM-A715F Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    http-x-requested-with: '^org\.mozilla\.firefox$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A71}
+  os_family: Android
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A032F Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.yandex\.browser$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Yandex Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A03 Core}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); 2201116SG Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/[\d.]+'
+  headers:
+    http-x-requested-with: '^com\.opera\.mini\.native\.beta$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Opera Mini, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: phablet, brand: Xiaomi, model: Redmi Note 11 Pro 5G}
+  os_family: Android
+  browser_family: Opera
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; SM-M426B Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.sec\.android\.app\.sbrowser$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy M42 5G}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SAMSUNG SM-A032M Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 SamsungBrowser/[\d.]+ Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.sec\.android\.app\.sbrowser\.lite$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser Lite, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A03 Core}
+  os_family: Android
+  browser_family: Chrome
+
+# Brave ships under two different brand names in the hint
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua: '"Brave(?: Browser)?";v='
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Brave, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smartphone, brand: "", model: ""}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64; (?<model>Quest \d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) OculusBrowser/(?<client_version>[\d.]+) SamsungBrowser/[\d.]+ Chrome/(?<engine_version>[\d.]+) VR Safari/537\.36'
+  headers:
+    sec-ch-ua: '"Oculus Browser";v='
+  os: {name: Meta Horizon, version: "", platform: x64}
+  client: {type: browser, name: Oculus Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; NetCast; U\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36 SmartTV/[\d.]+ Colt/[\d.]+'
+  headers:
+    sec-ch-ua: '"CrowBrowser";v='
+  os: {name: GNU/Linux, version: "", platform: ""}
+  client: {type: browser, name: Crow Browser, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: tv, brand: LG, model: NetCast}
+  os_family: GNU/Linux
+  browser_family: Chrome
+
+# `Andr0id` with a zero is how Vewd marks an Android TV build
+-
+  regex: 'Mozilla/5\.0 \(Linux; Andr0id (?<os_version>[\d.]+); TY55_(?<model>\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OMI/(?<client_version>\d+\.\d+\.\d+\.\d+)\.\S+'
+  headers:
+    sec-ch-ua: '"Vewd Core";v='
+  os: {name: Android TV, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Vewd Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: tv, brand: Telly, model: "TY55-{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+# DuckDuckGo on Android, where the model only exists as a hint
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile DuckDuckGo/\d+ Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.duckduckgo\.mobile\.android$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^Nokia (?<model>[\d.]+)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Nokia, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile DuckDuckGo/\d+ Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.duckduckgo\.mobile\.android$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^SM-G781V$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy S20 FE 5G}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile DuckDuckGo/\d+ Safari/537\.36'
+  headers:
+    http-x-requested-with: '^com\.duckduckgo\.mobile\.android$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
+    sec-ch-ua-model: '^SM-A137F$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: DuckDuckGo Privacy Browser, version: "", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A13}
+  os_family: Android
+  browser_family: Chrome
+
+# The hints say Android even though the user agent claims a desktop
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)'
+  headers:
+    sec-ch-ua-platform: '^Android$'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-model: '^RVL-AL09$'
+  os: {name: Android, version: "{os_version}", platform: x64}
+  client: {type: browser, name: Opera, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: Huawei, model: Honor Note 10}
+  os_family: Android
+  browser_family: Opera
+
+# iPhone15,2 is the iPhone 14 Pro
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ \[FBAN/FBIOS;FBAV/(?<client_version>[\d.]+);[^\]]*FBDV/iPhone15,2;[^\]]*\]'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook, version: "{client_version}"}
+  device: {type: phablet, brand: Apple, model: iPhone 14 Pro}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36 PTST/[\d.]+'
+  bot: {name: WebPageTest, category: Site Monitor, url: 'https://www.webpagetest.org'}

@@ -1,0 +1,7205 @@
+---
+
+- regex: Breaker/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/3\.00\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: feed reader
+    name: Breaker
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: castero (?<client_version>[\d.]+) <https://github\.com/xgi/castero>
+  client:
+    type: feed reader
+    name: castero
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: castget (?<client_version>[\d.]+) \(castget rss enclosure downloader\)
+  client:
+    type: feed reader
+    name: castget
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Newsboat/(?<client_version>[\d.]+) \(Linux x86_64\)
+  os:
+    name: GNU/Linux
+    version: ''
+    platform: x64
+  client:
+    type: feed reader
+    name: Newsboat
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: GNU/Linux
+  browser_family: Unknown
+- regex: Newsboat/(?<client_version>[\d.]+) \(Macintosh; Intel Mac OS X\)
+  os:
+    name: Mac
+    version: ''
+    platform: ''
+  client:
+    type: feed reader
+    name: Newsboat
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Playapod/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.18\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: feed reader
+    name: Playapod
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Playapod Lite/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.8\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: feed reader
+    name: Playapod
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: PodPuppy (?<client_version>[\d.]+) github\.com/felixwatts/PodPuppy
+  client:
+    type: feed reader
+    name: PodPuppy
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Reeder/(?<client_version>[\d.]+) CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: feed reader
+    name: Reeder
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Reeder/(?<client_version>[\d.]+) CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: feed reader
+    name: Reeder
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: got \(https://github\.com/sindresorhus/got\)
+  client:
+    type: library
+    name: got
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: got/(?<client_version>[\d.]+) \(https://github\.com/sindresorhus/got\)
+  client:
+    type: library
+    name: got
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Symfony HttpClient/(?:Curl|Native)
+  client:
+    type: library
+    name: Symfony
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: BTWebClient/1870\(43938\)
+  client:
+    type: library
+    name: uTorrent
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: uTorrent/2210\(25110\)
+  client:
+    type: library
+    name: uTorrent
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: CarrierWave/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: CarrierWave
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: 'Deno/(?<client_version>[\d.]+).*'
+  client:
+    type: library
+    name: Deno
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Down/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: Down
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Lavf/60\.3\.100
+  client:
+    type: library
+    name: ffmpeg
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: FileDownloader/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: FileDownloader
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: FileDownloader/(?<client_version>[\d.]+) X 9I/Q
+  client:
+    type: library
+    name: FileDownloader
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: git-annex/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: git-annex
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: git-annex/(?<client_version>[\d.]+)-g4c291fafb
+  client:
+    type: library
+    name: git-annex
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: GStreamer souphttpsrc (?<client_version>[\d.]+) libsoup/2\.70\.0
+  client:
+    type: library
+    name: GStreamer
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: GStreamer souphttpsrc libsoup/2\.52\.2
+  client:
+    type: library
+    name: GStreamer
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: HTTP-Tiny/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: HTTP:Tiny
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: KaiOS Downloader
+  os:
+    name: KaiOS
+    version: ''
+    platform: ''
+  client:
+    type: library
+    name: KaiOS Downloader
+    version: ''
+  device:
+    type: feature phone
+    brand: ''
+    model: ''
+  os_family: Firefox OS
+  browser_family: Unknown
+- regex: KaiOS Downloader PodKast
+  os:
+    name: KaiOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: PodKast
+    version: ''
+  device:
+    type: feature phone
+    brand: ''
+    model: ''
+  os_family: Firefox OS
+  browser_family: Unknown
+- regex: libsoup/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: libsoup
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: PRDownloader
+  client:
+    type: library
+    name: PRDownloader
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: reqwest/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: reqwest
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: resty-requests
+  client:
+    type: library
+    name: resty-requests
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Ruby
+  client:
+    type: library
+    name: ruby
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: SafariViewService/(?<client_version>[\d.]+) CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: Mac
+    version: '13.0'
+    platform: ''
+  client:
+    type: library
+    name: Safari View Service
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: undici
+  client:
+    type: library
+    name: undici
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: URL/Emacs Emacs/28\.2 \(TTY; x86_64-pc-linux-gnu\)
+  os:
+    name: GNU/Linux
+    version: ''
+    platform: x64
+  client:
+    type: library
+    name: Emacs
+    version: '28.2'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: GNU/Linux
+  browser_family: Unknown
+- regex: URL/Emacs Emacs/(?<client_version>[\d.]+) \(OpenStep; x86_64-apple-darwin22\.1\.0\)
+  os:
+    name: Mac
+    version: 13.0.1
+    platform: x64
+  client:
+    type: library
+    name: Emacs
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: FDM/(?<client_version>[\d.]+)
+  client:
+    type: library
+    name: Free Download Manager
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: FDM 3\.x
+  client:
+    type: library
+    name: Free Download Manager
+    version: '3'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Microsoft-Windows-XP/2002, UPnP/1\.1, J\. River Internet Reader/2\.0 \(compatible; Windows-Media-Player/10\)
+  os:
+    name: Windows
+    version: XP
+    platform: ''
+  client:
+    type: mediaplayer
+    name: JRiver Media Center
+    version: '2.0'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: Windows
+  browser_family: Unknown
+- regex: J\. River Internet Reader/2\.0 \(compatible; Windows-Media-Player/10\)
+  os:
+    name: Windows
+    version: ''
+    platform: ''
+  client:
+    type: mediaplayer
+    name: JRiver Media Center
+    version: '2.0'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: Windows
+  browser_family: Unknown
+- regex: Juice/2\.2 \(Darwin\) \+http://juicereceiver\.sf\.net/
+  os:
+    name: Mac
+    version: ''
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Juice
+    version: '2.2'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Juice/1 CFNetwork/1333\.0\.4 Darwin/21\.5\.0
+  os:
+    name: iOS
+    version: '15.5'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Juice
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Juice/16 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Juice
+    version: '16'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: just_audio/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.13\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Just Audio
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Kasts/(?<client_version>[\d.]+); Syndication
+  client:
+    type: mediaplayer
+    name: Kasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: MixerBox/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.11\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: MixerBox
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: MixerBox/807\.iOS \(iPhone; iOS (?<os_version>[\d.]+); en_US\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: MixerBox
+    version: '807'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: MixerBox/1029 CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: MixerBox
+    version: '1029'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: MixerBox%20Pro/(?<client_version>[\d.]+) CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: MixerBox
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: MusicBee/3\.5
+  client:
+    type: mediaplayer
+    name: MusicBee
+    version: '3.5'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: MusicBee VN23Ig
+  client:
+    type: mediaplayer
+    name: MusicBee
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: amarok/(?<client_version>[\d.]+) \(Phonon/4\.7\.80; Phonon-GStreamer/4\.7\.80\)
+  client:
+    type: mediaplayer
+    name: Amarok
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Hubhopper/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.16\.0
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Hubhopper
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Instacast Instacast/(?<client_version>[\d.]+) CFNetwork/672\.1\.14 Darwin/14\.0\.0
+  os:
+    name: iOS
+    version: '7.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Instacast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Instacast/2763 CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Instacast
+    version: '2763'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Overcast \( http://overcast\.fm/; Apple Watch podcast app\)
+  os:
+    name: watchOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Overcast
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podcast Addict - Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-G781B Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast & Radio Addict
+    version: ''
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S20 FE 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: PodcastAddict/v5 \( https://podcastaddict\.com/; Android podcast app\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast & Radio Addict
+    version: '5'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: PodcastAddict/v2 - Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-N950U Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast & Radio Addict
+    version: '2'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Note 8
+  os_family: Android
+  browser_family: Unknown
+- regex: GaanaAndroid-(?<client_version>[\d.]+)/Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); A1601 Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Gaana
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: OPPO
+    model: F1s
+  os_family: Android
+  browser_family: Unknown
+- regex: Gaana/1768 CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Gaana
+    version: '1768'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Gaana-iOS
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Gaana
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podbean/Android App (?<client_version>[\d.]+) \(http://podbean\.com\),1927526fe23b5acf535b3e91b64cee95
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podbean
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podbean/Android generic (?<client_version>[\d.]+) \(http://podbean\.com\),9376c517335ded9a716022cc1f15c884
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podbean
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podbean/iOS \(http://podbean\.com\) (?<client_version>[\d.]+) - 19c4ff292bd09cd2ccbad22cc6755a45
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podbean
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: AlexaMediaPlayer/vizzini\.locked\.38\.0 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/1\.5\.9
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: vizzini.locked.38.0
+  device:
+    type: smart speaker
+    brand: Amazon
+    model: Alexa
+  os_family: Android
+  browser_family: Unknown
+- regex: AlexaService/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.8\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Alexa Mobile Voice/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.2\.0
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: AlexaService/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) AmznExoPlayerLib/2\.13\.3
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Echo/1\.0\(APNG\)
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: '1.0'
+  device:
+    type: smart speaker
+    brand: Amazon
+    model: Echo
+  os_family: Unknown
+  browser_family: Unknown
+- regex: TuneIn%20Radio/1383 CFNetwork/1125\.2 Darwin/19\.4\.0
+  os:
+    name: iOS
+    version: '13.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: TuneIn Radio
+    version: '1383'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: TuneIn Radio
+  client:
+    type: mobile app
+    name: TuneIn Radio
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: RadioPublic/android-2\.2
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: RadioPublic
+    version: '2.2'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: RadioPublic Android (?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: RadioPublic
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: RadioPublic/iOS-2\.0
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: RadioPublic
+    version: '2.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: RadioPublic iOS (?<os_version>[\d.]+)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: RadioPublic
+    version: '{os_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: NPROneAndroid
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: NPR
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: NPR%20One/371 CFNetwork/1402\.0\.8 Darwin/22\.2\.0
+  os:
+    name: iOS
+    version: '16.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: NPR
+    version: '371'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GooglePodcasts/(?<client_version>[\d.]+) iPod_touch/(?<os_version>[\d.]+) hw/iPod9_1
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Google Podcasts
+    version: '{client_version}'
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch 7
+  os_family: iOS
+  browser_family: Unknown
+- regex: spotify_other-mobile
+  client:
+    type: mobile app
+    name: Spotify
+    version: ''
+  device:
+    type: smartphone
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: spotify_android-tablet
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Spotify
+    version: ''
+  device:
+    type: tablet
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Spotify/(?<client_version>[\d.]+) OSX/0 \(MacBookPro6,2\)
+  os:
+    name: Mac
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Spotify
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: MacBook Pro 15" (2010)
+  os_family: Mac
+  browser_family: Unknown
+- regex: AmazonMusic
+  client:
+    type: mobile app
+    name: Amazon Music
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Harley/(?<client_version>[\d.]+) A5FPM1T85BR19/9\.2\.1\.2362a
+  client:
+    type: mobile app
+    name: Amazon Music
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: AmazonMusic%2F(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Amazon Music
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: ActionExtension/(?<client_version>[\d.]+) CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: ActionExtension
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: ActionExtension/5328 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: ActionExtension
+    version: '5328'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Adori-Dev/7 CFNetwork/974\.2\.1 Darwin/18\.0\.0
+  os:
+    name: iOS
+    version: '12.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Adori
+    version: '7'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Adori/6\.1 \(https://adorilabs\.com\) requests/2\.24
+  client:
+    type: mobile app
+    name: Adori
+    version: '6.1'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Adori/1 CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Adori
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Adori-Listen/1 CFNetwork/978\.0\.7 Darwin/18\.6\.0
+  os:
+    name: iOS
+    version: '12.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Adori
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Agora/37 CFNetwork/974\.2\.1 Darwin/18\.0\.0
+  os:
+    name: iOS
+    version: '12.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Agora
+    version: '37'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Airr/3787 CFNetwork/1128\.0\.1 Darwin/19\.6\.0
+  os:
+    name: iOS
+    version: '13.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Airr
+    version: '3787'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Airr/4070 CFNetwork/1206 Darwin/20\.1\.0
+  os:
+    name: iOS
+    version: '14.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Airr
+    version: '4070'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Airr%20Beta/672 CFNetwork/978\.0\.7 Darwin/18\.5\.0
+  os:
+    name: iOS
+    version: '12.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Airr
+    version: '672'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Airr \(airr\.io\)
+  client:
+    type: mobile app
+    name: Airr
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Airr/6610 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Airr
+    version: '6610'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Airsonic/(?<client_version>[\d.]+)-SNAPSHOT\.20220625052932
+  client:
+    type: mobile app
+    name: Airsonic
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); CLT-L29 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/75\.0\.3770\.101 Mobile Safari/537\.36 AllYouCanBooksAppAndroid
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: All You Can Books
+    version: ''
+  device:
+    type: smartphone
+    brand: Huawei
+    model: P20 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: AllYouCanBooks/522 CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: All You Can Books
+    version: '522'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: AllHitMusicRadio/1\.0 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: AllHitMusicRadio
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Aloha/2 CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: browser
+    name: Aloha Browser
+    version: ''
+    engine: ''
+    engine_version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Chrome
+- regex: Aloha/4 CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: browser
+    name: Aloha Browser
+    version: ''
+    engine: ''
+    engine_version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Chrome
+- regex: Amazon;AFTT;756a522d9f1648b89e76e80be654456a;;tpapi
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV Stick
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTT;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV Stick
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTSSS;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV Stick (Gen 3)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTSSS;756a522d9f1648b89e76e80be654456a;;tpapi;3\.200\.454
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV Stick (Gen 3)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTSS;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV Stick Lite (Gen 1)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTKA;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV Stick 4K Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTTI43;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Amazon
+    model: Fire TV 4-Series (2021)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTSO001;756a522d9f1648b89e76e80be654456a;;tpapi
+  os:
+    name: Fire OS
+    version: '7'
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: JVC
+    model: Fire TV 4K (2019)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTEAMR311;756a522d9f1648b89e76e80be654456a;;tpapi
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Insignia
+    model: HD (2018)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTEAMR311;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Insignia
+    model: HD (2018)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTEU014;756a522d9f1648b89e76e80be654456a;;tpapi
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Grundig
+    model: Vision 7 4K (2019)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTMM;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Anker
+    model: Nebula Soundbar
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTMM;756a522d9f1648b89e76e80be654456a;;tpapi;3\.200\.454
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Anker
+    model: Nebula Soundbar
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTDCT31;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Toshiba
+    model: 4K UHD (2020)
+  os_family: Android
+  browser_family: Unknown
+- regex: Amazon;AFTKMST12;756a522d9f1648b89e76e80be654456a;;tpapi;3\.202\.356
+  os:
+    name: Fire OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Amazon Fire
+    version: ''
+  device:
+    type: tv
+    brand: Toshiba
+    model: 43LF711U20
+  os_family: Android
+  browser_family: Unknown
+- regex: Anchor/9 CFNetwork/901\.1 Darwin/17\.5\.0
+  os:
+    name: iOS
+    version: '11.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Anchor
+    version: '9'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: AnchorFM/3\.0 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.5\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: AnchorFM
+    version: '3.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Anghami Android (?<client_version>[\d.]+) / V 11 \(6011570\) Google store
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Anghami
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Anghami/(?<client_version>[\d.]+) CFNetwork/711\.1\.12 Darwin/14\.0\.0 iPhone11,6 iOS16\.2 v2
+  os:
+    name: iOS
+    version: '8.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Anghami
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Apple
+    model: iPhone XS Max
+  os_family: iOS
+  browser_family: Unknown
+- regex: Anghami/(?<client_version>[\d.]+) CFNetwork/1206 Darwin/20\.1\.0
+  os:
+    name: iOS
+    version: '14.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Anghami
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: أنغامي/(?<client_version>[\d.]+) CFNetwork/1335\.0\.3 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Anghami
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: de\.danoeh\.antennapod/(?<client_version>[\d.]+)b \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.9\.3
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: AntennaPod
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: AntennaPod/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: AntennaPod
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: antenna/19 CFNetwork/711\.1\.16 Darwin/14\.0\.0
+  os:
+    name: iOS
+    version: '8.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: AntennaPod
+    version: '19'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Anybox/74 CFNetwork/1402\.0\.8 Darwin/22\.2\.0
+  os:
+    name: iOS
+    version: '16.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Anybox
+    version: '74'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Anytime/(?<client_version>[\d.]+) b95 \(phone;android sdk_gphone64_arm64-userdebug 13 TE1A\.220922\.012 9302419 dev-keys\) https://github\.com/amugofjava/anytime_podcast_player
+  os:
+    name: Android
+    version: '13'
+    platform: ARM
+  client:
+    type: mobile app
+    name: Anytime Podcast Player
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: APKXDL \(Linux; U; Android (?<os_version>[\d.]+);nb_no; trlte/KTU84P\) Downloader
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: APK Downloader
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: APKXDL \(Linux; U; Android (?<os_version>[\d.]+);en_US; beyond0q/SP1A\.210812\.016\) Downloader
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: APK Downloader
+    version: ''
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S10e
+  os_family: Android
+  browser_family: Unknown
+- regex: Apollo/(?<client_version>[\d.]+) CFNetwork/1085\.4 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apollo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Apollo/3 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apollo
+    version: '3'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: MessagesViewService/1\.0 CFNetwork/1120 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple iMessage
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Messages/5500 CFNetwork/1098 Darwin/19\.0\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: '10.15'
+    platform: x64
+  client:
+    type: mobile app
+    name: Apple iMessage
+    version: '5500'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Messages Share Extension/5500 CFNetwork/1098 Darwin/19\.0\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: '10.15'
+    platform: x64
+  client:
+    type: mobile app
+    name: Apple iMessage
+    version: '5500'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: MessagesNotificationExtension/1 CFNetwork/1098\.7 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple iMessage
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Messages/1\.0 CFNetwork/1335\.0\.3\.1 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple iMessage
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Messages/6000 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple iMessage
+    version: '6000'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podcast(?:er|s)/(?<client_version>[\d.]+) CFNetwork/1111 Darwin/19\.0\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: '10.15'
+    platform: x64
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: البودكاست/(?<client_version>[\d.]+) CFNetwork/1209 Darwin/20\.2\.0
+  os:
+    name: iOS
+    version: '14.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: พ็อดคาสท์/(?<client_version>[\d.]+) CFNetwork/1126 Darwin/19\.5\.0
+  os:
+    name: iOS
+    version: '13.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: ポッドキャスト/(?<client_version>[\d.]+) CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: פודקאסטים/(?<client_version>[\d.]+) CFNetwork/1120 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: (?:Podcastok|Подкасты|פודקאסטים|البودكاست|팟캐스트)/(?<client_version>[\d.]+) CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Подкаст(?:и|ы)/(?<client_version>[\d.]+) CFNetwork/1206 Darwin/20\.1\.0
+  os:
+    name: iOS
+    version: '14.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: إسمعلي/1\.0 CFNetwork/609\.1\.4 Darwin/13\.0\.0
+  os:
+    name: iOS
+    version: '6.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: atc/1\.0 watchOS/6\.3 model/Watch2,4 hwp/t8002 build/17U208 \(6; dt:134\)
+  os:
+    name: watchOS
+    version: '6.3'
+    platform: ARM
+  device:
+    type: wearable
+    brand: Apple
+    model: Watch Series 2 42mm
+  os_family: iOS
+  browser_family: Unknown
+- regex: \(null\)/\(null\) watchOS/(?<os_version>[\d.]+) model/Watch4,2 hwp/t8006 build/16R382 \(6; dt:191\)
+  os:
+    name: watchOS
+    version: '{os_version}'
+    platform: ARM
+  device:
+    type: wearable
+    brand: Apple
+    model: Watch Series 4 44mm
+  os_family: iOS
+  browser_family: Unknown
+- regex: AirPodcasts/(?<client_version>[\d.]+) CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Podcasts
+    version: '{client_version}'
+  device:
+    type: smart speaker
+    brand: Apple
+    model: HomePod
+  os_family: iOS
+  browser_family: Unknown
+- regex: Recordatorios/2466 CFNetwork/1329 Darwin/21\.3\.0
+  os:
+    name: iOS
+    version: '15.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Apple Reminders
+    version: '2466'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Arvocast/3752 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Arvocast
+    version: '3752'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Radio\.com/(?<client_version>[\d.]+) \(com\.cbsradio\.cbsradioplayer; build:1; iOS (?<os_version>[\d.]+)\) Alamofire/4\.8\.1
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Audacy
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Audio/105 CFNetwork/548\.1\.4 Darwin/11\.0\.0
+  os:
+    name: iOS
+    version: '5.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Audio
+    version: '105'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Android_AudioNow
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Audio Now
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Awasu/3\.2PE
+  client:
+    type: mobile app
+    name: Awasu
+    version: '3.2'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Bear/5702 CFNetwork/811\.8 Darwin/16\.7\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: 10.12.6
+    platform: x64
+  client:
+    type: mobile app
+    name: Bear
+    version: '5702'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Bear/(?<client_version>[\d.]+) CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bear
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bible/11 CFNetwork/978\.0\.7 Darwin/18\.6\.0
+  os:
+    name: iOS
+    version: '12.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bible
+    version: '11'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bolt/10 CFNetwork/1098\.7 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bolt
+    version: '10'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bookmobile/1 CFNetwork/894 Darwin/17\.4\.0
+  os:
+    name: iOS
+    version: 11.2.6
+    platform: ''
+  client:
+    type: mobile app
+    name: Bookmobile
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Boom/(?<client_version>[\d.]+) CFNetwork/976 Darwin/18\.2\.0
+  os:
+    name: iOS
+    version: '12.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Boom
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Boom/2 CFNetwork/1335\.0\.3\.2 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Boom
+    version: '2'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Boomplay/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/3\.00\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Boomplay
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bose/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Bose SoundTouch
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Bose/(?<client_version>[\d.]+) ETSa8uM//nROIZCanRgS0w
+  client:
+    type: mobile app
+    name: Bose SoundTouch
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: bPod
+  os:
+    name: BlackBerry OS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: bPod
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: BlackBerry
+  browser_family: Unknown
+- regex: breez/(?<client_version>[\d.]+) CFNetwork/1402 Darwin/22\.2\.0
+  os:
+    name: iOS
+    version: '16.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Breez
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Broadcast/1\.0 CFNetwork/893\.14\.2 Darwin/17\.3\.0
+  os:
+    name: iOS
+    version: '11.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Broadcast
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: BroadwayPodcastNetwork/iOS
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Broadway Podcast Network
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Browser/(?<client_version>[\d.]+) CFNetwork/887 Darwin/17\.0\.0
+  os:
+    name: iOS
+    version: '11.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Browser app
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Browser/(?<client_version>[\d.]+) CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Browser app
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: browser_ios/19100\.2\.142 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: BrowserPlus/(?<client_version>[\d.]+) CFNetwork/978\.0\.7 Darwin/18\.5\.0
+  os:
+    name: iOS
+    version: '12.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: BrowserPlus
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: BrowserPlus/(?<client_version>[\d.]+) CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: BrowserPlus
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bullhorn/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.17\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Bullhorn/1\.0 \(\+http://bullhorn\.fm/\)
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Bullhorn/1\.0 \( http://bullhorn\.fm/\)
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Bullhorn
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Bullhorn \(https://bullhorn\.fm\)
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Bullhorn/1 CFNetwork/1335\.0\.3 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bullhorn/0 CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: '0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Bullhorn/1 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Bullhorn
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Capital/(?<client_version>[\d.]+) \(iPhone; CPU iPhone OS 16_1_1 like Mac OS X\)
+  os:
+    name: iOS
+    version: 16.1.1
+    platform: ''
+  client:
+    type: mobile app
+    name: Capital
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Capital/(?<client_version>[\d.]+) CFNetwork/976 Darwin/18\.2\.0
+  os:
+    name: iOS
+    version: '12.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Capital
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: capsule\.fm/1 CFNetwork/976 Darwin/18\.2\.0
+  os:
+    name: iOS
+    version: '12.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: capsule.fm
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: capsule-android
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: capsule.fm
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Castamatic/3847 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: Castamatic
+    version: '3847'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Castamatic/(?<client_version>[\d.]+) \(com\.gunpmedia\.Castamatic; build:3136; iOS (?<os_version>[\d.]+)\) Alamofire/4\.9\.0
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Castamatic
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Castaway/1 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Castaway
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Castaway/8 CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Castaway
+    version: '8'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: CastBox/(?<client_version>[\d.]+)-191015245 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.10\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: CastBox
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: CastBox/(?<client_version>[\d.]+)-190508115\.r1a805d3
+  client:
+    type: mobile app
+    name: CastBox
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Classic FM/(?<client_version>[\d.]+) \(iPhone; CPU iPhone OS 16_3_1 like Mac OS X\)
+  os:
+    name: iOS
+    version: 16.3.1
+    platform: ''
+  client:
+    type: mobile app
+    name: Classic FM
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Classic FM/(?<client_version>[\d.]+) Android (?<os_version>[\d.]+)/vivo V2111
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Classic FM
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: Y21
+  os_family: Android
+  browser_family: Unknown
+- regex: Classic FM/(?<client_version>[\d.]+) CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Classic FM
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Client/(?<client_version>[\d.]+) CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Client
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Cosmicast/1 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Cosmicast
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: CPod/(?<client_version>[\d.]+) \(github\.com/z-------------\)
+  client:
+    type: mobile app
+    name: CPod
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: damus/24 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Damus
+    version: '24'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: 'DS podcast/(?<client_version>[\d.]+) \(be\.standaard\.audio; build:6; Android (?<os_version>[\d.]+); Sdk:29; Manufacturer:samsung; Model: SM-J600FN\) OkHttp/4\.9\.1'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: De Standaard
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy J6
+  os_family: Android
+  browser_family: Unknown
+- regex: 'DS podcast/(?<client_version>[\d.]+) \(be\.standaard\.audio; build:5; Android (?<os_version>[\d.]+); Sdk:30; Manufacturer:samsung; Model: SM-A505FN\) OkHttp/4\.9\.0'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: De Standaard
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A50
+  os_family: Android
+  browser_family: Unknown
+- regex: DManager/27 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: DManager
+    version: '27'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: doubleTwist CloudPlayer
+  client:
+    type: mobile app
+    name: DoubleTwist CloudPlayer
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: doubleTwist CloudPlayer ETbs42V/Br J3W/G8NeL8g
+  client:
+    type: mobile app
+    name: DoubleTwist CloudPlayer
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Doughnut/(?<client_version>[\d.]+) CFNetwork/1335\.0\.3\.1 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Doughnut
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Doughnut/(?<client_version>[\d.]+) \( https://doughnutapp\.com/; Podcast Client; macOS Version 10\.15\.7 \(Build 19H2026\)\)
+  os:
+    name: Mac
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Doughnut
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Doughnut/58 CFNetwork/902\.6 Darwin/17\.7\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: 10.13.6
+    platform: x64
+  client:
+    type: mobile app
+    name: Doughnut
+    version: '58'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Downie/1108 CFNetwork/760\.2\.6 Darwin/15\.2\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: 10.11.2
+    platform: x64
+  client:
+    type: mobile app
+    name: Downie
+    version: '1108'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Downie/7 CFNetwork/1335\.0\.3\.2 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Downie
+    version: '7'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Downloader/(?<client_version>[\d.]+) CFNetwork/711\.3\.18 Darwin/14\.0\.0
+  os:
+    name: iOS
+    version: '8.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Downloader
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Downloader/29 CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Downloader
+    version: '29'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: EMAudioPlayer (?<client_version>[\d.]+) \(720\) / Android (?<os_version>[\d.]+) / MotoG3
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: EMAudioPlayer
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Motorola
+    model: Moto G3
+  os_family: Android
+  browser_family: Unknown
+- regex: Expo/(?<client_version>[\d.]+) CFNetwork/976 Darwin/18\.2\.0
+  os:
+    name: iOS
+    version: '12.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Expo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Expo/(?<client_version>[\d.]+) CFNetwork/1402\.0\.8 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Expo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: CFR%20Plus/9 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: faidr
+    version: '9'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: CFR%20Plus/0 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: faidr
+    version: '0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: CFR%20Plus/0 CFNetwork/1402\.0\.8 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: faidr
+    version: '0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Fathom/5 CFNetwork/1406\.0\.2 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Fathom
+    version: '5'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Fathom/5 CFNetwork/1474 Darwin/23\.0\.0
+  os:
+    name: iOS
+    version: '17.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Fathom
+    version: '5'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: FeedStation/4\.5 \(http://www\.newsgator\.com/; Microsoft Windows\)
+  os:
+    name: Windows
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: FeedStation
+    version: '4.5'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: Windows
+  browser_family: Unknown
+- regex: FeedStation/4\.0 \(http://www\.newsgator\.com/; Microsoft Windows\)
+  os:
+    name: Windows
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: FeedStation
+    version: '4.0'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: Windows
+  browser_family: Unknown
+- regex: Files/1\.0 CFNetwork/758\.3\.15 Darwin/15\.4\.0
+  os:
+    name: iOS
+    version: '9.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Files
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Files/6 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Files
+    version: '6'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Fountain/(?<client_version>[\d.]+) Android https://www\.fountain\.fm
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Fountain
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Fountain/(?<client_version>[\d.]+) iOS https://www\.fountain\.fm
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Fountain
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: fountainapp/565 CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Fountain
+    version: '565'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Garmin fenix 5X Plus/18\.0
+  client:
+    type: mobile app
+    name: Garmin fenix 5X
+    version: '18.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Garmin fenix 5X Plus/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Garmin fenix 5X
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Garmin Forerunner 2(?:4|5)5 Music/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Garmin Forerunner
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Garmin Forerunner 745/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Garmin Forerunner
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Garmin Forerunner 945/13\.0
+  client:
+    type: mobile app
+    name: Garmin Forerunner
+    version: '13.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Gold/(?<client_version>[\d.]+) \(iPhone; CPU iPhone OS 15_7_3 like Mac OS X\)
+  os:
+    name: iOS
+    version: 15.7.3
+    platform: ''
+  client:
+    type: mobile app
+    name: Gold
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Gold/(?<client_version>[\d.]+) CFNetwork/902\.2 Darwin/17\.7\.0
+  os:
+    name: iOS
+    version: 11.4.1
+    platform: ''
+  client:
+    type: mobile app
+    name: Gold
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoldenPod/(?<client_version>[\d.]+) \(GNU/Linux; podcatcher; Using LWP\) libwwwperl
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: GoldenPod
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoldenPod/0\.9 \(GNU/Linux; podcatcher; Using LWP\) libwwwperl
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: GoldenPod
+    version: '0.9'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoLoud/1092 CFNetwork/978\.0\.7 Darwin/18\.6\.0
+  os:
+    name: iOS
+    version: '12.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoLoud
+    version: '1092'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoLoud/114 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoLoud
+    version: '114'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoLoud/1324 CFNetwork/1329 Darwin/21\.3\.0
+  os:
+    name: iOS
+    version: '15.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoLoud
+    version: '1324'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Goodpods\.Android / (?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Goodpods
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Goodpods\.iOS / (?<client_version>[\d.]+)
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Goodpods
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Goodpods/1 CFNetwork/1329 Darwin/21\.3\.0
+  os:
+    name: iOS
+    version: '15.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Goodpods
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Goodpods/3 CFNetwork/1128\.0\.1 Darwin/19\.6\.0
+  os:
+    name: iOS
+    version: '13.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Goodpods
+    version: '3'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoodReader/(?<client_version>[\d.]+) CFNetwork/548\.1\.4 Darwin/11\.0\.0
+  os:
+    name: iOS
+    version: '5.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoodReader
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoodReader4/100 CFNetwork/711\.3\.18 Darwin/14\.0\.0
+  os:
+    name: iOS
+    version: '8.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoodReader
+    version: '100'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoodReaderIPad/(?<client_version>[\d.]+) CFNetwork/711\.3\.18 Darwin/14\.0\.0
+  os:
+    name: iOS
+    version: '8.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoodReader
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: GoodReader4/(?<client_version>[\d.]+) CFNetwork/1335\.0\.3\.2 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: GoodReader
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Fuchsia\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/108\.0\.0\.0 Safari/537\.36 CrKey/1\.56\.500000
+  os:
+    name: Fuchsia
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Google Nest Hub
+    version: ''
+  device:
+    type: tv
+    brand: Google
+    model: Chromecast
+  os_family: GNU/Linux
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Fuchsia\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/110\.0\.0\.0 Safari/537\.36 CrKey/1\.56\.500000
+  os:
+    name: Fuchsia
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Google Nest Hub
+    version: ''
+  device:
+    type: tv
+    brand: Google
+    model: Chromecast
+  os_family: GNU/Linux
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(X11; Fuchsia\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36 CrKey/1\.56\.500000
+  os:
+    name: Fuchsia
+    version: ''
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tv
+    brand: Google
+    model: Chromecast
+  os_family: GNU/Linux
+  browser_family: Chrome
+- regex: Guacamole/(?<client_version>[\d.]+) CFNetwork/811\.5\.4 Darwin/16\.7\.0
+  os:
+    name: iOS
+    version: '10.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Guacamole
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Hammel/1\.5 CFNetwork/976 Darwin/18\.2\.0
+  os:
+    name: iOS
+    version: '12.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Hammel
+    version: '1.5'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Hammel/9 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Hammel
+    version: '9'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: HardCast/11 CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: HardCast
+    version: '11'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Hark/(?<client_version>[\d.]+) CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Hark Audio
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Hark/(?<client_version>[\d.]+) CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Hark Audio
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Heart/(?<client_version>[\d.]+) \(iPhone; CPU iPhone OS 16_4_1 like Mac OS X\)
+  os:
+    name: iOS
+    version: 16.4.1
+    platform: ''
+  client:
+    type: mobile app
+    name: Heart
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Heart/(?<client_version>[\d.]+) Android (?<os_version>[\d.]+)/samsung SM-A235F
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Heart
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A23
+  os_family: Android
+  browser_family: Unknown
+- regex: Heart/(?<client_version>[\d.]+) CFNetwork/897\.15 Darwin/17\.5\.0
+  os:
+    name: iOS
+    version: '11.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Heart
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: hermespod\.com/v1\.5\.x
+  client:
+    type: mobile app
+    name: HermesPod
+    version: '1.5'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: HiCast/1 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: HiCast
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: HiCast/12 CFNetwork/1333\.0\.4 Darwin/21\.5\.0
+  os:
+    name: iOS
+    version: '15.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: HiCast
+    version: '12'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Himalaya/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/3\.00; CFNetwork; iPhone13,4\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Himalaya
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Apple
+    model: iPhone 12 Pro Max
+  os_family: iOS
+  browser_family: Unknown
+- regex: Himalaya_test/55 CFNetwork/894 Darwin/17\.4\.0
+  os:
+    name: iOS
+    version: 11.2.6
+    platform: ''
+  client:
+    type: mobile app
+    name: Himalaya
+    version: '55'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: HyperCatcher/1
+  client:
+    type: mobile app
+    name: HyperCatcher
+    version: '1'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: HyperCatcher/2 CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: HyperCatcher
+    version: '2'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: iHeartRadio/(?<client_version>[\d.]+) \(Android (?<os_version>[\d.]+); SM-G960U Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iHeartRadio
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S9
+  os_family: Android
+  browser_family: Unknown
+- regex: iHeartPodcasts/(?<client_version>[\d.]+) \(Android (?<os_version>[\d.]+); SM-A505FN Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iHeartRadio
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A50
+  os_family: Android
+  browser_family: Unknown
+- regex: iHeartRadio/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); iPhone12,1\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iHeartRadio
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone 11
+  os_family: iOS
+  browser_family: Unknown
+- regex: iHeartRadio/(?<client_version>[\d.]+) CFNetwork/1125\.2 Darwin/19\.4\.0
+  os:
+    name: iOS
+    version: '13.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: iHeartRadio
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: IOSAudiobooks/(?<client_version>[\d.]+) CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Audiobooks
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: IOSAudiobooks/8 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Audiobooks
+    version: '8'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: iVooxApp/3\.85 \(iPhone; iOS; iOS (?<os_version>[\d.]+); d:16910714; 113F\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iVoox
+    version: '3.85'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: ivooxApp/2\.281\.428_428 \(G8341; Android (?<os_version>[\d.]+); d:420031; E5A4\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iVoox
+    version: 2.281.428
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia XZ1
+  os_family: Android
+  browser_family: Unknown
+- regex: iVoox
+  client:
+    type: mobile app
+    name: iVoox
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: ivooxNew/01 CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: iVoox
+    version: '01'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: ivooxNew/1 CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: iVoox
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Jam/(?<client_version>[\d.]+) Android/(?<os_version>[\d.]+) \(www\.listentojam\.com\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Jam
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Jam/(?<client_version>[\d.]+) iOS/(?<os_version>[\d.]+) \(www\.listentojam\.com\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Jam
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: com\.jio\.media\.jiobeats/9\.3 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.18\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: JioSaavn
+    version: '9.3'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Saavn Player
+  client:
+    type: mobile app
+    name: JioSaavn
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: KajabiPodcast
+  client:
+    type: mobile app
+    name: Kajabi
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: KakaoTalk/(?<client_version>[\d.]+) CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: KakaoTalk
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Kids Listen/55 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Kids Listen
+    version: '55'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Kids%20Listen/94 CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Kids Listen
+    version: '94'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: KidspodMobileClient/111 CFNetwork/1465\.2 Darwin/23\.0\.0
+  os:
+    name: iOS
+    version: '17.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: KidsPod
+    version: '111'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: KKBOX/(?<client_version>[\d.]+)/iOS/(?<os_version>[\d.]+)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: KKBOX
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Laughable/(?<client_version>[\d.]+) CFNetwork/808\.1\.4 Darwin/16\.1\.0
+  os:
+    name: iOS
+    version: '10.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Laughable
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Laughable iOS/3\.1 \(com\.bywayEndeavors\.Laughable; build:3\.1\.0\.3; iOS (?<os_version>[\d.]+)\) Alamofire/4\.8\.2
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Laughable
+    version: '3.1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: LBC/(?<client_version>[\d.]+) \(iPhone; CPU iPhone OS 16_3_1 like Mac OS X\)
+  os:
+    name: iOS
+    version: 16.3.1
+    platform: ''
+  client:
+    type: mobile app
+    name: LBC
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: LBC/(?<client_version>[\d.]+) Android (?<os_version>[\d.]+)/samsung SM-A125F
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: LBC
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A12
+  os_family: Android
+  browser_family: Unknown
+- regex: LBC/98 \(iPad; CPU OS 12_5_7 like Mac OS X\)
+  os:
+    name: iOS
+    version: 12.5.7
+    platform: ''
+  client:
+    type: mobile app
+    name: LBC
+    version: '98'
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad
+  os_family: iOS
+  browser_family: Unknown
+- regex: LBC/(?<client_version>[\d.]+) CFNetwork/811\.5\.4 Darwin/16\.7\.0
+  os:
+    name: iOS
+    version: '10.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: LBC
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Player/LG Player 1\.0 for Android (?<os_version>[\d.]+) \(stagefright alternative\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: LG Player
+    version: '1.0'
+  device:
+    type: smartphone
+    brand: LG
+    model: Player
+  os_family: Android
+  browser_family: Unknown
+- regex: LG-H870/V20a Player/LG Player 1\.0 for Android (?<os_version>[\d.]+) \(stagefright alternative\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: LG Player
+    version: '1.0'
+  device:
+    type: smartphone
+    brand: LG
+    model: G6
+  os_family: Android
+  browser_family: Unknown
+- regex: Listen/1 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Listen
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Listen App/84 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: Listen
+    version: '84'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Listen%20App/136 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: Listen
+    version: '136'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Liulo/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/2\.00\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Liulo
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Liulo/(?<client_version>[\d.]+) \(vn\.bachminh\.podcastvn; build:6; iOS (?<os_version>[\d.]+)\) Alamofire/5\.6\.4
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Liulo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Liulo/6 CFNetwork/1331\.0\.7 Darwin/21\.4\.0
+  os:
+    name: iOS
+    version: '15.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Liulo
+    version: '6'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Listen5 1\.2 build 36 \(iPhone; iOS (?<os_version>[\d.]+); en_US\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Just Listen
+    version: '1.2'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Listen5/36 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Just Listen
+    version: '36'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: luminary\.next/1\.25 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.10\.5
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Luminary
+    version: '1.25'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Luminary/53\.0 \(Android (?<os_version>[\d.]+); SM-S908U; samsung b0q; en\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Luminary
+    version: '53.0'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S22 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: LuminaryPreprod/27 CFNetwork/976 Darwin/18\.2\.0
+  os:
+    name: iOS
+    version: '12.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Luminary
+    version: '27'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Luminary/325 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Luminary
+    version: '325'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Luminary/1\.0
+  client:
+    type: mobile app
+    name: Luminary
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Megaphone\.fm
+  client:
+    type: mobile app
+    name: Megaphone
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Menucast/1\.4 CFNetwork/720\.1\.1 Darwin/14\.0\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: '10.10'
+    platform: x64
+  client:
+    type: mobile app
+    name: Menucast
+    version: '1.4'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Messenger/(?<client_version>[\d.]+) CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: MessengerX
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Mimir/1 CFNetwork/1098 Darwin/19\.0\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: '10.15'
+    platform: x64
+  client:
+    type: mobile app
+    name: Mimir
+    version: '1'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Mimir-macOS/(?<client_version>[\d.]+)
+  os:
+    name: Mac
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Mimir
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: MobileSMS/1\.0 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: MobileSMS
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: MobileSMS/6000 CFNetwork/1474 Darwin/23\.0\.0
+  os:
+    name: iOS
+    version: '17.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: MobileSMS
+    version: '6000'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: MoonFM/128 CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: MoonFM
+    version: '128'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Moon FM/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: MoonFM
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Echo Mobiles
+    model: Moon
+  os_family: Unknown
+  browser_family: Unknown
+- regex: mytuner_podcasts_androidplayer/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.8\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: MyTuner
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: myTuner Radio app/11 CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: MyTuner
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: myTuner%20Radio%20app/11 CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: MyTuner
+    version: '11'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: MyTuner-ExoPlayerAdapter
+  client:
+    type: mobile app
+    name: MyTuner
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: myTuner
+  client:
+    type: mobile app
+    name: MyTuner
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: myTuneriOS%20Free/120 CFNetwork/1402\.0\.8 Darwin/22\.2\.0
+  os:
+    name: iOS
+    version: '16.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: MyTuner
+    version: '120'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Newsly
+  client:
+    type: mobile app
+    name: Newsly
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: 'NRC Audio/(?<client_version>[\d.]+) \(nl\.nrc\.audio; build:29; Android (?<os_version>[\d.]+); Sdk:31; Manufacturer:samsung; Model: SM-G975F\) OkHttp/4\.9\.3'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: NRC Audio
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S10+
+  os_family: Android
+  browser_family: Unknown
+- regex: NRC%20Audio/1 CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: NRC Audio
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: iPad \(compatible; Tablet2\.0\) NRC Digitale Editie, nl\.nrc\.nrcapp (?<client_version>[\d.]+) \(197\) / iPadOS (?<os_version>[\d.]+)
+  os:
+    name: iPadOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: NRC
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad
+  os_family: iOS
+  browser_family: Unknown
+- regex: iPhone \(compatible; Smartphone2\.0\) NRC Digitale Editie, nl\.nrc\.nrcapp (?<client_version>[\d.]+) \(197\) / iOS (?<os_version>[\d.]+)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: NRC
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: NRC-Nieuws/10\.2\.1 \(nl\.nrc\.nrcapp; build:206; iOS (?<os_version>[\d.]+)\) Alamofire/10\.2\.1
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: NRC
+    version: 10.2.1
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Outcast/1957 CFNetwork/889\.7 Darwin/17\.2\.0
+  os:
+    name: iOS
+    version: '11.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Outcast
+    version: '1957'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Outcast for Apple Watch
+  os:
+    name: watchOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Outcast
+    version: ''
+  device:
+    type: wearable
+    brand: Apple
+    model: Watch
+  os_family: iOS
+  browser_family: Unknown
+- regex: Outcast (?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Outcast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podcast Overhaul/11\.8 Android/(?<os_version>[\d.]+)  https://www\.podcastoverhaul\.com/
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Overhaul FM
+    version: '11.8'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podcast Overhaul/(?<client_version>[\d.]+) iOS/(?<os_version>[\d.]+) \+https://www\.podcastoverhaul\.com/
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Overhaul FM
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Palco MP3/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.15\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Palco MP3
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: PeaCast/0\.7
+  client:
+    type: mobile app
+    name: PeaCast
+    version: '0.7'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Player FM
+  client:
+    type: mobile app
+    name: Player FM
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Player FM Android
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Player FM
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Player FM - Podkicker Android
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Player FM
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Player FM iOS
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Player FM
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Player%20FM/588 CFNetwork/1121\.2\.2 Darwin/19\.2\.0
+  os:
+    name: iOS
+    version: '13.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Player FM
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Alpha%20PlayerFM/108 CFNetwork/808\.0\.2 Darwin/16\.0\.0
+  os:
+    name: iOS
+    version: '10.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Player FM
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podbay/21 CFNetwork/1335\.0\.3 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podbay
+    version: '21'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podbay/21 CFNetwork/1335\.0\.3\.1 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podbay
+    version: '21'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodcastGuru (?<client_version>[\d.]+)-beta(?:3|4)
+  client:
+    type: mobile app
+    name: Podcast Guru
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: PodcastGuru/65 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast Guru
+    version: '65'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podcast Player/1\.0 \(phone;android RMX3195_11_A\.18\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast Player
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podcast Player/1\.31 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.8\.2
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast Player
+    version: '1.31'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podcast Player/1\.5
+  client:
+    type: mobile app
+    name: Podcast Player
+    version: '1.5'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podcast Player/1\.0 \(phone;ios Version (?<os_version>[\d.]+) \(Build 20D67\)\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast Player
+    version: '1.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodcastRepublic/18\.0 \(Linux; U; Android (?<os_version>[\d.]+);blueline/QP1A\.190711\.020\.C3\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast Republic
+    version: '18.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podcastly/(?<client_version>[\d.]+) \(samsung; CPU OS android 11; en_us\)
+  os:
+    name: Android
+    version: '11'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcastly
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podcastly
+  client:
+    type: mobile app
+    name: Podcastly
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podchaser \(https://podchaser\.com\)
+  client:
+    type: mobile app
+    name: Podchaser
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podchaser-Parser
+  client:
+    type: mobile app
+    name: Podchaser
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podclipper/4\.2 \(miguelDSP\.Podclipper; build:4; iOS (?<os_version>[\d.]+)\) Alamofire/4\.7\.3
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podclipper
+    version: '4.2'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podclipper/40 \(miguelDSP\.Podclipper; build:129; iOS (?<os_version>[\d.]+)\) Alamofire/5\.7\.0
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podclipper
+    version: '40'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podclipper/40 \(miguelDSP\.Podclipper; build:129; macOS\(Catalyst\) (?<os_version>[\d.]+)\) Alamofire/5\.7\.1
+  os:
+    name: Mac
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podclipper
+    version: '40'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Podclipper/129 CFNetwork/1402\.0\.8 Darwin/22\.2\.0
+  os:
+    name: iOS
+    version: '16.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podclipper
+    version: '129'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodCruncher/(?<client_version>[\d.]+) CFNetwork/1125\.2 Darwin/19\.4\.0
+  os:
+    name: iOS
+    version: '13.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodCruncher
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodCruncher/(?<client_version>[\d.]+) CFNetwork/1335\.0\.3\.4 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodCruncher
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podeo/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.11\.7
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podeo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podeo/(?<client_version>[\d.]+) Android
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podeo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podeo/4\.1 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.11\.7
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podeo
+    version: '4.1'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podeo/(?<client_version>[\d.]+) iOS
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podeo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podeo/55 CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podeo
+    version: '55'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podfriend/1\.0 Mozilla/5\.0 \(Macintosh; Intel Mac OS X 10_15_7\) AppleWebKit/537\.36 \(KHTML, like Gecko\) PodFriend/0\.7\.1 Chrome/83\.0\.4103\.122 Electron/9\.2\.0 Safari/537\.36
+  os:
+    name: Mac
+    version: 10.15.7
+    platform: ''
+  client:
+    type: mobile app
+    name: Podfriend
+    version: '1.0'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Podfriend 2\.0 ios
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podfriend
+    version: '2.0'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Swoot/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.9\.6
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Swoot
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podhero/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.9\.6
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podhero
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podhero%20Alpha/4373 CFNetwork/1197 Darwin/20\.0\.0
+  os:
+    name: iOS
+    version: '14.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podhero
+    version: '4373'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Swoot Agent 1\.0
+  client:
+    type: mobile app
+    name: Podhero
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podhero/4357
+  client:
+    type: mobile app
+    name: Podhero
+    version: '4357'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podimo/(?<client_version>[\d.]+) build 121/iOS (?<os_version>[\d.]+)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podimo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podimo/(?<client_version>[\d.]+) build 91/Android 28
+  os:
+    name: Android
+    version: '9'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podimo
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Mobile; Safaricom_Kimem_Kerefa_4G; rv:48\.0; CAEN\) Gecko/48\.0 Firefox/48\.0 KAIOS/(?<os_version>[\d.]+) PodKast
+  os:
+    name: KaiOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodKast
+    version: ''
+  device:
+    type: feature phone
+    brand: Safaricom
+    model: Kimem Kerefa 4G
+  os_family: Firefox OS
+  browser_family: Unknown
+- regex: Podkicker/(?<client_version>[\d.]+)\(350\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podkicker
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podkicker Pro/3\.1\.19\.RC-GP-Pro\(2028\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podkicker Pro
+    version: 3.1.19
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Mobile; LYF/F271i/LYF_F271i-000-01-20-101019; Android; rv:48\.0\) Gecko/48\.0 Firefox/48\.0 KAIOS/2\.5 PodLP/(?<client_version>[\d.]+)
+  os:
+    name: KaiOS
+    version: '2.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodLP
+    version: '{client_version}'
+  device:
+    type: feature phone
+    brand: LYF
+    model: F271i
+  os_family: Firefox OS
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Mobile; Nokia 2720 V Flip; rv:48\.0; CAEN\) Gecko/48\.0 Firefox/48\.0 KAIOS/(?<os_version>[\d.]+) PodLP/(?<client_version>[\d.]+)
+  os:
+    name: KaiOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodLP
+    version: '{client_version}'
+  device:
+    type: feature phone
+    brand: Nokia
+    model: 2720 V Flip
+  os_family: Firefox OS
+  browser_family: Unknown
+- regex: Podme android app/5\.1 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.11\.5
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodMe
+    version: '5.1'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podme android app/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.18\.2
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodMe
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Podme android app/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.17\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodMe
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: PodMe/10289 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodMe
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodMN/iOS (?<client_version>[\d.]+) \(iPhone/(?<os_version>[\d.]+)\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodMN
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodMN/Android (?<client_version>[\d.]+) \(Android (?<os_version>[\d.]+); SM-A102U Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodMN
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A10e
+  os_family: Android
+  browser_family: Unknown
+- regex: PodNL/47 CFNetwork/1107\.1 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodNL
+    version: '47'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodNL/88 CFNetwork/1331\.0\.7 Darwin/21\.4\.0
+  os:
+    name: iOS
+    version: '15.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: PodNL
+    version: '88'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: podopolo/36 CFNetwork/1312 Darwin/20\.4\.0
+  os:
+    name: iOS
+    version: '14.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podopolo
+    version: '36'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: podopolo/20 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podopolo
+    version: '20'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podplay/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.13\.3
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podplay
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Pods/1 CFNetwork/1312 Darwin/21\.0\.0
+  os:
+    name: iOS
+    version: '15.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Pods
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Pods/3 CFNetwork/1335\.0\.3 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Pods
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podurama/(?<client_version>[\d.]+) CFNetwork/1390 Darwin/22\.0\.0
+  os:
+    name: iOS
+    version: '16.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podurama
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podurama/(?<client_version>[\d.]+) CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podurama
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PodTrapper
+  client:
+    type: mobile app
+    name: PodTrapper
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podvine/(?<client_version>[\d.]+) \(www\.podvine\.com\)
+  client:
+    type: mobile app
+    name: Podvine
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podverse/Android Mobile App/Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S134DL Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/105\.0\.5195\.136 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podverse
+    version: ''
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A03s
+  os_family: Android
+  browser_family: Unknown
+- regex: Podverse/iOS Mobile App/Mozilla/5\.0 \(iPhone; CPU iPhone OS 13_6_1 like Mac OS X\) AppleWebKit/605\.1\.15 \(KHTML, like Gecko\) Mobile/1234
+  os:
+    name: iOS
+    version: 13.6.1
+    platform: ''
+  client:
+    type: mobile app
+    name: Podverse
+    version: ''
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podverse/iOS Mobile App
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Podverse
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: podverse/393 CFNetwork/1128\.0\.1 Darwin/19\.6\.0
+  os:
+    name: iOS
+    version: '13.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podverse
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podverse/Feed Parser
+  client:
+    type: mobile app
+    name: Podverse
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podyssey
+  client:
+    type: mobile app
+    name: Podyssey
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podyssey/1 CFNetwork/1335\.0\.3\.4 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podyssey
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: ProCast/1 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: Procast
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Procast \(iOS\)
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Procast
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Procast/(?<client_version>[\d.]+) \(com\.podflitzer\.android; build:16700; Android (?<os_version>[\d.]+)\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Procast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: ProCast/(?<client_version>[\d.]+) \(de\.dsa\.Cuts; build:1; iOS (?<os_version>[\d.]+)\) Alamofire/4\.9\.1
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Procast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: PugpigBolt (?<client_version>[\d.]+) \(iPhone, iOS (?<os_version>[\d.]+)\) on phone \(model iPhone12,1\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PugPig Bolt
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone 11
+  os_family: iOS
+  browser_family: Unknown
+- regex: PugpigBolt (?<client_version>[\d.]+) \(samsung, Android (?<os_version>[\d.]+)\) on phone \(model SM-G998U\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: PugPig Bolt
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S21 Ultra 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: GetPodcast (?<client_version>[\d.]+) \(iPhone; iPhone OS (?<os_version>[\d.]+); de_DE\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: GetPodcast
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: radio\.de/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.18\.2
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: radio.de
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: radio\.next/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.15\.0
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Radio Next
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: GetPodcast/(?<client_version>[\d.]+) \(Linux; Android (?<os_version>[\d.]+); de_DE\) ExoPlayerLib/2\.18\.2
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: GetPodcast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: radio\.fr (?<client_version>[\d.]+) \(iPhone; iPhone OS (?<os_version>[\d.]+); fr_FR\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: radio.fr
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: radio\.de/4671 CFNetwork/1121\.2\.2 Darwin/19\.2\.0
+  os:
+    name: iOS
+    version: '13.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: radio.de
+    version: '4671'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: radio\.de/(?<client_version>[\d.]+) \(Linux; 13\) ExoPlayerLib/2\.18\.2
+  os:
+    name: GNU/Linux
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: radio.de
+    version: '{client_version}'
+  device:
+    type: desktop
+    brand: ''
+    model: ''
+  os_family: GNU/Linux
+  browser_family: Unknown
+- regex: Radioline
+  client:
+    type: mobile app
+    name: Radioline
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Radioline%202/(?<client_version>[\d.]+) CFNetwork/978\.0\.7 Darwin/18\.7\.0
+  os:
+    name: iOS
+    version: '12.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Radioline
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Repod/(?<client_version>[\d.]+) Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pixel 3 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/94\.0\.4606\.85 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Repod
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Google
+    model: Pixel 3
+  os_family: Android
+  browser_family: Unknown
+- regex: rhythmbox/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Rhythmbox
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: SachNoi\.app/1 CFNetwork/1197 Darwin/20\.0\.0
+  os:
+    name: iOS
+    version: '14.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: SachNoi
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: SachNoiApp/2 CFNetwork/1128\.0\.1 Darwin/19\.6\.0
+  os:
+    name: iOS
+    version: '13.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: SachNoi
+    version: '2'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: sp-agent
+  client:
+    type: mobile app
+    name: Samsung Podcasts
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: sp-agent ETSfy24nuLJtoscVI1I0Fw
+  client:
+    type: mobile app
+    name: Samsung Podcasts
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: sp-agent vQAsjA
+  client:
+    type: mobile app
+    name: Samsung Podcasts
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: ServeStream Dynamo/1\.0
+  client:
+    type: mobile app
+    name: ServeStream
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: ServeStream
+  client:
+    type: mobile app
+    name: ServeStream
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Shadow/45 CFNetwork/1335\.0\.3\.1 Darwin/21\.6\.0
+  os:
+    name: iOS
+    version: '15.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Shadow
+    version: '45'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Shadowrocket/1858 CFNetwork/1331\.0\.7 Darwin/21\.4\.0
+  os:
+    name: iOS
+    version: '15.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Shadowrocket
+    version: '1858'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Shadow/1 CFNetwork/1402\.0\.8 Darwin/22\.2\.0
+  os:
+    name: iOS
+    version: '16.2'
+    platform: ''
+  client:
+    type: mobile app
+    name: Shadow
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: SiriusXM/(?<client_version>[\d.]+) CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: SiriusXM
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: sxm-android/(?<client_version>[\d.]+) motorola/moto-e5-play Android/(?<os_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: SiriusXM
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Motorola
+    model: Moto E5 Play
+  os_family: Android
+  browser_family: Unknown
+- regex: Snipd/(?<client_version>[\d.]+) CFNetwork/1410\.0\.3 Darwin/22\.6\.0 \(iPhone iOS/16\.6\)
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: Snipd
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Snipd/90 CFNetwork/1329 Darwin/21\.3\.0
+  os:
+    name: iOS
+    version: '15.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Snipd
+    version: '90'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Sodes/1657 CFNetwork/1098\.6 Darwin/19\.0\.0
+  os:
+    name: iOS
+    version: '13.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: '''sodes'
+    version: '1657'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Sodes/1818 CFNetwork/1410\.0\.1\.1 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: '''sodes'
+    version: '1818'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Sonnet/Android \(Play\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Sonnet
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Sonnet/Android \(Download\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Sonnet
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Simple Podcast Player/1\.8 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.18\.6
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Sonnet
+    version: '1.8'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: sony_tv;ps5;9b18101888dd42948afd0b8792122bec;;tpapi;3\.200\.405
+  client:
+    type: mobile app
+    name: Sony PlayStation 5
+    version: ''
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation 5
+  os_family: Unknown
+  browser_family: Unknown
+- regex: sony_tv;ps5;9b18101888dd42948afd0b8792122bec;;tpapi;3\.202\.356 o5nV3Q
+  client:
+    type: mobile app
+    name: Sony PlayStation 5
+    version: ''
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation 5
+  os_family: Unknown
+  browser_family: Unknown
+- regex: SoundOn/(?<client_version>[\d.]+) \(Linux;Android\)
+  os:
+    name: Android
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: SoundOn
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: SoundOn/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: SoundOn
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: SoundOn/(?<client_version>[\d.]+) \(iOS\)
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: SoundOn
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: SoundOn/656 CFNetwork/1240\.0\.4 Darwin/20\.6\.0
+  os:
+    name: iOS
+    version: '14.7'
+    platform: ''
+  client:
+    type: mobile app
+    name: SoundOn
+    version: '656'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: SoundWaves-(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: SoundWaves
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Macintosh; Intel Mac OS X 10_9_5\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/53\.0\.2710\.89 Safari/537\.36 Spreaker/1\.0
+  os:
+    name: Mac
+    version: 10.9.5
+    platform: ''
+  client:
+    type: mobile app
+    name: Spreaker
+    version: '1.0'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: Stitcher Demo/4\.8\.0 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.10\.7
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Stitcher
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Stitcher/28420 CFNetwork/609\.1\.4 Darwin/13\.0\.0
+  os:
+    name: iOS
+    version: '6.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Stitcher
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Stitcher/iOS dWZpZA
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Stitcher
+    version: ''
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: StoryShots/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.11\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: StoryShots
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Swinsian/472 CFNetwork/978\.0\.7 Darwin/18\.7\.0 \(x86_64\)
+  os:
+    name: Mac
+    version: '10.14'
+    platform: x64
+  client:
+    type: mobile app
+    name: Swinsian
+    version: '472'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: ThePodcastApp/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); \) player \(build 6775;  https://podcast\.app/\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Podcast App
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: TREBLE/2\.1
+  client:
+    type: mobile app
+    name: Treble.fm
+    version: '2.1'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Turtlecast/(?<client_version>[\d.]+); \(Android (?<os_version>[\d.]+)\); \+https://www\.turtlecast\.app
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Turtlecast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: TURTLECAST/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Turtlecast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Ubook Player
+  client:
+    type: mobile app
+    name: Ubook Player
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: VictorReader_4-4-2
+  client:
+    type: mobile app
+    name: Victor Reader Stream New Generation
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: VictorReader Stream 503 ca-en Heather Ryan 4\.8\.15
+  client:
+    type: mobile app
+    name: Victor Reader Stream New Generation
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: VictorReader Stream Trek no-no Bente Rachel 2\.1\.31
+  client:
+    type: mobile app
+    name: Victor Reader Stream Trek
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: VictorReader Stream Trek ca-en Sharon Ryan 2\.1\.31
+  client:
+    type: mobile app
+    name: Victor Reader Stream Trek
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: VictorReader Stream V3 fr_FR Louise Will 1\.1\.0_build945_beta
+  client:
+    type: mobile app
+    name: Victor Reader Stream 3
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Vodacast/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.10\.4
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Vodacast
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Vodacast/6 CFNetwork/1404\.0\.5 Darwin/22\.3\.0
+  os:
+    name: iOS
+    version: '16.3'
+    platform: ''
+  client:
+    type: mobile app
+    name: Vodacast
+    version: '6'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: WynkMusic/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.11\.7
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Wynk Music
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Xiaoyuzhou/(?<client_version>[\d.]+) Android/(?<os_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Xiao Yu Zhou
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: Xiaoyuzhou/(?<client_version>[\d.]+)
+  client:
+    type: mobile app
+    name: Xiao Yu Zhou
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Xiaoyuzhou/(?<client_version>[\d.]+) \(build:1506; iOS (?<os_version>[\d.]+)\) ContentLengthDetector
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Xiao Yu Zhou
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Yandex\.Music/2019-11-01\.trunk\.5885661
+  client:
+    type: mobile app
+    name: Yandex Music
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Ya\.Music/2022-10-06\.trunk\.10125214
+  client:
+    type: mobile app
+    name: Yandex Music
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: yapa/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.10\.8
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yapa
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: yapa/561 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yapa
+    version: '561'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Zune/4\.8
+  client:
+    type: mobile app
+    name: Zune
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Libsyn4-peek
+  client:
+    type: library
+    name: Libsyn
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: UCast/1 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: UCast
+    version: '1'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: NPR%20One/371 CFNetwork/1399 Darwin/22\.1\.0
+  os:
+    name: iOS
+    version: '16.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: NPR
+    version: '371'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Uforia/1056 CFNetwork/1406\.0\.4 Darwin/22\.4\.0
+  os:
+    name: iOS
+    version: '16.4'
+    platform: ''
+  client:
+    type: mobile app
+    name: Uforia
+    version: '1056'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: LAT-Native-App; iPhone; iOS (?<os_version>[\d.]+)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: L.A. Times
+    version: ''
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(iPhone; CPU iPhone OS 16_1_2 like Mac OS X\) AppleWebKit/605\.1\.15 \(KHTML, like Gecko\) nytios/(?<client_version>[\d.]+)
+  os:
+    name: iOS
+    version: 16.1.2
+    platform: ''
+  client:
+    type: mobile app
+    name: The New York Times
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: NYT Audio/(?<client_version>[\d.]+) CFNetwork/1410\.0\.2 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: The New York Times
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: NYT%20Audio/(?<client_version>[\d.]+) CFNetwork/1469 Darwin/23\.0\.0
+  os:
+    name: iOS
+    version: '17.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: The New York Times
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: LiSTNR\.au\.com\.podcastoneaustralia/(?<client_version>[\d.]+) iPhone12,1 iOS/(?<os_version>[\d.]+) CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: LiSTNR
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone 11
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podu_player
+  client:
+    type: mobile app
+    name: podU
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Mail/1283 CFNetwork/520\.5\.1 Darwin/11\.4\.2 \(x86_64\) \(MacBookPro5%2C4\)
+  os:
+    name: Mac
+    version: 10.7.5
+    platform: x64
+  client:
+    type: pim
+    name: Apple Mail
+    version: '1283'
+  device:
+    type: desktop
+    brand: Apple
+    model: MacBook Pro 15" (2009)
+  os_family: Mac
+  browser_family: Unknown
+- regex: Mail/(?<client_version>[\d.]+) CFNetwork/1408\.0\.4 Darwin/22\.5\.0
+  os:
+    name: iOS
+    version: '16.5'
+    platform: ''
+  client:
+    type: pim
+    name: Apple Mail
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Podgrab - docker
+  client:
+    type: library
+    name: Podgrab
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Podcast Provider 0\.34-9e9009e7 for Radio Downloader 0\.34-9e9009e7
+  client:
+    type: library
+    name: Radio Downloader
+    version: '0.34'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: ESP32 HTTP Client/1\.0
+  client:
+    type: library
+    name: ESP32 HTTP Client
+    version: '1.0'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: com\.google\.android\.apps\.youtube\.music/(?<client_version>[\d.]+) \(Linux; U; Android (?<os_version>[\d.]+); en_US; Pixel 7 Pro; Build/[\w.-]+; Cronet/114\.0\.5735\.84\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Youtube Music
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Google
+    model: Pixel 7 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: YouTubeMusic/(?<client_version>[\d.]+) CFNetwork/1474 Darwin/23\.0\.0
+  os:
+    name: iOS
+    version: '17.0'
+    platform: ''
+  client:
+    type: mobile app
+    name: Youtube Music
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: YouTubeMusic/(?<client_version>[\d.]+) CFNetwork/1485 Darwin/23\.1\.0
+  os:
+    name: iOS
+    version: '17.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Youtube Music
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: Amazon;Echo_Dot;27d4dfe427b34d57995b463e5d63198d;;tpapi;3\.199\.422
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: ''
+  device:
+    type: smart speaker
+    brand: Amazon
+    model: Echo Dot
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Amazon;Echo_Dot_with_clock;27d4dfe427b34d57995b463e5d63198d;;tpapi;3\.199\.422
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: ''
+  device:
+    type: smart speaker
+    brand: Amazon
+    model: Echo Dot
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Amazon;Echo;27d4dfe427b34d57995b463e5d63198d;;tpapi;3\.199\.422
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: ''
+  device:
+    type: smart speaker
+    brand: Amazon
+    model: Echo
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Amazon;Echo_Show_5;27d4dfe427b34d57995b463e5d63198d;;tpapi;3\.199\.422
+  client:
+    type: mediaplayer
+    name: Alexa
+    version: ''
+  device:
+    type: tablet
+    brand: Amazon
+    model: Echo Show 5
+  os_family: Unknown
+  browser_family: Unknown
+- regex: DS%20Podcast/2 CFNetwork/1410\.0\.3 Darwin/22\.6\.0
+  os:
+    name: iOS
+    version: '16.6'
+    platform: ''
+  client:
+    type: mobile app
+    name: De Standaard
+    version: '2'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: SM-T970 \(compatible; Tablet2\.0\) HandelsbladProduction, com\.twipemobile\.nrc (?<client_version>[\d.]+) \(511\) / Android 33
+  os:
+    name: Android
+    version: '13'
+    platform: ''
+  client:
+    type: mobile app
+    name: NRC
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S7+ 12.4" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-G991U Build/[\w.-]+\) nprone_android/(?<client_version>[\d.]+)/OSv:13
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: NPR
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S21 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: com\.audials/(?<client_version>[\d.]+)-0\+gb3764950b-1058878988 \(Linux;Android (?<os_version>[\d.]+)\) AndroidXMedia3/1\.1\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Audials
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: com\.audials\.paid/(?<client_version>[\d.]+)-0 g6a7a08b50-770931356 \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.18\.1
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Audials
+    version: '{client_version}'
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Android
+  browser_family: Unknown
+- regex: CoolerFM/1\.0 iPhone/15 \+https://cooler\.fm
+  os:
+    name: iOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Cooler
+    version: '1.0'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: Metacast/189 CFNetwork/1485 Darwin/23\.1\.0
+  os:
+    name: iOS
+    version: '17.1'
+    platform: ''
+  client:
+    type: mobile app
+    name: Metacast
+    version: '189'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown
+- regex: mowPod/1\.0 Mozilla/5\.0 \(Macintosh; Intel Mac OS X 10_15_7\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/118\.0\.0\.0 Safari/537\.36
+  os:
+    name: Mac
+    version: 10.15.7
+    platform: ''
+  client:
+    type: mobile app
+    name: mowPod
+    version: '1.0'
+  device:
+    type: desktop
+    brand: Apple
+    model: ''
+  os_family: Mac
+  browser_family: Unknown
+- regex: com\.meecel\.feedreader\.RssDemonAd
+  client:
+    type: mobile app
+    name: RSSDemon
+    version: ''
+  device:
+    type: ''
+    brand: ''
+    model: ''
+  os_family: Unknown
+  browser_family: Unknown
+- regex: Virgin%20Radio/(?<client_version>[\d.]+) / \(Linux; Android (?<os_version>[\d.]+)\) ExoPlayerLib/2\.17\.1 / samsung \(SM-G996B\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Virgin Radio
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S21+ 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: WNYC App/(?<client_version>[\d.]+) Android/(?<os_version>[\d.]+) device/Verizon-SM-G930V
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: WNYC
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S7
+  os_family: Android
+  browser_family: Unknown
+- regex: WNYC/(?<client_version>[\d.]+)-11105 iOS/(?<os_version>[\d.]+) device/iPhone7,2
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: WNYC
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone 6
+  os_family: iOS
+  browser_family: Unknown
+- regex: WNYC (?<client_version>[\d.]+) rv:11042 \(iPhone; iPhone OS (?<os_version>[\d.]+); en_US\)
+  os:
+    name: iOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: WNYC
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+- regex: WNYC/9556 CFNetwork/1496\.0\.7 Darwin/23\.5\.0
+  os:
+    name: iOS
+    version: '17.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: WNYC
+    version: '9556'
+  device:
+    type: ''
+    brand: Apple
+    model: ''
+  os_family: iOS
+  browser_family: Unknown

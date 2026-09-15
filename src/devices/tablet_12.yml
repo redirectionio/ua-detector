@@ -1,0 +1,6171 @@
+---
+
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB360ZU\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10 5G
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB301XU\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M8 (Gen 4) (2024)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB-X306X\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10 HD
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB-X505X\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB3-710F\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: TAB3 7 Essential
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Tab1000\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Hemilton
+    model: Pro Tab 1000
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 24075RP89G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad SE 8.7"
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 25040RP0AE\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 24074RPD2G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad Pro 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 2410CRP4C(?:C|G|I)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Pad 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 24091RPADG\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Pad 7 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 2509BRP2DG\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2 Pro 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 2603ARP14G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2 9.7"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); EX7X4\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: EXCEED
+    model: EX7X4
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); ROD2-W09\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/24\.77/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: MagicPad 2 WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); ROL-W00\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad V9 11.5" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); ELN2-L29\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X9a 11.5" LTE
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); LeoPad_10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Adreamer
+    model: LeoPad 10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LeoPad 10X\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Adreamer
+    model: LeoPad 10X
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LeoPad_10S\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Adreamer
+    model: LeoPad 10S
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NpadQ\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: N-one
+    model: NPad Q
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TAB011\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: N-one
+    model: NPad Mini
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SU15 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: S-Color
+    model: SU15 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); T20Mini Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Doogee
+    model: T20 Mini Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Infinix X1101B Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yandex Browser Lite
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Infinix
+    model: XPad
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); I9_Plus_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: BMAX
+    model: MaxPad I9 Plus
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); I10_Plus\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: BMAX
+    model: MaxPad I10 Plus
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; iPA2475 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: iQOO Pad2 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; iPA2453 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: iQOO Pad2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; iPA2451 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: iQOO Pad Air
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; iPA2575 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: iQOO Pad5 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; iPA2556 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: iQOO Pad5
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-US; 24076RP19G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) UCBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: UC Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad SE 8.7"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-US; 24074RPD2I Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) UCBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: UC Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad Pro 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; AZIMUT_4 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Mediacom
+    model: SmartPad 10.5" Azimut 4
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; TMRV5GTB Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 PHX/16\.7
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Phoenix Browser
+    version: '16.7'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: T-Mobile
+    model: REVVL Tab 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); ULTRAPAD Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vorcom
+    model: Ultra Pad
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Kenshi_K10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: K10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); (?<model>E10|H44|Pad Pro E90)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: '{model}'
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); H34\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: H34
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); H24\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: H24
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); WO Pad Max\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO Pad Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO 7\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO Pad Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+) YaSearchBrowser/24\.120 BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO Pad Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO Pad 13\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO Pad 13
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO 8 Ultra\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO8 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; SM-X926B Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 Ultra 14.6" 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X520 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 FE 10.9" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X626B Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 FE+ 13.1" 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X730 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S11 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X400 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 Lite WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X406 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 Lite 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X930 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S11 Ultra 14.6" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X130 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A11 8.7" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); Venus Pad16\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lingbo
+    model: Venus Pad 16
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); Venus Pad15\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.91/apad BroPP/1\.0 YaSearchApp/24\.91/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.91'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lingbo
+    model: Venus Pad 15
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); L16 Max\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.91/apad BroPP/1\.0 YaSearchApp/24\.91/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.91'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lingbo
+    model: L16 Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); TG 30\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.102/apad BroPP/1\.0 YaSearchApp/24\.102/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.102'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Temigereev
+    model: TG 30
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); TG15\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.102\.1 BroPP/1\.0 YaSearchApp/24\.102\.1 webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 24.102.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Temigereev
+    model: TG 15
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); NDL-W09\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/23\.111/apad BroPP/1\.0 YaSearchApp/23\.111/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '23.111'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X8a WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TB375FC\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Xiaoxin Pad Pro 12.7"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TB351FU\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TB321FU\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Legion Y700
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Tab 16 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.102/apad BroPP/1\.0 YaSearchApp/24\.102/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.102'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 16 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RT8\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Oukitel
+    model: RT8
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RT9\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Oukitel
+    model: RT9
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RT3 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+) YaSearchBrowser/24\.123\.1 BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Oukitel
+    model: RT3 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OT6 Kids\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Oukitel
+    model: OT6 Kids
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RT3 Plus\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+) YaSearchBrowser/25\.104\.1 BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Oukitel
+    model: RT3 Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Hi10_XPro_Pad\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Chuwi
+    model: Hi10 XPro Pad
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); B22_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Biegedy
+    model: B22
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V10E-LTE-464\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: VALE
+    model: V10E LTE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MES-B3\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: MESWAO
+    model: MES-B3
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); M10_C01_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Pritom
+    model: M10 C01
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TOUCH 7\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Pritom
+    model: Touch 7
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); M10_R04\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Pritom
+    model: M10 R04
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); GRAVITY_4\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: SPC
+    model: Gravity 4
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Advance A7 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Blu
+    model: Advance A7
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SpaceTab_H20_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: HAOQIN
+    model: SpaceTab H20
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NDL-L09\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X8a LTE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HEY3-N09 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad 10 12.1"
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 9199S\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: TCL
+    model: NxtPaper 10 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LIFETAB_P1075X\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Medion
+    model: Lifetab P1075X
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); G10_US\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: GOODTEL
+    model: G10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); A130-2024\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Acepad
+    model: A130 (2024)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pad 80 WiFi\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: OSCAL
+    model: Pad 80 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pad 70 WiFi\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: OSCAL
+    model: Pad 70 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Tab 10 WiFi\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 10 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Tab A5 Kids\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab A5 Kids
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Tab 9 WiFi\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 9 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Tab 90 WiFi\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 90 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Tab 90\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 90
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MT16\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: UMIDIGI
+    model: G5 Tab
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MT06\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: UMIDIGI
+    model: G3 Tab
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TAB R5\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Hotwav
+    model: Tab R5
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); KST103SD-L\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Kinstone
+    model: KST103SD-L
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X710\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S9 11" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X826B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10+ 12.4" 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X620\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.43/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 FE+ 13.1"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X218B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A9+ 11.0" 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-P625\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S6 Lite 10.4" (2024)
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X135(?:F|G)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A11 8.7" LTE
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X820\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.102/apad BroPP/1\.0 YaSearchApp/24\.102/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.102'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10+ 12.4" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); P25T_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: P25T
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 98 \(M1E3\)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: '98'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); P50Case\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: P50 Case
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB-X306F Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 EdgA/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Microsoft Edge
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10 HD
+  os_family: Android
+  browser_family: Internet Explorer
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB-X606X\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 EdgA/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Microsoft Edge
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10 FHD Plus
+  os_family: Android
+  browser_family: Internet Explorer
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); QTab Y2\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: QMobile
+    model: Y2 Tab
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TPC1013_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lville
+    model: TPC1013
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); Okapi_Tab8_Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+) YaSearchBrowser/24\.101\.1 BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Okapi
+    model: Tab 8 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); La_tab_link_74 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Logicom
+    model: La Tab Link 74
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); GK133M3 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Ghia
+    model: GK133M3
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Elite T10 PRO\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Sky
+    model: Elite T10 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; Tab A11 Pro Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Ulefone
+    model: Tab A11 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; OT11 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Oukitel
+    model: OT11
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); P101-EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: TOSCIDO
+    model: P101
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NoteAir4C\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONYX BOOX
+    model: Note Air 4C
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LOMONOSOV3\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONYX BOOX
+    model: Lomonosov 3
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO 10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.106\.1 BroPP/1\.0 YaSearchApp/24\.106\.1 webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 24.106.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO 12\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.106\.1 BroPP/1\.0 YaSearchApp/24\.106\.1 webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 24.106.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO12
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T181-EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/24\.12\.0\.264\.01 \(beta\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 24.12.0.264.01 beta
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: TOSCIDO
+    model: T181
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); itel P10003L\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: iTel
+    model: Vista Tab 30
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); hoco_HI10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.106/apad BroPP/1\.0 YaSearchApp/24\.106/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.106'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: hoco
+    model: HI10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB-X606F Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10 FHD Plus
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB-X505L\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab M10
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); neocore_E1R1\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: neoCore
+    model: E1 R1
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Digma Pro HIT 106 HS1007PL\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Hit 106 10.1"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Digma Pro HIT 104 HS1009PL\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Hit 104 10.1"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pulse TA3E0P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/24\.123/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Pulse TA3E0P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pulse TA3D0P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/24\.123/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Pulse TA3D0P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Spectrum TA2D0P02\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/24\.120/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Spectrum TA2D0P02
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Infinity TA2D0M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Infinity TA2D0M01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Zenith TA3E1P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Zenith TA3E1P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Zenith TA3D1P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Zenith TA3D1P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Infinity TA3D0M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Infinity TA3D0M01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Zoom TA3E0P02\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Zoom TA3E0P02
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Zenith TA2D1P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/24\.120/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Zenith TA2D1P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Quantum TA2D5P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Quantum TA2D5P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Optima 8430E 4G DA1C8P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.20\.1/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Optima 8430E 4G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); K10 DA1C0P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: K10 DA1C0P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); PRIME 18 MS100(?:1|2|3)PL\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Prime 18 11" 3G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Edge TA3D1M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Edge TA3D1M01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Eclipse TA3E1P02\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Eclipse TA3E1P02
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Empire TA3E2M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Empire TA3E2M01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Wave TAXX5P0X\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Wave TAXX5P0X
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); ru-ru; Redmi Pad SE 8\.7 4G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/14\.10\.1\.3-gn
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sogou Explorer
+    version: '8.7'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad SE 8.7"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); AG_1088_A133P\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: SOWLY
+    model: A133P
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Armor Pad Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Ulefone
+    model: Armor Pad Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Symtab20\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Symphony
+    model: SymTab 20
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); MRO-W09\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad Pro 12.2" (2024) WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TGR-W00\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad 11.5" S WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); WGRR-W19\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad Pro 12.6" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TECNO T1101 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Safari/537\.36 YandexSearch/7\.54/apad YandexSearchBrowser/7\.54
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '7.54'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Tecno Mobile
+    model: MegaPad 11
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-P555M\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A 9.7" LTE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-T113N\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab 3 Lite 7.0" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X215\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A9+ 11.0" LTE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Q8 DA6B8P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.122/apad BroPP/1\.0 YaSearchApp/24\.122/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.122'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Q8 DA6B8P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Spark TA1C8M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.122/apad BroPP/1\.0 YaSearchApp/24\.122/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.122'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Spark TA1C8M01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Infinity TA3E0M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.122/apad BroPP/1\.0 YaSearchApp/24\.122/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.122'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Infinity TA3E0M01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pulse TA2D0P01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.125/apad BroPP/1\.0 YaSearchApp/24\.125/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.125'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Pulse TA2D0P01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); N101B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: CONSUNG
+    model: N101B
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); FT1000\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.125/apad BroPP/1\.0 YaSearchApp/24\.125/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.125'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: FONTEL
+    model: FT1000
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); FT800\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: FONTEL
+    model: FT800
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); FTB13\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: X-View
+    model: FTB13
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YQ10SK Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Atozee
+    model: YQ10SK
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); hoco_HI12\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.125/apad BroPP/1\.0 YaSearchApp/24\.125/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.125'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: hoco
+    model: HI12
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); NP03J\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Nubia
+    model: Red Magic Gaming Pad
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); NT01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Nubia
+    model: Pad Pro 10.9" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); NP05J\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Nubia
+    model: Red Magic Astra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-P607T\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Note 10.1" 2014 Edition LTE
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Ocean K8 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Olax
+    model: Ocean K8 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); N02\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Xgody
+    model: N02
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HANSON_FLEX_7000\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Hanson
+    model: FLEX 7000
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); J10_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: JUSYEA
+    model: J10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 12; HarmonyOS; BKY-W09; HMSCore 6\.14\.0\.309; GMSCore 0\.3\.6\.244735\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) HuaweiBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: HarmonyOS
+    version: ''
+    platform: ''
+  client:
+    type: browser
+    name: Huawei Browser Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad 12 X WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; 24091RPADC Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Pad 7 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SmartPad_A10_(?:EU Build/[\w.-]+|L)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: BYYBUO
+    model: SmartPad A10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ALFA10TX_PRO Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Hometech
+    model: ALFA 10TX Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TMNT\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: TurboKids
+    model: TMNT
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SMART_W84\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: iGet
+    model: Smart W84
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TAB-10US\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Whoop
+    model: TAB-10US
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TBX11\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: andersson
+    model: TBX11
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LGUK932\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: LG
+    model: G Pad II 10.1
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Edge TA3E1M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Edge TA3E1M01
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Edge TA2D1M01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Edge TA2D1M01
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Navo_P\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Vonino
+    model: Navo P
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); MEGA 8\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Mega 8
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); MEGA 2\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Mega 2
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Tab 60 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 60 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Active 10 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Active 10 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Active 12 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Active 12 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); MEGA 12\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Mega 12
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Zoom TA3D0P02\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.26/apad BroPP/1\.0 YaSearchApp/25\.26/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.26'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Digma
+    model: Pro Zoom TA3D0P02
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); VIA L50\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.40/apad BroPP/1\.0 YaSearchApp/25\.40/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.40'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Casper
+    model: VIA L50
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TAB R9 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Hotwav
+    model: Tab R9 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TAB R9 Plus\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Hotwav
+    model: Tab R9 Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TAB R8\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.40/apad BroPP/1\.0 YaSearchApp/25\.40/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.40'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Hotwav
+    model: Tab R8
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TAB R5 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.40/apad BroPP/1\.0 YaSearchApp/25\.40/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.40'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Hotwav
+    model: Tab R5 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 24076RP19I Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad SE 8.7"
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 2405CRPFDL Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); XBOOK_12\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: HOMII
+    model: XBOOK 12
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); WO 9 Ultra\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.24/apad BroPP/1\.0 YaSearchApp/25\.24/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.24'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: W&O
+    model: WO9 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Alfa 11 BT\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Hometech
+    model: ALFA 11 BT
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); M8_4G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Multilaser
+    model: M8 4G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); EM103A\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ApoloSign
+    model: EM103A
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); BUV7TBLT10A Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: V7
+    model: BUV7TBLT10A
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); M50S\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: M50S
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); M50-ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: M50
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); M50_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.20/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: M50
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); P50_T_(?:EEA|ROW)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: P50
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); P50_(?:B|ROW)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: P50
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T60Ai_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T60Ai
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T50Max_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.62/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T50 Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T50HD_(?:EEA|ROW)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T50HD
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T60Plus_(?:EEA|ROW)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T60 Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); ArtPadPro_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: Art Pad Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); M50Plus\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.27/apad BroPP/1\.0 YaSearchApp/25\.27/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.27'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: M50 Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); M50Mini\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/24\.12\.3\.98\.01 \(beta\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 24.12.3.98.01 beta
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: M50 Mini
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Lunnen Ground 11\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: LUNNEN
+    model: Ground 11
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TL65611S01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: LUNNEN
+    model: Ground 11
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Lunnen Ground 10\.4\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: LUNNEN
+    model: Ground 10.4
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Infinix X1101\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.20/apad BroPP/1\.0 SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Infinix
+    model: XPad
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); iPlay60 mini Turbo\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.40/apad BroPP/1\.0 YaSearchApp/25\.40/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.40'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AllDocube
+    model: iPlay 60 Mini Turbo
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); H14\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.29/apad BroPP/1\.0 YaSearchApp/25\.29/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.29'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: H14
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); GTX_JACULUS_01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: GTX
+    model: Jaculus 01
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); C3_Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: COLORROOM
+    model: C3 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); C10S\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Qiuwoky
+    model: C10S
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Armor Pad 4 Ultra\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Ulefone
+    model: Armor Pad 4 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RugKing Pad Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Ulefone
+    model: RugKing Pad Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RugKing Pad 2 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Ulefone
+    model: RugKing Pad 2 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); AGM_PAD_T1\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AGM
+    model: Pad T1
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); AGM_PAD_P2W\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AGM
+    model: Pad P2W
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-Hans-CN; XYAO-W00 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad Pro 11 (2024) WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-Hans-CN; BVE-W10 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: Qinyun C5z 10.4" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-Hans-CN; TGR-W10 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad 11.5" S WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); WEB-W0(?:0|9)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.26/apad BroPP/1\.0 YaSearchApp/25\.26/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.26'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad Pro 13.2" (2025) WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Z168_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ZIOVO
+    model: Z168
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); XB-T11i\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: XB
+    model: XB-T11i
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB311(?:F|X)U\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab K10 (Gen 2)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TB373FU\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: IdeaTab Pro 12.7" (2025)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TAB_868_PRO\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Tibuta
+    model: Tab 868 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pixus_Deon\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Pixus
+    model: Deon
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pad Lite E58\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: Pad Lite E58
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; Lecoo P116G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Lecoo 5G Cloud Tablet
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; M10_R02 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Pritom
+    model: M10 R02
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); DC-8015\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.30/apad BroPP/1\.0 YaSearchApp/25\.30/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.30'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Everest
+    model: EverPad DC-8015
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X526B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>[\d.]+) Chrome/(?<engine_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Samsung Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 FE 10.9" 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pad 100 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Safari/537\.36 YandexSearch/7\.54/apad YandexSearchBrowser/7\.54
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '7.54'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OSCAL
+    model: Pad 100
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Vitumi 10\.1\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.61/apad BroPP/1\.0 YaSearchApp/24\.61/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.61'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vitumi
+    model: Kids TV46410B01 10.1"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); G1000 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: G-Vill
+    model: G1000 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); G1000\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.45\.1 BroPP/1\.0 YaSearchApp/25\.45\.1 webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.45.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: G-Vill
+    model: G1000
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); G2000\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.46 BroPP/1\.0 YaSearchApp/25\.46 webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.46'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: G-Vill
+    model: G2000
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); P50Ai_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.46/apad BroPP/1\.0 YaSearchApp/25\.46/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.46'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: P50Ai
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2409\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.43/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OPPO
+    model: Pad 4 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2401\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OPPO
+    model: Pad 3 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2404\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.43/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OnePlus
+    model: Pad Pro 12.1"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2480\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.80\.1/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OnePlus
+    model: Pad Lite 11.0"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); L10-T11-EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.43/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: VASOUN
+    model: L10-T11
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); L10_T08_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.62/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: VASOUN
+    model: L10-T08
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); L10-T11\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: VASOUN
+    model: L10-T11
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NOVUS TAB\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Zuum
+    model: Novus Tab
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); IT-801B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ATMPC
+    model: IT-801B
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); GLOBALSEC TAB TEN\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: GlobalSec
+    model: Tab Ten
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); VTAB7 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Vios
+    model: VTAB7
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 2505DRP06G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/24\.79/apad BroPP/1\.0 YaSearchApp/24\.79/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '24.79'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2 4G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TL4648S01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/25\.6\.0\.201\.01 \(beta\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.6.0.201.01 beta
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: LUNNEN
+    model: Ground 8.4
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ImPAD 6414 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Impression
+    model: ImPad 6414
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 25040RP0AG\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T70_ROW\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.61/apad BroPP/1\.0 YaSearchApp/25\.61/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.61'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T70
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T50Max_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T50 Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T65Max_(?:EEA|ROW)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T65 Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T30 Max\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Doogee
+    model: T30 Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T1201\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.46/apad BroPP/1\.0 YaSearchApp/25\.46/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.46'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AllDocube
+    model: iPlay 60 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); T10Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Doogee
+    model: T10 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); U10 Kid\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Doogee
+    model: U10 Kid
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-X516C\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S9 FE 10.9" 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-T636B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab Active 4 Pro 10.1" 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Sirius Plus Tab 10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Stylo
+    model: Sirius Plus Tab 10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pad Pro E111\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: Pad Pro E111
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pad Pro E110\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: Pad Pro E110
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); P50_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/25\.8\.0\.194\.01 \(alpha\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.8.0.194.01 alpha
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: P50
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OB-P10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.61/apad BroPP/1\.0 YaSearchApp/25\.61/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.61'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Unihertz
+    model: Tank Pad P10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OB-P08\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Unihertz
+    model: Tank Pad P08
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Jaculus V2\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: GTX
+    model: Jaculus V2
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); iPlay60_Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.61/apad BroPP/1\.0 YaSearchApp/25\.61/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.61'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AllDocube
+    model: iPlay 60 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); hoco_HI11\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.65/apad BroPP/1\.0 YaSearchApp/25\.65/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.65'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: hoco
+    model: HI11
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); ACD-Tab-10S\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: ACD
+    model: Tab 10S
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); U320\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: YUMKEM
+    model: U320
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pad6 PLUS\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: YIKEMI
+    model: Pad 6 Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ELN2-W29\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X9a 11.5" WiFi
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); A10-21_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Acer
+    model: Iconia A10 M1
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 100146663\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONN
+    model: '100146663'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 100146660\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONN
+    model: '100146660'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 100135924\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONN
+    model: '100135924'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 100135920\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONN
+    model: '100135920'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 100135794\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: ONN
+    model: '100135794'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Bigtech_B_RU Build/[\w.-]+;\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Bigben
+    model: BigTech B
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); T50Mini_ROW Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\)  Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yandex Browser Lite
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Teclast
+    model: T50 Mini
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ROL-W60 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad GT 11.5" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ROD2-W69 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad GT Pro 12.3" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HEY3-W00 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad 10 12.1" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); JMS-W09 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36 B1/s1\.0\.100\+435
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X7 8.7" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; CGA-W00 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: MagicPad 3 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); AGM PAD T3\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.66\.1/apad BroPP/1\.0 YaSearchApp/25\.66\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.66.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AGM
+    model: Pad T3
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; Readboy_C26Pro Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) UCBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: UC Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Readboy
+    model: C26 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; FunPad-8Max Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: FMT
+    model: FunPad 8 Max
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); BTKR-W09\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad 11.5" (2024) WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); AGS5-AL00\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Huawei
+    model: MatePad 10.4" SE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TOREX831B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Torex
+    model: Pad 831B
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TK_E720_EEA Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yandex Browser Lite
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Great Asia
+    model: TK-E720
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TechPad_832 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: TechPad
+    model: '832'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-X510 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/137\.0\.7151\.118 Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera
+    version: '{client_version}'
+    engine: Presto
+    engine_version: ''
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S9 FE 10.9" WiFi
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X920 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/139\.0\.7258\.158 Safari/537\.36 GoogleApp/16\.34\.61\.ve\.arm64 DSRP
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: mobile app
+    name: Google Search App
+    version: 16.34.61
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S10 Ultra 14.6" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X300\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab Active5 8.0 (2024) WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X133\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A11 8.7" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X236B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A11+ 11" 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X230\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab A11+ 11" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X736B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S11 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-X936B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab S11 Ultra 14.6" 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-Hans-CN; ROD-W19 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad 9 Pro Soft Light Edition 12.1" WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); ViewPad 7D Pro Build/[\w.-]+\) AppleWebKit/534\.30 \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/534\.30 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: ''
+  device:
+    type: tablet
+    brand: ViewSonic
+    model: ViewPad 7D Pro
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(iPad; CPU OS 17_5_1 like Mac OS X\) AppleWebKit/605\.1\.15 \(KHTML, like Gecko\) Mobile/21F90 \[FBAN/FBIOS;FBAV/(?<client_version>[\d.]+);FBBV/604687626;FBDV/iPad13,18;FBMD/iPad;FBSN/iPadOS;FBSV/(?<os_version>[\d.]+);FBSS/2;FBID/tablet;FBLC/nl_NL;FBOP/5;FBRV/606615897\]
+  os:
+    name: iPadOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Facebook
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad 10 10.9" WiFi
+  os_family: iOS
+  browser_family: Unknown
+- regex: com\.google\.ios\.youtube/(?<client_version>[\d.]+) \(iPad13,19; U; CPU iPadOS 18_5 like Mac OS X; en_US\)
+  os:
+    name: iPadOS
+    version: '18.5'
+    platform: ''
+  client:
+    type: mobile app
+    name: YouTube
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad 10 10.9"
+  os_family: iOS
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pixel Tablet 2\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Google
+    model: Pixel Tablet 2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 25099RP13G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.45/apad BroPP/1\.0 YaSearchApp/25\.45/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.45'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 2604ERP4DG\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.45/apad BroPP/1\.0 YaSearchApp/25\.45/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '25.45'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Xiaomi
+    model: Redmi Pad 2 9.7" 4G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); TAB KINGKONG 2\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: CUBOT
+    model: Tab King Kong 2
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; DMOAO_D2_EEA Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: DMOAO
+    model: D2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-US; Pixus_Arena Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) UCBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: UC Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Pixus
+    model: Arena
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); ALFA 8TX\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.84\.1/apad BroPP/1\.0 YaSearchApp/25\.84\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.84.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Hometech
+    model: ALFA 8TX
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); BPad_Mini_SE Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: BNCF
+    model: BPad Mini SE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pad Pro E112\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: Pad Pro E112
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pad Lite E48\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.100\.1/apad BroPP/1\.0 YaSearchApp/25\.100\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.100.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: KENSHI
+    model: Pad Lite E48
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); PAD10_PRO\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.102\.1/apad BroPP/1\.0 YaSearchApp/25\.102\.1/apad webOmni \(beta\) SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.102.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: G-Tab
+    model: Pad 10 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); XiaoXin Pad 2022\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Xiaoxin Pad Pro 10.6" (2022)
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); AuPad\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Chuwi
+    model: AuPad
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); MEGA 3\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Blackview
+    model: Mega 3
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Pad H10 PEN\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Casper
+    model: Pad H10 Pen
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); S3_U_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: SUAAT
+    model: S3
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); A301LV Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Tab 7 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); PA2573\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: Pad 5 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); PA2511\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: Pad SE
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); PA2455\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Vivo
+    model: Pad 3
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2481\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OnePlus
+    model: Pad Lite 11.0"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2415\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.101\.1/apad BroPP/1\.0 YaSearchApp/25\.101\.1/apad webOmni SA/3 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.101.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OnePlus
+    model: Pad 3 13.2" WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); OPD2405\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/25\.89\.1/apad BroPP/1\.0 YaSearchApp/25\.89\.1/apad webOmni SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: 25.89.1
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: OnePlus
+    model: Pad 3 11.61"
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); A10Pro_EEA\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Jckkcfug
+    model: A10 Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); V-Z80Plus\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/25\.104\.1/apad BroPP/1\.0 SA/3 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: VIKUSHA
+    model: V-Z80 Plus
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); W5A\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: HeadWolf
+    model: WPad5
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android 2\.0; en-us;\) AppleWebKit/538\.1 \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/538\.1 \(Kobo Touch 0390/(?<client_version>[\d.]+)\)
+  os:
+    name: KoboOS
+    version: ''
+    platform: ''
+  client:
+    type: mobile app
+    name: Kobo eReader
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Kobo
+    model: ''
+  os_family: GNU/Linux
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/145\.0\.0\.0 Safari/537\.36
+  headers:
+    sec-ch-ua-model: ^"SM-X356B"$
+  os:
+    name: Android
+    version: '10'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: 145.0.0.0
+    engine: Blink
+    engine_version: 145.0.0.0
+  device:
+    type: tablet
+    brand: Samsung
+    model: Galaxy Tab Active 5 Pro 10.1" 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/146\.0\.0\.0 Safari/537\.36
+  headers:
+    sec-ch-ua-model: ^"TB361FU"$
+  os:
+    name: Android
+    version: '10'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: 146.0.0.0
+    engine: Blink
+    engine_version: 146.0.0.0
+  device:
+    type: tablet
+    brand: Lenovo
+    model: Idea Tab Plus WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/145\.0\.0\.0 Safari/537\.36
+  headers:
+    sec-ch-ua-model: ^"B25_EEA"$
+  os:
+    name: Android
+    version: '10'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: 145.0.0.0
+    engine: Blink
+    engine_version: 145.0.0.0
+  device:
+    type: tablet
+    brand: Biegedy
+    model: B25
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/142\.0\.0\.0 Safari/537\.36
+  headers:
+    sec-ch-ua-model: ^"V10E_LTE_464"$
+  os:
+    name: Android
+    version: '10'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: 142.0.0.0
+    engine: Blink
+    engine_version: 142.0.0.0
+  device:
+    type: tablet
+    brand: VALE
+    model: V10E LTE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: ^"HMD T21"$
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: tablet
+    brand: HMD
+    model: T21
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/142\.0\.0\.0 Safari/537\.36
+  headers:
+    sec-ch-ua-model: ^"Tab 60 WiFi"$
+  os:
+    name: Android
+    version: '10'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome
+    version: 142.0.0.0
+    engine: Blink
+    engine_version: 142.0.0.0
+  device:
+    type: tablet
+    brand: Blackview
+    model: Tab 60 WiFi
+  os_family: Android
+  browser_family: Chrome
+- regex: CitrixReceiver/(?<client_version>[\d.]+) iOS/(?<os_version>[\d.]+) CitrixReceiver-iPad X1Class CWACapable 302RedirectionCapable CFNetwork Darwin
+  os:
+    name: iPadOS
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Citrix Workspace
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad
+  os_family: iOS
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); BPad T1\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+)/apad YaSearchBrowser/26\.40\.1/apad BroPP/1\.0 Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: BNCF
+    model: BPad T1
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); iPlay80miniUltra\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: AllDocube
+    model: iPlay 80 Mini Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-US; NDL2-W09 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) UCBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: UC Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X8b WiFi
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); JMS-L09 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/149\.0\.7827\.93 Mobile Safari/537\.36 Line/(?<client_version>[\d.]+)/IAB
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Line
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Honor
+    model: Pad X7 8.7" LTE
+  os_family: Android
+  browser_family: Unknown
+- regex: com\.google\.android\.youtube/(?<client_version>[\d.]+)\(Linux; U; Android (?<os_version>[\d.]+); pt_BR; T470 Build/[\w.-]+\) gzip
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: YouTube
+    version: '{client_version}'
+  device:
+    type: tablet
+    brand: Dany
+    model: Genius Tab
+  os_family: Android
+  browser_family: Unknown

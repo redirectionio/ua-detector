@@ -1,0 +1,1330 @@
+---
+
+# Every operating system the corpus knows, generated from `regexes/oss.yml` of the pinned
+# revision: Fire OS, webOS, Symbian, Haiku, IRIX, Remix OS and three hundred more, where
+# `systems.yml` reads the handful of platform tokens the traffic is made of.
+#
+# Priority -4, between the precise rungs of `systems.yml` at -3 and the catch-alls at -5, in
+# matomo's order reversed. Rules using a lookaround or an anchor are left out, as are the eight
+# whose version comes from a table rather than a capture.
+
+-
+  regex: '.*(?:Java ME|J2ME|Profile/MIDP|CLDC|Java; U; MIDP|MMP/\d\.\d).*'
+  priority: -4
+  os: {name: 'Java ME'}
+  os_family: 'Real-time OS'
+-
+  regex: '.*(?:Linux[^a-z]|Cinnamon/(?:\d+[.\d]+)|(?:(?:i386|x86_64)-)?(?:pc|unknown)-linux-gnu|X11).*'
+  priority: -4
+  os: {name: 'GNU/Linux'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'GNU/Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*\bOS/2.*'
+  priority: -4
+  os: {name: 'OS/2'}
+  os_family: 'IBM'
+-
+  regex: '.*\bOS/2; Warp (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'OS/2', version: "{os_version}", platform: ""}
+  os_family: 'IBM'
+-
+  regex: '.*PlayStation (?<os_version>(?:Portable|Vita)).*'
+  priority: -4
+  os: {name: 'PlayStation Portable', version: "{os_version}", platform: ""}
+  os_family: 'Mobile Gaming Console'
+-
+  regex: '.*(?:Nitro|Nintendo (?<os_version>[3]?DS[i]?)).*'
+  priority: -4
+  os: {name: 'Nintendo Mobile', version: "{os_version}", platform: ""}
+  os_family: 'Mobile Gaming Console'
+-
+  regex: '.*PlayStation.+; Linux (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'PlayStation', version: "{os_version}", platform: ""}
+  os_family: 'Gaming Console'
+-
+  regex: '.*Nintendo (?<os_version>Wii|Switch).*'
+  priority: -4
+  os: {name: 'Nintendo', version: "{os_version}", platform: ""}
+  os_family: 'Gaming Console'
+-
+  regex: '.*OSF1(?:[/ ]?v?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'OSF1', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*IRIX(?:;?64)?(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'IRIX', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*Syllable(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Syllable', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*DragonFly(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'DragonFly', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*OpenBSD(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'OpenBSD', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*NetBSD(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'NetBSD', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*FreeBSD(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'FreeBSD', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*ElectroBSD(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'ElectroBSD', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*HP-UX(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'HP-UX', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*AIX(?:[/ ]?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'AIX', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*(?:SunOS|Solaris)(?:[/ ](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Solaris', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*WebTV/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'WebTV', version: "{os_version}", platform: ""}
+  os_family: 'WebTV'
+-
+  regex: '.*GoogleTV(?:[ /](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Google TV', version: "{os_version}", platform: ""}
+  os_family: 'Google TV'
+-
+  regex: '.*REX; U;.*'
+  priority: -4
+  os: {name: 'REX'}
+  os_family: 'Real-time OS'
+-
+  regex: '.*bada(?:[ /](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Bada', version: "{os_version}", platform: ""}
+  os_family: 'Other Mobile'
+-
+  regex: '.*Inferno(?:[ /](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Inferno', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*RISC OS(?:-NC)?(?:[ /](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'RISC OS', version: "{os_version}", platform: ""}
+  os_family: 'RISC OS'
+-
+  regex: '.*(?:Mobile|Tablet);.+Firefox/\d+\.\d+.*'
+  priority: -4
+  os: {name: 'Firefox OS'}
+  os_family: 'Firefox OS'
+-
+  regex: '.*Nokia.*'
+  priority: -4
+  os: {name: 'Symbian'}
+  os_family: 'Symbian'
+-
+  regex: '.*(?:Symbian(?: OS)?|SymbOS).*'
+  priority: -4
+  os: {name: 'Symbian OS'}
+  os_family: 'Symbian'
+-
+  regex: '.*(?:MeeGo|WeTab).*'
+  priority: -4
+  os: {name: 'MeeGo'}
+  os_family: 'Other Mobile'
+-
+  regex: '.*SymbianOS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Symbian OS', version: "{os_version}", platform: ""}
+  os_family: 'Symbian'
+-
+  regex: '.*Series40.*'
+  priority: -4
+  os: {name: 'Symbian OS Series 40'}
+  os_family: 'Symbian'
+-
+  regex: '.*(?:Series ?60|SymbOS|S60)(?:[ /]?(?<os_version>\d+[.\d]+|V\d+))?.*'
+  priority: -4
+  os: {name: 'Symbian OS Series 60', version: "{os_version}", platform: ""}
+  os_family: 'Symbian'
+-
+  regex: '.*Symbian/3.*'
+  priority: -4
+  os: {name: 'Symbian^3'}
+  os_family: 'Symbian'
+-
+  regex: '.*BeOS[ +]?(?<os_version>\d[.\d]*)?.*'
+  priority: -4
+  os: {name: 'BeOS', version: "{os_version}", platform: ""}
+  os_family: 'BeOS'
+-
+  regex: '.*bPod.*'
+  priority: -4
+  os: {name: 'BlackBerry OS'}
+  os_family: 'BlackBerry'
+-
+  regex: '.*BlackBerry.*'
+  priority: -4
+  os: {name: 'BlackBerry OS'}
+  os_family: 'BlackBerry'
+-
+  regex: '.*(?:RIM Tablet OS|QNX|Play[Bb]ook).*'
+  priority: -4
+  os: {name: 'BlackBerry Tablet OS'}
+  os_family: 'BlackBerry'
+-
+  regex: '.*RIM Tablet OS (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'BlackBerry Tablet OS', version: "{os_version}", platform: ""}
+  os_family: 'BlackBerry'
+-
+  regex: '.*(?:BB10;.+Version|Black[Bb]erry[0-9a-z]+|Black[Bb]erry.+Version)/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'BlackBerry OS', version: "{os_version}", platform: ""}
+  os_family: 'BlackBerry'
+-
+  regex: '.*Fuchsia.*'
+  priority: -4
+  os: {name: 'Fuchsia'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:Darwin|Macintosh|Mac[ _]PowerPC|PPC|iMac|MacBook|.*macOS|AppleExchangeWebServices|com\.apple\.trustd|Sonos/.+\(MDCR_|WhatsApp/.*N$|nook browser).*'
+  priority: -4
+  os: {name: 'Mac'}
+  os_family: 'Mac'
+-
+  regex: '.*(?:Mac)?OSX/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  os_family: 'Mac'
+-
+  regex: '.*Macintosh; OS X (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  os_family: 'Mac'
+-
+  regex: '.*Mac (?:OS/)?(?<os_version>\d+(?:[_.]\d+)+).*'
+  priority: -4
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  os_family: 'Mac'
+-
+  regex: '.*Mac[ +]OS[ +]?X(?:[ /,](?:Version )?(?<os_version>\d+(?:[_.]\d+)+))?.*'
+  priority: -4
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  os_family: 'Mac'
+-
+  regex: '.*Macintosh;Mac OS X \((?<os_version>\d+[.\d]+)\);.*'
+  priority: -4
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  os_family: 'Mac'
+-
+  regex: '.*Mac OS X 10_15.+Version/(?<os_version>2[67]+[.\d]+).*'
+  priority: -4
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  os_family: 'Mac'
+-
+  regex: '.*Sonos/.+\(ICRU_.*'
+  priority: -4
+  os: {name: 'iOS'}
+  os_family: 'iOS'
+-
+  regex: '.*iOS[ /]Version (?<os_version>[\d.]+).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iTunes-(AppleTV|iPod|iPad|iPhone)/(?:[\d.]+).*'
+  priority: -4
+  os: {name: 'iOS'}
+  os_family: 'iOS'
+-
+  regex: '.*dv\(iPh.+ov\((?<os_version>\d+(?:[_.]\d+)*)\);.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*os=Apple-iOS.+osversion=(?<os_version>\d+[.\d]+)/.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*OS=iOS;OSVer=(?<os_version>\d+[.\d]+);.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPhone.+; Version (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPad.+; (?<os_version>\d+[.\d]+);.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPhone OS,(?<os_version>[\d.]+).+(?:iPhone|iPod).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*(?:FBIOS|Messenger(?:Lite)?ForiOS).*FBSV/ ?(?<os_version>\d+[.\d]*);.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*FBMD/iPhone;.*FBSV/ ?(?<os_version>\d+[.\d]+);.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*\biOS(?<os_version>\d+\.\d+\.\d+).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*(?:iPhone|iPod_touch)/(?<os_version>\d+[.\d]*)(?: hw)?/.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*(?:iPhone ?OS|\biOS(?: Version)?)(?:/|; |,)(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*(?:CPU OS|iPh(?:one)?[ _]OS|iPhone.+ OS|PodMN.+iPhone|\biOS)[ _/](?<os_version>\d+(?:[_.]\d+)*).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPhone OS 18_[67].+\) Version/(?<os_version>\d+\.\d+\.\d+).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPhone OS 18_[67].+(?:/iOS|Version)/(?<os_version>2[67](?:\.\d+){0,2}).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iOS (?<os_version>\d+[.\d]+)\).*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPad(?:; (?:iOS|iPadOS|iPhone OS)|.+CPU (?:iPad ?|iPhone )?OS) (?<os_version>(1[3-9]|2[67])+(?:[_.]\d+)*).*'
+  priority: -4
+  os: {name: 'iPadOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPad; CPU OS 18_[67].+Version/(?<os_version>2[67]+[.\d]+).*'
+  priority: -4
+  os: {name: 'iPadOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iPad; CPU OS 18_[67].+\) Version/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'iPadOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*(?:Watch1,[12]/|Watch OS,|watchOS[ /]?)(?<os_version>\d+[.\d]*)?.*'
+  priority: -4
+  os: {name: 'watchOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*AppleTV(?:/?(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'tvOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*tvOS[ /]?(?<os_version>(?:9|1[0-9]|2[67])\.\d+(?:[_.]\d+)*);?.*'
+  priority: -4
+  os: {name: 'tvOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*iOS(?:; |/)(?<os_version>(?:9|1[0-9]|2[67])\.\d+(?:[_.]\d+)*) (?:model/)?AppleTV.*'
+  priority: -4
+  os: {name: 'tvOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*Apple TV; iOS (?<os_version>(?:9|1[0-9]|2[67])[_.]\d+(?:[_.]\d+)*).*'
+  priority: -4
+  os: {name: 'tvOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*Apple ?TV.*CPU (?:iPhone )?OS (?<os_version>(?:9|1[0-9]|2[67])[_.]\d+(?:[_.]\d+)*).*'
+  priority: -4
+  os: {name: 'tvOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+-
+  regex: '.*Haiku.*'
+  priority: -4
+  os: {name: 'Haiku OS'}
+  os_family: 'BeOS'
+-
+  regex: '.*OS/Microsoft_Windows_NT_(?<os_version>\d+\.\d+).*'
+  priority: -4
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  os_family: 'Windows'
+-
+  regex: '.*(?:Windows|.+win32|Win64|MSDW|HandBrake Win Upd|Microsoft BITS|ms-office; MSOffice).*'
+  priority: -4
+  os: {name: 'Windows'}
+  os_family: 'Windows'
+-
+  regex: '.*Windows-(?<os_version>1[01])-.*'
+  priority: -4
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  os_family: 'Windows'
+-
+  regex: '.*(?:Windows(?:-Update-Agent)?|Microsoft-(?:CryptoAPI|Delivery-Optimization|WebDAV-MiniRedir|WNS)|WINDOWS_64)/(?<os_version>\d+\.\d+).*'
+  priority: -4
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  os_family: 'Windows'
+-
+  regex: '.*Windows; ?(?<os_version>\d+[.\d]*);.*'
+  priority: -4
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  os_family: 'Windows'
+-
+  regex: '.*Windows.+OS: (?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  os_family: 'Windows'
+-
+  regex: '.*FBW.+FBSV/(?<os_version>\d+[.\d]*);.*'
+  priority: -4
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  os_family: 'Windows'
+-
+  regex: '.*MorphOS(?:[ /](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'MorphOS', version: "{os_version}", platform: ""}
+  os_family: 'AmigaOS'
+-
+  regex: '.*Xiino(?:.*v\. (?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'palmOS', version: "{os_version}", platform: ""}
+  os_family: 'Other Mobile'
+-
+  regex: '.*(?:(?:PalmOS|Palm OS)(?:[/ ](?<os_version>\d+[.\d]+))?|Palm).*'
+  priority: -4
+  os: {name: 'palmOS', version: "{os_version}", platform: ""}
+  os_family: 'Other Mobile'
+-
+  regex: '.*.+gentoo.*'
+  priority: -4
+  os: {name: 'Gentoo'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*OS ROSA; Linux.*'
+  priority: -4
+  os: {name: 'Rosa'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Deepin[ /](?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Deepin', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Ubuntu[ /](?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Ubuntu', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Zorin OS (?<os_version>\d+).*'
+  priority: -4
+  os: {name: 'ZorinOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux Mint/(?<os_version>\d).*'
+  priority: -4
+  os: {name: 'Mint', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Mandriva(?: Linux)?/.+mdv(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Mandriva', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Fedora/.+\.fc(?<os_version>\d+).*'
+  priority: -4
+  os: {name: 'Fedora', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*CentOS Linux (?<os_version>\d).*'
+  priority: -4
+  os: {name: 'CentOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*.+\.el(?<os_version>\d+(?:[_.]\d+)*)\.(?:centos|x86_64).*'
+  priority: -4
+  os: {name: 'CentOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*centos(?: Linux)?/(?<os_version>\d+[.\d]+) .*'
+  priority: -4
+  os: {name: 'CentOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*CentOS Stream (?<os_version>\d).*'
+  priority: -4
+  os: {name: 'CentOS Stream', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:(?:(?:i386|x86_64)-)?redhat-linux-gnu|rhel|Red Hat Enterprise Linux Server).*'
+  priority: -4
+  os: {name: 'Red Hat'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:rhel|Red ?Hat(?: Enterprise)? Linux(?: Server)?)[ /](?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Red Hat', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*sles/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'SUSE', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*VectorLinux(?: package)?(?:[ /\-](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'VectorLinux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Arch ?Linux(?:[ /\-](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Arch Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Maemo.*'
+  priority: -4
+  os: {name: 'Maemo'}
+  os_family: 'Other Mobile'
+-
+  regex: '.*TOS; Linux.*'
+  priority: -4
+  os: {name: 'TmaxOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:Win|Sistema )Fenix.*'
+  priority: -4
+  os: {name: 'Fenix'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(Ordissimo|webissimo3).*'
+  priority: -4
+  os: {name: 'Ordissimo'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*PCLinuxOS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'PCLinuxOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*HasCodingOs (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'HasCodingOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Helio/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Lumin OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*dvkbuntu.*'
+  priority: -4
+  os: {name: 'DVKBuntu'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Roku; (?:AP|UI); (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Roku OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Roku(?:OS|4640X)?/(?:DVP|Pluto)?-?(?<os_version>\d+[.\d]+)?.*'
+  priority: -4
+  os: {name: 'Roku OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*RokuOS/.+RokuOS (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Roku OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*uclient-fetch.*'
+  priority: -4
+  os: {name: 'OpenWrt'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Librem 5.*'
+  priority: -4
+  os: {name: 'PureOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Pardus/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Pardus', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Foresight Linux.*'
+  priority: -4
+  os: {name: 'Foresight Linux'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*moonOS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'moonOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux.+kanotix.*'
+  priority: -4
+  os: {name: 'Kanotix'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Zenwalk GNU Linux.*'
+  priority: -4
+  os: {name: 'Zenwalk'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*LindowsOS.*'
+  priority: -4
+  os: {name: 'LindowsOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linspire.*'
+  priority: -4
+  os: {name: 'Linspire'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(MRE_VER_\d+;).*'
+  priority: -4
+  os: {name: 'MRE'}
+  os_family: 'Real-time OS'
+-
+  regex: '.*(MAUI RUNTIME.*?;).*'
+  priority: -4
+  os: {name: 'MRE'}
+  os_family: 'Real-time OS'
+-
+  regex: '.*(MAUI_MRE.*?;).*'
+  priority: -4
+  os: {name: 'MRE'}
+  os_family: 'Real-time OS'
+-
+  regex: '.*MRE\\\\(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'MRE', version: "{os_version}", platform: ""}
+  os_family: 'Real-time OS'
+-
+  regex: '.*MTK(?:(?: |/v?)(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'MTK / Nucleus', version: "{os_version}", platform: ""}
+  os_family: 'Real-time OS'
+-
+  regex: '.*Nucleus(?:(?: |/v?)(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'MTK / Nucleus', version: "{os_version}", platform: ""}
+  os_family: 'Real-time OS'
+-
+  regex: '.*ThreadX(?:_OS)?(?:/(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'ThreadX', version: "{os_version}", platform: ""}
+  os_family: 'Real-time OS'
+-
+  regex: '.*(?:AmigaOS|AmigaVoyager|Amiga-AWeb).*'
+  priority: -4
+  os: {name: 'AmigaOS'}
+  os_family: 'AmigaOS'
+-
+  regex: '.*AmigaOS[ ]?(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'AmigaOS', version: "{os_version}", platform: ""}
+  os_family: 'AmigaOS'
+-
+  regex: '.*(?:Sailfish|Jolla).*'
+  priority: -4
+  os: {name: 'Sailfish OS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux; diordnA[; ](?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Android-(?<os_version>\d+[.\d]*);.*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*\(Android:.*\); API (?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*(?:TwitterAndroid).*[ /](?:[a-z]+ )?(?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*(?:Orca-Android|FB4A).*FBSV/(?<os_version>\d+[.\d]*);.*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Android ?(?:jelly bean|Kit Kat|S\.O\. Ginger Bread|The FireCyano|:) (?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*(?:Allview_TX1_Quasar|Cosmote_My_mini_Tab) (?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*[ ](?<os_version>[\d.]+)\) AppleWebKit.*ROBLOX Android App.*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Android \(\d{2}/(?<os_version>\d+[.\d]*);.*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Android;(?<os_version>\d+[.\d]*);API.*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Android; (?<os_version>\d+[.\d]*); Mobile;.*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*(?:Android OS|OMDroid|sdk_gphone64_arm64-userdebug|StarOS)[ /](?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*(?:(?:Podbean|Podimo)(?:.*)/Android|Rutube(?:TV)?BlackAndroid).*'
+  priority: -4
+  os: {name: 'Android'}
+  os_family: 'Android'
+-
+  regex: '.*(?:Windows.+Andr0id TV|.+(?:K_?Android_?TV_|AndroidTV|GoogleTV_)).*'
+  priority: -4
+  os: {name: 'Android TV'}
+  os_family: 'Android'
+-
+  regex: '.*Android[; ](?<os_version>\d+[.\d]*).+(?:(?:Android(?: UHD)?|AT&T|Google|Smart)[ _]?TV|AOSP on r33a0|BRAVIA|wv-atv).*'
+  priority: -4
+  os: {name: 'Android TV', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Linux; Andr0id[; ](?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Android TV', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*(?:Android (?:9|1[0-7])[.\d]*|Linux x86_64); (?:asurada|atlas|brask|brox|brya|cherry|coral|corsola|dedede|drallion|elm|eve|fizz|geralt|grunt|guybrush|hana|hatch|jacuzzi|jedi|kalista|kukui|nami|nautilus|nirva|nissa|nocturne|octopus|ovis|puff|pyro|rammus|rauru|reef|rex|sand|sarien|skyrim|skywalker|snappy|soraka|staryu|strongbad|trogdor|volteer|zork)\).*'
+  priority: -4
+  os: {name: 'Chrome OS'}
+  os_family: 'Chrome OS'
+-
+  regex: '.*(?:(?:CrOS [a-z0-9_]+ |.*Build/R\d+-)(?<os_version>\d+[.\d]+)|Chromebook).*'
+  priority: -4
+  os: {name: 'Chrome OS', version: "{os_version}", platform: ""}
+  os_family: 'Chrome OS'
+-
+  regex: '.*SeewoOS x86_64 (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'SeewoOS', version: "{os_version}", platform: ""}
+  os_family: 'Chrome OS'
+-
+  regex: '.*(?:Chrome/(\d+\.[.\d]+) Odd/|SM-R(?:8[6-9]|9)|LEM14).*'
+  priority: -4
+  os: {name: 'Wear OS'}
+  os_family: 'Android'
+-
+  regex: '.*FreeBSD.+Android.*'
+  priority: -4
+  os: {name: 'FreeBSD'}
+  os_family: 'Unix'
+-
+  regex: '.*Lineage_(?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'Lineage OS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Kepler[ /](?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Vega OS', version: "{os_version}", platform: ""}
+  os_family: 'Other Smart TV'
+-
+  regex: '.*cordova-amazon-fireos.*'
+  priority: -4
+  os: {name: 'Fire OS'}
+  os_family: 'Android'
+-
+  regex: '.*Fire OS(?:[ /](?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'Fire OS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*FydeOS.*'
+  priority: -4
+  os: {name: 'FydeOS'}
+  os_family: 'Chrome OS'
+-
+  regex: '.*(?:.*_)?MocorDroid(?:(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'MocorDroid', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*CyanogenMod(?:[\-/](?:CM)?(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'CyanogenMod', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*MildWild(?: CM-(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'MildWild', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*RazoDroiD(?: v(?<os_version>\d+[.\d]*))?.*'
+  priority: -4
+  os: {name: 'RazoDroiD', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*HarmonyOS(?:[-/ ](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'HarmonyOS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*OpenHarmony(?:[-/ ](?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'OpenHarmony', version: "{os_version}", platform: ""}
+  os_family: 'OpenHarmony'
+-
+  regex: '.*(?:HarmonyOS|hmos.+OpenHarmony)[-/ ](?<os_version>[56][.\d]+).*'
+  priority: -4
+  os: {name: 'HarmonyOS NEXT', version: "{os_version}", platform: ""}
+  os_family: 'OpenHarmony'
+-
+  regex: '.*MyOS(?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'MyOS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*KAIOS(?:/(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'KaiOS', version: "{os_version}", platform: ""}
+  os_family: 'Firefox OS'
+-
+  regex: '.*Windows NT 6\.2; ARM;.*'
+  priority: -4
+  os: {name: 'Windows RT'}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*(?:IEMobile|Windows ?Mobile)(?: (?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Windows Mobile', version: "{os_version}", platform: ""}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*Windows CE(?: (?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Windows CE', version: "{os_version}", platform: ""}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*(?:XBLWP7|Windows Phone).*'
+  priority: -4
+  os: {name: 'Windows Phone'}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*(?:Windows Phone (?:OS)?|wds)[ /]?(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Windows Phone', version: "{os_version}", platform: ""}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*Windows Phone;FBSV/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Windows Phone', version: "{os_version}", platform: ""}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*(?:Ali)?YunOS[ /]?(?<os_version>\d+[.\d]+)?.*'
+  priority: -4
+  os: {name: 'YunOS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*Android (?<os_version>\d+[.\d]+)-RT.*'
+  priority: -4
+  os: {name: 'YunOS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*HbbTV/.+Samsung.*'
+  priority: -4
+  os: {name: 'Tizen'}
+  os_family: 'Other Mobile'
+-
+  regex: '.*Tizen[ /]?(?<os_version>\d+[.\d]+)?.*'
+  priority: -4
+  os: {name: 'Tizen', version: "{os_version}", platform: ""}
+  os_family: 'Other Mobile'
+-
+  regex: '.*(?:SmartHub; ?SMART-TV|HbbTV/.+Maple|Samsung;SmartTV201[2-5]).*'
+  priority: -4
+  os: {name: 'Orsay'}
+  os_family: 'Other Smart TV'
+-
+  regex: '.*Zeasn/.*'
+  priority: -4
+  os: {name: 'Whale OS'}
+  os_family: 'Other Smart TV'
+-
+  regex: '.*(?:WH|WhaleTV)/?(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Whale OS', version: "{os_version}", platform: ""}
+  os_family: 'Other Smart TV'
+-
+  regex: '.*Mageia; Linux.*'
+  priority: -4
+  os: {name: 'Mageia'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*CaixaMagica.*'
+  priority: -4
+  os: {name: 'Caixa Mágica'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Grid OS (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'GridOS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*OPR/.+TV Store/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Opera TV', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:Linux (?:[^;]+); Opera TV(?: Store)?/|^Opera/\d+\.\d+ \(Linux mips).*'
+  priority: -4
+  os: {name: 'Opera TV'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*KreaTV/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'KreaTV', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*KreaTV/0\.0\.0\.0.*'
+  priority: -4
+  os: {name: 'KreaTV'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Plasma Mobile.*'
+  priority: -4
+  os: {name: 'Plasma Mobile'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Android (?<os_version>\d+[.\d]*); ClearPHONE.*'
+  priority: -4
+  os: {name: 'ClearOS Mobile', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.* COS like Android.*'
+  priority: -4
+  os: {name: 'China OS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:.+\.amzn(?<os_version>\d)(?:int)?\.x86_64|Linux/.+aws).*'
+  priority: -4
+  os: {name: 'Amazon Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*.+tlinux(?<os_version>\d).*'
+  priority: -4
+  os: {name: 'TencentOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Nova; Linux.*'
+  priority: -4
+  os: {name: 'Nova'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*FINNEY U1.*'
+  priority: -4
+  os: {name: 'Sirin OS'}
+  os_family: 'Android'
+-
+  regex: '.*RouterOS (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'RouterOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Mikrotik/(?<os_version>\d)\.x.*'
+  priority: -4
+  os: {name: 'RouterOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*RED OS; Linux.*'
+  priority: -4
+  os: {name: 'RedOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*PICO.+OS(?<os_version>\d+[.\d]*).*'
+  priority: -4
+  os: {name: 'PICO OS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*VIDAA.*'
+  priority: -4
+  os: {name: 'VIDAA'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*VIDAA/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'VIDAA', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*TiVoOS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'TiVo OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*.+kali(?<os_version>\d).*'
+  priority: -4
+  os: {name: 'Kali', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux/(?:\d+\.[\d.-]+)\.el(?<os_version>\d+(?:[_.]\d+)*)uek.*'
+  priority: -4
+  os: {name: 'Oracle Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*LuneOS.*'
+  priority: -4
+  os: {name: 'LuneOS'}
+  os_family: 'Other Mobile'
+-
+  regex: '.*BrightSign/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'BrightSignOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*BrightSign/(?:[A-Z0-9]+)/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'BrightSignOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Raspbian.*'
+  priority: -4
+  os: {name: 'Raspberry Pi OS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Raspbian/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Raspbian', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*FRITZ!OS(?:/0(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'FRITZ!OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux.*Liri/.*'
+  priority: -4
+  os: {name: 'Liri OS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Webian.*'
+  priority: -4
+  os: {name: 'Webian'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Armadillo.*'
+  priority: -4
+  os: {name: 'Armadillo OS'}
+  os_family: 'Android'
+-
+  regex: '.*Helix Phone.*'
+  priority: -4
+  os: {name: 'HELIX OS'}
+  os_family: 'Android'
+-
+  regex: '.*(?:SerenityOS|Ladybird/).*'
+  priority: -4
+  os: {name: 'SerenityOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*AOSC OS.*'
+  priority: -4
+  os: {name: 'AOSC OS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux/(?:\d+\.[\d.-]+)\.lns(?<os_version>\d+(?:[_.]\d+)*)\.loongarch64.*'
+  priority: -4
+  os: {name: 'Loongnix', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*loongnix-server/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Loongnix', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*scientific/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Scientific Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*alpine/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Alpine Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*clear-linux-os/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Clear Linux OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*rocky/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Rocky Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux/(?:\d+\.[\d.-]+)-(?:\d+[.\d]+)stab(?:\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'OpenVZ'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux/(?:\d+\.[\d.-]+)-(?:pve|v(?<os_version>\d)\+).*'
+  priority: -4
+  os: {name: 'Proxmox VE', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*(?:붉은별|Fedora/(?:\d+\.[\d.-]+)\.rs(?<os_version>\d+(?:[_.]\d+)*)).*'
+  priority: -4
+  os: {name: 'Red Star', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Baidu Yi.*'
+  priority: -4
+  os: {name: 'Baidu Yi'}
+  os_family: 'Android'
+-
+  regex: '.*MOT-.*LinuxOS/.*'
+  priority: -4
+  os: {name: 'Motorola EZX'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Geos (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'GEOS', version: "{os_version}", platform: ""}
+  os_family: 'Other Mobile'
+-
+  regex: '.*gNewSense/.*\((?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'gNewSense', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*GENIX (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'GENIX', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*Joli OS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Joli OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Turbolinux/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Turbolinux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*ULTRIX (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'ULTRIX', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*NEWS-OS (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'NEWS-OS', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*\(NEXT\).*'
+  priority: -4
+  os: {name: 'NeXTSTEP'}
+  os_family: 'Unix'
+-
+  regex: '.*AROS.*'
+  priority: -4
+  os: {name: 'AROS'}
+  os_family: 'AmigaOS'
+-
+  regex: '.*OpenVMS(?: V(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'OpenVMS', version: "{os_version}", platform: ""}
+  os_family: 'OpenVMS'
+-
+  regex: '.*Qtopia/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Qtopia', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Star-Blade OS.*'
+  priority: -4
+  os: {name: 'Star-Blade OS'}
+  os_family: 'Unix'
+-
+  regex: '.*KIN\.(?:One|Two) (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'KIN OS', version: "{os_version}", platform: ""}
+  os_family: 'Windows Mobile'
+-
+  regex: '.*WoPhone(?:/(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'WoPhone', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*blackPanther OS.*'
+  priority: -4
+  os: {name: 'blackPanther OS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*VIZIO(?: SmartCast|-DTV).*'
+  priority: -4
+  os: {name: 'ViziOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*ViziOS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'ViziOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Linux[/-].+-(azure|Microsoft).*'
+  priority: -4
+  os: {name: 'Azure Linux'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*.+\.cm(?<os_version>\d)-x86_64.*'
+  priority: -4
+  os: {name: 'Azure Linux', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*RisingOS.*'
+  priority: -4
+  os: {name: 'risingOS'}
+  os_family: 'Android'
+-
+  regex: '.*Cloud Phone(?: (?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'Puffin OS', version: "{os_version}", platform: ""}
+  os_family: 'Android'
+-
+  regex: '.*LeafOS.*'
+  priority: -4
+  os: {name: 'LeafOS'}
+  os_family: 'Android'
+-
+  regex: '.*Coolita OS QJY/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Coolita OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Coolita OS QJY/.+LiteOS(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Coolita OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*KolibriOS.*'
+  priority: -4
+  os: {name: 'KolibriOS'}
+  os_family: 'Real-time OS'
+-
+  regex: '.*TitanOS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Titan OS', version: "{os_version}", platform: ""}
+  os_family: 'Other Smart TV'
+-
+  regex: '.*elementary OS/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'elementary OS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*GhostBSD/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'GhostBSD', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*ArcaOS(?: (?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'ArcaOS', version: "{os_version}", platform: ""}
+  os_family: 'IBM'
+-
+  regex: '.*Linpus/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Linpus', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Plan 9 (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Plan 9', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*Minix (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'MINIX', version: "{os_version}", platform: ""}
+  os_family: 'Unix'
+-
+  regex: '.*Contiki/(?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'Contiki', version: "{os_version}", platform: ""}
+  os_family: 'Other Mobile'
+-
+  regex: '.*NuttX(?:/(?<os_version>\d+[.\d]+))?.*'
+  priority: -4
+  os: {name: 'NuttX', version: "{os_version}", platform: ""}
+  os_family: 'Real-time OS'
+-
+  regex: '.*Kobo.*'
+  priority: -4
+  os: {name: 'KoboOS'}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*FortiOS (?<os_version>\d+[.\d]+).*'
+  priority: -4
+  os: {name: 'FortiOS', version: "{os_version}", platform: ""}
+  os_family: 'GNU/Linux'
+-
+  regex: '.*Steam.*'
+  priority: -4
+  os: {name: 'SteamOS'}
+  os_family: 'Mobile Gaming Console'

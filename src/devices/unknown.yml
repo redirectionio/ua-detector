@@ -1,0 +1,679 @@
+---
+
+# CyanogenMod names itself in the build string
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+)[^;]*; [\w-]+; .*CyanogenMod.*\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ (?:Mobile )?Safari/[\d.]+'
+  priority: -2
+  os: {name: 'CyanogenMod', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: ''}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+# Fallback: an Android build whose device token names nothing we know
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+)[^;]*; [\w-]+; .+?(?: Build/[^)]+)?\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ (?:Mobile )?Safari/[\d.]+'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: ''}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'Mozilla/3\.01 \(compatible;\)'
+  priority: -1
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'amaya/(?<v>[\d.]+) libwww/[\d.]+'
+  priority: -1
+  client: {type: browser, name: 'Amaya', version: "{v}", engine: '', engine_version: ""}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'BashPodder'
+  priority: -1
+  client: {type: feed reader, name: 'BashPodder', version: ""}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<v>[\d.]+) Mobile Safari/537\.36'
+  priority: -1
+  client: {type: browser, name: 'Chrome Webview', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Dillo/(?<v>\d+\.\d+\.\d+)[\w.-]*'
+  priority: -1
+  client: {type: browser, name: 'Dillo', version: "{v}", engine: 'Dillo', engine_version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Google-HTTP-Java-Client/(?<v>[\w.-]+) \(gzip\)'
+  priority: -1
+  client: {type: library, name: 'Google HTTP Java Client', version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'gPodder/(?<v>[\d.]+) \(\+http://gpodder\.org/\)'
+  priority: -1
+  client: {type: feed reader, name: 'gPodder', version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'HotJava/(?<v>[\d.]+) FCS'
+  priority: -1
+  client: {type: browser, name: 'HotJava', version: "{v}", engine: '', engine_version: ""}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Lynx/(?<v>\d+\.\d+\.\d+)[\w.]* libwww-FM/[\d.]+ SSL-MM/[\d.]+ OpenSSL/[\w.]+'
+  priority: -1
+  client: {type: browser, name: 'Lynx', version: "{v}", engine: 'Text-based', engine_version: ""}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'The Bat! (?<v>[\d.]+)'
+  priority: -1
+  client: {type: pim, name: 'The Bat!', version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'UCWEB(?<v>[\d.]+)/\d+/\d+'
+  priority: -1
+  client: {type: browser, name: 'UC Browser', version: "{v}", engine: '', engine_version: ""}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'GRequests/(?<v>[\d.]+)'
+  priority: -1
+  client: {type: library, name: 'GRequests', version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/4\.0 \(compatible; Gecko/\d+\) Maple (?<v>[\d.]+) Navi'
+  priority: -1
+  client: {type: browser, name: 'Maple', version: "{v}", engine: 'Maple', engine_version: "{v}"}
+  device: {}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'bPod'
+  priority: -1
+  os: {name: 'BlackBerry OS', version: "", platform: ""}
+  client: {type: mobile app, name: 'bPod', version: ""}
+  device: {}
+  os_family: 'BlackBerry'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Microsoft Office Word/(?<v>[\d.]+) \(Desktop; Desktop app; \w+/\w+\)'
+  priority: -1
+  client: {type: mobile app, name: 'Microsoft Office Word', version: "{v}"}
+  device: {type: 'desktop'}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Some Unknown UA'
+  priority: -1
+  device: {type: 'wearable', brand: '', model: 'Some Unknown Model'}
+  os_family: 'Unknown'
+  browser_family: 'Unknown'
+
+-
+  regex: 'ESPN Watch Extension/\d+ CFNetwork/[\d.]+ Darwin/[\d.]+'
+  priority: -1
+  os: {name: 'iOS', version: "15.5", platform: ""}
+  device: {type: '', brand: 'Apple'}
+  os_family: 'iOS'
+  browser_family: 'Unknown'
+
+-
+  regex: 'pcdc751/[\d.]+ UP\.Browser/(?<v>[\d.]+) \(GUI\) MMP/[\d.]+'
+  priority: -1
+  os: {name: 'Java ME', version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{v}", engine: '', engine_version: ""}
+  device: {type: 'feature phone'}
+  os_family: 'Real-time OS'
+  browser_family: 'Unknown'
+
+-
+  regex: 'r355\[\w+\] UP\.Browser/(?<v>[\d.]+) \(GUI\) MMP/[\d.]+'
+  priority: -1
+  os: {name: 'Java ME', version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{v}", engine: '', engine_version: ""}
+  device: {type: 'feature phone'}
+  os_family: 'Real-time OS'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Opera/[\d.]+ \(J2ME/MIDP; Opera Mini/(?<v>[\d.]+)(?:/[\d.]+)?; U; \w+\) Presto/(?<e>[\d.]+) Version/[\d.]+'
+  priority: -1
+  os: {name: 'Java ME', version: "", platform: ""}
+  client: {type: browser, name: 'Opera Mini', version: "{v}", engine: 'Presto', engine_version: "{e}"}
+  device: {type: 'feature phone'}
+  os_family: 'Real-time OS'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(Android; Linux armv7l; rv:[\d.]+\) Gecko/\d+ Firefox/[\d.]+ Fennec/(?<v>[\d.]+)'
+  priority: -1
+  os: {name: 'Android', version: "", platform: "ARM"}
+  client: {type: browser, name: 'Fennec', version: "{v}", engine: 'Gecko', engine_version: "{v}"}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Firefox'
+
+-
+  regex: 'Opera/[\d.]+ \(Android; Opera Mini/(?<v>[\d.]+)(?:/[\d.]+)?; U; \w+\) Presto/(?<e>[\d.]+) Version/[\d.]+'
+  priority: -1
+  os: {name: 'Android', version: "", platform: ""}
+  client: {type: browser, name: 'Opera Mini', version: "{v}", engine: 'Presto', engine_version: "{e}"}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [\w-]+; DNS Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ Mobile Safari/[\d.]+'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: 'smartphone', brand: 'DNS'}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [\w-]+; X5 R1 Build/\w+\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Version/[\d.]+ Mobile Safari/[\d.]+.*baiduboxapp/(?<v>\d+\.\d+).*'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: 'Baidu Box App', version: "{v}"}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Dalvik/[\d.]+ \(Linux## U## Android [\d.]+## Chromebook 14 \(CB3-431\) Build/[\w.-]+\d+-(?<os_version>[\d.]+)\)'
+  priority: -1
+  os: {name: 'Chrome OS', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: ""}
+  device: {type: 'desktop', brand: 'Acer', model: 'Chromebook 14'}
+  os_family: 'Chrome OS'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'BREW-Applet/\w+ \(BREW/(?<os_version>[\d.]+); DeviceId: \d+; Lang: \w+\) ucweb-squid'
+  priority: -1
+  os: {name: 'Brew', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'UC Browser', version: "", engine: '', engine_version: ""}
+  device: {}
+  os_family: 'Brew'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android [\d.]+; [\w-]+; [^;)]+; CyanogenMod-(?<os_version>\d+(?:\.[\d.]+)?)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ (?:Mobile )?Safari/[\d.]+'
+  os: {name: 'CyanogenMod', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android [\d.]+; [\w-]+; [^;)]+; CyanogenMod-\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ (?:Mobile )?Safari/[\d.]+'
+  priority: -1
+  os: {name: 'CyanogenMod', version: "", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android [\d.]+; [\w-]+; SPHS on Hsdroid Build/MocorDroid(?<os_version>[\d.]+)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ (?:Mobile )?Safari/[\d.]+'
+  priority: -1
+  os: {name: 'MocorDroid', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'Mozilla/[\d.]+ \[\w+\] \(Compatible; RISC OS (?<os_version>[\d.]+); Oregano (?<v>[\d.]+)\)'
+  priority: -1
+  os: {name: 'RISC OS', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Oregano', version: "{v}", engine: '', engine_version: ""}
+  device: {}
+  os_family: 'RISC OS'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/[\d.]+ \(Compatible; Acorn Browse [\d.]+ \[[\w-]+\] \w+  \d+; RISC OS (?<os_version>[\d.]+)\) Acorn-HTTP/[\d.]+'
+  priority: -1
+  os: {name: 'RISC OS', version: "{os_version}", platform: ""}
+  device: {}
+  os_family: 'RISC OS'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/[\d.]+ \(compatible; NCBrowser/[\d.]+; ANTFresco/(?<v>[\d.]+); RISC OS-NC (?<os_version>[\d.]+) \w+\)'
+  priority: -1
+  os: {name: 'RISC OS', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'ANT Fresco', version: "{v}", engine: '', engine_version: ""}
+  device: {}
+  os_family: 'RISC OS'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Tizen/(?<os_version>[\d.]+) like Android; [\w-]+; AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Tizen Browser/(?<v>[\d.]+) Mobile'
+  priority: -1
+  os: {name: 'Tizen', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Tizen Browser', version: "{v}", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {}
+  os_family: 'Other Mobile'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\)Version/(?<v>[\d.]+) TV Safari/[\d.]+'
+  priority: -1
+  os: {name: 'Tizen', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Safari', version: "{v}", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: 'tv'}
+  os_family: 'Other Mobile'
+  browser_family: 'Safari'
+
+-
+  regex: 'Mozilla/4\.0 \(compatible; MSIE (?<v>[\d.]+); Windows NT Windows CE\)'
+  priority: -1
+  os: {name: 'Windows CE', version: "", platform: ""}
+  client: {type: browser, name: 'Internet Explorer', version: "{v}", engine: 'Trident', engine_version: ""}
+  device: {}
+  os_family: 'Windows Mobile'
+  browser_family: 'Internet Explorer'
+
+-
+  regex: 'Opera/[\d.]+ \(Windows Mobile; WCE; Opera Mobi/[\w-]+; U; \w+\) Presto/(?<e>[\d.]+) Version/(?<v>[\d.]+)'
+  priority: -1
+  os: {name: 'Windows Mobile', version: "", platform: ""}
+  client: {type: browser, name: 'Opera Mobile', version: "{v}", engine: 'Presto', engine_version: "{e}"}
+  device: {}
+  os_family: 'Windows Mobile'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(compatible; MSIE (?<v>[\d.]+); Windows NT [\d.]+; Trident/(?<e>[\d.]+); XBLWP7; ZuneWP7\)'
+  priority: -1
+  os: {name: 'Windows Phone', version: "", platform: ""}
+  client: {type: browser, name: 'IE Mobile', version: "{v}", engine: 'Trident', engine_version: "{e}"}
+  device: {type: '', brand: '', model: ''}
+  os_family: 'Windows Mobile'
+  browser_family: 'Internet Explorer'
+
+-
+  regex: 'Opera/(?<v>[\d.]+)\.\(Windows CE; [\w-]+\) Presto/(?<e>[\d.]+) Version/[\d.]+'
+  priority: -1
+  os: {name: 'Windows CE', version: "", platform: ""}
+  client: {type: browser, name: 'Opera', version: "{v}", engine: 'Presto', engine_version: "{e}"}
+  device: {}
+  os_family: 'Windows Mobile'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Plasma Mobile, like Android [\d.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) QtWebEngine/(?<v>[\d.]+) Chrome/(?<e>[\d.]+).*'
+  priority: -1
+  os: {name: 'Plasma Mobile', version: "", platform: ""}
+  client: {type: browser, name: 'QtWebEngine', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'smartphone'}
+  os_family: 'GNU/Linux'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(PC; OpenHarmony (?<os_version>[\d.]+); HarmonyOS [\d.]+\) AppleWebKit/537\.36 \(KHTML,like Gecko\) Chrome/[\d.]+ Safari/537\.36 ArkWeb/(?<e>[\d.]+).*360Browser/(?<v>[\d.]+).*'
+  priority: -1
+  os: {name: 'HarmonyOS NEXT', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Harmony 360 Browser', version: "{v}", engine: 'ArkWeb', engine_version: "{e}"}
+  device: {type: 'desktop'}
+  os_family: 'OpenHarmony'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; diordnA (?<os_version>[\d.]+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Focus/(?<v>[\d.]+) Chrome/(?<e>[\d.]+) eliboM Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Firefox Focus', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) Safari/537\.36 EdgA?/(?<v>[\d.]+)'
+  priority: -1
+  os: {name: 'GNU/Linux', version: "", platform: "x64"}
+  client: {type: browser, name: 'Microsoft Edge', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'desktop'}
+  os_family: 'GNU/Linux'
+  browser_family: 'Internet Explorer'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); Speed Tablet [\d.]+ Quad Core Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<e>[\d.]+) Safari/537\.36 OPR/(?<v>[\d.]+)'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Opera', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'tablet'}
+  os_family: 'Android'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Base Shell \w+ Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<v>[\d.]+) Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'tv'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); WildRed Shell \w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'tv'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); G700 Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) Safari/537\.36.*OPR/(?<v>[\d.]+)'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Opera', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'tablet'}
+  os_family: 'Android'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MZ-Fast Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<v>[\d.]+).*'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); K4\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'tablet'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [\w-]+; K5 Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<v>[\d.]+).*'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); K6\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Mobile Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Mobile', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Default string\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'tablet'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Android_Device\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<v>[\d.]+) Mobile Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Unspecified Device\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Mobile Safari/537\.3\d*'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Mobile', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Dalvik/[\d.]+ \(Linux; U; Android (?<os_version>[\d.]+); audi_ks1280x480 Build/[\w.]+\)'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Android Browser', version: "", engine: 'WebKit', engine_version: ""}
+  device: {type: 'car browser', brand: '', model: 'Audi KS'}
+  os_family: 'Android'
+  browser_family: 'Android Browser'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ks1280x480\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Mobile Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Mobile', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'car browser', brand: '', model: 'Audi KS'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); AOSP on r33a0\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) Safari/537\.36 EdgA?/(?<v>[\d.]+)'
+  priority: -1
+  os: {name: 'Android TV', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Microsoft Edge', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'tv'}
+  os_family: 'Android'
+  browser_family: 'Internet Explorer'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); hx322x_box\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Safari/537\.36'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'tv'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); X98_(?<model>S\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) YaBrowser/(?<v>[\d.]+).*'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: "ARM"}
+  client: {type: browser, name: 'Yandex Browser', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'tv', brand: '', model: 'X98 {model}'}
+  os_family: 'Android'
+  browser_family: 'Unknown'
+
+-
+  # The one user agent the corpus gives it, verbatim: widened by a digit it reads every iPad
+  # that ever sent Safari, which is the busiest shape there is.
+  regex: 'Mozilla/5\.0 \(iPad; CPU OS 13_0 like Mac OS X\) AppleWebKit/605\.1\.15 \(KHTML, like Gecko\) Version/13\.0 Mobile/15E148 Safari/604\.1'
+  priority: -1
+  os: {name: 'Android', version: "", platform: ""}
+  client: {type: browser, name: 'Every Browser', version: "", engine: 'Blink', engine_version: ""}
+  device: {}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); P1 Build/[\w.]+; wv-atv; mse\) Google/[\d.]+ AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<v>[\d.]+).*'
+  priority: -1
+  os: {name: 'Android TV', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'tv'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux;\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) Safari/537\.36 SRAF/(?<v>[\d.]+) \(; SERAPHIC; SERAPHIC.*'
+  priority: -1
+  os: {name: 'GNU/Linux', version: "", platform: ""}
+  client: {type: browser, name: 'Seraphic Sraf', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'tv'}
+  os_family: 'GNU/Linux'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux \) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) Safari/537\.36 OPR/[\d.]+ OMI/(?<v>\d+(?:\.\d+)*)[.\w-]*\..*'
+  priority: -1
+  os: {name: 'GNU/Linux', version: "", platform: ""}
+  client: {type: browser, name: 'Opera Devices', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: 'tv', brand: '', model: 'Smart TV (2017)'}
+  os_family: 'GNU/Linux'
+  browser_family: 'Opera'
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS [\d_]+ like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ \[FBAN/FBIOS;FBAV/(?<v>[\d.]+);.*'
+  priority: -1
+  # The user agent says iPhone and the hints say a Linux desktop, which is the whole point of the
+  # fixture this came from -- and the conditions that made it true were dropped on the way in,
+  # leaving it to claim every iPhone running Facebook was a desktop.
+  headers:
+    platform: '^Linux$'
+    mobile: '^0$'
+  os: {name: 'GNU/Linux', version: "5.19.0", platform: "x86"}
+  client: {type: mobile app, name: 'Facebook', version: "{v}"}
+  device: {type: 'desktop', brand: '', model: ''}
+  os_family: 'GNU/Linux'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS [\d_]+ like Mac OS X\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) CriOS/(?<v>[\d.]+) Mobile/\w+.*'
+  priority: -1
+  # Same as the Facebook entry above: a desktop behind an iPhone string, told apart by the hints
+  # alone, which this was matching without.
+  headers:
+    platform: '^Windows$'
+    mobile: '^0$'
+  os: {name: 'Windows', version: "10", platform: "x86"}
+  client: {type: browser, name: 'Chrome Mobile iOS', version: "{v}", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(X11; U; Linux armv7l; [\w-]+; rv:(?<e>\d+\.\d+\.\d+|\d+\.\d+)[\w.]*\) Gecko/\d+ Firefox/[\d.]+ Tablet browser (?<v>[\d.]+) RX-\d+'
+  priority: -1
+  os: {name: 'GNU/Linux', version: "", platform: "ARM"}
+  client: {type: browser, name: 'MicroB', version: "{v}", engine: 'Gecko', engine_version: "{e}"}
+  device: {type: 'tablet'}
+  os_family: 'GNU/Linux'
+  browser_family: 'Firefox'
+
+-
+  regex: 'Pinterest for Android Tablet/(?<v>[\d.]+) \(\w+; (?<os_version>[\d.]+)\)'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: 'Pinterest', version: "{v}"}
+  device: {type: 'tablet'}
+  os_family: 'Android'
+  browser_family: 'Unknown'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); WayDroid x86_64 Device\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<v>[\d.]+) Mobile Safari/537\.3\d*'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: "x64"}
+  client: {type: browser, name: 'Chrome Mobile', version: "{v}", engine: 'Blink', engine_version: "{v}"}
+  device: {type: 'desktop'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(X11; U; U; Linux x86_64; [\w-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<e>[\d.]+) Safari/537\.36 Puffin/(?<v>[\d.]+)\w*'
+  priority: -1
+  os: {name: 'GNU/Linux', version: "", platform: "x64"}
+  client: {type: browser, name: 'Puffin Web Browser', version: "{v}", engine: 'Blink', engine_version: "{e}"}
+  device: {type: '', brand: '', model: ''}
+  os_family: 'GNU/Linux'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(X11; U; Linux i686; [\w@=-]+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Puffin/(?<v>[\d.]+)\w* Safari/[\d.]+'
+  priority: -1
+  os: {name: 'GNU/Linux', version: "", platform: "x86"}
+  client: {type: browser, name: 'Puffin Web Browser', version: "{v}", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: '', brand: '', model: ''}
+  os_family: 'GNU/Linux'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [\w-]+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Puffin/(?<v>[\d.]+)\w* Mobile Safari/[\d.]+'
+  priority: -1
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Puffin Web Browser', version: "{v}", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: '', brand: '', model: ''}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+# Android on a model token that names nothing: a smartphone with no brand and no model, which is
+# what the fixtures carrying an unrecognised one -- K6, Android_Device, `Iphone12 pro max` --
+# report.
+#
+# Which Chrome it is comes off the two markers, not off the model: `wv` is a WebView whether or
+# not it also says Version/4.0, Version/4.0 without `wv` is one too, and the plain string is
+# Chrome Mobile. Priority 1, behind every entry that does know the model.
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; (?:U; )?Android (?<os_version>[\d.]+); [^;)]+; wv\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) (?:Version/[\d.]+ )?Chrome/(?<client_version>(?:2[89]|[3-9]\d|\d{3,})\.[\d.]+) Mobile Safari/[\d.]+'
+  priority: -2
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{client_version}", engine: 'Blink', engine_version: "{client_version}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; (?:U; )?Android (?<os_version>[\d.]+); [^;)]+\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Version/[\d.]+ Chrome/(?<client_version>(?:2[89]|[3-9]\d|\d{3,})\.[\d.]+) Mobile Safari/[\d.]+'
+  priority: -2
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Webview', version: "{client_version}", engine: 'Blink', engine_version: "{client_version}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; (?:U; )?Android (?<os_version>[\d.]+); [^;)]+\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Chrome/(?<client_version>(?:2[89]|[3-9]\d|\d{3,})\.[\d.]+) Mobile Safari/[\d.]+'
+  priority: -2
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Chrome Mobile', version: "{client_version}", engine: 'Blink', engine_version: "{client_version}"}
+  device: {type: 'smartphone'}
+  os_family: 'Android'
+  browser_family: 'Chrome'

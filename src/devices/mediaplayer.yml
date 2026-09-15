@@ -1,0 +1,344 @@
+---
+
+# Players that say nothing about the machine they run on
+-
+  regex: 'Audacious/(?<client_version>[\d.]+) neon/[\d.]+'
+  client:
+    type: mediaplayer
+    name: Audacious
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'NSPlayer/(?<client_version>[\d.]+) WMFSDK/[\d.]+'
+  client:
+    type: mediaplayer
+    name: Windows Media Player
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Music Player Daemon (?<client_version>[\d.]+)'
+  client:
+    type: mediaplayer
+    name: Music Player Daemon
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'mpv (?<client_version>[\d.]+)'
+  client:
+    type: mediaplayer
+    name: mpv
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'foobar2000/(?<client_version>[\d.]+)'
+  client:
+    type: mediaplayer
+    name: Foobar2000
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+# Songbird and its Nightingale fork share the same Gecko based user agent
+-
+  regex: 'Mozilla/5\.0 \(X11; U; Linux i686; [a-z]{2}-[A-Z]{2}; rv:[\d.]+\) Gecko/\d+ (?<client_name>Songbird|Nightingale)/(?<client_version>[\d.]+) \(\d+\)'
+  os:
+    name: GNU/Linux
+    version: ""
+    platform: x86
+  client:
+    type: mediaplayer
+    name: "{client_name}"
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown
+
+-
+  regex: 'iTunes/(?<client_version>[\d.]+) \(Macintosh; Intel Mac OS X (?<os_version>[\d.]+)\) AppleWebKit/[\d.]+'
+  os:
+    name: Mac
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: iTunes
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'iTunes/(?<client_version>[\d.]+) \(Windows; Microsoft Windows (?<os_version>\d+) [^)]+\(Build \d+\)\) AppleWebKit/[\d.]+'
+  os:
+    name: Windows
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: iTunes
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'SAMSUNG-(?<model>GT-[A-Z0-9]+)/\w+ SHP/VPP/R\d+ Dolfin/[\d.]+ NexPlayer/(?<client_version>[\d.]+) SMM-MMS/[\d.]+ profile/MIDP-[\d.]+ configuration/CLDC-[\d.]+ OPN-B'
+  os:
+    name: Java ME
+    version: ""
+    platform: ""
+  client:
+    type: mediaplayer
+    name: NexPlayer
+    version: "{client_version}"
+  device:
+    type: smartphone
+    brand: Samsung
+    model: "{model}"
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Deezer/(?<client_version>[\d.]+) \(Android; (?<os_version>[\d.]+); Mobile; [a-z]{2}\) WIKO U FEEL'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: Deezer
+    version: "{client_version}"
+  device:
+    type: smartphone
+    brand: Wiko
+    model: U Feel
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'FlyCast/(?<client_version>[\d.]+) \(BlackBerry; \d+/[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ VendorID/-?\d+\)'
+  os:
+    name: BlackBerry OS
+    version: ""
+    platform: ""
+  client:
+    type: mediaplayer
+    name: FlyCast
+    version: "{client_version}"
+  device:
+    type: smartphone
+    brand: RIM
+    model: BlackBerry
+  os_family: BlackBerry
+  browser_family: Unknown
+
+-
+  regex: 'XBMC/(?<client_version>[\d.]+) r\d+ \(Mac OS X; Darwin [\d.]+; http://www\.xbmc\.org\)'
+  os:
+    name: Mac
+    version: ""
+    platform: ""
+  client:
+    type: mediaplayer
+    name: XBMC
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+# Darwin 10.4 on CFNetwork is iOS 4.2
+-
+  regex: 'SubStream/(?<client_version>[\d.]+) CFNetwork/[\d.]+ Darwin/10\.4\.0'
+  os:
+    name: iOS
+    version: "4.2"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: SubStream
+    version: "{client_version}"
+  device:
+    type: ""
+    brand: Apple
+    model: ""
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Samsung GT-I9505 stagefright/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\)'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: Stagefright
+    version: "{client_version}"
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S4
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Kodi/(?<client_version>[\d.]+) \(Macintosh; Intel Mac OS X (?<os_version>[\d_]+)\) App_Bitness/\d+ Version/[^ ]+'
+  os:
+    name: Mac
+    version: "{os_version|dots}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: Kodi
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'GoogleChirp/(?<client_version>[\d.]+) \(Linux; Android/(?<os_version>[\d.]+)\) GOOG/\d+ AppleWebKit/[\d.]+ \(KHTML, like Gecko\)'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: Google Podcasts
+    version: "{client_version}"
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Downcast/(?<client_version>[\d.]+) \(Mac OS X Version (?<os_version>[\d.]+) \(Build \w+\)\)'
+  os:
+    name: Mac
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mediaplayer
+    name: Downcast
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+# Darwin 13.3 is Mac OS X 10.9.4, and MacBookAir4,2 is the 2011 13 inch model
+-
+  regex: 'Downcast/\d+ CFNetwork/[\d.]+ Darwin/13\.3\.0 \(x86_64\) \(MacBookAir4%2C2\)'
+  os:
+    name: Mac
+    version: "10.9.4"
+    platform: x64
+  client:
+    type: mediaplayer
+    name: Downcast
+    version: ""
+  device:
+    type: desktop
+    brand: Apple
+    model: 'MacBook Air 13" (2011)'
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'MediaGo/(?<client_version>[\d.]+) \(Windows NT (?<os_version>\d+)\.0; WOW64\) PlaybackEngine/[\d.]+'
+  os:
+    name: Windows
+    version: "{os_version}"
+    platform: x64
+  client:
+    type: mediaplayer
+    name: Sony Media Go
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: Windows
+  browser_family: Unknown
+
+# Next set top boxes running VLC. The model is the token before `_VLC`, except for the 2000 HD
+# which the firmware writes with a dash.
+-
+  regex: 'NEXT 2000-HD_VLC/(?<client_version>[\d.]+) LibVLC/[\d.]+'
+  os:
+    name: RTOS & Next
+    version: ""
+    platform: ""
+  client:
+    type: mediaplayer
+    name: VLC
+    version: "{client_version}"
+  device:
+    type: tv
+    brand: Next & NextStar
+    model: 2000 HD
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'NEXT 2000-HD PLUS_VLC/(?<client_version>[\d.]+) LibVLC/[\d.]+'
+  os:
+    name: RTOS & Next
+    version: ""
+    platform: ""
+  client:
+    type: mediaplayer
+    name: VLC
+    version: "{client_version}"
+  device:
+    type: tv
+    brand: Next & NextStar
+    model: 2000 HD Plus
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'NEXT (?<model>[A-Za-z0-9\- ]+)_VLC/(?<client_version>[\d.]+) LibVLC/[\d.]+'
+  priority: -2
+  os:
+    name: RTOS & Next
+    version: ""
+    platform: ""
+  client:
+    type: mediaplayer
+    name: VLC
+    version: "{client_version}"
+  device:
+    type: tv
+    brand: Next & NextStar
+    model: "{model}"
+  os_family: Real-time OS
+  browser_family: Unknown

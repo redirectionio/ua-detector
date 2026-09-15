@@ -1,0 +1,1048 @@
+---
+
+-
+  regex: 'Pulse/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/[\d.]+\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Pulse, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'TurboDL/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/[\d.]+\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: TurboDL, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Downcast/(?<client_version>[\d.]+) \(iPhone; iOS (?<os_version>[\d.]+); Scale/[\d.]+\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Downcast, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'LiveJournal/(?<client_version>[\d.]+) \(iPad; iOS (?<os_version>[\d.]+); Scale/[\d.]+\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: LiveJournal, version: "{client_version}"}
+  device: {type: tablet, brand: Apple, model: iPad}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'WhatsApp/(?<client_version>[\d.]+) iPhone_OS/(?<os_version>[\d.]+) Device/iPhone_\d+'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: WhatsApp, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'AndroidDownloadManager/(?<client_version>[\d.]+) \(Linux; U; Android (?<os_version>[\d.]+); (?<model>MB\d+) Build/[\w.-]+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: AndroidDownloadManager, version: "{client_version}"}
+  device: {type: smartphone, brand: Motorola, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'AndroidDownloadManager/(?<client_version>[\d.]+) \(Linux; U; Android (?<os_version>[\d.]+); (?<model>MediaPad 7 Lite II) Build/\w+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: AndroidDownloadManager, version: "{client_version}"}
+  device: {type: tablet, brand: Huawei, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'com\.google\.android\.youtube/(?<client_version>[\d.]+)\(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}_[A-Z]{2}; (?<model>SCH-\w+) Build/\w+\) gzip'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: YouTube, version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'NS/[\d.]+ \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; phone/(?<model>Nexus \d+) Build/\w+; Density/\d+; gzip\) com\.google\.android\.apps\.magazines/\d+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Google Play Newsstand, version: ""}
+  device: {type: smartphone, brand: Google, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+# Apple hardware identifiers, which is the only place the exact model appears
+-
+  regex: 'Mozilla/5\.0 \(iPad3,6; iPad; U; CPU OS (?<os_version>[\d_]+) like Mac OS X; [a-z]{2}_[A-Z]{2}\) com\.google\.GooglePlus/\d+ \(KHTML, like Gecko\) Mobile/\w+ \(gzip\)'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Google Plus, version: ""}
+  device: {type: tablet, brand: Apple, model: iPad 4}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ \[FBAN/MessengerForiOS;FBAV/(?<client_version>[\d.]+);[^\]]*FBDV/iPhone8,4;[^\]]*\]'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook Messenger, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone SE}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPad; CPU OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ \[FBAN/MessengerForiOS;FBAV/(?<client_version>[\d.]+);[^\]]*FBDV/iPad4,1;[^\]]*\]'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook Messenger, version: "{client_version}"}
+  device: {type: tablet, brand: Apple, model: iPad Air}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPad; CPU OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ \[FBAN/GroupsForiOS;FBAV/(?<client_version>[\d.]+);[^\]]*FBDV/iPad3,4;[^\]]*\]'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook Groups, version: "{client_version}"}
+  device: {type: tablet, brand: Apple, model: iPad 4}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>Nexus \w+) Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 \[FB_IAB/MESSENGER;FBAV/(?<client_version>[\d.]+);\]'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Facebook Messenger, version: "{client_version}"}
+  device: {type: smartphone, brand: Google, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-T280 Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Safari/537\.36 \[FB_IAB/MESSENGER;FBAV/(?<client_version>[\d.]+);\]'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Facebook Messenger, version: "{client_version}"}
+  device: {type: tablet, brand: Samsung, model: 'Galaxy Tab A 7.0" WiFi'}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: '\[FBAN/FB4A;FBAV/(?<client_version>[\d.]+);[^\]]*FBMF/Sony;FBBD/Sony;FBPN/com\.facebook\.katana;FBDV/C1905;FBSV/(?<os_version>[\d.]+);FBOP/\d+;FBCA/armeabi-v7a:armeabi;\]'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: mobile app, name: Facebook, version: "{client_version}"}
+  device: {type: smartphone, brand: Sony, model: Xperia M}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'LightSpeed \[FBAN/MessengerLiteForiOS;FBAV/(?<client_version>[\d.]+);[^\]]*FBDV/iPhone10,4;[^\]]*FBSV/ (?<os_version>[\d.]+);[^\]]*\]'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Facebook Messenger Lite, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 8}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ LightSpeed \[FBAN/MessengerLiteForiOS;FBAV/(?<client_version>[\d.]+);[^\]]*FBDV/iPhone8,1;[^\]]*'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook Messenger Lite, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 6s}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ Safari Line/(?<client_version>[\d.]+)'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Line, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+# CFNetwork builds, each pinned to the iOS release that shipped it
+-
+  regex: 'Podcat/(?<client_version>\d+) CFNetwork/711\.3\.18 Darwin/[\d.]+'
+  os: {name: iOS, version: "8.3", platform: ""}
+  client: {type: mobile app, name: Podcat, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Podcat%202/(?<client_version>\d+) CFNetwork/1121\.2\.2 Darwin/[\d.]+'
+  os: {name: iOS, version: "13.3", platform: ""}
+  client: {type: mobile app, name: Podcat, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Podcat/(?<client_version>[\d.]+) \(iPhone; [a-z]{2}-[A-Z]{2}; iPhone OS (?<os_version>[\d.]+)\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Podcat, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'icatcher/(?<client_version>\d+) CFNetwork/672\.1\.14 Darwin/[\d.]+'
+  os: {name: iOS, version: "7.1", platform: ""}
+  client: {type: mobile app, name: iCatcher, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'iCatcher! Podcast Player/(?<client_version>[\d.]+)'
+  os: {name: iOS, version: "", platform: ""}
+  client: {type: mobile app, name: iCatcher, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'ProCast/(?<client_version>\d+) CFNetwork/978\.0\.7 Darwin/[\d.]+'
+  os: {name: iOS, version: "12.4", platform: ""}
+  client: {type: mobile app, name: Procast, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'TikTok/\d+ CFNetwork/978\.0\.7 Darwin/[\d.]+'
+  os: {name: iOS, version: "12.4", platform: ""}
+  client: {type: mobile app, name: TikTok, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'RoboForm/[\d.]+ CFNetwork/711\.1\.16 Darwin/[\d.]+'
+  os: {name: iOS, version: "8.1", platform: ""}
+  client: {type: mobile app, name: RoboForm, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'NAVER/(?<client_version>[\d.]+) CFNetwork/976 Darwin/[\d.]+'
+  os: {name: iOS, version: "12.1", platform: ""}
+  client: {type: mobile app, name: Naver, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Pic%20Collage/(?<client_version>[\d.]+) CFNetwork/889\.9 Darwin/[\d.]+'
+  os: {name: iOS, version: "11.1", platform: ""}
+  client: {type: mobile app, name: Pic Collage, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Slack/\d+ CFNetwork/889\.9 Darwin/[\d.]+'
+  os: {name: iOS, version: "11.1", platform: ""}
+  client: {type: mobile app, name: Slack, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'ntvmobil/\d+ CFNetwork/808\.1\.4 Darwin/[\d.]+'
+  os: {name: iOS, version: "10.1", platform: ""}
+  client: {type: mobile app, name: NTV Mobil, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Bose Music/\d+ CFNetwork/1240\.0\.4 Darwin/[\d.]+'
+  os: {name: iOS, version: "14.6", platform: ""}
+  client: {type: mobile app, name: Bose Music, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Papers/(?<client_version>[\d.]+) CFNetwork/902\.3\.1 Darwin/[\d.]+ \(x86_64\)'
+  os: {name: Mac, version: "10.13.6", platform: x64}
+  client: {type: mobile app, name: Papers, version: "{client_version}"}
+  device: {type: desktop, brand: Apple, model: ""}
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'Copied/\d+ CFNetwork/893\.13\.1 Darwin/[\d.]+ \(x86_64\)'
+  os: {name: Mac, version: "10.13.3", platform: x64}
+  client: {type: mobile app, name: Copied, version: ""}
+  device: {type: desktop, brand: Apple, model: ""}
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'PodcastRepublic/(?<client_version>[\d.]+) \(Linux; U; Android (?<os_version>[\d.]+);OnePlus(?<model>\w+)/[\w.]+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Podcast Republic, version: "{client_version}"}
+  device: {type: smartphone, brand: OnePlus, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'PodcastAddict/v(?<client_version>\d+) - Dalvik/[\d.]+ \(Linux; U; Android (?<os_version>[\d.]+); FEVER Build/\w+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Podcast & Radio Addict, version: "{client_version}"}
+  device: {type: smartphone, brand: Wiko, model: Fever}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Podcatcher Deluxe'
+  os: {name: Android, version: "", platform: ""}
+  client: {type: mobile app, name: Podcatcher Deluxe, version: ""}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Castro 2 Episode Download'
+  os: {name: iOS, version: "", platform: ""}
+  client: {type: mobile app, name: Castro 2, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Castro 2 (?<client_version>[\d.]+)/\d+ Like iTunes'
+  os: {name: iOS, version: "", platform: ""}
+  client: {type: mobile app, name: Castro 2, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'okhttp/(?<client_version>[\d.]+)'
+  os: {name: Android, version: "", platform: ""}
+  client: {type: library, name: OkHttp, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) (?:News/[\d.]+|AppleNews/\d+) Version/(?<client_version>[\d.]+)'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Apple News, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'YelpWebView/[\d.]+ Android/(?<os_version>[\d.]+) YelpApp/(?<client_version>[\d.]+) \(x-screen-scale [\d.]+;\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Yelp Mobile, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'com\.google\.android\.apps\.searchlite/\d+ \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}_[A-Z]{2}; M580; Build/\w+; Cronet/[\d.]+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Google Go, version: ""}
+  device: {type: smartphone, brand: S-TELL, model: M580}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'com\.google\.android\.apps\.searchlite/\d+ \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}_[A-Z]{2}; INOI_(?<model>[\w_]+); Build/\w+; Cronet/[\d.]+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Google Go, version: ""}
+  device: {type: smartphone, brand: Inoi, model: "{model|spaces}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'CastBox/(?<client_version>[\d.]+) \([\w.]+; build:\d+; iOS (?<os_version>[\d.]+)\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: CastBox, version: "{client_version}"}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Android OS (?<os_version>[\d.]+) / API-\d+ \(HUAWEITIT-U02/\w+\); HUAWEI HUAWEI TIT-U02\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36 UnityPlayer/(?<client_version>[\d.]+)\w*'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: UnityPlayer, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: Y6 Pro}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-T515 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Safari/537\.36 UCURSOS/v(?<client_version>[\d.]+)_\d+-android'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: U-Cursos, version: "{client_version}"}
+  device: {type: tablet, brand: Samsung, model: 'Galaxy Tab A 10.1" (2019)'}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(\d+MB; \d+x\d+; \d+x\d+; \d+x\d+; Samsung SM-A115F; (?<os_version>\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\)  ROBLOX Android App [\d.]+ Phone Hybrid\(\)  GooglePlayStore RobloxApp/(?<client_version>[\d.]+) \(GlobalDist; GooglePlayStore\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Roblox, version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy A11}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; iPhone12,1; CPU iPhone OS (?<os_version>[\d.]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ ROBLOX iOS App [\d.]+ Hybrid RobloxApp/(?<client_version>[\d.]+) \(GlobalDist; AppleAppStore\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Roblox, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 11}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Procast \(iOS\)'
+  os: {name: iOS, version: "", platform: ""}
+  client: {type: mobile app, name: Procast, version: ""}
+  device: {type: "", brand: Apple, model: ""}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Pinterest for iOS/(?<client_version>[\d.]+) \(iPhone7,2; (?<os_version>[\d.]+)\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Pinterest, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 6}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Pinterest for Android/(?<client_version>[\d.]+) \(K83CA; (?<os_version>[\d.]+)\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Pinterest, version: "{client_version}"}
+  device: {type: tablet, brand: ZTE, model: Grand X View 3}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ KAKAOTALK (?<client_version>[\d.]+)'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: KakaoTalk, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'TikTok (?<client_version>[\d.]+) rv:\d+ \(iPhone; iOS (?<os_version>[\d.]+); [a-z]{2}_[A-Z]{2}\) Cronet'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: TikTok, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Podbean/Android App (?<client_version>[\d.]+) \(http://podbean\.com\)'
+  os: {name: Android, version: "", platform: ""}
+  client: {type: mobile app, name: Podbean, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'AlexaMediaPlayer/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mediaplayer, name: Alexa, version: "{client_version}"}
+  device: {type: smart speaker, brand: Amazon, model: Alexa}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'TuneIn Radio Pro(?: By Farsroid\.com)?/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: TuneIn Radio Pro, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'TuneIn Radio/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/[\d.]+,gzip\(gfe\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: TuneIn Radio, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Podcaster/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Apple Podcasts, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Swoot/(?<client_version>[\d.]+) \(Linux;Android (?<os_version>[\d.]+)\) ExoPlayerLib/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Swoot, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+# Android API 29 is Android 10
+-
+  regex: 'Podimo/(?<client_version>[\d.]+) build \d+/Android 29'
+  os: {name: Android, version: "10", platform: ""}
+  client: {type: mobile app, name: Podimo, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'com\.evolve\.podcast/(?<client_version>[\d.]+) \(iPad; \) \(build \d+, iOS (?<os_version>[\d.]+)\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Evolve Podcast, version: "{client_version}"}
+  device: {type: tablet, brand: Apple, model: iPad}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'com\.evolve\.podcast/(?<client_version>[\d.]+) \(iPhone; \) \(build \d+, iOS (?<os_version>[\d.]+)\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Evolve Podcast, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'RadioPublic/android-(?<client_version>[\d.]+)'
+  os: {name: Android, version: "", platform: ""}
+  client: {type: mobile app, name: RadioPublic, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+# Monazilla is the shared marker of the 2ch client family
+-
+  regex: 'Monazilla/[\d.]+ 2chMate/(?<client_version>[\d.]+) Dalvik/[\d.]+ \(Linux; U; Android (?<os_version>[\d.]+); LGT01 Build/\w+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: ChMate, version: "{client_version}"}
+  device: {type: tablet, brand: LG, model: 'G Pad 8.0" LTE'}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Monazilla/[\d.]+ 2tch/(?<client_version>[\d.]+) iOS(?<os_version>\d+\.\d+)0 iPhone7,2'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: 2tch, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 6}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Monazilla/[\d.]+ Ciisaa/(?<client_version>[\d.]+) Dalvik/[\d.]+ \(Linux; U; Android (?<os_version>[\d.]+); (?<model>Nexus \d+)\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Ciisaa, version: "{client_version}"}
+  device: {type: tablet, brand: Google, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Monazilla/[\d.]+ \(BB2C (?<client_version>[\d.]+); iOS (?<os_version>[\d.]+) iPhone10,1\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: BB2C, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 8}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Monazilla/[\d.]+ \(twinkle/(?<client_version>[\d.]+); iOS(?<os_version>[\d.]+); iPhone10,1\)'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: twinkle, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone 8}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Monazilla/[\d.]+ JaneStyle_iOS/(?<client_version>[\d.]+) iOS(?<os_version>[\d.]+) iPhone,9,1'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: JaneStyle, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); JNY-LX1 Build/[\w-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 BNC/[\d.]+ \(Android (?<client_version>[\d.]+)\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Binance, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: P40 Lite}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NEOSR620 Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Instagram (?<client_version>[\d.]+) Android \([^)]+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Instagram, version: "{client_version}"}
+  device: {type: smartphone, brand: Lumus, model: Neo SR620}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'OfferUp/(?<client_version>[\d.]+) \(build: \d+; samsung SM-J260T1 \w+; Android (?<os_version>[\d.]+); [a-z]{2}_[A-Z]{2}\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: OfferUp, version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy J2 Core}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android \d+; HP Chromebook x360 11 G1 EE Build/R92-(?<os_version>[\d.]+); wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Safari/537\.36 trill_\d+ JsSdk/[\d.]+ NetType/\w+ Channel/\w+ AppName/musical_ly app_version/(?<client_version>[\d.]+) ByteLocale/\w+ ByteFullLocale/\w+ Region/\w+'
+  os: {name: Chrome OS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: TikTok, version: "{client_version}"}
+  device: {type: desktop, brand: HP, model: Chromebook x360 11 G1 EE}
+  os_family: Chrome OS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); 6025H_EEA Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 trill_\d+ JsSdk/[\d.]+ NetType/\w+ Channel/\w+ AppName/musical_ly app_version/(?<client_version>[\d.]+) ByteLocale/\w+ ByteFullLocale/\w+ Region/\w+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: TikTok, version: "{client_version}"}
+  device: {type: smartphone, brand: Alcatel, model: 1S}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android \d+; BMH-TN10 Build/[\w-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 T7/[\d.]+ BDOS/[\d.]+ \(HarmonyOS (?<os_version>[\d.]+)\) SP-engine/[\d.]+ baiduboxapp/(?<client_version>[\d.]+) \(Baidu; P1 \d+\) NABar/[\d.]+'
+  os: {name: HarmonyOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Baidu Box App, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: Honor 30}
+  os_family: Android
+  browser_family: Unknown
+
+# Electron applications, which all carry a desktop Chrome user agent
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) (?:GitHubDesktop)/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: GitHub Desktop, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) logioptionsplus/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: Logi Options+, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) EmbyTheater/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: Emby Theater, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) y8-browser/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: Y8 Browser, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) NuMuKiBrowser/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: NuMuKi Browser, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) LandisGyrAIMbrowser/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: Landis+Gyr AIM Browser, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Code/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: Visual Studio Code, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Binance/(?<client_version>[\d.]+) Chrome/[\d.]+ Electron/[\d.]+ Safari/537\.36 \(electron [\d.]+\)'
+  os: {name: Windows, version: "10", platform: x64}
+  client: {type: mobile app, name: Binance, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+# Desktop applications that only announce themselves
+-
+  regex: 'Wireshark/(?<client_version>[\d.]+) WinSparkle/[\d.]+ \(Win64\)'
+  os: {name: Windows, version: "", platform: x64}
+  client: {type: mobile app, name: Wireshark, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Magician'
+  client: {type: mobile app, name: Samsung Magician, version: ""}
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Razer Central PC/[\d.]+ \(Win32NT; [\d.]+; Microsoft Windows NT (?<os_version>\d+)\.[\d.]+\)'
+  os: {name: Windows, version: "{os_version}", platform: x86}
+  client: {type: mobile app, name: Razer Synapse, version: ""}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'git/(?<client_version>[\d.]+)\.windows\.\d+'
+  os: {name: Windows, version: "", platform: ""}
+  client: {type: mobile app, name: Git, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'GooglePodcasts/(?<client_version>[\d.]+) iPod_touch/(?<os_version>[\d.]+) hw/iPod9_1'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Google Podcasts, version: "{client_version}"}
+  device: {type: portable media player, brand: Apple, model: iPod Touch 7}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft-CryptoAPI/(?<os_version>[\d.]+)'
+  os: {name: Windows, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Windows CryptoAPI, version: ""}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft-Delivery-Optimization/(?<os_version>[\d.]+)'
+  os: {name: Windows, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Windows Delivery Optimization, version: ""}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Windows-Update-Agent/(?<os_version>\d+\.\d+)[\d.]* Client-Protocol/[\d.]+'
+  os: {name: Windows, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Windows Update Agent, version: ""}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'MSDW'
+  os: {name: Windows, version: "", platform: ""}
+  client: {type: mobile app, name: Dr. Watson, version: ""}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'qBittorrent/(?<client_version>[\d.]+) ProgramUpdater \(www\.qbittorrent\.org\)'
+  client: {type: mobile app, name: qBittorrent, version: "{client_version}"}
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'CPUID'
+  client: {type: mobile app, name: CPU-Z, version: ""}
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'AIDA64'
+  client: {type: mobile app, name: AIDA64, version: ""}
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'HandBrake Win Upd (?<client_version>[\d.]+) \d+'
+  os: {name: Windows, version: "", platform: ""}
+  client: {type: mobile app, name: HandBrake, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/4\.0 \(CCleaner, (?<client_version>[\d.]+)\)'
+  client: {type: mobile app, name: CCleaner, version: "{client_version}"}
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft Edge Update/(?<client_version>[\d.]+);winhttp'
+  os: {name: Windows, version: "", platform: ""}
+  client: {type: mobile app, name: Edge Update, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+# Watch1,2 is the 42 mm first generation Apple Watch
+-
+  regex: 'BBCNewsUKWatchApp/(?<client_version>[\d.]+) \(Watch1,2; watchOS (?<os_version>[\d.]+)\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: mobile app, name: BBC News, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); JLN-LX1 Build/[\w-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36 PetalSearch/(?<client_version>[\d.]+)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Petal Search, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: Nova 9 SE}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Version/[\d.]+ Mobile/\w+ Snapchat/(?<client_version>[\d.]+) \(like Safari/[\d.]+\)'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Snapchat, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>Pixel \w+ Pro) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36Snapchat(?<client_version>[\d.]+) \([^)]+\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Snapchat, version: "{client_version}"}
+  device: {type: smartphone, brand: Google, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'CronetSnapDevSheldon/\d+'
+  client: {type: mobile app, name: Snapchat, version: ""}
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Amazon\.com/(?<client_version>[\d.]+) \(Android/(?<os_version>[\d.]+)/JNY-LX1\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Amazon Shopping, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: P40 Lite}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'de\.mobile\.android\.app/\d+ \((?<client_version>[\d.]+)\)'
+  os: {name: Android, version: "", platform: ""}
+  client: {type: mobile app, name: mobile.de, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'de\.mobile\.android\.app/(?<client_version>[\d.]+) \(\d+\) \(gzip\)'
+  os: {name: Android, version: "", platform: ""}
+  client: {type: mobile app, name: mobile.de, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-N960N Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 DaumApps/(?<client_version>[\d.]+) DaumDevice/mobile'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Daum, version: "{client_version}"}
+  device: {type: phablet, brand: Samsung, model: Galaxy Note 9}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-G930W8 Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 GoogleApp/(?<client_version>[\d.]+)\.arm64'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: mobile app, name: Google Search App, version: "{client_version}"}
+  device: {type: smartphone, brand: Samsung, model: Galaxy S7}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HUAWEI (?<model>NXT-CL00) Build/[\w-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 baiduinput/(?<client_version>[\d.]+)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Baidu Input, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/4\.0 \(compatible; ms-office; MSOffice (?<client_version>\d+)\)'
+  os: {name: Windows, version: "", platform: ""}
+  client: {type: mobile app, name: Microsoft Office, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft Office/[\d.]+ \(OMDroid (?<os_version>\d+); officemobile (?<client_version>[\d.]+); Pro\)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Microsoft Office Mobile, version: "{client_version}"}
+  device: {}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft Office/[\d.]+ \(Windows NT 6\.2; Microsoft Office SyncProc (?<client_version>[\d.]+); Pro\)'
+  os: {name: Windows, version: "8", platform: ""}
+  client: {type: mobile app, name: Microsoft Office, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft Office (?<app>Visio|Word) \d+ \((?<client_version>[\d.]+)\) Windows NT 6\.2'
+  os: {name: Windows, version: "8", platform: ""}
+  client: {type: mobile app, name: "Microsoft Office {app}", version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'Microsoft Office/[\d.]+ \(Windows NT 6\.2; Microsoft Lync (?<client_version>[\d.]+); Pro\)'
+  os: {name: Windows, version: "8", platform: ""}
+  client: {type: mobile app, name: Microsoft Lync, version: "{client_version}"}
+  device: {type: desktop, brand: "", model: ""}
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'bonprix mobile App (?<client_version>[\d.]+) \(\d+\.\d+\) \(iOS (?<os_version>[\d.]+); iPhone12,5\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Version/[\d.]+ Mobile/\w+ Safari/[\d.]+'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: BonPrix, version: "{client_version}"}
+  device: {type: phablet, brand: Apple, model: iPhone 11 Pro Max}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'bonprix mobile App (?<client_version>[\d.]+) \(\d+\); Android (?<os_version>[\d.]+) API \d+; HUAWEI DRA-L01; Mozilla/5\.0 \(Linux; Android [\d.]+; DRA-L01 Build/[\w-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: BonPrix, version: "{client_version}"}
+  device: {type: smartphone, brand: Huawei, model: Y5 (2018)}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone12,3; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit \(KHTML, like Gecko\) Version/[\d.]+ Mobile Safari Quora (?<client_version>[\d.]+) rv:\d+'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Quora, version: "{client_version}"}
+  device: {type: phablet, brand: Apple, model: iPhone 11 Pro}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'relesys_web_client/[\d.]+ \(iOS/(?<os_version>[\d.]+); Apple; iPhone\) RelesysApp/(?<client_version>[\d.]+) \(\d+\) net\.relesysapp\.jj2go'
+  os: {name: iOS, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: JJ2GO, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ ZONApp/iOS/(?<client_version>[\d.]+);build:\d+'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: ZEIT ONLINE, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple, model: iPhone}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); XQ-CC54 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 ZONApp/Android/(?<client_version>[\d.]+)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: ZEIT ONLINE, version: "{client_version}"}
+  device: {type: smartphone, brand: Sony, model: Xperia 10 IV}
+  os_family: Android
+  browser_family: Unknown
+
+# Instagram, on a device the corpus never recorded. All 115 entries of this family were cut one
+# per fixture, and each froze two things that move: the model token, and the Chrome build the
+# WebView happened to be on -- `Chrome/74\.0\.3729\.157`, `Chrome/95\.0\.4638\.74`. Between them
+# they left 60 900 lines in 400 000 reaching no entry, the largest family in the traffic. The app
+# names itself and its own version plainly enough without either. Priority 1, behind every entry
+# that does know the device.
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); .+?\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) (?:Version/[\d.]+ )?Chrome/[\d.]+ (?:Mobile )?Safari/[\d.]+ Instagram (?<client_version>[\d.]+) Android \(.*'
+  priority: -2
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Instagram, version: "{client_version}"}
+  device: {type: smartphone}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ Instagram (?<client_version>[\d.]+) \(.*'
+  priority: -2
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Instagram, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPad; CPU OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ Instagram (?<client_version>[\d.]+) \(.*'
+  priority: -2
+  os: {name: iPadOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Instagram, version: "{client_version}"}
+  device: {type: tablet, brand: Apple}
+  os_family: iOS
+  browser_family: Unknown
+
+# Facebook, on a device the corpus never recorded. 311 entries carry an FB token and each was cut
+# per fixture, freezing the model and the Chrome build alongside it. Matomo needs two rules for
+# this app -- one on `FBAV`, one on `FBAN|FBSV|FBID|FBBV` -- because it matches the client apart
+# from the device and composes the two; an entry here has to answer for the whole string at once,
+# so what is wanted is one per platform rather than one per phone.
+#
+# The app writes its own version at FBAV. The four shapes are the native Android app, which
+# carries no Mozilla prefix at all and gives its Android version at FBSV, the Android WebView
+# under FB_IAB, and iPhone and iPad under FBAN/FBIOS.
+-
+  regex: '\[FBAN/FB4A;FBAV/(?<client_version>[\d.]+);.*FBSV/(?<os_version>[\d.]+);.*'
+  priority: -2
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Facebook, version: "{client_version}"}
+  device: {type: smartphone}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); .+?\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) (?:Version/[\d.]+ )?Chrome/[\d.]+ (?:Mobile )?Safari/[\w.]+ \[FB_IAB/[^;]+;FBAV/(?<client_version>[\d.]+);.*'
+  priority: -2
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: mobile app, name: Facebook, version: "{client_version}"}
+  device: {type: smartphone}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPhone; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+(?: Safari/[\d.]+)? \[FBAN/FBIOS;FBAV/(?<client_version>[\d.]+);.*'
+  priority: -2
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook, version: "{client_version}"}
+  device: {type: smartphone, brand: Apple}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPad; CPU OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+(?: Safari/[\d.]+)? \[FBAN/FBIOS;FBAV/(?<client_version>[\d.]+);.*'
+  priority: -2
+  os: {name: iPadOS, version: "{os_version|dots}", platform: ""}
+  client: {type: mobile app, name: Facebook, version: "{client_version}"}
+  device: {type: tablet, brand: Apple}
+  os_family: iOS
+  browser_family: Unknown

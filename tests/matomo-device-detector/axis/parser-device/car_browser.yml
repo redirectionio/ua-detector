@@ -1,0 +1,25 @@
+---
+-
+  user_agent: Mozilla/5.0 (X11; u; Linux; C) AppleWebKit /533.3 (Khtml, like Gheko) QtCarBrowser Safari/533.3
+  device:
+    type: car browser
+    brand: Tesla
+    model: Model S
+-
+  user_agent: Mozilla/5.0 (X11; GNU/Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chromium/75.0.3770.100 Chrome/75.0.3770.100 Safari/537.36 Tesla/2019.40.50.7-ad132c7b057e
+  device:
+    type: car browser
+    brand: Tesla
+    model: ""
+-
+  user_agent: Mozilla/5.0 (Linux; Android 9; AFTLBT962E2) AppleWebKit/537.36 (KHTML, like Gecko) Silk/118.3.1 like Chrome/118.0.5993.155 Safari/537.36
+  device:
+    type: car browser
+    brand: BMW
+    model: Car (2022)
+-
+  user_agent: Dalvik/2.1.0 (Linux; U; Android 9; AFTLFT962X3 Build/PMAIN1)
+  device:
+    type: car browser
+    brand: Jeep
+    model: Wagoneer

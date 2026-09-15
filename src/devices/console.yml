@@ -1,0 +1,844 @@
+---
+
+# Archos Gamepad
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ARCHOS GAMEPAD Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Archos
+    model: Gamepad
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; ARCHOS GAMEPAD(?<model>\d) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Archos
+    model: Gamepad {model}
+  os_family: Android
+  browser_family: Android Browser
+
+# Xbox. Only the trailing marker tells the models apart, a bare `Xbox` being the 360.
+-
+  regex: 'Mozilla/5\.0 \(compatible; MSIE (?<client_version>[\d.]+); Windows NT 6\.1; Trident/(?<engine_version>[\d.]+); Xbox\)'
+  os:
+    name: Windows
+    version: "7"
+    platform: ""
+  client:
+    type: browser
+    name: Internet Explorer
+    version: "{client_version}"
+    engine: Trident
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Microsoft
+    model: Xbox 360
+  os_family: Windows
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(compatible; MSIE (?<client_version>[\d.]+); Windows NT 6\.2; Trident/(?<engine_version>[\d.]+); Xbox; Xbox One\)'
+  os:
+    name: Windows
+    version: "8"
+    platform: ""
+  client:
+    type: browser
+    name: Internet Explorer
+    version: "{client_version}"
+    engine: Trident
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Microsoft
+    model: Xbox One
+  os_family: Windows
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(compatible; MSIE [\d.]+; Windows Phone (?<os_version>[\d.]+); Trident/(?<engine_version>[\d.]+); IEMobile/(?<client_version>[\d.]+); Xbox; Xbox One\)'
+  os:
+    name: Windows Phone
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: IE Mobile
+    version: "{client_version}"
+    engine: Trident
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Microsoft
+    model: Xbox One
+  os_family: Windows Mobile
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64; XBOX_ONE_ED\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36 Edge/(?<client_version>[\d.]+)'
+  os:
+    name: Windows
+    version: "10"
+    platform: x64
+  client:
+    type: browser
+    name: Microsoft Edge
+    version: "{client_version}"
+    engine: Edge
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Microsoft
+    model: Xbox One S
+  os_family: Windows
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 10\.0; Win64; x64; Xbox; Xbox (?<model>One X|Series X)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36 Edge/(?<client_version>[\d.]+)'
+  os:
+    name: Windows
+    version: "10"
+    platform: x64
+  client:
+    type: browser
+    name: Microsoft Edge
+    version: "{client_version}"
+    engine: Edge
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Microsoft
+    model: Xbox {model}
+  os_family: Windows
+  browser_family: Internet Explorer
+
+# Nintendo handhelds run what matomo calls Nintendo Mobile
+-
+  regex: 'Mozilla/5\.0 \(Nintendo 3DS; U; ; [a-z]{2}\) Version/[\d.]+\.\w+'
+  os:
+    name: Nintendo Mobile
+    version: 3DS
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: Nintendo
+    model: 3DS
+  os_family: Mobile Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Bunjalloo/(?<client_version>[\d.]+)\(Nintendo DS;U;[a-z]{2}\)'
+  os:
+    name: Nintendo Mobile
+    version: DS
+    platform: ""
+  client:
+    type: browser
+    name: Bunjalloo
+    version: "{client_version}"
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: Nintendo
+    model: DS
+  os_family: Mobile Gaming Console
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(New Nintendo 3DS like iPhone\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) NX/[\d.]+ Mobile NintendoBrowser/(?<client_version>[\d.]+)\.\w+'
+  os:
+    name: Nintendo Mobile
+    version: 3DS
+    platform: ""
+  client:
+    type: browser
+    name: Nintendo Browser
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: 3DS
+  os_family: Mobile Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mech\.Mozilla/[\d.]+ \(Nintendo GameBoy; U\) \[[a-z]{2}\]'
+  device:
+    type: console
+    brand: Nintendo
+    model: GameBoy
+  os_family: Unknown
+  browser_family: Unknown
+
+# Nintendo home consoles
+-
+  regex: 'Mozilla/5\.0 \(Nintendo Switch; WifiWebAuthApplet\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) NF/[\d.]+ NintendoBrowser/(?<client_version>[\d.]+)'
+  os:
+    name: Nintendo
+    version: Switch
+    platform: ""
+  client:
+    type: browser
+    name: Nintendo Browser
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: Switch
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(Nintendo Switch; LoginApplet; Nintendo Switch (?<model>Lite|OLED)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) NF/[\d.]+ NintendoBrowser/(?<client_version>[\d.]+)'
+  os:
+    name: Nintendo
+    version: Switch
+    platform: ""
+  client:
+    type: browser
+    name: Nintendo Browser
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: Switch {model}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Opera/(?<client_version>[\d.]+) \(Nintendo Wii; U; ; \d+; [a-z]{2}\)'
+  os:
+    name: Nintendo
+    version: Wii
+    platform: ""
+  client:
+    type: browser
+    name: Opera
+    version: "{client_version}"
+    engine: Presto
+    engine_version: ""
+  device:
+    type: console
+    brand: Nintendo
+    model: Wii
+  os_family: Gaming Console
+  browser_family: Opera
+
+-
+  regex: 'Mozilla/5\.0 \(Nintendo (?<model>WiiU)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) NX/[\d.]+ NintendoBrowser/(?<client_version>[\d.]+)\.\w+'
+  os:
+    name: Nintendo
+    version: Wii
+    platform: ""
+  client:
+    type: browser
+    name: Nintendo Browser
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: "{model}"
+  os_family: Gaming Console
+  browser_family: NetFront
+
+# The Switch also shows up running Lineage OS, where Android 15 is Lineage 22
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android 15; Switch(?: (?<model>OLED))?\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Lineage OS
+    version: "22"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: Switch {model}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android 15; Switch (?<model>Lite)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+)/apad BroPP/[\d.]+ YaSearchApp/[\d.]+/apad webOmni SA/\d+ Mobile Safari/537\.36'
+  os:
+    name: Lineage OS
+    version: "22"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: Switch {model}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android 15; Switch\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+)/apad BroPP/[\d.]+ YaSearchApp/[\d.]+/apad webOmni SA/\d+ Safari/537\.36'
+  os:
+    name: Lineage OS
+    version: "22"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Nintendo
+    model: Switch
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android OUYA (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; OUYA Build/[\w-]+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: OUYA
+    model: OUYA
+  os_family: Android
+  browser_family: Android Browser
+
+# PlayStation, whose operating system version is the console number followed by the firmware
+-
+  regex: 'Mozilla/5\.0 \((?i:PLAYSTATION) (?<console>3) (?<firmware>[\d.]+)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\)'
+  os:
+    name: PlayStation
+    version: "{console}.{firmware}"
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation (?<console>4) (?<firmware>[\d.]+)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\)'
+  os:
+    name: PlayStation
+    version: "{console}.{firmware}"
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation (?<console>4) Pro (?<firmware>[\d.]+)\)'
+  os:
+    name: PlayStation
+    version: "{console}.{firmware}"
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console} Pro
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation (?<console>4) PRO\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko, HEVC, HDR, UHD\) SCEE/[\d.]+ Nuanti/(?<client_version>[\d.]+)'
+  os:
+    name: PlayStation
+    version: "{console}"
+    platform: ""
+  client:
+    type: browser
+    name: Nuanti Meta
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console} Pro
+  os_family: Gaming Console
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation; PlayStation (?<console>5)/(?<firmware>[\d.]+)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/[\d.]+ Safari/[\d.]+'
+  os:
+    name: PlayStation
+    version: "{console}.{firmware}"
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation (?<console>5) (?<firmware>[\d.]+)/SmartTV\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\)'
+  os:
+    name: PlayStation
+    version: "{console}.{firmware}"
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation (?<console>5)/SmartTV\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\)'
+  os:
+    name: PlayStation
+    version: "{console}"
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \[[a-z]{2}\] \(Playstation(?<console>2); Linux (?<os_version>[\d.]+) MIPS; [a-z]{2}-[A-Z]{2}; rv:(?<engine_version>\d+\.\d+)\w*\) Gecko/\d+'
+  os:
+    name: PlayStation
+    version: "{os_version}"
+    platform: MIPS
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: Gecko
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation {console}
+  os_family: Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PS3\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) NuantiMeta/(?<client_version>[\d.]+)'
+  client:
+    type: browser
+    name: Nuanti Meta
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation 3
+  os_family: Unknown
+  browser_family: Unknown
+
+# The PSP and the Vita both report as PlayStation Portable, with the model as the version
+-
+  regex: 'Mozilla/4\.0 \(PlayStation Portable\); [\d.]+\)'
+  os:
+    name: PlayStation Portable
+    version: Portable
+    platform: ""
+  client:
+    type: browser
+    name: NetFront
+    version: ""
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation Portable
+  os_family: Mobile Gaming Console
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/5\.0 \(PlayStation Vita [\d.]+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Silk/(?<client_version>[\d.]+)'
+  os:
+    name: PlayStation Portable
+    version: Vita
+    platform: ""
+  client:
+    type: browser
+    name: Mobile Silk
+    version: "{client_version}"
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Sony
+    model: PlayStation Vita
+  os_family: Mobile Gaming Console
+  browser_family: Chrome
+
+# Android handhelds
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Retroid Pocket 2(?:Plus|\+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Retroid Pocket
+    model: 2 Plus
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Retroid Pocket (?<model>5)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Retroid Pocket
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Retroid Pocket (?<model>4 Pro)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/\d+ Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Retroid Pocket
+    model: "{model}"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[A-Z]{2}; Retroid Pocket (?<model>3 Plus) Build/[\w.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) UCBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: UC Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Retroid Pocket
+    model: "{model}"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RGCUBE\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: ANBERNIC
+    model: RG Cube
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>RG(?:40\d[A-Z]|505|556))\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: ANBERNIC
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); (?<model>RG(?:40\d[A-Z]|505|556))\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/\d+ Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: ANBERNIC
+    model: "{model}"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Razer Edge (?<model>5G)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Razer
+    model: Edge {model}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SHIELD Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Webview
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Nvidia
+    model: SHIELD Portable
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'UCWEB/[\d.]+ \(MIDP-[\d.]+; U; Adr (?<os_version>[\d.]+); [a-z]{2}; JXD_(?<model>S\d+)WIFI\) U2/[\d.]+ UCBrowser/(?<client_version>[\d.]+) U2/[\d.]+ Mobile'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: UC Browser
+    version: "{client_version}"
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: JXD
+    model: "{model} WiFi"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); DEXP (?<model>\w+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: DEXP
+    model: "{model}"
+  os_family: Android
+  browser_family: Unknown
+
+# Aplix shipped the same browser on the Saturn and on Sanyo's 3DO clone
+-
+  regex: 'Aplix_SEGASATURN_browser/(?<client_version>[\d.]+) \(Japanese\)'
+  client:
+    type: browser
+    name: Aplix
+    version: "{client_version}"
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: Sega
+    model: Saturn
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Aplix_SANYO_browser/(?<client_version>[\d.]+) \(Japanese\)'
+  client:
+    type: browser
+    name: Aplix
+    version: "{client_version}"
+    engine: ""
+    engine_version: ""
+  device:
+    type: console
+    brand: Sanyo
+    model: 3DO TRY
+  os_family: Unknown
+  browser_family: Unknown
+
+# Valve, both the handheld and the overlay injected into games
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36 SteamDeck'
+  os:
+    name: SteamOS
+    version: ""
+    platform: x64
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: console
+    brand: Valve Corporation
+    model: Steam Deck
+  os_family: Mobile Gaming Console
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64; Valve Steam GameOverlay; \) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36'
+  os:
+    name: SteamOS
+    version: ""
+    platform: x64
+  client:
+    type: browser
+    name: Steam In-Game Overlay
+    version: ""
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: console
+    brand: Valve Corporation
+    model: ""
+  os_family: Mobile Gaming Console
+  browser_family: Chrome

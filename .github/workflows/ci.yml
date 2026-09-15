@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  check:
+    name: Build and unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build --release --examples
+      - run: cargo clippy --release --lib --examples --benches
+      - run: cargo test --release --lib
+      # Hand written, and not covered by the corpus: the production user agents the corpus shows
+      # once or not at all. See tests/pinned/production.rs.
+      - run: cargo test --release --test pinned
+
+  corpus:
+    name: The whole corpus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      # Every one of the 38 030 fixture cases, one test each, read off disk. Twice: once against
+      # the database as it ships, embedded, and once against the files, which is how it is run
+      # while working.
+      - run: cargo test --release --test corpus
+      - run: cargo test --release --no-default-features --test corpus

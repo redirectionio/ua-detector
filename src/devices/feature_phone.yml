@@ -1,0 +1,1233 @@
+---
+
+# KaiOS feature phones, all sharing one user agent shape where only the token between the
+# first two semicolons tells the device apart.
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Fise_32433_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'FISE', model: 'M32433 3G'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; DIXON_XK1_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'DIXON', model: 'XK1 3G'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Tech_Pad_Kaios_One_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'TechPad', model: 'Kaios One 3G'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Crosscall_Core-S4_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Crosscall', model: 'Core-S4'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; IPRO_K2_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'iPro', model: 'K2 3G'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; CAT (?<model>B\d+); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Cat', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ATT_EA211101; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'AT&T', model: 'Cingular Flex'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ATT_U102AA; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'AT&T', model: 'Cingular Flip IV'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ATT_U1030AA; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'AT&T', model: 'Cingular Flex 2'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; CKT_U102AC; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Cricket', model: 'Debut Flip'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; CKT_U1030AC; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Cricket', model: 'Debut Flex'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Nokia (?<model>2720 V Flip); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Nokia', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Nokia_(?<model>2720_Flip); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Nokia', model: '{model|spaces}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; 3088X; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: '3088'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL 4052[CR]; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'SmartFlip'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL 4052[OWZ]; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'Go Flip 3'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL 4056[WZ]; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'Go Flip 4'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL A406DL; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'MyFlip 2'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Mango_(?<model>AKABUTO)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Mango', model: '{model|title} 4G'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Doppio_(?<model>TEXTER)_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Doppio', model: '{model|title}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; BLACKPHONE_Blackphone_(?<model>K\d+)_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Blackphone', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; GEOPHONE_T19I_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Geo Phone', model: 'T19i'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Geo_Phone_(?<model>T\d+)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Geo Phone', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Accent_Nubia(?<model>\d+K); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Accent', model: 'Nubia {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ACCENT_NUBIA(?<model>\d+K); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Accent', model: 'Nubia {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Accent_60K28_512; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Accent', model: 'Nubia 60K'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; B300V; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Blu', model: 'Flex'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; BLU_TankMega_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Blu', model: 'Tank Mega'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; BLU_(?<model>ZOEY_SMART); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Blu', model: '{model|spaces|title}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Multilaser_(?<model>ZAPP); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Multilaser', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Multilaser_(?<model>ZAPP_II)_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Multilaser', model: '{model|spaces}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; M560M3; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'MTN', model: 'Smart S'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; M561M3; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'MTN', model: 'Smart T'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; M571M3; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'MTN', model: 'Smart Kamunye'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; M562F3; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Orange', model: 'Sanza'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Sanza-M560F3; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Orange', model: 'Sanza'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; RED_X_(?<model>RX\d+)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'RED-X', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; SIGMAMOBILE-S3500-3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sigma', model: 'X-Style'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; R3Di_(?<model>FR\d+); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'R3Di', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Symphony_(?<model>PD1_4G)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Symphony', model: '{model|spaces}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Bmobile_(?<model>W\d+K)_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Bmobile', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Digit_Digit4G-(?<model>Bold|Defender|Elite|Music|Power|Star)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Digit', model: 'Digit4G {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Digit_Digit4G(?<model>Lite)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Digit', model: 'Digit4G {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Digit_Digit4GPowerMAX_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Digit', model: 'Digit4G Power Max'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Digit_Digit4G_(?<model>Shine)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Digit', model: 'Digit4G {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Energizer_(?<model>E\d+); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Energizer', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ENERGIZER_(?<model>E\d+S); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Energizer', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Energizer_(?<model>E\d+S?C?)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Energizer', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ENERGIZER_(?<model>H\d+A)_512; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Energizer', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; IDC_(?<model>Voice_20)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'IDC', model: '{model|spaces}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Free_Wi-Kif(?<model>4G)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'free', model: 'Wi-Kif {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Telma_Wi-Kif\+(?<model>[34]G)_[34]G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Telma', model: 'Wi-Kif+ {model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Telma_Wikif_Max_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Telma', model: 'Wi-Kif Max'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; KLT_(?<model>K\d+); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'K-Lite', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ASPERA_(?<model>[FR]\d+)_4G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Aspera', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Condor_(?<model>FP\w+); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Condor', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; LOGAN_(?<model>Panita)_3G; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'LOGAN', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; MAXCOM (?<model>MK\d+); rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Maxcom', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; LYF/(?<model>[\w-]+)/[\w-]+;\s*Android; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'LYF', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Jio/(?<model>[\w-]+)/[\w-]+;\s*Android; rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Jio', model: '{model}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; rv:[\d.]+; (?<model>A405DL)\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: Alcatel, model: 'MyFlip'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+# These two write the tokens without spaces around the semicolons
+-
+  regex: 'Mozilla/5\.0 \(Mobile;Orange_Neva(?<model>link|mini);rv:[\d.]+(?:; \w+)?\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KAIOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Mobile, version: "{client_version}", engine: Gecko, engine_version: "{client_version}"}
+  device: {type: feature phone, brand: Orange, model: 'Neva {model|title}'}
+  os_family: Firefox OS
+  browser_family: Firefox
+-
+  regex: 'BenQ-(?<model>\w+)/[\d.]+/WAP[\d.]+/MIDP[\d.]+/CLDC[\d.]+ UP\.Browser/(?<client_version>[\d.]+)\.\w\.[\d.]+ \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'BenQ', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Cricket-(?<model>\w+)/[\d.]+ UP\.Browser/(?<client_version>[\d.]+) \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Cricket', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'KDDI-(?<model>\w+) UP\.Browser/(?<client_version>\d+\.\d+)_[\d.]+\.\w\.[\d.]+ \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'KDDI', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'KDDI-(?<model>CA32) UP\.Browser/(?<client_version>[\d.]+) \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'KDDI', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SAGEM-(?<model>my411C-orange)/[\d.]+/ MIDP-[\d.]+ Configuration/CLDC-[\d.]+ Browser/UP\.Browser/(?<client_version>\d+\.\d+\.\d+)\.\w\.[\d.]+ \(GUI\)'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sagem', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Sagem-(?<model>my411X)/[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ Browser/UP\.Browser/(?<client_version>\d+\.\d+\.\d+)\.\w\.[\d.]+ \(GUI\)'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sagem', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SAGEM-(?<model>my511X-orange)/[\d.]+/ MIDP-[\d.]+ Configuration/CLDC-[\d.]+ Browser/UP\.Browser/(?<client_version>\d+\.\d+\.\d+)\.\w\.[\d.]+ \(GUI\)'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sagem', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SAGEM-(?<model>myC5-2v)/[\d.]+ UP\.Browser/(?<client_version>\d+\.\d+\.\d+\.\d+)\.\w\.[\d.]+ \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sagem', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SAGEM-(?<model>myV-55)/[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ UP\.Browser/(?<client_version>\d+\.\d+\.\d+\.\d+)\.\w\.[\d.]+ \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sagem', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'VK-VK(?<model>\d+) UP\.Browser/(?<client_version>[\d.]+) \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'VK Mobile', model: 'VK{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'vk-vk(?<model>\d+)/[\d.]+ up\.browser/(?<client_version>[\d.]+) \(gui\) mmp/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'VK Mobile', model: 'VK{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SIE-(?<model>S55)/\d+ UP\.Browser/(?<client_version>\d+\.\d+\.\d+\.\d+)\.\w\.\d+ \(GUI\) MMP/[\d.]+ UP\.Link/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Siemens', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SIE-(?<model>S65)/\d+ UP\.Browser/(?<client_version>\d+\.\d+\.\d+\.\d+)\.\w\d* \(GUI\) MMP/[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ UP\.Link/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Siemens', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SIE-(?<model>C45|ME45)/\d+ UP\.Browser/(?<client_version>[\d.]+) \(GUI\)'
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Siemens', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'SIE-(?<model>SLIK|S40)/[\d.]+ UP/[\d.]+\w*'
+  device: {type: feature phone, brand: 'Siemens', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Amoi-(?<model>\w+)/[\d.]+ UP\.Browser/(?<client_version>[\d.]+) \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Amoi', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'O2-(?<model>X[12]i)/[\d.]+ UP\.Browser/(?<client_version>\d+\.\d+\.\d+\.\d+\.\d+)\.\w\.[\d.]+ \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'O2', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'O2-(?<model>X4) UP\.Browser/(?<client_version>[\d.]+) \(GUI\) MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'O2', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SAMSUNG-GT-(?<model>E\d+)/\w+ NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Samsung', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonU10/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Aino'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonU100i/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Aino'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonJ108i/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Cedar'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonJ10i2/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Elm'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonJ20i/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Hazel'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonF100i/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Jalou'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonJ105i/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Naite'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'SonyEricssonW20/\w+ Browser/NetFront/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ JavaPlatform/JP-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Zylo'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/4\.0 \(Brew MP (?<os_version>[\d.]+); U; [a-z]{2}-[a-z]{2}; Kyocera; NetFront/(?<client_version>[\d.]+)/AMB\) Sprint S2151-BST'
+  os: {name: Brew, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Kyocera', model: 'Coast'}
+  os_family: Brew
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/4\.0 \(BREW (?<os_version>[\d.]+); U; [a-z]{2}-[a-z]{2}; Sanyo; NetFront/(?<client_version>[\d.]+)/AMB\) Boost SCP6760'
+  os: {name: Brew, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sanyo', model: 'Incognito'}
+  os_family: Brew
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/4\.0 \(Brew MP (?<os_version>[\d.]+); U; [a-z]{2}-[a-z]{2}; Sanyo; NetFront/(?<client_version>[\d.]+)/AMB\) Boost SCP6780'
+  os: {name: Brew, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sanyo', model: 'Innuendo'}
+  os_family: Brew
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/4\.0 \(REX; U; [a-z]{2}-[a-z]{2}; Sanyo; SCP-6750/US; NetFront/(?<client_version>[\d.]+)/AMB\)'
+  os: {name: REX, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sanyo', model: 'Katana Eclipse X'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/4\.0 \(MobilePhone (?<model>PM-\d+)/US/[\d.]+\) NetFront/(?<client_version>\d+)\.x MMP/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sanyo', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: NetFront
+
+-
+  regex: 'Mozilla/3\.0\(WILLCOM;SANYO/(?<model>WX\w+)/\d+;\d+/\d+/C\d+\) NetFront/(?<client_version>[\d.]+)'
+  client: {type: browser, name: 'NetFront', version: "{client_version}", engine: 'NetFront', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sanyo', model: '{model}'}
+  os_family: Unknown
+  browser_family: NetFront
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/LARUS_TV1_V\d+_[\d-]+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'DEXP', model: 'Larus TV1'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/Discover136_S\d+_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Lava', model: 'Discover 136'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_DE\d+-EXPLAY-FIN_L\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Explay', model: 'Fin'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/KKT_Quadra_S\d+_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Lava', model: 'KKT Quadra'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/KKT40PowerP_S\d+_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Lava', model: 'KKT40 Power Plus'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_T19A_MAXVI_P11_MTK\w+_V\d+_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'MAXVI', model: 'P11'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_Maxvi_K10_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'MAXVI', model: 'K10'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_Maxvi_X300_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'MAXVI', model: 'X300'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_Maxvi_X500_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'MAXVI', model: 'X500'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_Maxvi_X800_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'MAXVI', model: 'X800'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/XB59_ARTEL_V5_V\d+_\d+_MP;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Artel', model: 'V5'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_AX2941_ARTEL_X4_V\d+_\d+_MP;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Artel', model: 'X4'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/ARTEL_F5_V\d+_\d+_MP;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Artel', model: 'F5'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/ARTEL_M5_V\d+_\d+_MP;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Artel', model: 'M5'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_X2805_ARTEL_X5_V\d+_\d+_MP;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Artel', model: 'X5'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '[\w.]+(?: [\w.]+)*[ _]?\(?MRE/(?<os_version>\d+\.\d+)[\d.]*(?:\(\d+\))?;MAUI/_LD2409_WINMAX_BD45_\d+;.*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Winmax', model: 'BD45'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'GIONEE(?<model>\d+)_\d+_\w+_HW \(MRE\\\\(?<os_version>[\d.]+)\(\d+\).*'
+  os: {name: MRE, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Gionee', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'GIONEE (?<model>\w+)/\w+ MAUI-browser/MIDP[\d.]+/CLDC[\d.]+/Screen-\d+X\d+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Gionee', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Videocon_(?<model>V\d+)_Maui Wap Browser Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Videocon', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Micromax (?<model>X\d+)/\w+ MAUI-Browser Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'MicroMax', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: '(?<model>G\d+)_MAUI WAP Browser'
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'A&K', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'FLY_(?<model>E141TV_PLUS)/ WAP Browser/MAUI\(HTTP PGDL;HTTPS\)Profile/\w+-[\d.]+ [a-z]{2}-[A-Z]{2}'
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+  device: {type: feature phone, brand: 'Fly', model: '{model|spaces}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'lephone (?<model>K\d+)/Dorado WAP-Browser/(?<client_version>[\d.]+)'
+  os: {name: Mocor OS, version: "", platform: ""}
+  client: {type: browser, name: 'Dorado', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Lephone', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Nokia Browser
+
+-
+  regex: '(?<model>B30)_Dorado WAP-Browser/(?<client_version>[\d.]+)'
+  os: {name: Mocor OS, version: "", platform: ""}
+  client: {type: browser, name: 'Dorado', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Cat', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Nokia Browser
+
+-
+  regex: 'LAVA (?<model>Spark i\d+)/MIDP-[\d.]+ Configuration/CLDC-[\d.]+/Screen-\d+x\d+  Dorado WAP-Browser'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Dorado', version: ""}
+  device: {type: feature phone, brand: 'Lava', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Nokia Browser
+
+-
+  regex: 'AIRNESS-(?<model>\w+)/REV [\d.]+/Teleca \w+'
+  client: {type: browser, name: 'Obigo', version: ""}
+  device: {type: feature phone, brand: 'Airness', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'SonyEricssonWT13i/[\w.]+ TelecaBrowser/\w+-\d+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Obigo', version: ""}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Mix Walkman'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SonyEricssonCK13i/[\w.]+ TelecaBrowser/\w+-\d+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Obigo', version: ""}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'txt'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SonyEricssonCK15i/[\w.]+ TelecaBrowser/\w+-\d+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Obigo', version: ""}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'txt pro'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SonyEricssonW150a/[\w.]+ TelecaBrowser/\w+-\d+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Obigo', version: ""}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Yendo'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'UCWEB/[\d.]+ \(Java; U; MIDP-[\d.]+; [a-z]{2}-[A-Z]{2}; sonyericssonwt13i\) U2/[\d.]+ UCBrowser/(?<client_version>[\d.]+) U2/[\d.]+ Mobile UNTRUSTED/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Mix Walkman'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'UCWEB/[\d.]+ \(Java; U; MIDP-[\d.]+; [a-z]{2}-[A-Z]{2}; SonyEricssonCK15i\) U2/[\d.]+ UCBrowser/(?<client_version>[\d.]+) U2/[\d.]+ Mobile UNTRUSTED/[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'txt pro'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'SonyEricssonP910i/\w+ SEMC-Browser/Symbian/[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Symbian^3, version: "", platform: ""}
+  client: {type: browser, name: 'SEMC-Browser', version: ""}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'P910i'}
+  os_family: Symbian
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(SymbianOS/[\d.]+;U; Series60/(?<os_version>[\d.]+) SonyEricssonU1i/[\d.]+;Profile/MIDP-[\d.]+ Configuration/ CLDC-[\d.]+\)AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\).*'
+  os: {name: Symbian OS Series 60, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Nokia Browser', version: "7.0", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Satio'}
+  os_family: Symbian
+  browser_family: Nokia Browser
+
+-
+  regex: 'Mozilla/5\.0 \(SymbianOS/[\d.]+;U; Series60/(?<os_version>[\d.]+) SonyEricssonU5i/[\d.]+;Profile/MIDP-[\d.]+ Configuration/ CLDC-[\d.]+\)AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\).*'
+  os: {name: Symbian OS Series 60, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Nokia Browser', version: "7.0", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Vivaz'}
+  os_family: Symbian
+  browser_family: Nokia Browser
+
+-
+  regex: 'Mozilla/5\.0 \(SymbianOS/[\d.]+;U; Series60/(?<os_version>[\d.]+) SonyEricssonU8i/[\d.]+;Profile/MIDP-[\d.]+ Configuration/ CLDC-[\d.]+\)AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\).*'
+  os: {name: Symbian OS Series 60, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Nokia Browser', version: "7.0", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Vivaz pro'}
+  os_family: Symbian
+  browser_family: Nokia Browser
+
+-
+  regex: 'SonyEricssonU1i/\w+; Mozilla/5\.0 \(SymbianOS/[\d.]+; U; Series60/(?<os_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like.*'
+  os: {name: Symbian OS Series 60, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Nokia Browser', version: "7.0", engine: 'WebKit', engine_version: "{engine_version}"}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Satio'}
+  os_family: Symbian
+  browser_family: Nokia Browser
+
+-
+  regex: 'R380 [\d.]+ WAP[\d.]+'
+  device: {type: feature phone, brand: 'Ericsson', model: 'R380'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Fly_(?<model>DS\d+)/\w+_MAUI_Browser/MIDP[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  device: {type: feature phone, brand: 'Fly', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Fly_(?<model>E\d+)/WAPBrowserProfile/MIDP[\d.]+ Configuration/CLDC[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  device: {type: feature phone, brand: 'Fly', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'FLY-(?<model>SL\d+)/BSI AU\.Browser/[\d.]+ \w+'
+  device: {type: feature phone, brand: 'Fly', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Karbonn (?<model>K\w+) WAP-Browser/[\d.]+'
+  device: {type: feature phone, brand: 'Karbonn', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'WAP Browser-Karbonn (?<model>K\w+)/[\d.]+'
+  device: {type: feature phone, brand: 'Karbonn', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 Opera/[\d.]+ \(KDDI-(?<model>\w+); BREW; Opera Mobi; U; \w+\) Presto/(?<engine_version>[\d.]+) Version/(?<client_version>[\d.]+)'
+  os: {name: Brew, version: "", platform: ""}
+  client: {type: browser, name: 'Opera Mobile', version: "{client_version}", engine: 'Presto', engine_version: "{engine_version}"}
+  device: {type: feature phone, brand: 'KDDI', model: '{model}'}
+  os_family: Brew
+  browser_family: Opera
+
+-
+  regex: 'MOT-(?<model>V\d+)v/[\w.]+ MIB/(?<client_version>[\d.]+) Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  client: {type: browser, name: 'Motorola Internet Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Motorola', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/4\.0 \(compatible; MSIE [\d.]+; Windows CE; IEMobile (?<client_version>[\d.]+); [a-z]{2}-[A-Z]{2}; KIN\.Two (?<os_version>[\d.]+)\)'
+  os: {name: KIN OS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'IE Mobile', version: "{client_version}", engine: 'Trident', engine_version: ""}
+  device: {type: feature phone, brand: 'Microsoft', model: 'Kin Two'}
+  os_family: Windows Mobile
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Sonim-(?<model>XP\d+)/[\w_]+;U;REX/[\d.]+;BREW/(?<os_version>[\d.]+);\d+\*\d+;CTC/[\d.]+\) POLARIS/(?<client_version>[\d.]+)'
+  os: {name: Brew, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Polaris', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Sonim', model: '{model}'}
+  os_family: Brew
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/4\.0 \(jig browser (?<client_version>[\d.]+); (?<model>P\d+i)\)'
+  client: {type: browser, name: 'Jig Browser', version: "{client_version}"}
+  device: {type: feature phone, brand: 'Panasonic', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'SonyEricssonW100i/[\d.]+ Browser/[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  device: {type: feature phone, brand: 'Sony Ericsson', model: 'Spiro'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'TIANYU-KTOUCH/(?<model>\w+)/Screen-\d+X\d+'
+  device: {type: feature phone, brand: 'TIANYU', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/4\.0 \(compatible; MSIE [\d.]+; Windows CE; IEMobile (?<client_version>[\d.]+); MSIEMobile [\d.]+\) \d+x\d+; VZW; UTStar-(?<model>\w+); Window Mobile [\d.]+ Standard;.*'
+  os: {name: Windows CE, version: "", platform: ""}
+  client: {type: browser, name: 'IE Mobile', version: "{client_version}", engine: 'Trident', engine_version: ""}
+  device: {type: feature phone, brand: 'UTStarcom', model: '{model}'}
+  os_family: Windows Mobile
+  browser_family: Internet Explorer
+
+-
+  regex: 'CAT-(?<model>B\d+) MIDP-[\d.]+/CLDC-[\d.]+ Release/[\d.]+ Browser/Opera \(HTTPS\) Sync/SyncClient[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+ Opera/[\d.]+.*Presto/(?<engine_version>[\d.]+).*Version/(?<client_version>[\d.]+).*'
+  os: {name: MTK / Nucleus, version: "", platform: ""}
+  client: {type: browser, name: 'Opera Mobile', version: "{client_version}", engine: 'Presto', engine_version: "{engine_version}"}
+  device: {type: feature phone, brand: 'Cat', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Opera
+
+-
+  regex: 'DoCoMo/(?<client_version>[\d.]+) MST_v_(?<model>\w+)'
+  client: {type: browser, name: 'DoCoMo', version: "{client_version}"}
+  device: {type: feature phone, brand: 'DoCoMo', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'DoCoMo/(?<client_version>[\d.]+)/(?<model>\w+)'
+  client: {type: browser, name: 'DoCoMo', version: "{client_version}"}
+  device: {type: feature phone, brand: 'DoCoMo', model: '{model}'}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'G-Fone(?<model>\d+)/Browser/WAP[\d.]+ Profile/MIDP-[\d.]+ Configuration/CLDC-[\d.]+'
+  os: {name: Java ME, version: "", platform: ""}
+  device: {type: feature phone, brand: 'Gfone', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'LAVA (?<model>KKT Pearl)/MIDP-[\d.]+ Configuration/CLDC-[\d.]+/Screen-\d+x\d+'
+  os: {name: Java ME, version: "", platform: ""}
+  device: {type: feature phone, brand: 'Lava', model: '{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'TECNOT(?<model>\d+)/wap[\d.]+_Profile/MIDP-[\d.]+/CLDC-[\d.]+/\d+x\d+/key'
+  os: {name: Java ME, version: "", platform: ""}
+  device: {type: feature phone, brand: 'Tecno Mobile', model: 'T{model}'}
+  os_family: Real-time OS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; Windows Phone (?<os_version>[\d.]+); Android [\d.]+; ARM; Trident/(?<engine_version>[\d.]+); Touch; rv:[\d.]+; IEMobile/(?<client_version>[\d.]+); HISENSE; E260T\+\).*'
+  os: {name: Windows Phone, version: "{os_version}", platform: "ARM"}
+  client: {type: browser, name: 'IE Mobile', version: "{client_version}", engine: 'Trident', engine_version: "{engine_version}"}
+  device: {type: smartphone, brand: 'Hisense', model: 'Nana'}
+  os_family: Windows Mobile
+  browser_family: Internet Explorer
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL4044T; rv:[\d.]+\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KaiOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}", engine: 'Gecko', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'Go Flip'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL4044C; rv:[\d.]+\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KaiOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}", engine: 'Gecko', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'Quick Flip'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL4044O; rv:[\d.]+\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KaiOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}", engine: 'Gecko', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'Cingular Flip II'}
+  os_family: Firefox OS
+  browser_family: Firefox
+
+-
+  regex: 'Mozilla/5\.0 \(Mobile; ALCATEL4044V; rv:[\d.]+\) Gecko/[\d.]+ Firefox/(?<client_version>[\d.]+) KaiOS/(?<os_version>[\d.]+)'
+  os: {name: KaiOS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}", engine: 'Gecko', engine_version: "{client_version}"}
+  device: {type: feature phone, brand: 'Alcatel', model: 'Go Flip V'}
+  os_family: Firefox OS
+  browser_family: Firefox

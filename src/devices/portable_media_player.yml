@@ -1,0 +1,728 @@
+---
+
+# Apple iPod touch. The generation is only readable from the hardware identifier, when the
+# user agent carries one at all.
+-
+  regex: 'Mozilla/5\.0 \(iPod; U; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X; [a-z]{2}-[a-z]{2}\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Mobile/\w+'
+  os:
+    name: iOS
+    version: "{os_version|dots}"
+    platform: ""
+  client:
+    type: browser
+    name: Mobile Safari
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch
+  os_family: iOS
+  browser_family: Safari
+
+-
+  regex: 'iPodTouch7'
+  os:
+    name: iOS
+    version: ""
+    platform: ""
+  client:
+    type: browser
+    name: Mobile Safari
+    version: ""
+    engine: WebKit
+    engine_version: ""
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch 7
+  os_family: iOS
+  browser_family: Safari
+
+# iPod5,1 is the fifth generation, iPod7,1 the sixth: the hardware identifier runs ahead of
+# the marketing name.
+-
+  regex: 'Mozilla/5\.0 \(iPod touch; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ Instagram (?<client_version>[\d.]+) \(iPod5,1;.*'
+  os:
+    name: iOS
+    version: "{os_version|dots}"
+    platform: ""
+  client:
+    type: mobile app
+    name: Instagram
+    version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch 5
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(iPod touch; CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) Mobile/\w+ Instagram (?<client_version>[\d.]+) \(iPod7,1;.*'
+  os:
+    name: iOS
+    version: "{os_version|dots}"
+    platform: ""
+  client:
+    type: mobile app
+    name: Instagram
+    version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch 6
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'GooglePodcasts/(?<client_version>[\d.]+) iPod_touch/(?<os_version>[\d.]+) hw/iPod9_1'
+  os:
+    name: iOS
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: mobile app
+    name: Google Podcasts
+    version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch 7
+  os_family: iOS
+  browser_family: Unknown
+
+# `iPhone OS 421` is how this build spells 4.2.1
+-
+  regex: 'Mozilla/5\.0 \(iPod; U; CPU iPhone OS 421 like Mac OS X; [a-z]{2}-[A-Z]{2}\) AppleWebKit/[\d.]+ \(KHTML like Gecko\) Mobile/\w+ iPod41 BingWeb/(?<client_version>[\d.]+)'
+  os:
+    name: iOS
+    version: "4.2.1"
+    platform: ""
+  client:
+    type: mobile app
+    name: Microsoft Bing
+    version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Apple
+    model: iPod Touch 4
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/4\.0 \(compatible; MSIE 6\.0; Windows CE; IEMobile (?<client_version>[\d.]+); Microsoft ZuneHD [\d.]+\)'
+  os:
+    name: Windows CE
+    version: ""
+    platform: ""
+  client:
+    type: browser
+    name: IE Mobile
+    version: "{client_version}"
+    engine: Trident
+    engine_version: ""
+  device:
+    type: portable media player
+    brand: Microsoft
+    model: Zune HD
+  os_family: Windows Mobile
+  browser_family: Internet Explorer
+
+# Players reporting through the stock Android browser
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; COWON (?<model>\w+) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Cowon
+    model: "{model}"
+  os_family: Android
+  browser_family: Android Browser
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+)-update1; [a-z]{2}-[a-z]{2}; Panasonic (?<model>[\w-]+) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Panasonic
+    model: "{model}"
+  os_family: Android
+  browser_family: Android Browser
+
+# Samsung Galaxy Player, sold as YP-GB1 and YP-GI1
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; YP-GB1 Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Samsung
+    model: Galaxy Player 4.0
+  os_family: Android
+  browser_family: Android Browser
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; YP-GI1 Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Samsung
+    model: Galaxy Player 4.2
+  os_family: Android
+  browser_family: Android Browser
+
+# Sony Walkman, whose model number is written `NW-<name>Series`
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; NW-(?<model>\w+)Series Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Sony
+    model: Walkman {model}
+  os_family: Android
+  browser_family: Android Browser
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NW-(?<model>\w+)Series\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Sony
+    model: Walkman {model}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Dalvik/[\d.]+ \(Linux; U; Android (?<os_version>[\d.]+); FiiO (?<model>\w+) Build/\w+\)'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Android Browser
+    version: ""
+    engine: WebKit
+    engine_version: ""
+  device:
+    type: portable media player
+    brand: FiiO
+    model: "{model}"
+  os_family: Android
+  browser_family: Android Browser
+
+# Chrome Mobile, one entry per brand since the brand cannot be read from the model alone
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); FiiO (?<model>M\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: FiiO
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Diofox (?<model>M\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Diofox
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MECHEN H1-Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: MECHEN
+    model: H1 Pro
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MECHEN (?<model>H\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: MECHEN
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SWOFY (?<model>M\d+)-Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: SWOFY
+    model: "{model} Pro"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Fanvace (?<model>M\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Fanvace
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>XDP-\d+R) Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Pioneer
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+# Chrome on a desktop sized user agent
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HMT(?<model>\d+Q?)(?: Build/\w+)?\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Xoro
+    model: HMT {model}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>DV-PTB\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Wizz
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LENCO Diverso-(?<model>\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Lenco
+    model: Diverso {model}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>SLTDVD\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Sylvania
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>DRP\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: RCA Tablets
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); MusicPAD_(?<model>\w+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Vonino
+    model: MusicPAD {model}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>Y57A)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Surfans
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+# Players reporting through the Android webview
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HMT(?<model>\d+Q?) Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Webview
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: Xoro
+    model: HMT {model}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); FiiO (?<model>M\d+(?: Plus LTD)?) Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Webview
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: FiiO
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); KUGOU-(?<model>\w+) Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Webview
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: KuGou
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); R6III Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Chrome Webview
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{client_version}"
+  device:
+    type: portable media player
+    brand: HiBy
+    model: R6 Gen III
+  os_family: Android
+  browser_family: Chrome
+
+# Quark, an Android browser that keeps the webview version alongside its own
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; Shanling (?<model>M\d+\(\d+\)) Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Quark
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Shanling
+    model: "{model}"
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-Hans-CN; HITV205N Build/[\w.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Quark
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Hisense
+    model: Touch
+  os_family: Android
+  browser_family: Chrome
+
+# Yandex Browser, which also ships as a search app
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); FiiO (?<model>M\d+S)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/[\d.]+ YaSearchApp/[\d.]+ webOmni SA/\d+ Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: FiiO
+    model: "{model}"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Oilsky (?<model>M\d+)-Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/\d+ Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Oilsky
+    model: "{model} Pro"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Diofox (?<model>M\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/\d+ Mobile Safari/537\.36'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Diofox
+    model: "{model}"
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Oilsky (?<model>M\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)'
+  os:
+    name: Android
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: browser
+    name: Opera Mobile
+    version: "{client_version}"
+    engine: Blink
+    engine_version: "{engine_version}"
+  device:
+    type: portable media player
+    brand: Oilsky
+    model: "{model}"
+  os_family: Android
+  browser_family: Opera

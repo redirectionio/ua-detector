@@ -1,0 +1,969 @@
+---
+
+# Apple Watch. The marketing name lives nowhere in the user agent, only the hardware
+# identifier does, so each identifier has to be spelled out. Sizes come in pairs and the
+# numbering runs ahead of the series: Watch2,6 is a Series 1, Watch6,10 an SE second
+# generation.
+-
+  regex: 'Watch(?<code>1,1)/(?<os_version>[\d.]+) \(\w+\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch 38mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Watch(?<code>1,2)/(?<os_version>[\d.]+) \(\w+\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:2,3) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 2 38mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:2,4) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 2 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:2,6) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 1 38mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:2,7) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 1 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:3,1|3,3) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 3 38mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:3,2|3,4) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 3 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:4,1|4,3) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 4 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:4,2|4,4) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 4 44mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:5,1|5,3) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 5 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:5,2|5,4) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 5 44mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:5,9|5,11) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch SE 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:5,10|5,12) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch SE 44mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:6,6|6,8) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 7 41mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:6,7|6,9) hwp/\w+ build/\w+ \([^)]*\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 7 45mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'atc/[\d.]+ watchOS'
+  os: {name: watchOS, version: "", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'com\.apple\.appstored/[\d.]+ watchOS/(?<os_version>[\d.]+) model/Watch(?:6,1) hwp/\w+ build/\w+ \([^)]*\) AMS/[\d.]+'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 6 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'aceApps \(watchOS (?<os_version>[\d.]+); Apple Watch(?:6,17); naverapp_ios_watch; [\d.]+\)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 8 45mm}
+  os_family: iOS
+  browser_family: Unknown
+
+# The Apple push registration daemons write the same bracketed tuple
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,2|6,4)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 6 44mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,3)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 6 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,10|6,12)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch SE (Gen 2) 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,11|6,13)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch SE (Gen 2) 44mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,14|6,16)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 8 41mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,15|6,17)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 8 45mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:6,18)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Ultra}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:7,1|7,3)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 9 41mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:7,2|7,4)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Series 9 45mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?:server-bag|com\.apple\.invitation-registration) \[Watch OS,(?<os_version>[\d.]+),\w+,Watch(?:7,5)\]'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  device: {type: wearable, brand: Apple, model: Watch Ultra 2}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,8|7,10); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Series 10 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,9|7,11); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Series 10 46mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'AppleCoreMedia/[\w.]+ \(Apple Watch; U; CPU OS (?<os_version>[\d_]+) like Mac OS X; [a-z]{2}_[a-z]{2}\)'
+  os: {name: iOS, version: "{os_version|dots}", platform: ""}
+  client: {type: library, name: iOS Application, version: ""}
+  device: {type: wearable, brand: Apple, model: Watch}
+  os_family: iOS
+  browser_family: Unknown
+
+# Samsung watches on Tizen, whose SM-R code is the only sign of which watch it is
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R500)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch Active}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R600)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Gear Sport 43mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R760)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Gear S3 Frontier 46mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R770)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Gear S3 Classic 41mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R800)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 46mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R805F)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 46mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R820)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch Active 2 44mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R845F)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 3 45mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R850)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 3 41mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R855U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 3 41mm 4G}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R765V)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Gear S3 Frontier 33mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R805U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 46mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R810)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 42mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R815F|R815U|R815W)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 42mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R825F|R825U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch Active 2 44mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R830)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch Active 2 40mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R835F|R835U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch Active 2 40mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R840)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 3 45mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R845U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 3 45mm LTE}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R855F)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 3 41mm 4G}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R720)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Tizen Browser, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Gear S2 43mm}
+  os_family: Other Mobile
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R730A)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Tizen Browser, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Gear S2 44mm}
+  os_family: Other Mobile
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R732)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Tizen Browser, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Gear S2 42mm}
+  os_family: Other Mobile
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SAMSUNG SM-(?:R750A)\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Tizen Browser, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Gear S 40mm}
+  os_family: Other Mobile
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Tizen (?<os_version>[\d.]+); SM-(?:R750)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) efl-webengine/[\d.]+ Mobile Safari/537\.36'
+  os: {name: Tizen, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Gear S 40mm}
+  os_family: Other Mobile
+  browser_family: Chrome
+
+# Samsung watches on Wear OS, which reports an Android version the result drops
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R860|R870)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 4 40mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R895F|R895N|R895U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 4 46mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R910|R915U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 44mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R925F)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 Pro 50mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R875F)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 4 44mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R885U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 4 Classic 42mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R905F|R905N|R905U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 40mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R915F)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 44mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R920)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 Pro 45mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R925N|R925U)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 Pro 50mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R950)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 6 Classic 43mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R960)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 6 Classic 47mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: '(?:M)?ozilla/5\.0 \(Linux; Android [\d.]+; (?:SAMSUNG )?SM-(?:R900)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Odd/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Odd Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: Galaxy Watch 5 40mm}
+  os_family: Android
+  browser_family: Chrome
+
+# Mobvoi TicWatch, on Wear OS
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; (?<model>TicWatch (?:Pro S|S2|C2\+?))\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Odd/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Odd Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Mobvoi, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; Ticwatch (?<model>S)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Odd/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Odd Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Mobvoi, model: "TicWatch {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SAMSUNG (?<model>TicWatch Pro 3 Ultra GPS)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Mobvoi, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>TicWatch Pro 5)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Mobvoi, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); OPWWE231\) AppleWebKit/537\.36 \(KHTML, like Gecko\) SamsungBrowser/(?<client_version>\d+\.\d+)\.? Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36(?: \d+)?'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Samsung Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: OnePlus, model: Watch 2}
+  os_family: Android
+  browser_family: Chrome
+
+# Android smartwatches. The `Cr4` marker is what tells Chrome apart from Chrome Mobile here,
+# and a few of these user agents lost their parentheses on the way out.
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LEO-BX9 Build/[\w.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Cr\d+ Mobile Safari/537\.3\d*'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Huawei, model: Smart Watch 2}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ASUS (?<model>ZenWatch 2) Build/[\w.]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Cr\d+ Mobile Safari/537\.3\d*'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Asus, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 Linux; Android (?<os_version>[\d.]+); NB (?<model>RunIQ) Build/[\w.]+ AppleWebKit/537\.36 KHTML, like Gecko Chrome/(?<client_version>[\d.]+) Cr\d+ Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: New Balance, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 Linux; Android (?<os_version>[\d.]+); LG (?<model>Watch Urbane) Build/[\w.]+ AppleWebKit/(?<engine_version>[\d.]+) KHTML, like Gecko Chrome/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: LG, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ASUS (?<model>ZenWatch) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Asus, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>Gear Live) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Samsung, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>SmartWatch \d+) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Sony, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+# The Wear Internet Browser, on the first generation of Android Wear watches
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>Moto 360) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) WIB/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Wear Internet Browser, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Motorola, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>G Watch(?: R)?) Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) WIB/(?<client_version>[\d.]+) Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Wear Internet Browser, version: "{client_version}", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: LG, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Motorola-F100 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Opera Mobile, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Motorola, model: Moto ACTV}
+  os_family: Android
+  browser_family: Opera
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); \w+; NT-1501C Build/\w+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Android Browser, version: "", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: IconBIT, model: Callisto 100}
+  os_family: Android
+  browser_family: Android Browser
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); [a-z]{2}-[a-z]{2}; (?<model>Glass \d+) Build/\w+; XE\d+\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Android Browser, version: "", engine: WebKit, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Google, model: "{model}"}
+  os_family: Android
+  browser_family: Android Browser
+
+# Chinese smartwatch makers, all reporting through the Android webview
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>R2021W2) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Autan, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>APPLLP(?:2| Max)) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: LOKMAT, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LEM(?<model>12)Pro Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: LEMFO, model: "LEM{model} Pro"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>LEM16) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: LEMFO, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; (?<model>LEM14) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Wear OS, version: "", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: LEMFO, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>LEM15)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: LEMFO, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); GEOZON (?<model>LTE) Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: GEOZON, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); KidPhone(?<model>4G) Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: ELARI, model: "KidPhone {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); X9 CALL(?<model>\d+) Build/\w+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: W&O, model: "X9 Call {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); THOR (?<model>S|Pro|PRO) Build/\w+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Zeblaze, model: "Thor {model|title}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); THOR (?<model>4 Plus)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Zeblaze, model: "Thor {model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); OW19W(?:1|3)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: OPPO, model: Watch 46mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); OW19W2 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: OPPO, model: Watch 41mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); OW20W1 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: OPPO, model: Watch 2 46mm}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); H1-C-ALADENG\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Gocomma, model: W5}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); GLL-AL01\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Huawei, model: Watch 3 Pro Elite}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LEO-DLXX Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) MQQBrowser/(?<client_version>[\d.]+) TBS/\d+ Mobile Safari/537\.36 bwqsh/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: QQ Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Huawei, model: Smart Watch 2 Sport}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LEO-DLXXE Build/[\w-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) HuaweiBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Huawei Browser Mobile, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Huawei, model: Smart Watch 2 Sport}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); ARC-AL00\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/[\d.]+ YaSearchBrowser/(?<client_version>[\d.]+) BroPP/[\d.]+ SA/\d+ Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Yandex Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Huawei, model: Watch 4}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm; Android (?<os_version>[\d.]+); ELARI (?<model>4G Wink)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) SA/\d+ Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Yandex Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: ELARI, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RES102 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Yandex Browser Lite, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Rokid, model: Station}
+  os_family: Android
+  browser_family: Unknown
+
+# Headsets
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>Pico G2 4K) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Pico, model: G2 4K}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Pico (?<model>Neo \d+) Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Webview, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Pico, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); VRL(?<model>\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Digma, model: "VR L{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); VR-1541F\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: wearable, brand: Lenovo, model: Mirage Solo}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; Pacific\) AppleWebKit/537\.36 \(KHTML, like Gecko\) OculusBrowser/(?<client_version>[\d.]+) SamsungBrowser/[\d.]+ Chrome/(?<engine_version>[\d.]+).*'
+  os: {name: Meta Horizon, version: "", platform: ""}
+  client: {type: browser, name: Oculus Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: Go}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; (?<model>Quest(?: 2)?)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) OculusBrowser/(?<client_version>[\d.]+) SamsungBrowser/[\d.]+ Chrome/(?<engine_version>[\d.]+).*'
+  os: {name: Meta Horizon, version: "", platform: ""}
+  client: {type: browser, name: Oculus Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; Standalone HMD\) AppleWebKit/537\.36 \(KHTML, like Gecko\) OculusBrowser/(?<client_version>[\d.]+) SamsungBrowser/[\d.]+ Chrome/(?<engine_version>[\d.]+).*'
+  os: {name: Meta Horizon, version: "", platform: ""}
+  client: {type: browser, name: Oculus Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: Quest 2}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64; (?<model>Quest 2)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) OculusBrowser/(?<client_version>[\d.]+) SamsungBrowser/[\d.]+ Chrome/(?<engine_version>[\d.]+).*'
+  os: {name: Meta Horizon, version: "", platform: x64}
+  client: {type: browser, name: Oculus Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64; (?<model>Quest (?:3|Pro))\) AppleWebKit/537\.36 \(KHTML, like Gecko\) OculusBrowser/(?<client_version>[\d.]+) Chrome/(?<engine_version>[\d.]+) VR Safari/537\.36'
+  os: {name: Meta Horizon, version: "", platform: x64}
+  client: {type: browser, name: Oculus Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); (?<model>Quest 3S?)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Safari/537\.36'
+  os: {name: Android, version: "{os_version}", platform: ARM}
+  client: {type: browser, name: Yandex Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Meta, model: "{model}"}
+  os_family: Android
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64; PICO (?<model>\d+) OS(?<os_version>[\d.]+) like Quest\) AppleWebKit/537\.36 \(KHTML, like Gecko\) PicoBrowser/(?<client_version>[\d.]+) Chrome/(?<engine_version>[\d.]+) VR Safari/537\.36.*'
+  os: {name: PICO OS, version: "{os_version}", platform: x64}
+  client: {type: browser, name: PICO Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Pico, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64; Pico Neo(?<model>\d+) Link OS(?<os_version>[\d.]+) like Quest\) AppleWebKit/537\.36 \(KHTML, like Gecko\) PicoBrowser/(?<client_version>[\d.]+) Chrome/(?<engine_version>[\d.]+) VR Safari/537\.36.*'
+  os: {name: PICO OS, version: "{os_version}", platform: x64}
+  client: {type: browser, name: PICO Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Pico, model: "Neo {model} Link"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; Pico (?<model>Neo \d+) OS(?<os_version>[\d.]+) like Quest\) AppleWebKit/537\.36 \(KHTML, like Gecko\) PicoBrowser/(?<client_version>[\d.]+) Chrome/(?<engine_version>[\d.]+) Mobile VR Safari/537\.36.*'
+  os: {name: PICO OS, version: "{os_version}", platform: ""}
+  client: {type: browser, name: PICO Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Pico, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); (?<model>A\d+)\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Safari/537\.36 Mobile VR Wolvic/(?<client_version>[\d.]+)'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Wolvic, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: Pico, model: "{model}"}
+  os_family: Android
+  browser_family: Chrome
+
+-
+  regex: 'Mozilla/5\.0 \(Android (?<os_version>[\d.]+); Mobile VR; rv:[\d.]+\) Gecko/(?<engine_version>[\d.]+) Firefox/[\d.]+'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Firefox Reality, version: "", engine: Gecko, engine_version: "{engine_version}"}
+  device: {type: wearable, brand: "", model: ""}
+  os_family: Android
+  browser_family: Firefox

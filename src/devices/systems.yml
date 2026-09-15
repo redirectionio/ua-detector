@@ -1,0 +1,284 @@
+---
+
+# The platform axis: an entry reads the platform token and says nothing about the client. It is
+# what answers when nothing recognises a string in full. Priority -3 and below, so any entry
+# that does overwrites it.
+
+-
+  regex: '.*\(Linux; (?:U; )?Android (?<os_version>[\d.]+)[;)].*'
+  priority: -3
+  os: {name: 'Android', version: "{os_version}", platform: ""}
+  device: {type: ''}
+  os_family: 'Android'
+
+-
+  regex: '.*\(iPhone[;,] (?:U; )?CPU iPhone OS (?<os_version>[\d_]+) like Mac OS X[;)].*'
+  priority: -3
+  os: {name: 'iOS', version: "{os_version|dots}", platform: ""}
+  os_family: 'iOS'
+
+-
+  regex: '.*\(iPad; (?:U; )?CPU (?:iPad )?OS (?<os_version>[\d_]+) like Mac OS X[;)].*'
+  priority: -3
+  os: {name: 'iPadOS', version: "{os_version|dots}", platform: ""}
+  os_family: 'iOS'
+
+# The desktops, which do claim a device where the mobile platforms above do not: a browser on
+# one reads as a phone otherwise.
+
+-
+  regex: '.*Windows NT 10\.0[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: '10', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 6\.3[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: '8.1', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 6\.2[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: '8', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 6\.1[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: '7', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 6\.0[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: 'Vista', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 5\.2[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: 'Server 2003', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 5\.1[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: 'XP', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*Windows NT 5\.0[;)].*'
+  priority: -3
+  os: {name: 'Windows', version: '2000', platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*(?:Intel|PPC) Mac OS X (?<os_version>[\d_.]+)[;) ].*'
+  priority: -3
+  os: {name: 'Mac', version: "{os_version|dots}", platform: ""}
+  device: {type: 'desktop', brand: 'Apple'}
+  os_family: 'Mac'
+
+-
+  regex: '.*X11;[^)]*Linux (?:x86_64|i686)[;) ].*'
+  priority: -3
+  os: {name: 'GNU/Linux', version: "", platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'GNU/Linux'
+
+# A Windows the table above does not name -- NT 6.8, NT 11.0. The version is left empty rather
+# than guessed.
+-
+  regex: '.*Windows NT [\d.]+.*'
+  priority: -4
+  os: {name: 'Windows', version: "", platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+# Any other Linux, `Linux[^a-z]`, which also reads the `linux-gnu` of a build string. Priority
+# -5, under Android, which says Linux as well and is not a desktop.
+-
+  regex: '(?:.*[^a-z0-9_-])?Linux[^a-z].*'
+  priority: -5
+  os: {name: 'GNU/Linux', version: "", platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'GNU/Linux'
+
+# Android written some other way than the token above spells it: `Linux;Android 5.0`,
+# `Linux; Android/5.0`, `Android; Linux armv7l`. The version is left to the entry above; this
+# only says the thing is not the desktop the Linux rungs below assume.
+-
+  regex: '.*[(; ]Android[;/ )].*'
+  priority: -3
+  os: {name: 'Android'}
+  device: {type: ''}
+  os_family: 'Android'
+
+# An app that names the platform by a single letter at the end of the string, which is all
+# WhatsApp sends.
+-
+  regex: '.*WhatsApp/.*A'
+  priority: -3
+  os: {name: 'Android'}
+  device: {type: ''}
+  os_family: 'Android'
+
+-
+  regex: '.*WhatsApp/.*i'
+  priority: -3
+  os: {name: 'iOS'}
+  device: {type: ''}
+  os_family: 'iOS'
+
+-
+  regex: '.*(?:mingw32|winhttp|WhatsApp/.*W)'
+  priority: -3
+  os: {name: 'Windows'}
+  os_family: 'Windows'
+
+# webOS, which says Linux as well and is not a desktop.
+-
+  regex: '.*(?:Web0S; .*WEBOS|webOS|web0S|Palm webOS|hpwOS)(?:/?(?<os_version>\d+[.\d]+))?.*'
+  priority: -3
+  os: {name: 'webOS', version: "{os_version}", platform: ""}
+  device: {type: ''}
+  os_family: 'Other Mobile'
+
+# Apps that talk without a browser string at all: `Android-Gmail/65987847 (sw384dp; 450dpi)`,
+# `ChatGPT/1.2026.237 (iOS 26.6.1; iPad16,5; ...)`. Each says which system it is on somewhere.
+-
+  regex: '.*Android-[\w-]+/.*'
+  priority: -3
+  os: {name: 'Android'}
+  device: {type: ''}
+  os_family: 'Android'
+
+-
+  regex: '.*[(; ]iOS[ /](?<os_version>[\d._]+)(?:[;) ].*)?'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version|dots}", platform: ""}
+  os_family: 'iOS'
+
+-
+  regex: '.*iP(?:hone|ad)/(?<os_version>[\d._]+) hw/.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version|dots}", platform: ""}
+  os_family: 'iOS'
+
+# An app on an Apple system reaches the network through CFNetwork over Darwin. Which release it
+# is would take a table of Darwin versions; that it is one of them is enough.
+-
+  regex: '.*CFNetwork/[\d.]+ Darwin/[\d.]+.*'
+  priority: -3
+  os: {name: 'iOS'}
+  os_family: 'iOS'
+
+# An iPad names its system on its own where no browser wrapped it: a WebKit networking process
+# sends `iPadOS/26.6` and nothing else.
+-
+  regex: '.*iPad(?:OS)?[ /](?<os_version>(?:1[3-9]|2[67])[_.][_.\d]+).*'
+  priority: -3
+  os: {name: 'iPadOS', version: "{os_version|dots}", platform: ""}
+  os_family: 'iOS'
+
+# Except where the string says which machine it is: the four tokens that open it belong to macOS
+# frameworks, and the architectures name something nobody carries. Two rungs above the entry
+# for the handheld, since the generated one that reads any Darwin as a Mac sits between them.
+-
+  regex: '(?:(?:com\.apple\.WebKit\.Networking|NetworkingExtension|Safari|com\.apple\.Safari\.SearchHelper).*Darwin[/;].*|.*(?:CFNetwork|Mana|StudioDisplay)/.+Darwin(?:/|; )[\d.]+.*(?:x86_64|i386|Power%20Macintosh|PowerMac).*|.*CFNetwork/macOS/.+Darwin/.*|.*(?:x86_64-apple-)?darwin[\d.]+.*|.*C?Python.*Darwin.*)'
+  priority: -2
+  os: {name: 'Mac'}
+  device: {type: 'desktop'}
+  os_family: 'Mac'
+
+# The bottom rung of each desktop family, for the strings the rungs above are too exact for: a
+# Macintosh whose spaces became `/**/` on the way in, the Windows releases from before NT.
+-
+  regex: '.*Macintosh.*'
+  priority: -5
+  os: {name: 'Mac'}
+  device: {type: 'desktop'}
+  os_family: 'Mac'
+
+# `Windows[;)]` and not `Windows ` -- Windows Phone is neither this nor a desktop.
+-
+  regex: '.*[(; ]Windows(?: 9[58]| ME| 3\.1)?[;)].*'
+  priority: -5
+  os: {name: 'Windows'}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+# The office applications write the system with a slash rather than a platform token:
+# `Microsoft Office Word/16.112 (Mac OS/26.3.1; Desktop; ...)`.
+-
+  regex: '.*[(; ]Windows/(?<os_version>[\d.]+)[;) ].*'
+  priority: -5
+  os: {name: 'Windows', version: "{os_version}", platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+-
+  regex: '.*[(; ]Mac OS/(?<os_version>[\d.]+)[;) ].*'
+  priority: -5
+  os: {name: 'Mac', version: "{os_version}", platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Mac'
+
+-
+  regex: '.*\(X11;.*'
+  priority: -5
+  os: {name: 'GNU/Linux'}
+  device: {type: 'desktop'}
+  os_family: 'GNU/Linux'
+
+-
+  regex: '.*[(; ]Windows CE[;) ].*'
+  priority: -4
+  os: {name: 'Windows CE'}
+  device: {type: ''}
+  os_family: 'Windows Mobile'
+
+-
+  regex: '.*[(; ]OpenHarmony[ /](?<os_version>[\d.]+)[;) ].*'
+  priority: -4
+  os: {name: 'HarmonyOS NEXT', version: "{os_version}", platform: ""}
+  device: {type: ''}
+  os_family: 'OpenHarmony'
+
+-
+  regex: '.*FBSN/iOS;.*FBSV/(?<os_version>[\d.]+);.*'
+  priority: -4
+  os: {name: 'iOS', version: "{os_version}", platform: ""}
+  os_family: 'iOS'
+
+-
+  regex: '.*[(; ]iPadOS[ /](?<os_version>[\d._]+)[;) ].*'
+  priority: -4
+  os: {name: 'iPadOS', version: "{os_version|dots}", platform: ""}
+  device: {type: 'tablet'}
+  os_family: 'iOS'
+
+# `WindowsNT6.1` with the spaces stripped out, which a fair amount of fuzzed traffic sends.
+-
+  regex: '.*WindowsNT[\d.]+.*'
+  priority: -4
+  os: {name: 'Windows', version: "", platform: ""}
+  device: {type: 'desktop'}
+  os_family: 'Windows'
+
+# A Macintosh carrying a Mobile build token and an iOS version is an iPhone reporting the wrong
+# platform.
+-
+  regex: '.*Macintosh.*Mobile/\w+.*[(; ]iOS [\d.]+.*'
+  priority: -2
+  device: {type: ''}

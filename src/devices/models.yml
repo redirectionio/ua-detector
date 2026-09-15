@@ -1,0 +1,222 @@
+---
+
+# The device axis: an entry answers for a model token wherever it appears and says nothing about
+# the system or the client. `2109119DG` is a Mi 11 Lite 5G whether Chrome, Facebook or a podcast
+# app is asking.
+#
+# Priority 2, after the entries that answer in full and after the catch-alls at 1.
+
+-
+  regex: '.*[;/ ]2109119DG[;)/ ].*'
+  priority: -3
+  device: {brand: 'Xiaomi', model: 'Mi 11 Lite 5G'}
+
+-
+  regex: '.*[;/ ]CPH2005[;)/ ].*'
+  priority: -3
+  device: {brand: 'OPPO', model: 'Find X2 Lite'}
+
+# A model token that says TV is a television, whatever else is written around it: an Android
+# set-top box reads as a phone otherwise.
+-
+  regex: '.*[(;] ?[^;)]*\bTV\b[^;)]*[;)].*'
+  priority: -1
+  device: {type: 'tv'}
+
+# The Facebook applications write the device in their own bracket, and some send no platform
+# token at all.
+-
+  regex: '.*FBMD/iPhone;.*'
+  priority: -3
+  device: {type: 'smartphone', brand: 'Apple'}
+
+-
+  regex: '.*FBMD/iPad;.*'
+  priority: -3
+  device: {type: 'tablet', brand: 'Apple'}
+
+# HbbTV is the broadcast standard a television speaks, whatever Linux the string also names.
+-
+  regex: '.*HbbTV/[\d.]+.*'
+  priority: -1
+  device: {type: 'tv'}
+
+# Amazon's Fire TV sticks and cubes name themselves by a code and nothing else. Shortest first,
+# so `AFTSSS` lands on top of the `AFTSS` it opens with.
+-
+  regex: '.*(?:smarttv_)?AFTA(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Cube (Gen 1)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTR(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Cube (Gen 2)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTN(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV (Gen 3)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTB(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV (Gen 1)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTT(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick (Gen 2)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTM(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick (Gen 1)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTS(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV (Gen 2)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTSS(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick Lite (Gen 1)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTKM(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick 4K (2023)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTMM(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick 4K'}
+
+-
+  regex: '.*(?:smarttv_)?AFTSSS(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick (Gen 3)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTKRT(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick 4K Max (2023)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTGAZL(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Cube (Gen 3)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTANNA0(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV (2021-2022)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTCA002(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick 4K Select (2025)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTCL001(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Stick HD (2026)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTKA002(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV 2-Series (2023)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTTIFF43(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Omni QLED (2022)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTKAUK001(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV 4-Series (2023)'}
+
+-
+  regex: '.*(?:smarttv_)?AFTKADE001(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Amazon', model: 'Fire TV Omni QLED (2023)'}
+
+# Xiaomi's televisions: `MiTV-` names the family, the code that follows names the set.
+-
+  regex: '.*\bMiTV-\w.*'
+  priority: -1
+  device: {type: 'tv', brand: 'Xiaomi'}
+
+-
+  regex: '.*\bMiTV-AFKR0(?:[);/ ].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Xiaomi', model: 'TV Box S (2nd Gen)'}
+
+# Xiaomi's television box.
+-
+  regex: '.*\bMIBOX(?<model>[234])(?:[);/ ].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Xiaomi', model: 'Mi Box {model}'}
+
+# Google's television dongle, which says Android and no more about the machine.
+-
+  regex: '.*\bChromecast(?:[);/ _].*|$)'
+  priority: -1
+  device: {type: 'tv', brand: 'Google', model: 'Chromecast (2020)'}
+
+-
+  regex: '.*\bChromecast HD.*'
+  priority: -1
+  device: {type: 'tv', brand: 'Google', model: 'Chromecast HD (2022)'}
+
+# A television box that runs Android and says so.
+-
+  regex: '.*\bUGOOS[-_ ].*'
+  priority: -1
+  device: {type: 'tv', brand: 'Ugoos'}
+
+# A console says which one it is and nothing else. Most specific last.
+-
+  regex: '.*\bXbox.*'
+  priority: -1
+  device: {type: 'console', brand: 'Microsoft', model: 'Xbox 360'}
+
+-
+  regex: '.*\bXbox One.*'
+  priority: -1
+  device: {type: 'console', brand: 'Microsoft', model: 'Xbox One'}
+
+-
+  regex: '.*\bXbox One X.*'
+  priority: -1
+  device: {type: 'console', brand: 'Microsoft', model: 'Xbox One X'}
+
+-
+  regex: '.*\bXBOX_ONE_ED.*'
+  priority: -1
+  device: {type: 'console', brand: 'Microsoft', model: 'Xbox One S'}
+
+-
+  regex: '.*\bXbox Series X.*'
+  priority: -1
+  device: {type: 'console', brand: 'Microsoft', model: 'Xbox Series X'}
+
+# An LG television names its firmware and nothing else. `NetCast.TV` is the browser of that
+# name, not the set.
+-
+  regex: '.*(?:LGE_DLNA_SDK.*|NetCast(?:[^.].*|\.[^T].*|\.T[^V].*|$))'
+  priority: -1
+  device: {type: 'tv', brand: 'LG', model: 'NetCast'}
+
+# Televisions whose model token says nothing about being one.
+-
+  regex: '.*[(;] ?AI PONT[;)].*'
+  priority: -1
+  device: {type: 'tv'}
+
+-
+  regex: '.*BRAVIA.*'
+  priority: -1
+  device: {type: 'tv'}

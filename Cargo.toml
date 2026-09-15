@@ -1,0 +1,45 @@
+[package]
+name = "device-detector"
+version = "0.1.0"
+edition = "2024"
+description = "Reads a user agent, and the client hints that go with it, into the device, operating system and client it names"
+repository = "https://github.com/redirectionio/device-detector"
+license = "LGPL-3.0-or-later"
+readme = "README.md"
+keywords = ["user-agent", "device-detection", "client-hints", "browser", "bot"]
+categories = ["web-programming", "parser-implementations"]
+# The corpus this library is written against, and the tests generated from it, weigh forty
+# megabytes and are of no use to anyone depending on the crate.
+exclude = ["tests/", "benches/", ".github/", "castor.php", "castor.composer.*", ".castor.stub.php"]
+
+[features]
+# The database, built into the binary. On by default, because a crate that has to be handed a
+# directory of yaml before it answers anything is no use to a dependant. Off, the files are read
+# at startup instead, which is what makes a corpus run cost its twenty seconds of assertions
+# rather than the two minutes of rebuild that embedding them costs on every change.
+default = ["embed"]
+embed = ["dep:include_dir"]
+
+[dependencies]
+include_dir = { version = "0.7.4", optional = true }
+regex = "1.12.2"
+regex-automata = { version = "0.4", features = ["meta", "syntax", "perf", "unicode", "nfa", "dfa", "hybrid"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_yaml = "0.9.33"
+tracing = "0.1.43"
+
+[dev-dependencies]
+criterion = "0.8.2"
+indicatif = "0.18.6"
+libtest-mimic = "0.8.2"
+
+# Loading the database, and compiling a budget of it, cost the better part of a second each, so
+# these run few samples: the variance they are up against is nowhere near that.
+# The corpus registers its cases at runtime, so it brings its own harness.
+[[test]]
+name = "corpus"
+harness = false
+
+[[bench]]
+name = "detection"
+harness = false

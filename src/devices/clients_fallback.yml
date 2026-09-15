@@ -1,0 +1,6242 @@
+---
+
+# Every client the corpus knows, generated from `regexes/client/*.yml` of the pinned revision.
+#
+# Matomo tries its parsers in the order FeedReader, MobileApp, MediaPlayer, PIM, Browser,
+# Library, and inside each its rules top to bottom, stopping at the first that matches. This
+# merges every entry that matches and keeps the last, so both orders are turned around -- which
+# is also why an app beats the browser its WebView reports. Rules using a lookaround, a
+# backreference or an anchor are left out: the regex crate compiles none of them.
+#
+# Priority -3, under `clients.yml`: many of these name themselves with a token short or common
+# enough to turn up inside another string, so they only answer where nothing else does.
+
+-
+  regex: '.*(?:nscurl).*'
+  priority: -3
+  client: {type: library, name: 'nscurl', version: ""}
+
+-
+  regex: '.*(?:KlHttpClientCurl(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'KlHttpClientCurl', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lodestone PHP Parser).*'
+  priority: -3
+  client: {type: library, name: 'Lodestone PHP Parser', version: ""}
+
+-
+  regex: '.*(?:BIC Tracker).*'
+  priority: -3
+  client: {type: library, name: 'BIC Tracker', version: ""}
+
+-
+  regex: '.*(?:libHTTP/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'LibHTTP', version: "{client_version}"}
+
+-
+  regex: '.*(?:MatomoTrackerSDK/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'MatomoTracker', version: "{client_version}"}
+
+-
+  regex: '.*(?:webchk v(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'webchk', version: "{client_version}"}
+
+-
+  regex: '.*(?:Apidog/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Apidog', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bun/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Bun', version: "{client_version}"}
+
+-
+  regex: '.*(?:go-network-v(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'go-network', version: "{client_version}"}
+
+-
+  regex: '.*(?:vimeo\.php(?: (?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'vimeo.php', version: "{client_version}"}
+
+-
+  regex: '.*(?:sqlmap(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'sqlmap', version: "{client_version}"}
+
+-
+  regex: '.*(?:trafilatura(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'trafilatura', version: "{client_version}"}
+
+-
+  regex: '.*(?:azsdk-python-storage-blob(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Azure Blob Storage', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cygwin-Setup(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Cygwin', version: "{client_version}"}
+
+-
+  regex: '.*(?:ICAP-Client-Library(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'ICAP Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:Python-xmlrpc(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'XML-RPC', version: "{client_version}"}
+
+-
+  regex: '.*(?:Boto3(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Boto3', version: "{client_version}"}
+
+-
+  regex: '.*(?:httprs(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'httprs', version: "{client_version}"}
+
+-
+  regex: '.*(?:qbhttp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'QbHttp', version: "{client_version}"}
+
+-
+  regex: '.*(?:request\.js).*'
+  priority: -3
+  client: {type: library, name: 'request', version: ""}
+
+-
+  regex: '.*(?:CakePHP).*'
+  priority: -3
+  client: {type: library, name: 'CakePHP', version: ""}
+
+-
+  regex: '.*(?:node-superagent(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'superagent', version: "{client_version}"}
+
+-
+  regex: '.*(?:http\.rb(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'http.rb', version: "{client_version}"}
+
+-
+  regex: '.*(?:babashka\.http-client(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Babashka HTTP Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mandrill-PHP(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Mandrill PHP', version: "{client_version}"}
+
+-
+  regex: '.*(?:Stealer (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: library, name: 'Stealer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Definitely-Not-Requests).*'
+  priority: -3
+  client: {type: library, name: 'Requests', version: ""}
+
+-
+  regex: '.*(?:cpp-httplib(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'cpp-httplib', version: "{client_version}"}
+
+-
+  regex: '.*(?:AppleCoreMedia/1\.0\.0).*'
+  priority: -3
+  client: {type: library, name: 'iOS Application', version: ""}
+
+-
+  regex: '.*(?:OkDownload/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: library, name: 'OKDownload Library', version: "{client_version}"}
+
+-
+  regex: '.*(?:KaiOS Downloader).*'
+  priority: -3
+  client: {type: library, name: 'KaiOS Downloader', version: ""}
+
+-
+  regex: '.*(?:axios(?:/?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Axios', version: "{client_version}"}
+
+-
+  regex: '.*(?:harbor-registry-client).*'
+  priority: -3
+  client: {type: library, name: 'Harbor registry client', version: ""}
+
+-
+  regex: '.*(?:Helm/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Helm', version: "{client_version}"}
+
+-
+  regex: '.*(?:skopeo/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Skopeo', version: "{client_version}"}
+
+-
+  regex: '.*(?:libpod/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'libpod', version: "{client_version}"}
+
+-
+  regex: '.*(?:go-containerregistry/v(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'go-container registry', version: "{client_version}"}
+
+-
+  regex: '.*(?:docker/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'docker', version: "{client_version}"}
+
+-
+  regex: '.*(?:cri-o/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'cri-o', version: "{client_version}"}
+
+-
+  regex: '.*(?:containers/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'containers', version: "{client_version}"}
+
+-
+  regex: '.*(?:containerd/v?(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Containerd', version: "{client_version}"}
+
+-
+  regex: '.*(?:buildkit/v?(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'BuildKit', version: "{client_version}"}
+
+-
+  regex: '.*(?:Buildah/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Buildah', version: "{client_version}"}
+
+-
+  regex: '.*(?:BSRPC (?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Open Build Service', version: "{client_version}"}
+
+-
+  regex: '.*(?:Artifactory/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Artifactory', version: "{client_version}"}
+
+-
+  regex: '.*(?:ultimate_sitemap_parser/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Ultimate Sitemap Parser', version: "{client_version}"}
+
+-
+  regex: '.*(?:pa11y/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Pa11y', version: "{client_version}"}
+
+-
+  regex: '.*(?:go-resty/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Resty', version: "{client_version}"}
+
+-
+  regex: '.*(?:hackney/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'hackney', version: "{client_version}"}
+
+-
+  regex: '.*(?:jsdom/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'jsdom', version: "{client_version}"}
+
+-
+  regex: '.*(?:unirest-java/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Unirest for Java', version: "{client_version}"}
+
+-
+  regex: '.*(?:lua-resty-http/(?<client_version>[.\d]+).+ngx_).*'
+  priority: -3
+  client: {type: library, name: 'LUA OpenResty NGINX', version: "{client_version}"}
+
+-
+  regex: '.*(?:cpprestsdk/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'C++ REST SDK', version: "{client_version}"}
+
+-
+  regex: '.*(?:uclient-fetch).*'
+  priority: -3
+  client: {type: library, name: 'uclient-fetch', version: ""}
+
+-
+  regex: '.*(?:gvfs/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'gvfs', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:BTWebClient/|^uTorrent/)).*'
+  priority: -3
+  client: {type: library, name: 'uTorrent', version: ""}
+
+-
+  regex: '.*(?:aria2(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Aria2', version: "{client_version}"}
+
+-
+  regex: '.*(?:akka-http/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Akka HTTP', version: "{client_version}"}
+
+-
+  regex: '.*(?:GRequests(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'GRequests', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mikrotik/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Mikrotik Fetch', version: "{client_version}"}
+
+-
+  regex: '.*(?:Embarcadero URI Client/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Embarcadero URI Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:WinHTTP).*'
+  priority: -3
+  client: {type: library, name: 'Windows HTTP', version: ""}
+
+-
+  regex: '.*(?:WinHttp\.WinHttpRequest.+(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'WinHttp WinHttpRequest', version: "{client_version}"}
+
+-
+  regex: '.*(?:Jakarta Commons-HttpClient/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Jakarta Commons HttpClient', version: "{client_version}"}
+
+-
+  regex: '.*(?:insomnia(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Insomnia REST Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:PostmanRuntime(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Postman Desktop', version: "{client_version}"}
+
+-
+  regex: '.*(?:ReactorNetty/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'ReactorNetty', version: "{client_version}"}
+
+-
+  regex: '.*(?:electron-fetch/?(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: library, name: 'Electron Fetch', version: "{client_version}"}
+
+-
+  regex: '.*(?:node-fetch/?(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: library, name: 'Node Fetch', version: "{client_version}"}
+
+-
+  regex: '.*(?:REST::Client/(?<client_version>\d+)).*'
+  priority: -3
+  client: {type: library, name: 'Perl REST::Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:scalaj-http/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'ScalaJ HTTP', version: "{client_version}"}
+
+-
+  regex: '.*(?:RestSharp/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'RestSharp', version: "{client_version}"}
+
+-
+  regex: '.*(?:rest-client/(?<client_version>\d+\.[.\d]+) .*ruby).*'
+  priority: -3
+  client: {type: library, name: 'REST Client for Ruby', version: "{client_version}"}
+
+-
+  regex: '.*(?:HTTPie(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'HTTPie', version: "{client_version}"}
+
+-
+  regex: '.*(?:libdnf(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'libdnf', version: "{client_version}"}
+
+-
+  regex: '.*(?:urlgrabber(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'urlgrabber (yum)', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Go-http-client|^Go )/?(?:(?<client_version>\d+[.\d]+))?(?: package http)?).*'
+  priority: -3
+  client: {type: library, name: 'Go-http-client', version: "{client_version}"}
+
+-
+  regex: '.*(?:Faraday(?: v(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Faraday', version: "{client_version}"}
+
+-
+  regex: '.*(?:WWW-Mechanize(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'WWW-Mechanize', version: "{client_version}"}
+
+-
+  regex: '.*(?:Google-HTTP-Java-Client(?:/(?<client_version>\d+[\.\w-]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Google HTTP Java Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:aiohttp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'aiohttp', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mechanize(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Mechanize', version: "{client_version}"}
+
+-
+  regex: '.*(?:HTTP_Request2(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'HTTP_Request2', version: "{client_version}"}
+
+-
+  regex: '.*(?:okhttp3-(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: library, name: 'OkHttp', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:okhttp|network-okhttp3)/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: library, name: 'OkHttp', version: "{client_version}"}
+
+-
+  regex: '.*(?:grpc-java-okhttp/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: library, name: 'gRPC-Java', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:perlclient|libwww-perl)(?:/?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Perl', version: "{client_version}"}
+
+-
+  regex: '.*(?:Java/?(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Java', version: "{client_version}"}
+
+-
+  regex: '.*(?:Java-http-client(?:/?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Java HTTP Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:Apache-HttpClient(?:/?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Apache HTTP Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:Python-urllib3?(?:/?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Python urllib', version: "{client_version}"}
+
+-
+  regex: '.*(?:Python-httplib2(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'httplib2', version: "{client_version}"}
+
+-
+  regex: '.*(?:python-requests(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Python Requests', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:lib)?curl(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'curl', version: "{client_version}"}
+
+-
+  regex: '.*(?:Guzzle(?:Http)?(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Guzzle (PHP HTTP Client)', version: "{client_version}"}
+
+-
+  regex: '.*(?:Wget(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Wget', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cypress/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Cypress', version: "{client_version}"}
+
+-
+  regex: '.*(?:Jaunt/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Jaunt', version: "{client_version}"}
+
+-
+  regex: '.*(?:SlimerJS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'SlimerJS', version: "{client_version}"}
+
+-
+  regex: '.*(?:AnyEvent-HTTP(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'AnyEvent HTTP', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cpanel-HTTP-Client(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'cPanel HTTP Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:PHP-Curl-Class(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'PHP cURL Class', version: "{client_version}"}
+
+-
+  regex: '.*(?:geoipupdate(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'GeoIP Update', version: "{client_version}"}
+
+-
+  regex: '.*(?:fasthttp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'fasthttp', version: "{client_version}"}
+
+-
+  regex: '.*(?:python-httpx(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'HTTPX', version: "{client_version}"}
+
+-
+  regex: '.*(?:r-curl(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'r-curl', version: "{client_version}"}
+
+-
+  regex: '.*(?:Dart/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Dart', version: "{client_version}"}
+
+-
+  regex: '.*(?:azure-data-factory(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'Azure Data Factory', version: "{client_version}"}
+
+-
+  regex: '.*(?:quic-go[ -]HTTP/3).*'
+  priority: -3
+  client: {type: library, name: 'quic-go', version: ""}
+
+-
+  regex: '.*(?:req/v(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'req', version: "{client_version}"}
+
+-
+  regex: '.*(?:Typhoeus).*'
+  priority: -3
+  client: {type: library, name: 'Typhoeus', version: ""}
+
+-
+  regex: '.*(?:HTMLParser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'HTML Parser', version: "{client_version}"}
+
+-
+  regex: '.*(?:msray-plus).*'
+  priority: -3
+  client: {type: library, name: 'Msray-Plus', version: ""}
+
+-
+  regex: '.*(?:Slim Framework).*'
+  priority: -3
+  client: {type: library, name: 'Slim Framework', version: ""}
+
+-
+  regex: '.*(?:Fuzz Faster U Fool v(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'FFUF', version: "{client_version}"}
+
+-
+  regex: '.*(?:tcms-api/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Kiwi TCMS API', version: "{client_version}"}
+
+-
+  regex: '.*(?:kiwi-tcms/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'Kiwi TCMS', version: "{client_version}"}
+
+-
+  regex: '.*(?:IPinfoClient/.*/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'IPinfo', version: "{client_version}"}
+
+-
+  regex: '.*(?:PhantomJS(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: library, name: 'PhantomJS', version: "{client_version}"}
+
+-
+  regex: '.*(?:SP%20Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SP Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:WAP Browser/MAUI|(?:\w*)Maui Wap Browser|MAUI[- ]Browser).*'
+  priority: -3
+  client: {type: browser, name: 'MAUI WAP Browser', version: ""}
+
+-
+  regex: '.*(?:GOGGalaxyClient/(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'GOG Galaxy', version: "{client_version}"}
+
+-
+  regex: '.*(?:Zvu(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Zvu', version: "{client_version}"}
+
+-
+  regex: '.*(?:SimpleBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'SimpleBrowser', version: ""}
+
+-
+  regex: '.*(?:Uzbl).*'
+  priority: -3
+  client: {type: browser, name: 'Uzbl', version: ""}
+
+-
+  regex: '.*(?:NetSurf(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NetSurf', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:\w{1,5}[_ ])?Dorado(?: WAP-Browser)?(?:[/ ]?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Dorado', version: "{client_version}"}
+
+-
+  regex: '.*(?:Safari%20Technology%20Preview/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Safari Technology Preview', version: "{client_version}"}
+
+-
+  regex: '.*(?:Surf(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'surf', version: "{client_version}"}
+
+-
+  regex: '.*(?:Coast(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Coast', version: "{client_version}"}
+
+-
+  regex: '.*(?:Browlser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Browlser', version: "{client_version}"}
+
+-
+  regex: '.*(?:BlackBerry|PlayBook|BB10).*'
+  priority: -3
+  client: {type: browser, name: 'BlackBerry Browser', version: ""}
+
+-
+  regex: '.*(?:Xiino(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Xiino', version: "{client_version}"}
+
+-
+  regex: '.*(?:WeTab-Browser).*'
+  priority: -3
+  client: {type: browser, name: 'WeTab Browser', version: ""}
+
+-
+  regex: '.*(?:Sunrise(?:Browser)?(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Sunrise', version: "{client_version}"}
+
+-
+  regex: '.*(?:Snowshoe(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Snowshoe', version: "{client_version}"}
+
+-
+  regex: '.*(?:Skyfire(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Skyfire', version: "{client_version}"}
+
+-
+  regex: '.*(?:Shiira(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Shiira', version: "{client_version}"}
+
+-
+  regex: '.*(?:SEMC-Browser(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'SEMC-Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Polaris|Embider)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Polaris', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Oregano|OreganMediaBrowser)(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Oregano', version: "{client_version}"}
+
+-
+  regex: '.*(?:OffByOne).*'
+  priority: -3
+  client: {type: browser, name: 'Off By One', version: ""}
+
+-
+  regex: '.*(?:Odyssey Web Browser(?:.*OWB/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Odyssey Web Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:NetPositive(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NetPositive', version: "{client_version}"}
+
+-
+  regex: '.*(?:PLAYSTATION|NINTENDO 3|AppleWebKit.+ N[XF]/\d+\.\d+\.\d+).*'
+  priority: -3
+  client: {type: browser, name: 'NetFront', version: ""}
+
+-
+  regex: '.*(?:NetFront(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NetFront', version: "{client_version}"}
+
+-
+  regex: '.*(?:Browser/(?:NetFont-|NF|NetFront)(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'NetFront', version: "{client_version}"}
+
+-
+  regex: '.*(?:NetFrontLifeBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NetFront Life', version: "{client_version}"}
+
+-
+  regex: '.*(?:NintendoBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Nintendo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:OmniWeb(?:[ /][v]?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'OmniWeb', version: "{client_version}"}
+
+-
+  regex: '.*(?:LuaKit(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'LuaKit', version: "{client_version}"}
+
+-
+  regex: '.*\bLinks(?: \((?<client_version>\d+[.\d]+))?.*'
+  priority: -3
+  client: {type: browser, name: 'Links', version: "{client_version}"}
+
+-
+  regex: '.*(?:K-meleon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'K-meleon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kindle/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Kindle Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:MSPIE|Pocket Internet Explorer)[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Pocket Internet Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:IE[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Internet Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:MSIE (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Internet Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:MSIE (?<client_version>\d+\.[.\d]+)[^\.\d].*XBLWP7).*'
+  priority: -3
+  client: {type: browser, name: 'IE Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:IEMobile[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'IE Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:Crazy Browser (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Crazy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:iCab(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'iCab', version: "{client_version}"}
+
+-
+  regex: '.*(?:iCabMobile(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'iCab Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:HotJava(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'HotJava', version: "{client_version}"}
+
+-
+  regex: '.*(?:Google ?Earth(?:/v?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Google Earth', version: "{client_version}"}
+
+-
+  regex: '.*(?:GoogleEarth/(?<client_version>\d+\.[.\d]+)[^\.\d].*client:(?:Plus|Pro)).*'
+  priority: -3
+  client: {type: browser, name: 'Google Earth Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Google Earth Pro|Google%20Earth%20Pro)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Google Earth Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:Galeon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Galeon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Fluid(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Fluid', version: "{client_version}"}
+
+-
+  regex: '.*(?:eZBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'eZ Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Element Browser(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Element Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Elinks(?:[ /]\(?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Elinks', version: "{client_version}"}
+
+-
+  regex: '.*(?:Dolfin(?:/(?<client_version>\d+[.\d]+))?|dolphin).*'
+  priority: -3
+  client: {type: browser, name: 'Dolphin', version: "{client_version}"}
+
+-
+  regex: '.*(?:Dillo(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Dillo', version: "{client_version}"}
+
+-
+  regex: '.*(?:dbrowser).*'
+  priority: -3
+  client: {type: browser, name: 'dbrowser', version: ""}
+
+-
+  regex: '.*(?:Cheshire(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Cheshire', version: "{client_version}"}
+
+-
+  regex: '.*(?:Charon(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Charon', version: "{client_version}"}
+
+-
+  regex: '.*(?:BrowseX \((?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'BrowseX', version: "{client_version}"}
+
+-
+  regex: '.*(?:bline(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'B-Line', version: "{client_version}"}
+
+-
+  regex: '.*(?:Beonex(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Beonex', version: "{client_version}"}
+
+-
+  regex: '.*(?:Arora(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Arora', version: "{client_version}"}
+
+-
+  regex: '.*(?:Amiga-Aweb(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Amiga Aweb', version: "{client_version}"}
+
+-
+  regex: '.*(?:AmigaVoyager(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Amiga Voyager', version: "{client_version}"}
+
+-
+  regex: '.*(?:amaya(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Amaya', version: "{client_version}"}
+
+-
+  regex: '.*(?:ABrowse(?: (?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'ABrowse', version: "{client_version}"}
+
+-
+  regex: '.*(?:VMS_Mosaic(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'VMS Mosaic', version: "{client_version}"}
+
+-
+  regex: '.*(?:NCSA_Mosaic(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NCSA Mosaic', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lynx(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lynx', version: "{client_version}"}
+
+-
+  regex: '.*(?:Jasmine(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Jasmine', version: "{client_version}"}
+
+-
+  regex: '.*(?:Palmscape(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Palmscape', version: "{client_version}"}
+
+-
+  regex: '.*(?:WebPro(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Palm WebPro', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:hpw|web)OS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'wOSBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Pre/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Palm Pre', version: "{client_version}"}
+
+-
+  regex: '.*(?:Blazer(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Palm Blazer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Tizen (?:\d+\.[.\d]+)[^\.\d].* Version/(?<client_version>\d+[.\d]+) (?:TV|Mobile|like)).*'
+  priority: -3
+  client: {type: browser, name: 'Tizen Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Tizen|SLP) ?Browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Tizen Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:PocketBook/).*'
+  priority: -3
+  client: {type: browser, name: 'PocketBook Browser', version: ""}
+
+-
+  regex: '.*(?:HeadlessChrome(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Headless Chrome', version: "{client_version}"}
+
+-
+  regex: '.*(?:.*Chromium(?:_(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Chromium', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chromium(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Chromium', version: "{client_version}"}
+
+-
+  regex: '.*(?:chromeframe(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Chrome Frame', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome(?:/(?<client_version>\d+[.\d]+))? Mobile).*'
+  priority: -3
+  client: {type: browser, name: 'Chrome Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:CriOS(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Chrome Mobile iOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:CrMo(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Chrome Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?: wv\)|Version/).* Chrome(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Chrome Webview', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:iPad|iPhone);.* like Mac OS X.* Chrome(?:/(?<client_version>\d+[.\d]+))? Mobile/\w{5,7} Safari/).*'
+  priority: -3
+  client: {type: browser, name: 'Chrome Mobile iOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:SafeBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SafeBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:QtWebEngine/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'QtWebEngine', version: "{client_version}"}
+
+-
+  regex: '.*(?:LG Browser(?:/(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'LG Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Soul(?:Browser)?$|Soul/).*'
+  priority: -3
+  client: {type: browser, name: 'Soul Browser', version: ""}
+
+-
+  regex: '.*(?:SuperBird(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'SuperBird', version: "{client_version}"}
+
+-
+  regex: '.*(?:OpenFin/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'OpenFin', version: "{client_version}"}
+
+-
+  regex: '.*(?:JAPAN Browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Japan Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:BlueBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Blue Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:MonumentBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Monument Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Quark(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Quark', version: "{client_version}"}
+
+-
+  regex: '.*(?:TV Bro/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'TV Bro', version: "{client_version}"}
+
+-
+  regex: '.*(?:NTENTBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NTENT Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Sleipnir(?:(?:%20Browser)?[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Sleipnir', version: "{client_version}"}
+
+-
+  regex: '.*(?:S40OviBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Nokia Ovi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Series60/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Nokia OSS Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:NokiaBrowser|BrowserNG|WicKed|Nokia-Communicator-WWW-Browser)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Nokia Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:GoBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'GoBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:OneBrowser(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'ONE Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Openwave(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:UP\.Browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:IBrowse(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'IBrowse', version: "{client_version}"}
+
+-
+  regex: '.*(?:iBrowser/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'iBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:iBrowser/Mini(?<client_version>\d+\.\d+)).*'
+  priority: -3
+  client: {type: browser, name: 'iBrowser Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:Silk(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Mobile Silk', version: "{client_version}"}
+
+-
+  regex: '.*(?:Silk/(?<client_version>\d+[.\d]+) like Chrome).*'
+  priority: -3
+  client: {type: browser, name: 'Mobile Silk', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mb2345Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: '2345 Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kiwi Chrome).*'
+  priority: -3
+  client: {type: browser, name: 'Kiwi', version: ""}
+
+-
+  regex: '.*(?:LeBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lenovo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ (?:LeBrowser|MobileLenovoBrowser)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lenovo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:ACHEETAHI).*'
+  priority: -3
+  client: {type: browser, name: 'CM Browser', version: ""}
+
+-
+  regex: '.*(?:Ecosia (?:android|ios)@(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Ecosia', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mint Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Mint Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SogouMobileBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Sogou Mobile Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SznProhlizec/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Seznam Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+SznProhlizec/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Seznam Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:webexplorer/(?<client_version>\d+)).*'
+  priority: -3
+  client: {type: browser, name: 'Web Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Web Explorer/(?<client_version>\d+\.[.\d]+) .*Chrome).*'
+  priority: -3
+  client: {type: browser, name: 'Web Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Rocket/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox Rocket', version: "{client_version}"}
+
+-
+  regex: '.*(?:isivioo).*'
+  priority: -3
+  client: {type: browser, name: 'Isivioo', version: ""}
+
+-
+  regex: '.*(?:Streamy(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Streamy', version: "{client_version}"}
+
+-
+  regex: '.*\bUBrowser(?:/(?<client_version>\d+[.\d]+))?.*'
+  priority: -3
+  client: {type: browser, name: 'UBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:EUI Browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'EUI Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.browser\.tssomas(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Super Fast Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:SFB(?:rowser)?)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Super Fast Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Samsung ?Browser(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Samsung Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:DDG-Android-|ddg_android/)(?<client_version>\d+[.\d]*)).*'
+  priority: -3
+  client: {type: browser, name: 'DuckDuckGo Privacy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:DuckDuckGo|Ddg)/(?<client_version>\d+[.\d]*)).*'
+  priority: -3
+  client: {type: browser, name: 'DuckDuckGo Privacy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:coc_coc_browser|coccocbrowser|CocCoc)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Coc Coc', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:MIUIBrowser|MiuiBrowser)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Mi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:M?QQ(?:Browser|浏览器)|MQBHD)(?:/(?<client_version>[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'QQ Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:M?QQBrowser/Mini(?<client_version>[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'QQ Browser Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:QQBrowserLite/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'QQ Browser Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:\bSE (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Sogou Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:LBBrowser(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Cheetah Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:LieBaoFast(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'LieBaoFast', version: "{client_version}"}
+
+-
+  regex: '.*(?:Epiphany(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'GNOME Web', version: "{client_version}"}
+
+-
+  regex: '.*(?:Iron/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Iron', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome(?:/(?<client_version>\d+\.[.\d]+) )?.*Iron).*'
+  priority: -3
+  client: {type: browser, name: 'Iron', version: "{client_version}"}
+
+-
+  regex: '.*(?:MobileIron(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Iron Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:Puffin/(?<client_version>\d+[.\d]+)(?:[AILW][PT]|M)?).*'
+  priority: -3
+  client: {type: browser, name: 'Puffin Web Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Puffin/(?<client_version>\d+[.\d]+)(?:[LMW]D)).*'
+  priority: -3
+  client: {type: browser, name: 'Puffin Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Puffin/(?<client_version>\d+[.\d]+)FP).*'
+  priority: -3
+  client: {type: browser, name: 'Puffin Cloud Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Maxthon|MyIE2)).*'
+  priority: -3
+  client: {type: browser, name: 'Maxthon', version: ""}
+
+-
+  regex: '.*(?:(?:Maxthon(?:%20Browser)?|MxBrowser(?:-inhouse|-iPhone)?|MXiOS)[ /](?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'Maxthon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+(?:MxBrowser|Maxthon)(?:.+\(portable\))?/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Maxthon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+Maxthon/\d{4}).*'
+  priority: -3
+  client: {type: browser, name: 'Maxthon', version: ""}
+
+-
+  regex: '.*(?:Mercury/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Mercury', version: "{client_version}"}
+
+-
+  regex: '.*(?:Midori(?:[ /](?<client_version>[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Midori', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+Midori Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Midori', version: "{client_version}"}
+
+-
+  regex: '.*(?:TweakStyle(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'TweakStyle', version: "{client_version}"}
+
+-
+  regex: '.*(?:VivaiOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Vivaldi Mobile iOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:Viv(?:aldi)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Vivaldi', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ya(?:ndex)?Search(?:App|Browser)?(?:/(?<client_version>\d+[.\d]*))).*'
+  priority: -3
+  client: {type: browser, name: 'Yandex Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:YaBrowser/(?<client_version>\d+[.\d]*).*corp).*'
+  priority: -3
+  client: {type: browser, name: 'Yandex Browser Corp', version: "{client_version}"}
+
+-
+  regex: '.*(?:YaBrowser(?:/(?<client_version>\d+[.\d]*)) \(lite\)?).*'
+  priority: -3
+  client: {type: browser, name: 'Yandex Browser Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:iP(?:hone|ad).*YaBrowser(?:/(?<client_version>\d+[.\d]*))).*'
+  priority: -3
+  client: {type: browser, name: 'Yandex Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:YaBrowser(?:/(?<client_version>\d+[.\d]*)) YaApp_iOS).*'
+  priority: -3
+  client: {type: browser, name: 'Yandex Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:(?:BD)?Spark(?:Safe)?|BIDUBrowser)[/ ](?<client_version>\d+[.\d]*)).*'
+  priority: -3
+  client: {type: browser, name: 'Baidu Spark', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:baidubrowser|bdbrowser(?:(?:hd)?_i18n)?|FlyFlow|BaiduHD)(?:[/ ](?<client_version>\d+[.\d]*))?).*'
+  priority: -3
+  client: {type: browser, name: 'Baidu Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:bd)?honorbrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'HONOR Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Konqueror(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Konqueror', version: "{client_version}"}
+
+-
+  regex: '.*(?:Conkeror(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Conkeror', version: "{client_version}"}
+
+-
+  regex: '.*(?:ChromePlus(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'ChromePlus', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Comodo[ _])?Dragon/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Comodo Dragon', version: "{client_version}"}
+
+-
+  regex: '.*(?:CoolNovo(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'CoolNovo', version: "{client_version}"}
+
+-
+  regex: '.*(?:rekonq(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Rekonq', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+Opera/).*'
+  priority: -3
+  client: {type: browser, name: 'Opera', version: ""}
+
+-
+  regex: '.*(?:(?:Opera[/ ]?|OPR[/ ])(?:9\.80.*Version/)?(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Opera|OPR)[/ ](?:9\.80.*Version/)?(?<client_version>\d+\.[.\d]+) .*Edition Next).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Next', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera.+Edition Next.+Version/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Next', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera%20Mini/(?<client_version>\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Mini iOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:OPiOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Mini iOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera ?Mini.+Version/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera ?Mini/(?:att/)?(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:OPT/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Touch', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera/.+CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Opera', version: ""}
+
+-
+  regex: '.*(?:Opera%20Touch/.+CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Touch', version: ""}
+
+-
+  regex: '.*(?:Opera%20Touch/(?<client_version>\d+[.\d]+)?.+CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Touch', version: "{client_version}"}
+
+-
+  regex: '.*\bOMI/(?<client_version>\d+[.\d]+).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Devices', version: "{client_version}"}
+
+-
+  regex: '.*(?:MMS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Opera Neon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera(?:%20)?GX/.+CFNetwork/.+Darwin/).*'
+  priority: -3
+  client: {type: browser, name: 'Opera GX', version: ""}
+
+-
+  regex: '.*(?:OP(?:RG)?X(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Opera GX', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ OP(?:RG)?X(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Opera GX', version: "{client_version}"}
+
+-
+  regex: '.*(?:Obigo|Teleca).*'
+  priority: -3
+  client: {type: browser, name: 'Obigo', version: ""}
+
+-
+  regex: '.*(?:Obigo[ ]?(?:InternetBrowser|Browser)?(?:[ /](?<client_version>[a-z0-9]*))?).*'
+  priority: -3
+  client: {type: browser, name: 'Obigo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Whale/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Whale Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Dooble)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Dooble', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:QupZilla)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'QupZilla', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Polarity)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Polarity', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Navigator|Netscape6?)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Netscape', version: "{client_version}"}
+
+-
+  regex: '.*(?:Fireweb(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Fireweb', version: "{client_version}"}
+
+-
+  regex: '.*(?:Fireweb Navigator(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Fireweb Navigator', version: "{client_version}"}
+
+-
+  regex: '.*(?:RockMelt(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'RockMelt', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Espial|Escape)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Espial TV Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:ANTGalio(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'ANTGalio', version: "{client_version}"}
+
+-
+  regex: '.*(?:ANTFresco(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'ANT Fresco', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:BonEcho|GranParadiso|Lorentz|Minefield|Namoroka|Shiretoko)[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox', version: "{client_version}"}
+
+-
+  regex: '.*(?:.*Servo.*Firefox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox', version: "{client_version}"}
+
+-
+  regex: '.*(?:FxiOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox Mobile iOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Mobile|Tablet).*Firefox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Mobile|Tablet).*Servo.*Firefox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:Firefox.+UCKai/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+UC Browser(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:UC AppleWebKit).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser', version: ""}
+
+-
+  regex: '.*(?:UCWEB(?:[ /]?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:UC ?(?:Browser|Mobile)(?:[ /]?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:UCPC/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:UC[ ]?Browser.* \(UCTurbo\)).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser Turbo', version: ""}
+
+-
+  regex: '.*(?:UCTurbo(?:[ /]?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser Turbo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+uc mini browser(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:UCMini(?:[ /]?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:UC[ ]?Browser/(?<client_version>\d+[.\d]+) \(UCMini\)).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser Mini', version: "{client_version}"}
+
+-
+  regex: '.*(?:UCBrowserHD/(?<client_version>\d[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'UC Browser HD', version: "{client_version}"}
+
+-
+  regex: '.*(?:Firefox/(?<client_version>\d+\.[.\d]+).*\(Swiftfox\)).*'
+  priority: -3
+  client: {type: browser, name: 'Swiftfox', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cyberfox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Cyberfox', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Focus|Klar)(?:/(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox Focus', version: "{client_version}"}
+
+-
+  regex: '.*(?:Centaury(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Centaury', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mypal(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Mypal', version: "{client_version}"}
+
+-
+  regex: '.*(?:ArcticFox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Arctic Fox', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kazehakase(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Kazehakase', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:TO-Browser/TOB|DT-Browser/DTB)(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 't-online.de Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cunaguaro(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Cunaguaro', version: "{client_version}"}
+
+-
+  regex: '.*(?:Origin/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Origin In-Game Overlay', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kylo(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Kylo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kapiko(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Kapiko', version: "{client_version}"}
+
+-
+  regex: '.*(?:jig browser(?: web;|9i?)?(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Jig Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:JigBrowserPlus/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Jig Browser Plus', version: "{client_version}"}
+
+-
+  regex: '.*(?:Flock(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Flock', version: "{client_version}"}
+
+-
+  regex: '.*(?:IceDragon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'IceDragon', version: "{client_version}"}
+
+-
+  regex: '.*(?:CometBird(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'CometBird', version: "{client_version}"}
+
+-
+  regex: '.*(?:PaleMoon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Pale Moon', version: "{client_version}"}
+
+-
+  regex: '.*(?:.*Goanna.*PaleMoon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Pale Moon', version: "{client_version}"}
+
+-
+  regex: '.*(?:WebPositive).*'
+  priority: -3
+  client: {type: browser, name: 'WebPositive', version: ""}
+
+-
+  regex: '.*(?:WebPositive/(?<client_version>[\d.]+).+Version/).*'
+  priority: -3
+  client: {type: browser, name: 'WebPositive', version: "{client_version}"}
+
+-
+  regex: '.*(?:Iceweasel(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Iceweasel', version: "{client_version}"}
+
+-
+  regex: '.*(?:Iridium(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Iridium', version: "{client_version}"}
+
+-
+  regex: '.*(?:Brave(?: Browser(?: Nightly)?| Chrome)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Brave', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/(?<client_version>\d+\.[.\d]+).*Brave/).*'
+  priority: -3
+  client: {type: browser, name: 'Brave', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mobile Safari/.+Brave/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Brave', version: "{client_version}"}
+
+-
+  regex: '.*(?:Brave Browser(?: Nightly)?/(?<client_version>[.\d]+) Mac OS X).*'
+  priority: -3
+  client: {type: browser, name: 'Brave', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mac OS X.+Brave(?:/(?<client_version>[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Brave', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bunjalloo(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Bunjalloo', version: "{client_version}"}
+
+-
+  regex: '.*(?:AtomicBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Atomic Web Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/(?<client_version>\d+\.[.\d]+) .*MRCHROME).*'
+  priority: -3
+  client: {type: browser, name: 'Amigo', version: "{client_version}"}
+
+-
+  regex: '.*(?:OppoBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Oppo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Avant ?Browser).*'
+  priority: -3
+  client: {type: browser, name: 'Avant Browser', version: ""}
+
+-
+  regex: '.*(?:Deepnet Explorer (?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'Deepnet Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Maemo Browser(?: (?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'MicroB', version: "{client_version}"}
+
+-
+  regex: '.*(?:Firefox.*Tablet browser (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'MicroB', version: "{client_version}"}
+
+-
+  regex: '.*(?:Fennec(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Fennec', version: "{client_version}"}
+
+-
+  regex: '.*(?:Epic(?:/(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Epic', version: "{client_version}"}
+
+-
+  regex: '.*(?:Android \d+; [A-Za-z0-9]{10}; U; [^;]+\) AppleWebKit/.+Chrome/).*'
+  priority: -3
+  client: {type: browser, name: 'Avast Secure Browser', version: ""}
+
+-
+  regex: '.*(?:Tenta/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Tenta Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+Tenta/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Tenta Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Aloha/).*'
+  priority: -3
+  client: {type: browser, name: 'Aloha Browser', version: ""}
+
+-
+  regex: '.*(?:AlohaBrowser(?:App)?(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Aloha Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ AlohaBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Aloha Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:VertexSurf/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Vertex Surf', version: "{client_version}"}
+
+-
+  regex: '.*(?:Waterfox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Waterfox', version: "{client_version}"}
+
+-
+  regex: '.*(?:Camino(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Camino', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mobicip).*'
+  priority: -3
+  client: {type: browser, name: 'Mobicip', version: ""}
+
+-
+  regex: '.*(?:IceCat(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'IceCat', version: "{client_version}"}
+
+-
+  regex: '.*(?:SailfishBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Sailfish Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:360 Alitephone Browser(?:[ /]?\(?(?<client_version>\d+[.\d]+)(?:beta)?\)?)?).*'
+  priority: -3
+  client: {type: browser, name: '360 Speed Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:360 Aphone Browser(?:[ /]?\(?(?<client_version>\d+[.\d]+)(?:beta)?\)?)?).*'
+  priority: -3
+  client: {type: browser, name: '360 Phone Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:QIHU 360[ES]E|QihooBrowserHD/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: '360 Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Edg[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Microsoft Edge', version: "{client_version}"}
+
+-
+  regex: '.*(?:HeadlessChrome/.*(?:Headless)?Edg(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Headless Edge', version: "{client_version}"}
+
+-
+  regex: '.*(?:EdgA[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Microsoft Edge', version: "{client_version}"}
+
+-
+  regex: '.*(?:EdgiOS[ /](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Microsoft Edge', version: "{client_version}"}
+
+-
+  regex: '.*(?:Edge/(?<client_version>\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Microsoft Edge', version: "{client_version}"}
+
+-
+  regex: '.*(?:AOLShield(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'AOL Shield', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ AOLShield(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'AOL Shield Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:TenFourFox(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'TenFourFox', version: "{client_version}"}
+
+-
+  regex: '.*(?:Qwant/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Qwant Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:QwantMobile(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Qwant Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.*QwantMobile(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Qwant Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:QwantiOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Qwant Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:Beaker ?Browser(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Beaker Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:RealmeBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Realme Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:VivoBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'vivo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:ZTE ?Browser/).*'
+  priority: -3
+  client: {type: browser, name: 'ZTE Browser', version: ""}
+
+-
+  regex: '.*(?:com\.huawei\.hmos\.browser).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser', version: ""}
+
+-
+  regex: '.*(?:HBPC/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:HuaweiBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:ArkWeb/.+HuaweiBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:PC;.+ArkWeb).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser', version: ""}
+
+-
+  regex: '.*(?:PC;.+ArkWeb/.+HuaweiBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:HBPC/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Huawei Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:MxNitro/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'MxNitro', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:7Star|Kuaiso)/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: '7Star', version: "{client_version}"}
+
+-
+  regex: '.*(?:Slimjet/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Slimjet', version: "{client_version}"}
+
+-
+  regex: '.*(?:SlimBoat/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'SlimBoat', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ Hola(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'hola! Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SY/(?<client_version>\d+[.\d]+) Chrome/).*'
+  priority: -3
+  client: {type: browser, name: 'Stampy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Jio(?:Browser|Pages|Sphere)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'JioSphere', version: "{client_version}"}
+
+-
+  regex: '.*(?:OculusBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Oculus Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:TNSBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'K.Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SputnikBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Sputnik Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Basilisk(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Basilisk', version: "{client_version}"}
+
+-
+  regex: '.*(?:NoxBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Nox Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:FreeU(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'FreeU', version: "{client_version}"}
+
+-
+  regex: '.*(?:Hawk/QuickBrowser(?:/v?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Hawk Quick Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Hawk/TurboBrowser(?:/v?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Hawk Turbo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Crusta(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Crusta', version: "{client_version}"}
+
+-
+  regex: '.*(?:COSBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'COS Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:MZBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Meizu Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:splash Version(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Splash', version: "{client_version}"}
+
+-
+  regex: '.*(?:Faux(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Faux Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Beamrise(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Beamrise', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kinza(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Kinza', version: "{client_version}"}
+
+-
+  regex: '.*(?:Origyn Web Browser).*'
+  priority: -3
+  client: {type: browser, name: 'Origyn Web Browser', version: ""}
+
+-
+  regex: '.*(?:WIB/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Wear Internet Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Minimo(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Minimo', version: "{client_version}"}
+
+-
+  regex: '.*(?:BlackHawk(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'BlackHawk', version: "{client_version}"}
+
+-
+  regex: '.*(?:SalamWeb(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'SalamWeb', version: "{client_version}"}
+
+-
+  regex: '.*(?:mCent(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'mCent', version: "{client_version}"}
+
+-
+  regex: '.*(?:Falkon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Falkon', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:ChatGPT%20)?Atlas/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'ChatGPT Atlas', version: "{client_version}"}
+
+-
+  regex: '.*(?:TaoBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Tao Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:AlohaLite(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Aloha Browser Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:CCleaner(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'CCleaner', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Ordissimo|webissimo3)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Ordissimo', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:com\.airfind\.deltabrowser|AirSearch)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Delta Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lovense(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lovense Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Start/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'START Internet Browser', version: "{client_version}"}
+
+-
+  regex: '.*\bAT/(?<client_version>\d+[.\d]+).*'
+  priority: -3
+  client: {type: browser, name: 'AVG Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:AVG/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'AVG Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mobile VR.+Firefox).*'
+  priority: -3
+  client: {type: browser, name: 'Firefox Reality', version: ""}
+
+-
+  regex: '.*(?:Wolvic/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Wolvic', version: "{client_version}"}
+
+-
+  regex: '.*(?:Atom/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Atom', version: "{client_version}"}
+
+-
+  regex: '.*(?:115Browser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: '115 Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Valve Steam GameOverlay(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Steam In-Game Overlay', version: "{client_version}"}
+
+-
+  regex: '.*(?:Light/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Light', version: "{client_version}"}
+
+-
+  regex: '.*(?:Elements Browser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Elements Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:ADG/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'AOL Desktop', version: "{client_version}"}
+
+-
+  regex: '.*(?:AOL (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'AOL Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:AirWatch Browser v|AirWatchBrowser/)(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'VMware AirWatch', version: "{client_version}"}
+
+-
+  regex: '.*(?:ToGate/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'ToGate', version: "{client_version}"}
+
+-
+  regex: '.*(?:GlassBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Glass Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Sizzy/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Sizzy', version: "{client_version}"}
+
+-
+  regex: '.*(?:OhHaiBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'OhHai Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Polypane/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Polypane', version: "{client_version}"}
+
+-
+  regex: '.*(?:i?Lunascape(?:[/ ](?<client_version>\d+\.[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lunascape', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ i?Lunascape(?:[/ ](?<client_version>\d+\.[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lunascape', version: "{client_version}"}
+
+-
+  regex: '.*(?:iLunascapeLite/(?:(?<client_version>\d+\.[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lunascape Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:ybrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Yahoo! Japan Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lulumi-browser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Lulumi', version: "{client_version}"}
+
+-
+  regex: '.*(?:TungstenBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Tungsten', version: "{client_version}"}
+
+-
+  regex: '.*(?:Xvast/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Xvast', version: "{client_version}"}
+
+-
+  regex: '.*(?:Colibri/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Colibri', version: "{client_version}"}
+
+-
+  regex: '.*(?:SEB/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Safe Exam Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Turkcell-)?YaaniBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Yaani Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Firefox/.*(?:Turkcell-)?YaaniBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Yaani Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cliqz).*'
+  priority: -3
+  client: {type: browser, name: 'Cliqz', version: ""}
+
+-
+  regex: '.*(?:Ghostery:?(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: browser, name: 'Ghostery Privacy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:PrivacyWall/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'PrivacyWall', version: "{client_version}"}
+
+-
+  regex: '.*(?:PHX/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Phoenix Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:YoloBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Yolo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Borealis/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Borealis Navigator', version: "{client_version}"}
+
+-
+  regex: '.*(?:NFSBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'NFS Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Stargon/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Stargon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Browzar).*'
+  priority: -3
+  client: {type: browser, name: 'Browzar', version: ""}
+
+-
+  regex: '.*(?:SLBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Smart Lenovo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ SLBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Smart Lenovo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:OceanHero/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'OceanHero', version: "{client_version}"}
+
+-
+  regex: '.*(?:UR/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'UR Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Kode(?:iOS)?/(?:(?<client_version>\d+[.\d]+))?|TansoDL)).*'
+  priority: -3
+  client: {type: browser, name: 'Kode Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SeewoBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Seewo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Sraf(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Seraphic Sraf', version: "{client_version}"}
+
+-
+  regex: '.*(?:Navigateur web/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Navigateur Web', version: "{client_version}"}
+
+-
+  regex: '.*(?:SFive_IOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SFive', version: "{client_version}"}
+
+-
+  regex: '.*(?:SFive(?:_Android)?/.+ Chrome/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SFive', version: "{client_version}"}
+
+-
+  regex: '.*(?:WhaleBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Whale TV Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.tcl\.browser).*'
+  priority: -3
+  client: {type: browser, name: 'BrowseHere', version: ""}
+
+-
+  regex: '.*(?:Tbrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'T-Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Odin/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Odin', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:chimlac_browser|chimlac)/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Chim Lac', version: "{client_version}"}
+
+-
+  regex: '.*(?:PlayFreeBrowser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'PlayFree Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Zetakey/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Zetakey', version: "{client_version}"}
+
+-
+  regex: '.*(?:AwoX(?:/(?<client_version>\d+[.\d]+))? Browser).*'
+  priority: -3
+  client: {type: browser, name: 'AwoX', version: "{client_version}"}
+
+-
+  regex: '.*(?:Browser/Phantom/V(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Phantom Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Perfect%20Browser(?:-iPad)?|Perfect(?:BrowserPro)?)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Perfect Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Biyubi/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Biyubi', version: "{client_version}"}
+
+-
+  regex: '.*(?:xStand/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'xStand', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ekioh/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Flow', version: "{client_version}"}
+
+-
+  regex: '.*(?:Flow/(?:(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: browser, name: 'Flow', version: "{client_version}"}
+
+-
+  regex: '.*(?:Android (?:[\d.]+;) ?(?:[^;]+;)? Flow\) AppleWebKit/537.+Chrome/\d{3}).*'
+  priority: -3
+  client: {type: browser, name: 'Flow Browser', version: ""}
+
+-
+  regex: '.*(?:Orca/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Orca', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cornowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Cornowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:BanglaBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Bangla Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Smooz/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Smooz', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+Smooz/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Smooz', version: "{client_version}"}
+
+-
+  regex: '.*(?:Otter(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Otter Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+Otter(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Otter Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:VenusBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Venus Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Avira(?:Scout)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Avira Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:GinxDroid(?:Browser)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'GinxDroid Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:BriskBard(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'BriskBard', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome.+BriskBard/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'BriskBard', version: "{client_version}"}
+
+-
+  regex: '.*(?:PolyBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'PolyBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:flast/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Flast', version: "{client_version}"}
+
+-
+  regex: '.*(?:qutebrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Qutebrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:qutebrowser/(?<client_version>\d+\.[.\d]+) .*Chrome).*'
+  priority: -3
+  client: {type: browser, name: 'Qutebrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:PiBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Pi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lolifox/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Lolifox', version: "{client_version}"}
+
+-
+  regex: '.*(?:DeskBrowse/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'DeskBrowse', version: "{client_version}"}
+
+-
+  regex: '.*(?:CravingExplorer/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Craving Explorer', version: "{client_version}"}
+
+-
+  regex: '.*(?:DotBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Dot Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/(?<client_version>\d+\.[.\d]+) .*AgentWeb.+UCBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'CoolBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Byffox/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Byffox', version: "{client_version}"}
+
+-
+  regex: '.*(?:HasBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'HasBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:DeledaoPersonal|DeledaoFamily)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Deledao', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chromium GOST.+Chrome/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Chromium GOST', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/(?<client_version>\d+\.[.\d]+) .*\(Chromium GOST\)).*'
+  priority: -3
+  client: {type: browser, name: 'Chromium GOST', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chedot/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Chedot', version: "{client_version}"}
+
+-
+  regex: '.*(?:JavaFX/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'JavaFX', version: "{client_version}"}
+
+-
+  regex: '.*(?:Degdegan/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'deg-degan', version: "{client_version}"}
+
+-
+  regex: '.*(?:Qazweb/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Qazweb', version: "{client_version}"}
+
+-
+  regex: '.*(?:7654Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: '7654 Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Helio/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Helio', version: "{client_version}"}
+
+-
+  regex: '.*(?:Torrent/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Maelstrom', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mandarin Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Mandarin', version: "{client_version}"}
+
+-
+  regex: '.*(?:Version/.+Chrome/.+EdgW/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Edge WebView', version: "{client_version}"}
+
+-
+  regex: '.*(?:Arvin/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Arvin', version: "{client_version}"}
+
+-
+  regex: '.*(?:Secure/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:FlashBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Flash Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:spectre-browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Spectre Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:bonsai-browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Bonsai', version: "{client_version}"}
+
+-
+  regex: '.*(?:Harman_Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Harman Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:psi-secure-browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'PSI Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:lagatos-browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Lagatos Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:LTBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'LT Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:dBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Peeps dBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SushiBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Sushi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:ChanjetCloud/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'ChanjetCloud', version: "{client_version}"}
+
+-
+  regex: '.*(?:Private Browser/(?<client_version>\d+[.\d]+) Chrome/).*'
+  priority: -3
+  client: {type: browser, name: 'Secure Private Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:T\+Browser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'T+Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:ReqwirelessWeb/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Reqwireless WebViewer', version: "{client_version}"}
+
+-
+  regex: '.*(?:SiteKiosk (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SiteKiosk', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/.+ SiteKiosk (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SiteKiosk', version: "{client_version}"}
+
+-
+  regex: '.*(?:CYBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'CyBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:HiBrowser/v?(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Hi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:\d+/tclwebkit(?:\d+[.\d]*)).*'
+  priority: -3
+  client: {type: browser, name: 'BrowseHere', version: ""}
+
+-
+  regex: '.*(?:ABB/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'AdBlock Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:youcare-ios-app).*'
+  priority: -3
+  client: {type: browser, name: 'YouCare', version: ""}
+
+-
+  regex: '.*(?:youcare-android-app).*'
+  priority: -3
+  client: {type: browser, name: 'YouCare', version: ""}
+
+-
+  regex: '.*(?:Decentr).*'
+  priority: -3
+  client: {type: browser, name: 'Decentr', version: ""}
+
+-
+  regex: '.*(?:SurfBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Surf Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Floorp/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Floorp', version: "{client_version}"}
+
+-
+  regex: '.*(?:lexi(?:Browser)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Lexi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lilo/.+CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Lilo', version: ""}
+
+-
+  regex: '.*(?:Lilo/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Lilo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Sparrow/.+CFNetwork).*'
+  priority: -3
+  client: {type: browser, name: 'Viasat Browser', version: ""}
+
+-
+  regex: '.*(?:Chrome/(?<client_version>\d+\.[.\d]+).+Sparrow).*'
+  priority: -3
+  client: {type: browser, name: 'Viasat Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/(?<client_version>\d+\.[.\d]+).+TeslaBrowser/).*'
+  priority: -3
+  client: {type: browser, name: 'Tesla Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:.+U Browser(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'U Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:bloket).*'
+  priority: -3
+  client: {type: browser, name: 'Bloket', version: ""}
+
+-
+  regex: '.*(?:.+Vast Browser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Vast Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Keepsafe Browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Keepsafe Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:InspectBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'Inspect Browser', version: ""}
+
+-
+  regex: '.*(?:YAGI/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'YAGI', version: "{client_version}"}
+
+-
+  regex: '.*(?:Safari/537\.36 (?:Browser|Navegador)).*'
+  priority: -3
+  client: {type: browser, name: 'APN Browser', version: ""}
+
+-
+  regex: '.*(?:Odd/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Odd Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Norton%20Private%20Browser).*'
+  priority: -3
+  client: {type: browser, name: 'Norton Private Browser', version: ""}
+
+-
+  regex: '.*(?:Norton/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Norton Private Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Alva/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'ALVA', version: "{client_version}"}
+
+-
+  regex: '.*(?:PicoBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'PICO Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:RokuBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Roku Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Nuanti(?:Meta)?/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Nuanti Meta', version: "{client_version}"}
+
+-
+  regex: '.*(?:ArcMobile2(?:/(?<client_version>\d+\.[.\d]+);)?).*'
+  priority: -3
+  client: {type: browser, name: 'Arc Search', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.airfind\.browser/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Airfind Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:DoCoMo/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'DoCoMo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Nuviu/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Nuviu', version: "{client_version}"}
+
+-
+  regex: '.*(?:fGet/).*'
+  priority: -3
+  client: {type: browser, name: 'fGet', version: ""}
+
+-
+  regex: '.*(?:\[PB/\d+\]).*'
+  priority: -3
+  client: {type: browser, name: 'Proxy Browser', version: ""}
+
+-
+  regex: '.*(?:\[HS/\d+\]).*'
+  priority: -3
+  client: {type: browser, name: 'HotBrowser', version: ""}
+
+-
+  regex: '.*(?:\[(?:HB/29|PB/(?:6[36]|81|1[02]8|115|149)|SX/\d+)\]).*'
+  priority: -3
+  client: {type: browser, name: 'SecureX', version: ""}
+
+-
+  regex: '.*(?:VD/\d+).*'
+  priority: -3
+  client: {type: browser, name: 'VD Browser', version: ""}
+
+-
+  regex: '.*(?:Skye/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Skye', version: "{client_version}"}
+
+-
+  regex: '.*(?:Quick Search TV(?:/(?:Wild Moon Edition )?(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Quick Search TV', version: "{client_version}"}
+
+-
+  regex: '.*(?:Raspbian Chromium/(?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Raspbian Chromium', version: "{client_version}"}
+
+-
+  regex: '.*(?:SberBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SberBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:tararia/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'tararia', version: "{client_version}"}
+
+-
+  regex: '.*(?:yixia\.browser/com\.donerbrowser\.app/).*'
+  priority: -3
+  client: {type: browser, name: 'Colom Browser', version: ""}
+
+-
+  regex: '.*(?:VibeMate(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'VibeMate', version: "{client_version}"}
+
+-
+  regex: '.*(?:RakutenWebSearch(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Rakuten Web Search', version: "{client_version}"}
+
+-
+  regex: '.*(?:RakutenBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Rakuten Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Impervious(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Impervious Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:catalyst(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Catalyst', version: "{client_version}"}
+
+-
+  regex: '.*(?:Wexond(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Wexond', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ninetails(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Ninetails', version: "{client_version}"}
+
+-
+  regex: '.*(?:JuziBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'JUZI Browser', version: ""}
+
+-
+  regex: '.*(?:Lotus/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Lotus', version: "{client_version}"}
+
+-
+  regex: '.*(?:ManagedBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Intune Managed Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bang/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Bang', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ask\.com Mobile Browser).*'
+  priority: -3
+  client: {type: browser, name: 'Ask.com', version: ""}
+
+-
+  regex: '.*(?:GoKu-iOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'GoKu', version: "{client_version}"}
+
+-
+  regex: '.*(?:18\+/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: '18+ Privacy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SurfyBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Surfy Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Novarra-Vision|Vision-Browser)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Vision Mobile Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bluefy/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Bluefy', version: "{client_version}"}
+
+-
+  regex: '.*(?:.*OnBrowserLite(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'OnBrowser Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:DiigoBrowser(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Diigo Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:IOS)?TrueLocationBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'TrueLocation Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mogok/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Mogok Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Aplix_.*_browser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Aplix', version: "{client_version}"}
+
+-
+  regex: '.*(?:Acoo Browser).*'
+  priority: -3
+  client: {type: browser, name: 'Acoo Browser', version: ""}
+
+-
+  regex: '.*(?:LeganBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Legan Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:WebDiscover/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'WebDiscover', version: "{client_version}"}
+
+-
+  regex: '.*(?:Qiyu/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Qiyu', version: "{client_version}"}
+
+-
+  regex: '.*(?:EastBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'East Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:K-Ninja/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'K-Ninja', version: "{client_version}"}
+
+-
+  regex: '.*(?:GreenBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'GreenBrowser', version: ""}
+
+-
+  regex: '.*(?:Columbus/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Columbus Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Liri/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Liri Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Wyzo/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Wyzo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Vonkeror(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Vonkeror', version: "{client_version}"}
+
+-
+  regex: '.*(?:WebianShell/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Webian Shell', version: "{client_version}"}
+
+-
+  regex: '.*(?:Classilla/).*'
+  priority: -3
+  client: {type: browser, name: 'Classilla', version: ""}
+
+-
+  regex: '.*(?:Eolie).*'
+  priority: -3
+  client: {type: browser, name: 'Eolie', version: ""}
+
+-
+  regex: '.*(?:EudoraWeb (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'EudoraWeb', version: "{client_version}"}
+
+-
+  regex: '.*(?:MixerBox-Browser).*'
+  priority: -3
+  client: {type: browser, name: 'MixerBox AI', version: ""}
+
+-
+  regex: '.*(?:YouBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'YouBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:MaxBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'MaxBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SkyLeap/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'SkyLeap', version: "{client_version}"}
+
+-
+  regex: '.*(?:sppm_bizbrowser).*'
+  priority: -3
+  client: {type: browser, name: 'BizBrowser', version: ""}
+
+-
+  regex: '.*(?:Kitt/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Kitt', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Ladybird|LibWeb\+LibJS/.*Browser)/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Ladybird', version: "{client_version}"}
+
+-
+  regex: '.*(?:WeltweitimnetzBrowser/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Weltweitimnetz Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:xChaos_Arachne/5\.(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Arachne', version: "{client_version}"}
+
+-
+  regex: '.*(?:nook browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Nook Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:NaenaraBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Naenara Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:KUN/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'KUN', version: "{client_version}"}
+
+-
+  regex: '.*(?:wkbrowser (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Wukong Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Swiftweasel(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Swiftweasel', version: "{client_version}"}
+
+-
+  regex: '.*(?:Roccat(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Roccat', version: "{client_version}"}
+
+-
+  regex: '.*(?:Awesomium/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Awesomium', version: "{client_version}"}
+
+-
+  regex: '.*(?:Prism/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Prism', version: "{client_version}"}
+
+-
+  regex: '.*(?:iNet Browser(?: (?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'iNet Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:MIB|MotorolaWebKit.*Version)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Motorola Internet Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:UPhoneWebBrowser(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'UPhone Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:QtWeb Internet Browser(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'QtWeb', version: "{client_version}"}
+
+-
+  regex: '.*(?:Presearch \(Tempest\)).*'
+  priority: -3
+  client: {type: browser, name: 'Presearch', version: ""}
+
+-
+  regex: '.*(?:Perk/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Perk', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ninesky(?:-android-mobile)?/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Ninesky', version: "{client_version}"}
+
+-
+  regex: '.*(?:Veera/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Veera', version: "{client_version}"}
+
+-
+  regex: '.*(?:SecureBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'AppTec Secure Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:OJR Browser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'OJR Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Dezor/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Dezor', version: "{client_version}"}
+
+-
+  regex: '.*(?:TUSK/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'TUSK', version: "{client_version}"}
+
+-
+  regex: '.*(?:PrivacyBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'Privacy Browser', version: ""}
+
+-
+  regex: '.*(?:ProxyFox).*'
+  priority: -3
+  client: {type: browser, name: 'ProxyFox', version: ""}
+
+-
+  regex: '.*(?:XXXAndroidApp).*'
+  priority: -3
+  client: {type: browser, name: 'XnBrowse', version: ""}
+
+-
+  regex: '.*(?:TQBrowser).*'
+  priority: -3
+  client: {type: browser, name: 'TQ Browser', version: ""}
+
+-
+  regex: '.*(?:RCATorExplorer).*'
+  priority: -3
+  client: {type: browser, name: 'RCA Tor Explorer', version: ""}
+
+-
+  regex: '.*(?:Singlebox/(?<client_version>\d+\.[\.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Singlebox', version: "{client_version}"}
+
+-
+  regex: '.*(?:AltiBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'AltiBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:QuarkPC/(?<client_version>\d+\.[\.\d]+)).*'
+  priority: -3
+  client: {type: browser, name: 'QuarkPC', version: "{client_version}"}
+
+-
+  regex: '.*(?:HeyTapBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'HeyTapBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:SamanthaDoubao/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Doubao', version: "{client_version}"}
+
+-
+  regex: '.*(?:ArtisReader/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'ArtisBrowser', version: "{client_version}"}
+
+-
+  regex: '.*(?:buscari/([\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Seekee', version: ""}
+
+-
+  regex: '.*(?:FireSendBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'FireSend Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:MySudo Browser).*'
+  priority: -3
+  client: {type: browser, name: 'MySudo', version: ""}
+
+-
+  regex: '.*(?:Quiche%20Browser).*'
+  priority: -3
+  client: {type: browser, name: 'Quiche Browser', version: ""}
+
+-
+  regex: '.*(?:Lightpanda/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Lightpanda', version: "{client_version}"}
+
+-
+  regex: '.*(?:Startpage(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: browser, name: 'Startpage', version: "{client_version}"}
+
+-
+  regex: '.*(?:MullvadBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Mullvad Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:Stadium/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Stadium', version: "{client_version}"}
+
+-
+  regex: '.*(?:Teak/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Teak Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:FulldiveBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: browser, name: 'Fulldive', version: "{client_version}"}
+
+-
+  regex: '.*(?:Android-Gmail).*'
+  priority: -3
+  client: {type: pim, name: 'Gmail', version: ""}
+
+-
+  regex: '.*(?:mailapp/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'MailApp', version: "{client_version}"}
+
+-
+  regex: '.*(?:BlueMail/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'BlueMail', version: "{client_version}"}
+
+-
+  regex: '.*(?:MailMaster(?:PC|_Android_Mobile)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Mail Master', version: "{client_version}"}
+
+-
+  regex: '.*(?:Foxmail/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Foxmail', version: "{client_version}"}
+
+-
+  regex: '.*(?:NaverMailApp/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'NAVER Mail', version: "{client_version}"}
+
+-
+  regex: '.*(?:eM ?Client/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'eM Client', version: "{client_version}"}
+
+-
+  regex: '.*(?:jp.co.yahoo.ymail/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Yahoo! Mail', version: "{client_version}"}
+
+-
+  regex: '.*(?:Yahoo%20Mail).*'
+  priority: -3
+  client: {type: pim, name: 'Yahoo Mail', version: ""}
+
+-
+  regex: '.*(?:Mailbird/(?<client_version>\d+\.[.\d]+)/).*'
+  priority: -3
+  client: {type: pim, name: 'Mailbird', version: "{client_version}"}
+
+-
+  regex: '.*(?:ramboxpro/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: pim, name: 'Rambox Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:Evernote/?(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Evernote', version: "{client_version}"}
+
+-
+  regex: '.*(?:Basecamp[0-9]/?(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Basecamp', version: "{client_version}"}
+
+-
+  regex: '.*(?:Notion/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Notion', version: "{client_version}"}
+
+-
+  regex: '.*(?:Mailspring/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Mailspring', version: "{client_version}"}
+
+-
+  regex: '.*(?:Franz/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Franz', version: "{client_version}"}
+
+-
+  regex: '.*(?:Raindrop\.io/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Raindrop.io', version: "{client_version}"}
+
+-
+  regex: '.*(?:BathyScaphe/).*'
+  priority: -3
+  client: {type: pim, name: 'BathyScaphe', version: ""}
+
+-
+  regex: '.*(?:JaneView/).*'
+  priority: -3
+  client: {type: pim, name: 'JaneView', version: ""}
+
+-
+  regex: '.*(?:Live5ch/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Live5ch', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:SeaMonkey|Iceape)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'SeaMonkey', version: "{client_version}"}
+
+-
+  regex: '.*(?:DAVdroid(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'DAVdroid', version: "{client_version}"}
+
+-
+  regex: '.*(?:The Bat!(?: Voyager)?(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'The Bat!', version: "{client_version}"}
+
+-
+  regex: '.*(?:MailBar(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'MailBar', version: "{client_version}"}
+
+-
+  regex: '.*(?:Postbox(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'Postbox', version: "{client_version}"}
+
+-
+  regex: '.*\bBarca(?:Pro)?(?:[/ ](?<client_version>\d+[.\d]+))?.*'
+  priority: -3
+  client: {type: pim, name: 'Barca', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lotus-Notes(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'Lotus Notes', version: "{client_version}"}
+
+-
+  regex: '.*(?:Airmail(?: (?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'Airmail', version: "{client_version}"}
+
+-
+  regex: '.*(?:Spicebird/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Spicebird', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Thunderbird|Icedove|Shredder)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'Thunderbird', version: "{client_version}"}
+
+-
+  regex: '.*(?:WindowsMail(?:/(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: pim, name: 'Windows Mail', version: "{client_version}"}
+
+-
+  regex: '.*\b(?:(?:Microsoft )?Outlook|MacOutlook)(?:[/ ](?<client_version>\d+[.\d]+))?.*'
+  priority: -3
+  client: {type: pim, name: 'Microsoft Outlook', version: "{client_version}"}
+
+-
+  regex: '.*(?:Outlook-Express(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: pim, name: 'Outlook Express', version: "{client_version}"}
+
+-
+  regex: '.*(?:YouView(?:HTML/(?<client_version>\d+\.[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'YouView', version: "{client_version}"}
+
+-
+  regex: '.*(?:DIGA(?:Plus/(?<client_version>\d+\.[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'DIGA', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.devcoder\.iptvxtreamplayer).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Xtream Player', version: ""}
+
+-
+  regex: '.*(?:JHV/SWHV-(?<client_version>[.\d+]+)).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'JHelioviewer', version: "{client_version}"}
+
+-
+  regex: '.*(?:StudioDisplay/(?<client_version>\d+\.[\d.]+)).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'StudioDisplay', version: "{client_version}"}
+
+-
+  regex: '.*(?:Hubhopper/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Hubhopper', version: "{client_version}"}
+
+-
+  regex: '.*(?:MixerBox(?:%20Pro)?/(?<client_version>[.\d]+)).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'MixerBox', version: "{client_version}"}
+
+-
+  regex: '.*(?:just_audio/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Just Audio', version: "{client_version}"}
+
+-
+  regex: '.*(?:Downcast/(?<client_version>\d+\.[\d.]+)?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Downcast', version: "{client_version}"}
+
+-
+  regex: '.*(?:MPlayer[ /](?<client_version>\d+\.[\d.])).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'MPlayer', version: "{client_version}"}
+
+-
+  regex: '.*(?:MediaGo(?:/(?<client_version>[\w\.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Sony Media Go', version: "{client_version}"}
+
+-
+  regex: '.*(?:HTC Streaming Player).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'HTC Streaming Player', version: ""}
+
+-
+  regex: '.*(?:mpv (?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'mpv', version: "{client_version}"}
+
+-
+  regex: '.*(?:Music Player Daemon (?:(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Music Player Daemon', version: "{client_version}"}
+
+-
+  regex: '.*(?:GoogleChirp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Google Podcasts', version: "{client_version}"}
+
+-
+  regex: '.*(?:stagefright(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Stagefright', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kodi(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Kodi', version: "{client_version}"}
+
+-
+  regex: '.*(?:XBMC(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'XBMC', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Windows-Media-Player|NSPlayer)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Windows Media Player', version: "{client_version}"}
+
+-
+  regex: '.*(?:J\. River Internet Reader/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'JRiver Media Center', version: "{client_version}"}
+
+-
+  regex: '.*(?:Winamp(?:MPEG)?(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Winamp', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Lib)?VLC(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'VLC', version: "{client_version}"}
+
+-
+  regex: '.*(?:Sonos/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'SONOS', version: "{client_version}"}
+
+-
+  regex: '.*(?:SubStream(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'SubStream', version: "{client_version}"}
+
+-
+  regex: '.*(?:Songbird(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Songbird', version: "{client_version}"}
+
+-
+  regex: '.*(?:QuickTime(?:(?:(?:.+qtver=)|(?:(?: E-)?[\./]))(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'QuickTime', version: "{client_version}"}
+
+-
+  regex: '.*(?:Nightingale(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Nightingale', version: "{client_version}"}
+
+-
+  regex: '.*(?:NexPlayer(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'NexPlayer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Miro(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Miro', version: "{client_version}"}
+
+-
+  regex: '.*(?:MediaMonkey(?:[ /](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'MediaMonkey', version: "{client_version}"}
+
+-
+  regex: '.*(?:foobar2000(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Foobar2000', version: "{client_version}"}
+
+-
+  regex: '.*(?:FlyCast(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'FlyCast', version: "{client_version}"}
+
+-
+  regex: '.*(?:iTunes(?:-iPhone|-iPad)?(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'iTunes', version: "{client_version}"}
+
+-
+  regex: '.*(?:Deezer(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Deezer', version: "{client_version}"}
+
+-
+  regex: '.*(?:Clementine(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Clementine', version: "{client_version}"}
+
+-
+  regex: '.*(?:Boxee(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Boxee', version: "{client_version}"}
+
+-
+  regex: '.*(?:Banshee(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Banshee', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:AlexaMediaPlayer/|^AlexaMediaPlayer/|^Echo/|Amazon;Echo(?:_|;)|^AlexaService/|^Alexa Mobile Voice/)(?<client_version>[a-z\d]+\.[a-z.\d]+)?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Alexa', version: "{client_version}"}
+
+-
+  regex: '.*(?:Audacious(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mediaplayer, name: 'Audacious', version: "{client_version}"}
+
+-
+  regex: '.*(?:boohee/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'boohee', version: "{client_version}"}
+
+-
+  regex: '.*(?:JOKERBET/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'JOKERBET', version: "{client_version}"}
+
+-
+  regex: '.*(?:_sol_ _app_ __v(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Sol Nyheter', version: "{client_version}"}
+
+-
+  regex: '.*(?:DelfiEEwww/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Delfi EE', version: "{client_version}"}
+
+-
+  regex: '.*(?:LoiLoNote/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'LoiLoNote', version: "{client_version}"}
+
+-
+  regex: '.*(?:BNK48_101/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'iAM48', version: "{client_version}"}
+
+-
+  regex: '.*(?:Azul (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Azul', version: "{client_version}"}
+
+-
+  regex: '.*(?:YahooSearch/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yahoo Search', version: "{client_version}"}
+
+-
+  regex: '.*(?:superhk/(?<client_version>[\d.]+)/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yahoo Hong Kong', version: "{client_version}"}
+
+-
+  regex: '.*(?:super/(?<client_version>[\d.]+)/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yahoo', version: "{client_version}"}
+
+-
+  regex: '.*(?:YuanBao/.+app_version/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'YuanBao', version: "{client_version}"}
+
+-
+  regex: '.*(?:poq\.ios/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'poq', version: "{client_version}"}
+
+-
+  regex: '.*(?:Phantom/ios/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Phantom', version: "{client_version}"}
+
+-
+  regex: '.*(?:HuffPost/ios/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HuffPost', version: "{client_version}"}
+
+-
+  regex: '.*(?:Latina/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Latina', version: "{client_version}"}
+
+-
+  regex: '.*(?:QuickBooks/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'QuickBooks', version: "{client_version}"}
+
+-
+  regex: '.*(?:GrokApp/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Grok', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kobo.+/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Kobo eReader', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Citrix(?:Receiver| Workspace)|CWA(?:WEBVIEW)?)(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Citrix Workspace', version: "{client_version}"}
+
+-
+  regex: '.*(?:Citrix(?:SSO|VPN)(?:[ -](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Citrix VPN', version: "{client_version}"}
+
+-
+  regex: '.*(?:PrimeVideo/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Amazon Prime Video', version: "{client_version}"}
+
+-
+  regex: '.*(?:espn/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ESPN', version: "{client_version}"}
+
+-
+  regex: '.*(?:GM-Android/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'General Motors', version: "{client_version}"}
+
+-
+  regex: '.*(?:REDLINECLIENT.+V(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Redline', version: "{client_version}"}
+
+-
+  regex: '.*(?:ChatGPT/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ChatGPT', version: "{client_version}"}
+
+-
+  regex: '.*(?:DeepSeek Chat/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'DeepSeek', version: "{client_version}"}
+
+-
+  regex: '.*(?:dubox;(?<client_version>[\d.]+);).*'
+  priority: -3
+  client: {type: mobile app, name: 'TeraBox', version: "{client_version}"}
+
+-
+  regex: '.*(?:TeraBox/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TeraBox', version: "{client_version}"}
+
+-
+  regex: '.*(?:Hulu/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Hulu', version: "{client_version}"}
+
+-
+  regex: '.*(?:genspark).*'
+  priority: -3
+  client: {type: mobile app, name: 'Genspark', version: ""}
+
+-
+  regex: '.*(?:Kimi/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Kimi', version: "{client_version}"}
+
+-
+  regex: '.*(?:lookr/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Lookr', version: "{client_version}"}
+
+-
+  regex: '.*(?:KeplrWalletMobile/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Keplr', version: "{client_version}"}
+
+-
+  regex: '.*(?:VidJuiceUniTube/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'VidJuice UniTube', version: "{client_version}"}
+
+-
+  regex: '.*(?:opgg-electron-app/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'OP.GG', version: "{client_version}"}
+
+-
+  regex: '.*(?:anythingllm-desktop/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Anything LLM', version: "{client_version}"}
+
+-
+  regex: '.*(?:DeepL/).*'
+  priority: -3
+  client: {type: mobile app, name: 'DeepL', version: ""}
+
+-
+  regex: '.*(?:Zite/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Zite', version: "{client_version}"}
+
+-
+  regex: '.*(?:smzdm (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'smzdm', version: "{client_version}"}
+
+-
+  regex: '.*(?:appdb/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'appdb', version: "{client_version}"}
+
+-
+  regex: '.*(?:OpenVAS-VT (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'OpenVAS', version: "{client_version}"}
+
+-
+  regex: '.*(?:HFIOS/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HeartFocus', version: "{client_version}"}
+
+-
+  regex: '.*(?:HFEducationIOS/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HeartFocus Education', version: "{client_version}"}
+
+-
+  regex: '.*(?:EdmodoAndroid/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Edmodo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Townnews-Now/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TownNews Now', version: "{client_version}"}
+
+-
+  regex: '.*(?:TRP_iPhone_App/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TRP Retail Locator', version: "{client_version}"}
+
+-
+  regex: '.*(?:WallaNews/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Walla News', version: "{client_version}"}
+
+-
+  regex: '.*(?:BOOM v(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Boom360', version: "{client_version}"}
+
+-
+  regex: '.*(?:GoEuro(?:Android|IOS )/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'GoEuro', version: "{client_version}"}
+
+-
+  regex: '.*(?:Sooplive Webview/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'SOOP', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kwai_Pro/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Kwai Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kwai/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Kwai', version: "{client_version}"}
+
+-
+  regex: '.*(?:topsecret\.chat/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TopSecret Chat', version: "{client_version}"}
+
+-
+  regex: '.*(?:tracepal(?:\.app)?/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TracePal', version: "{client_version}"}
+
+-
+  regex: '.*(?:ZONApp/(?:iOS|Android)/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ZEIT ONLINE', version: "{client_version}"}
+
+-
+  regex: '.*(?:Fiddler/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Fiddler Classic', version: "{client_version}"}
+
+-
+  regex: '.*(?:mojeek-app).*'
+  priority: -3
+  client: {type: mobile app, name: 'Mojeek', version: ""}
+
+-
+  regex: '.*(?:nyt_android/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'The Crossword', version: "{client_version}"}
+
+-
+  regex: '.*(?:VISHAAPP (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Visha', version: "{client_version}"}
+
+-
+  regex: '.*(?:XShare).*'
+  priority: -3
+  client: {type: mobile app, name: 'XShare', version: ""}
+
+-
+  regex: '.*(?:Perplexity).*'
+  priority: -3
+  client: {type: mobile app, name: 'Perplexity', version: ""}
+
+-
+  regex: '.*(?:obsidian/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Obsidian', version: "{client_version}"}
+
+-
+  regex: '.*(?:WatchFree/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WatchFree+', version: "{client_version}"}
+
+-
+  regex: '.*(?:ReutersNews(?: App)?[/ ]?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Reuters News', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.theepochtimes\.mobile/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'The Epoch Times', version: "{client_version}"}
+
+-
+  regex: '.*(?:WNYC(?: App)?[/ ]?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'WNYC', version: "{client_version}"}
+
+-
+  regex: '.*(?:SOFI_APP_VERSION=(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'SoFi', version: "{client_version}"}
+
+-
+  regex: '.*(?:nate_app;appver:(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'nate', version: "{client_version}"}
+
+-
+  regex: '.*(?:momoWebView/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'MOMO', version: "{client_version}"}
+
+-
+  regex: '.*(?:iPlayTV/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'iPlayTV', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bridge/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bridge', version: "{client_version}"}
+
+-
+  regex: '.*(?:XING(?:-iPhone)?/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'XING', version: "{client_version}"}
+
+-
+  regex: '.*(?:Trade Me(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Trade Me', version: "{client_version}"}
+
+-
+  regex: '.*(?:GlobalProtect).*'
+  priority: -3
+  client: {type: mobile app, name: 'GlobalProtect', version: ""}
+
+-
+  regex: '.*(?:com\.topbuzz\.videoen/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'BuzzVideo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Redditor).*'
+  priority: -3
+  client: {type: mobile app, name: 'Redditor', version: ""}
+
+-
+  regex: '.*(?:waipu/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'waipu.tv', version: "{client_version}"}
+
+-
+  regex: '.*(?:De Telegraaf(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'De Telegraaf', version: "{client_version}"}
+
+-
+  regex: '.*(?:CoinbaseRetail(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Coinbase', version: "{client_version}"}
+
+-
+  regex: '.*(?:HCom(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Hotels.com', version: "{client_version}"}
+
+-
+  regex: '.*(?:Autopliuslt(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Autoplius.lt', version: "{client_version}"}
+
+-
+  regex: '.*(?:appname/PLAYit).*'
+  priority: -3
+  client: {type: mobile app, name: 'PLAYit', version: ""}
+
+-
+  regex: '.*(?:appname/HideX).*'
+  priority: -3
+  client: {type: mobile app, name: 'HideX', version: ""}
+
+-
+  regex: '.*(?:Clipbox\+/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Clipbox+', version: "{client_version}"}
+
+-
+  regex: '.*(?:DeFiWallet/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Crypto.com DeFi Wallet', version: "{client_version}"}
+
+-
+  regex: '.*(?:SearchCraft/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'SearchCraft', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lark/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Lark', version: "{client_version}"}
+
+-
+  regex: '.*(?:Whatplay).*'
+  priority: -3
+  client: {type: mobile app, name: 'Whatplay', version: ""}
+
+-
+  regex: '.*(?:Freespoke/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Freespoke', version: "{client_version}"}
+
+-
+  regex: '.*(?:twitch-desktop-electron-platform.*spotlight/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Twitch Studio', version: "{client_version}"}
+
+-
+  regex: '.*(?:XSplitBroadcaster/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'XSplit Broadcaster', version: "{client_version}"}
+
+-
+  regex: '.*(?:OBS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'OBS Studio', version: "{client_version}"}
+
+-
+  regex: '.*(?:CamScanner/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'CamScanner', version: "{client_version}"}
+
+-
+  regex: '.*(?:Quicksilver).*'
+  priority: -3
+  client: {type: mobile app, name: 'Quicksilver', version: ""}
+
+-
+  regex: '.*(?:HistoryHound/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HistoryHound', version: "{client_version}"}
+
+-
+  regex: '.*(?:MXPlayer/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'MX Player', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bitwarden_Mobile/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bitwarden', version: "{client_version}"}
+
+-
+  regex: '.*(?:\+Simple Browser).*'
+  priority: -3
+  client: {type: mobile app, name: '+Simple', version: ""}
+
+-
+  regex: '.*(?:MetaMask(?:Mobile)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'MetaMask', version: ""}
+
+-
+  regex: '.*(?:com\.meecel\.feedreader\.RssDemonAd).*'
+  priority: -3
+  client: {type: mobile app, name: 'RSSDemon', version: ""}
+
+-
+  regex: '.*(?:IPTV Pro/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'IPTV Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:IPTV/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'IPTV', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^NYT(?: |%20)?Audio(?:-iOS)?|nytios)/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'The New York Times', version: "{client_version}"}
+
+-
+  regex: '.*(?:Uforia/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Uforia', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^NPROneAndroid$|(?:^NPR%20One|nprone_android)/(?<client_version>[\d.]+))).*'
+  priority: -3
+  client: {type: mobile app, name: 'NPR', version: "{client_version}"}
+
+-
+  regex: '.*(?:UCast/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'UCast', version: "{client_version}"}
+
+-
+  regex: '.*(?:Zune/(\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Zune', version: ""}
+
+-
+  regex: '.*(?:Spreaker/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Spreaker', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Sonnet/(?:Android|iOS)|^Simple Podcast Player/(?<client_version>\d+\.[.\d]+))).*'
+  priority: -3
+  client: {type: mobile app, name: 'Sonnet', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^Radioline%202/(?<client_version>\d+\.[.\d]+)|^Radioline$)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Radioline', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Podyssey App|com\.toysinboxes\.Echo|fm\.podyssey\.podcasts|^Podyssey)/?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podyssey', version: "{client_version}"}
+
+-
+  regex: '.*(?:PodLP/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'PodLP', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^Podhero(?:%20Alpha)?/|^Swoot[/ ](?:Agent[/ ])?)(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podhero', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:NRC-Nieuws/|nl\.nrc\.nrcapp |com\.twipemobile\.nrc )(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'NRC', version: "{client_version}"}
+
+-
+  regex: '.*(?:Listen5[ /](?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Just Listen', version: "{client_version}"}
+
+-
+  regex: '.*(?:LG Player (?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'LG Player', version: "{client_version}"}
+
+-
+  regex: '.*(?:KajabiMobileApp|KajabiPodcast).*'
+  priority: -3
+  client: {type: mobile app, name: 'Kajabi', version: ""}
+
+-
+  regex: '.*(?:hermespod\.com/v?(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HermesPod', version: "{client_version}"}
+
+-
+  regex: '.*(?:\(Fuchsia\).* CrKey/(:?\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Nest Hub', version: ""}
+
+-
+  regex: '.*(?:Goodpods(?:\.Android|\.iOS)? ?/ ?(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Goodpods', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:be\.standaard\.audio|^DS podcast/|DS%20Podcast/)(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'De Standaard', version: "{client_version}"}
+
+-
+  regex: '.*(?:CPod/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'CPod', version: "{client_version}"}
+
+-
+  regex: '.*(?:BroadwayPodcastNetwork/iOS).*'
+  priority: -3
+  client: {type: mobile app, name: 'Broadway Podcast Network', version: ""}
+
+-
+  regex: '.*(?:(?:^Podcasts/|^Balados/|^Podcasti/|^Podcastit/|^Podcasturi/|^Podcasty/|^Podcast’ler/|^Podkaster/|^Podcaster/|^Podcastok/|^Подкасти/|^Подкасты/|^פודקאסטים/|^البودكاست/|^पॉडकास्ट/|^พ็อดคาสท์/|^播客/|^팟캐스트/|^ポッドキャスト/|^إسمعلي/|^Подкасттар/|^Podcast/|AirPodcasts/)(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Apple Podcasts', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^MessagesViewService/|^Messages/|^Messages Share Extension/|^MessagesNotificationExtension/)(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Apple iMessage', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^AntennaPod/|^de\.danoeh\.antennapod/|antenna/)(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'AntennaPod', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^Anghami Android |^Anghami/|^أنغامي/)(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Anghami', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:AllYouCanBooksApp|^AllYouCanBooks/(?<client_version>[\d.]+))).*'
+  priority: -3
+  client: {type: mobile app, name: 'All You Can Books', version: "{client_version}"}
+
+-
+  regex: '.*(?:ActionExtension/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ActionExtension', version: "{client_version}"}
+
+-
+  regex: '.*(?:LoseIt!/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'LoseIt!', version: "{client_version}"}
+
+-
+  regex: '.*(?:MyWatchParty/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'My Watch Party', version: "{client_version}"}
+
+-
+  regex: '.*(?:RelesysApp/(?<client_version>\d+\.[.\d]+) \(\d{1,2}\) net\.relesysapp\.jj2go).*'
+  priority: -3
+  client: {type: mobile app, name: 'JJ2GO', version: "{client_version}"}
+
+-
+  regex: '.*(?:Safari Quora (?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Quora', version: "{client_version}"}
+
+-
+  regex: '.*(?:Overcast/?(?<client_version>\d+\.[.\d]+)? \(\+http://overcast\.fm/; (?:Apple Watch|iOS) podcast).*'
+  priority: -3
+  client: {type: mobile app, name: 'Overcast', version: "{client_version}"}
+
+-
+  regex: '.*(?:RadioAppFree/).*'
+  priority: -3
+  client: {type: mobile app, name: 'RadioApp', version: ""}
+
+-
+  regex: '.*(?:Klarna/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Klarna', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:AmazonMusic|^Harley)(?:(?:%2F|/)(?<client_version>\d+\.[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Amazon Music', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Spotify(?:-Lite)?/(?<client_version>\d+\.[.\d]+|12\d+)|^spotify_)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Spotify', version: "{client_version}"}
+
+-
+  regex: '.*(?:TuyaSmart/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Tuya Smart Life', version: "{client_version}"}
+
+-
+  regex: '.*(?:Reddit/Version (?<client_version>\d+\.[.\d]+)/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Reddit', version: "{client_version}"}
+
+-
+  regex: '.*(?:AT&T TV).*'
+  priority: -3
+  client: {type: mobile app, name: 'DIRECTV', version: ""}
+
+-
+  regex: '.*(?:DaumApps/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Daum', version: "{client_version}"}
+
+-
+  regex: '.*(?:anonymized by Abelssoft).*'
+  priority: -3
+  client: {type: mobile app, name: 'AntiBrowserSpy', version: ""}
+
+-
+  regex: '.*(?:OneSearch/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yahoo OneSearch', version: "{client_version}"}
+
+-
+  regex: '.*(?:HisThumbnail).*'
+  priority: -3
+  client: {type: mobile app, name: 'HisThumbnail', version: ""}
+
+-
+  regex: '.*(?:iOSStartsidenApp).*'
+  priority: -3
+  client: {type: mobile app, name: 'Startsiden', version: ""}
+
+-
+  regex: '.*(?:1Password/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: '1Password', version: "{client_version}"}
+
+-
+  regex: '.*(?:Waste My Time! Extension/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Don''t Waste My Time!', version: "{client_version}"}
+
+-
+  regex: '.*(?:jitsi-meet/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Jitsi Meet', version: ""}
+
+-
+  regex: '.*(?:de\.mobile\.android\.app/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'mobile.de', version: "{client_version}"}
+
+-
+  regex: '.*(?:Amazon\.com/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Amazon Shopping', version: "{client_version}"}
+
+-
+  regex: '.*(?:/Shibetoshi:(?<client_version>\d+\.[.\d]+)/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Dogecoin Core', version: "{client_version}"}
+
+-
+  regex: '.*(?:/Satoshi:(?<client_version>\d+\.[.\d]+)/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bitcoin Core', version: "{client_version}"}
+
+-
+  regex: '.*(?:Adobe NGL|NGL Client/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Adobe NGL', version: "{client_version}"}
+
+-
+  regex: '.*(?:IPM).*'
+  priority: -3
+  client: {type: mobile app, name: 'Adobe IPM', version: ""}
+
+-
+  regex: '.*(?:Azureus (?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Vuze', version: "{client_version}"}
+
+-
+  regex: '.*(?:APP/yym-hago-and(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Hago', version: "{client_version}"}
+
+-
+  regex: '.*(?:Surfshark(?:Android)?/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Surfshark', version: "{client_version}"}
+
+-
+  regex: '.*(?:FreeSafeIP).*'
+  priority: -3
+  client: {type: mobile app, name: 'SafeIP', version: ""}
+
+-
+  regex: '.*(?:PlexMediaServer/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Plex Media Server', version: "{client_version}"}
+
+-
+  regex: '.*(?:rnps-action-cards/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'RNPS Action Cards', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ballz/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Ballz', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera autoupdate agent).*'
+  priority: -3
+  client: {type: mobile app, name: 'Opera Updater', version: ""}
+
+-
+  regex: '.*(?:Windows Antivirus (?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Windows Antivirus', version: "{client_version}"}
+
+-
+  regex: '.*(?:ExpediaBookings).*'
+  priority: -3
+  client: {type: mobile app, name: 'Expedia', version: ""}
+
+-
+  regex: '.*(?:D-Stream%20Air).*'
+  priority: -3
+  client: {type: mobile app, name: 'DStream Air', version: ""}
+
+-
+  regex: '.*(?:com\.mercbank\.s1mobileipad).*'
+  priority: -3
+  client: {type: mobile app, name: 'Mercantile Bank of Michigan', version: ""}
+
+-
+  regex: '.*(?:Citrix%20Viewer).*'
+  priority: -3
+  client: {type: mobile app, name: 'Citrix Workspace', version: ""}
+
+-
+  regex: '.*(?:com\.apple\.Safari\.SearchHelper/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Safari Search Helper', version: "{client_version}"}
+
+-
+  regex: '.*(?:Radio%20Italiane/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Radio Italiane', version: "{client_version}"}
+
+-
+  regex: '.*(?:OrangeRadio/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Orange Radio', version: "{client_version}"}
+
+-
+  regex: '.*(?:(MEmpresas|Millennium%20Empresas)).*'
+  priority: -3
+  client: {type: mobile app, name: 'MEmpresas', version: ""}
+
+-
+  regex: '.*(?:MBolsa).*'
+  priority: -3
+  client: {type: mobile app, name: 'MBolsa', version: ""}
+
+-
+  regex: '.*(?:(Millennium/|Millennium%20Corp)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bank Millenium', version: ""}
+
+-
+  regex: '.*(?:Skyeng%20Teachers).*'
+  priority: -3
+  client: {type: mobile app, name: 'Skyeng Teachers', version: ""}
+
+-
+  regex: '.*(?:Skyeng%20App).*'
+  priority: -3
+  client: {type: mobile app, name: 'Skyeng', version: ""}
+
+-
+  regex: '.*(?:My%20Bentley).*'
+  priority: -3
+  client: {type: mobile app, name: 'My Bentley', version: ""}
+
+-
+  regex: '.*(?:NET\.mede).*'
+  priority: -3
+  client: {type: mobile app, name: 'NET.mede', version: ""}
+
+-
+  regex: '.*(?:com\.Nanoteq\.QmunicateH10p.+/(?<client_version>\d+\.[.\d]+) \().*'
+  priority: -3
+  client: {type: mobile app, name: 'Q-municate', version: "{client_version}"}
+
+-
+  regex: '.*(?:Wayback%20Machine%20Extension).*'
+  priority: -3
+  client: {type: mobile app, name: 'Wayback Machine', version: ""}
+
+-
+  regex: '.*(?:UconnectLive).*'
+  priority: -3
+  client: {type: mobile app, name: 'Uconnect LIVE', version: ""}
+
+-
+  regex: '.*(?:Twitterrific).*'
+  priority: -3
+  client: {type: mobile app, name: 'Twitterrific', version: ""}
+
+-
+  regex: '.*(?:VandenBorre[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Vanden Borre My Security', version: "{client_version}"}
+
+-
+  regex: '.*(?:Tokai[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TOKAI SAFE', version: "{client_version}"}
+
+-
+  regex: '.*(?:DNA[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'DNA Digiturva', version: "{client_version}"}
+
+-
+  regex: '.*(?:elisaya[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Elisa Turvapaketti', version: "{client_version}"}
+
+-
+  regex: '.*(?:KPN_Veilig[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'KPN Veilig', version: "{client_version}"}
+
+-
+  regex: '.*(?:Telia_swe[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Telia Trygg', version: "{client_version}"}
+
+-
+  regex: '.*(?:Swisscom[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Swisscom Internet Security', version: "{client_version}"}
+
+-
+  regex: '.*(?:FSCDCSafe[ /](?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'F-Secure SAFE', version: "{client_version}"}
+
+-
+  regex: '.*(?:RDDocuments/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'RDDocuments', version: "{client_version}"}
+
+-
+  regex: '.*(?:.+HiSearch/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HiSearch', version: "{client_version}"}
+
+-
+  regex: '.*(?:CopilotSapphire/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Copilot', version: "{client_version}"}
+
+-
+  regex: '.*(?:NewsSapphire/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'MSN', version: "{client_version}"}
+
+-
+  regex: '.*(?:BingWeb(?:/(?<client_version>[\d.]+))?|bingipadclient).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Bing', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Bing)?Sapphire/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Bing', version: "{client_version}"}
+
+-
+  regex: '.*(?:imoAndroid/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'IMO International Calls & Chat', version: "{client_version}"}
+
+-
+  regex: '.*(?:imoAndroid/(?<client_version>20\d{2}\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'IMO HD Video Calls & Chat', version: "{client_version}"}
+
+-
+  regex: '.*(?:Asus Update/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ASUS Updater', version: "{client_version}"}
+
+-
+  regex: '.*(?:WindowsStoreSDK).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Store', version: ""}
+
+-
+  regex: '.*(?:Focuskeeper/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Focus Keeper', version: "{client_version}"}
+
+-
+  regex: '.*(?:Focus Matrix/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Focus Matrix', version: "{client_version}"}
+
+-
+  regex: '.*(?:Be Focused/(?<client_version>\d+\.[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Be Focused', version: "{client_version}"}
+
+-
+  regex: '.*(?:Instabridge(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Instabridge', version: "{client_version}"}
+
+-
+  regex: '.*(?:TradingView/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TradingView', version: "{client_version}"}
+
+-
+  regex: '.*(?:BBCNewsUKWatchApp/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'BBC News', version: "{client_version}"}
+
+-
+  regex: '.*(?:Theyub v(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Theyub', version: "{client_version}"}
+
+-
+  regex: '.*(?:PAN GlobalProtect/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'GlobalProtect', version: "{client_version}"}
+
+-
+  regex: '.*(?:WindowsPowerShell/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'PowerShell', version: "{client_version}"}
+
+-
+  regex: '.*(?:BlueStacks(?: 5)?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'BlueStacks', version: "{client_version}"}
+
+-
+  regex: '.*(?:Adobe Synchronizer (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Adobe Synchronizer', version: "{client_version}"}
+
+-
+  regex: '.*(?:GoogleTagManager/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Tag Manager', version: "{client_version}"}
+
+-
+  regex: '.*(?:Netflix/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Netflix', version: "{client_version}"}
+
+-
+  regex: '.*(?:Avid Link Desktop App/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Avid Link', version: "{client_version}"}
+
+-
+  regex: '.*(?:etoro-cordova-app).*'
+  priority: -3
+  client: {type: mobile app, name: 'eToro', version: ""}
+
+-
+  regex: '.*(?:QQMusic/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'QQMusic', version: "{client_version}"}
+
+-
+  regex: '.*(?:QQ/(?<client_version>\d+[.\d]+) V1_IPH_SQ_).*'
+  priority: -3
+  client: {type: mobile app, name: 'QQ', version: "{client_version}"}
+
+-
+  regex: '.*(?:TencentDocs/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Tencent Docs', version: "{client_version}"}
+
+-
+  regex: '.*(?:TIM/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TIM', version: "{client_version}"}
+
+-
+  regex: '.*(?:Blackboard/(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Blackboard', version: "{client_version}"}
+
+-
+  regex: '.*(?:Pandora/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Pandora', version: "{client_version}"}
+
+-
+  regex: '.*(?:GoNativeIOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'GoNative', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:mirall|Nextcloud-android)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Nextcloud', version: "{client_version}"}
+
+-
+  regex: '.*(?:Jungle Disk Workgroup HTTP).*'
+  priority: -3
+  client: {type: mobile app, name: 'Jungle Disk', version: ""}
+
+-
+  regex: '.*(?:zepeto_global/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ZEPETO', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.paint\.bynumber/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Paint by Number', version: "{client_version}"}
+
+-
+  regex: '.*(?:MetaTrader 5 Terminal/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'MetaTrader', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.meevii\.bibleKJV/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bible KJV', version: "{client_version}"}
+
+-
+  regex: '.*(?:wordcookies/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Word Cookies!', version: "{client_version}"}
+
+-
+  regex: '.*(?:RaveSocial/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Rave Social', version: "{client_version}"}
+
+-
+  regex: '.*(?:Bookshelf-Android/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bookshelf', version: "{client_version}"}
+
+-
+  regex: '.*(?:Battle\.net/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Battle.net', version: "{client_version}"}
+
+-
+  regex: '.*(?:Microsoft-WebDAV-MiniRedir).*'
+  priority: -3
+  client: {type: mobile app, name: 'WebDAV', version: ""}
+
+-
+  regex: '.*(?:EpicGamesLauncher/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Epic Games Launcher', version: "{client_version}"}
+
+-
+  regex: '.*(?:ERA Agent Update).*'
+  priority: -3
+  client: {type: mobile app, name: 'ESET Remote Administrator', version: ""}
+
+-
+  regex: '.*(?:Microsoft BITS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Background Intelligent Transfer Service', version: "{client_version}"}
+
+-
+  regex: '.*(?:Microsoft-WNS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Windows Push Notification Services', version: "{client_version}"}
+
+-
+  regex: '.*(?:rekordbox/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'rekordbox', version: "{client_version}"}
+
+-
+  regex: '.*(?:CreativeCloud/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Adobe Creative Cloud', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Acrobat|ReaderServices)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Adobe Acrobat Reader', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opera News/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Opera News', version: "{client_version}"}
+
+-
+  regex: '.*(?:Cortana (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Cortana', version: "{client_version}"}
+
+-
+  regex: '.*(?:HikConnect).*'
+  priority: -3
+  client: {type: mobile app, name: 'Hik-Connect', version: ""}
+
+-
+  regex: '.*(?:Bose Music).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bose Music', version: ""}
+
+-
+  regex: '.*(?:Google(?:Software| )Update/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Chrome Update', version: "{client_version}"}
+
+-
+  regex: '.*(?:Microsoft Edge Update/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Edge Update', version: "{client_version}"}
+
+-
+  regex: '.*(?:CCleaner, (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'CCleaner', version: "{client_version}"}
+
+-
+  regex: '.*(?:HandBrake Win Upd (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HandBrake', version: "{client_version}"}
+
+-
+  regex: '.*(?:AIDA64).*'
+  priority: -3
+  client: {type: mobile app, name: 'AIDA64', version: ""}
+
+-
+  regex: '.*(?:qBittorrent/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'qBittorrent', version: "{client_version}"}
+
+-
+  regex: '.*(?:Windows-Update-Agent).*'
+  priority: -3
+  client: {type: mobile app, name: 'Windows Update Agent', version: ""}
+
+-
+  regex: '.*(?:Microsoft-Delivery-Optimization).*'
+  priority: -3
+  client: {type: mobile app, name: 'Windows Delivery Optimization', version: ""}
+
+-
+  regex: '.*(?:Microsoft-CryptoAPI/(\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Windows CryptoAPI', version: ""}
+
+-
+  regex: '.*(?:git/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Git', version: "{client_version}"}
+
+-
+  regex: '.*(?:Razer Central PC).*'
+  priority: -3
+  client: {type: mobile app, name: 'Razer Synapse', version: ""}
+
+-
+  regex: '.*(?:Magician).*'
+  priority: -3
+  client: {type: mobile app, name: 'Samsung Magician', version: ""}
+
+-
+  regex: '.*(?:Wireshark/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Wireshark', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:\bCode/|VSCode )(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Visual Studio Code', version: "{client_version}"}
+
+-
+  regex: '.*(?:LandisGyrAIMbrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Landis+Gyr AIM Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:NuMuKiBrowser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'NuMuKi Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:y8-browser/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Y8 Browser', version: "{client_version}"}
+
+-
+  regex: '.*(?:EmbyTheater/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Emby Theater', version: "{client_version}"}
+
+-
+  regex: '.*(?:logioptionsplus/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Logi Options+', version: "{client_version}"}
+
+-
+  regex: '.*(?:GitHub ?Desktop/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'GitHub Desktop', version: "{client_version}"}
+
+-
+  regex: '.*(?:COAF%20SMART%20Citizen/).*'
+  priority: -3
+  client: {type: mobile app, name: 'COAF SMART Citizen', version: ""}
+
+-
+  regex: '.*(?:ntvmobil/).*'
+  priority: -3
+  client: {type: mobile app, name: 'NTV Mobil', version: ""}
+
+-
+  regex: '.*(?:Blue Proxy/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Blue Proxy', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:AlipayClient|AliApp\(AP)[/ _](?<client_version>\d+\.[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Alipay', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:taobao_android|AliApp\(TB)[/ _](?<client_version>\d+\.[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Taobao', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:lazada_android|AliApp\(LA)[/ _](?<client_version>\d+\.[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Lazada', version: "{client_version}"}
+
+-
+  regex: '.*(?:Aliexpress(?:Android)?/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'AliExpress', version: "{client_version}"}
+
+-
+  regex: '.*(?:.+/(?:gfibertv|gftv200)-(?<client_version>[\d]+)-).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Fiber TV', version: "{client_version}"}
+
+-
+  regex: '.*(?:Vuhuv/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Vuhuv', version: "{client_version}"}
+
+-
+  regex: '.*(?:OfferUp/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'OfferUp', version: "{client_version}"}
+
+-
+  regex: '.*(?:Blitz/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Blitz', version: "{client_version}"}
+
+-
+  regex: '.*(?:StreamlabsOBS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Streamlabs OBS', version: "{client_version}"}
+
+-
+  regex: '.*(?:SohuNews/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'SohuNews', version: "{client_version}"}
+
+-
+  regex: '.*(?:TeamsMobile-(?:Android|iOS)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Teams', version: ""}
+
+-
+  regex: '.*(?:(?:maglev|Teams)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Teams', version: "{client_version}"}
+
+-
+  regex: '.*(?:yakyak/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'YakYak', version: "{client_version}"}
+
+-
+  regex: '.*(?:OK(?:Android|iOS)/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Odnoklassniki', version: "{client_version}"}
+
+-
+  regex: '.*(?:ru\.mail\.my/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'My World', version: "{client_version}"}
+
+-
+  regex: '.*(?:Binance/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Binance', version: "{client_version}"}
+
+-
+  regex: '.*(?:BNC/.+\(Android (?<client_version>\d+[.\d]+)\)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Binance', version: "{client_version}"}
+
+-
+  regex: '.*(?:JaneStyle_iOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'JaneStyle', version: "{client_version}"}
+
+-
+  regex: '.*(?:twinkle/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'twinkle', version: "{client_version}"}
+
+-
+  regex: '.*(?:BB2C (?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'BB2C', version: "{client_version}"}
+
+-
+  regex: '.*(?:Ciisaa/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Ciisaa', version: "{client_version}"}
+
+-
+  regex: '.*(?:2tch/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: '2tch', version: "{client_version}"}
+
+-
+  regex: '.*(?:2?chMate/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ChMate', version: "{client_version}"}
+
+-
+  regex: '.*(?:Rocket\.Chat\+?/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Rocket Chat', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.evolve\.podcast/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Evolve Podcast', version: "{client_version}"}
+
+-
+  regex: '.*(?:Podimo/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podimo', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^RadioPublic[/ ](?:Android|iOS)[- ])(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'RadioPublic', version: "{client_version}"}
+
+-
+  regex: '.*(?:Swoot/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Swoot', version: "{client_version}"}
+
+-
+  regex: '.*(?:devcasts/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'DevCasts', version: "{client_version}"}
+
+-
+  regex: '.*(?:TuneIn(?:(?: |%20)Radio(?:[^/]*))?/?(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'TuneIn Radio', version: "{client_version}"}
+
+-
+  regex: '.*(?:TuneIn Radio Pro(?:[^/]*)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TuneIn Radio Pro', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Podbean/.+App |Podbean/Android generic |Podbean/iOS \([^)]+\) )(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podbean', version: "{client_version}"}
+
+-
+  regex: '.*(?:CGNBrowser/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'CGN', version: "{client_version}"}
+
+-
+  regex: '.*(?:Thunder/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Thunder', version: "{client_version}"}
+
+-
+  regex: '.*(?:Zoho%20Chat/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Zoho Chat', version: "{client_version}"}
+
+-
+  regex: '.*(?:ZenKit/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Zen', version: "{client_version}"}
+
+-
+  regex: '.*(?:YaBrowser/(?<client_version>[\d.]+).+YazekaApp/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yandex AI', version: "{client_version}"}
+
+-
+  regex: '.*(?:Yandex/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yandex', version: ""}
+
+-
+  regex: '.*(?:Zalo/(?<client_version>[\d.]+)|Zalo (?:android|iOS)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Zalo', version: "{client_version}"}
+
+-
+  regex: '.*(?:Opal/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Opal Travel', version: "{client_version}"}
+
+-
+  regex: '.*(?:whisper/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Whisper', version: ""}
+
+-
+  regex: '.*(?:WH%20Questions/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WH Questions', version: "{client_version}"}
+
+-
+  regex: '.*(?:WSJ/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'The Wall Street Journal', version: ""}
+
+-
+  regex: '.*(?:Wattpad/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Wattpad', version: "{client_version}"}
+
+-
+  regex: '.*(?:ShowMe/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'ShowMe', version: "{client_version}"}
+
+-
+  regex: '.*(?:Clovia/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Clovia', version: "{client_version}"}
+
+-
+  regex: '.*(?:SPORT1/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'SPORT1', version: ""}
+
+-
+  regex: '.*(?:ShopeeVN/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Shopee', version: "{client_version}"}
+
+-
+  regex: '.*(?:KAKAOTALK[ /](?<client_version>\d+\.(?:[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'KakaoTalk', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.tinyspeck\.chatlyio/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Slack', version: "{client_version}"}
+
+-
+  regex: '.*(?:Slack/(\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Slack', version: ""}
+
+-
+  regex: '.*(?:RoboForm/(\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'RoboForm', version: ""}
+
+-
+  regex: '.*(?:Papers/(?<client_version>\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Papers', version: "{client_version}"}
+
+-
+  regex: '.*(?:Pic%20Collage/(?<client_version>\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Pic Collage', version: "{client_version}"}
+
+-
+  regex: '.*(?:Copied/(\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Copied', version: ""}
+
+-
+  regex: '.*(?:aweme(?: app_version)?/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Douyin', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:musically_go|ultralite) app_version/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TikTok Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:TikTok[/ ]|com\.zhiliaoapp\.musically|musical_ly_|trill_)(?<client_version>\d+\.(?:[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'TikTok', version: "{client_version}"}
+
+-
+  regex: '.*(?:AppName/(?:musical_ly|trill) app_version/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TikTok', version: "{client_version}"}
+
+-
+  regex: '.*(?:GroupMe/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'GroupMe', version: "{client_version}"}
+
+-
+  regex: '.*(?:WebexTeams).*'
+  priority: -3
+  client: {type: mobile app, name: 'Webex Teams', version: ""}
+
+-
+  regex: '.*(?:iPhoneLync/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Skype for Business', version: "{client_version}"}
+
+-
+  regex: '.*(?:OC/(?<client_version>[\d.]+) \(Skype for Business\)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Skype for Business', version: "{client_version}"}
+
+-
+  regex: '.*(?:Skype/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Skype', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Microsoft Office Mobile|officemobile)[ /](?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Office Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:Microsoft Office Existence Discovery).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Office', version: ""}
+
+-
+  regex: '.*(?:OneDriveiOSApp/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft OneDrive', version: "{client_version}"}
+
+-
+  regex: '.*(?:WpsM?office/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WPS Office', version: "{client_version}"}
+
+-
+  regex: '.*(?:Microsoft\.Data\.Mashup).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Power Query', version: ""}
+
+-
+  regex: '.*(?:Microsoft Lync (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Lync', version: "{client_version}"}
+
+-
+  regex: '.*(?:Microsoft Office SyncProc (?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Microsoft Office', version: "{client_version}"}
+
+-
+  regex: '.*(?:1PasswordThumbs/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: '1Password', version: "{client_version}"}
+
+-
+  regex: '.*(?:U-Cursos/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'U-Cursos', version: ""}
+
+-
+  regex: '.*(?:Betbull/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'BetBull', version: ""}
+
+-
+  regex: '.*(?:Bitsboard/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Bitsboard', version: "{client_version}"}
+
+-
+  regex: '.*(?:HP%20Smart/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'HP Smart', version: ""}
+
+-
+  regex: '.*(?:Covenant%20Eyes/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Covenant Eyes', version: "{client_version}"}
+
+-
+  regex: '.*(?:discord(?:-Updater)?/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Discord', version: ""}
+
+-
+  regex: '.*(?:discord/(?<client_version>[\d.]+).+Electron).*'
+  priority: -3
+  client: {type: mobile app, name: 'Discord', version: "{client_version}"}
+
+-
+  regex: '.*(?:DeviantArt/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'DeviantArt', version: ""}
+
+-
+  regex: '.*(?:Procast/?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Procast', version: "{client_version}"}
+
+-
+  regex: '.*(?:Kik/(?<client_version>[\d.]+) \(Android).*'
+  priority: -3
+  client: {type: mobile app, name: 'Kik', version: "{client_version}"}
+
+-
+  regex: '.*(?:Skyeng Teachers/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Skyeng Teachers', version: "{client_version}"}
+
+-
+  regex: '.*(?:Keeper/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Keeper Password Manager', version: "{client_version}"}
+
+-
+  regex: '.*(?:Instapaper/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Instapaper', version: "{client_version}"}
+
+-
+  regex: '.*(?:LinkedIn(?:App)?(?:\]?/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'LinkedIn', version: "{client_version}"}
+
+-
+  regex: '.*(?:Viber(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Viber', version: "{client_version}"}
+
+-
+  regex: '.*(?:RobloxApp/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Roblox', version: "{client_version}"}
+
+-
+  regex: '.*(?:UCURSOS/v(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'U-Cursos', version: "{client_version}"}
+
+-
+  regex: '.*(?:UnityPlayer/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'UnityPlayer', version: "{client_version}"}
+
+-
+  regex: '.*(?:strimio(?:-desktop)/(?<client_version>\d+\.(?:[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Strimio', version: "{client_version}"}
+
+-
+  regex: '.*(?:Unibox/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Unibox', version: ""}
+
+-
+  regex: '.*(?:AhaRadio2/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Aha Radio 2', version: "{client_version}"}
+
+-
+  regex: '.*(?:CronetSnapDevSheldon).*'
+  priority: -3
+  client: {type: mobile app, name: 'Snapchat', version: ""}
+
+-
+  regex: '.*(?:(?:Safari/[\d.]+)?Snapchat/?(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Snapchat', version: "{client_version}"}
+
+-
+  regex: '.*(?:TopBuzz/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'TopBuzz', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^GaanaAndroid-|^Gaana-iOS|^Gaana/)(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Gaana', version: "{client_version}"}
+
+-
+  regex: '.*(?:TwitterAndroid[/]?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Twitter', version: "{client_version}"}
+
+-
+  regex: '.*(?:Twitter/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Twitter', version: "{client_version}"}
+
+-
+  regex: '.*(?:Twitter for iPhone[/]?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Twitter', version: "{client_version}"}
+
+-
+  regex: '.*(?:PetalSearch/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Petal Search', version: "{client_version}"}
+
+-
+  regex: '.*(?:baiduinput/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Baidu Input', version: "{client_version}"}
+
+-
+  regex: '.*(?:baiduboxapp/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Baidu Box App', version: "{client_version}"}
+
+-
+  regex: '.*(?:lite baiduboxapp/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Baidu Box App Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:Flipboard/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Flipboard App', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Google|SearchWith)Lens/(?<client_version>\d+[.\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Lens', version: "{client_version}"}
+
+-
+  regex: '.*(?:Google/(?<client_version>\d+[.\d]+)? CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Search App', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:com\.google\.GoogleMobile|GSA|GoogleApp)/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Search App', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.douban\.group/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'douban App', version: "{client_version}"}
+
+-
+  regex: '.*(?:tieba/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'tieba', version: "{client_version}"}
+
+-
+  regex: '.*(?:NewsArticle/(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'NewsArticle App', version: "{client_version}"}
+
+-
+  regex: '.*(?:SogouSearch Android[\d.]+ version(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'SogouSearch App', version: "{client_version}"}
+
+-
+  regex: '.*(?:RSSRadio/(?<client_version>[\d]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'RSSRadio', version: "{client_version}"}
+
+-
+  regex: '.*(?:jp\.co\.yahoo\.(?:android\.yjtop|ipn\.appli)/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yahoo! Japan', version: "{client_version}"}
+
+-
+  regex: '.*(?:YelpApp/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yelp Mobile', version: "{client_version}"}
+
+-
+  regex: '.*(?:iCatcher[^\d]+(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'iCatcher', version: "{client_version}"}
+
+-
+  regex: '.*(?:Podcat(?:%202)?/(?<client_version>[\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podcat', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:PodcastAddict/v(?<client_version>[\d]+)|^Podcast Addict)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podcast & Radio Addict', version: "{client_version}"}
+
+-
+  regex: '.*(?:DoggCatcher).*'
+  priority: -3
+  client: {type: mobile app, name: 'DoggCatcher', version: ""}
+
+-
+  regex: '.*(?:Castro 2).*'
+  priority: -3
+  client: {type: mobile app, name: 'Castro 2', version: ""}
+
+-
+  regex: '.*(?:Castro 2 (?<client_version>[\d.]+)/[\d]+ Like iTunes).*'
+  priority: -3
+  client: {type: mobile app, name: 'Castro 2', version: "{client_version}"}
+
+-
+  regex: '.*(?:Castro/(?<client_version>\d+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Castro', version: "{client_version}"}
+
+-
+  regex: '.*(?:PodcastRepublic/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podcast Republic', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:CastBox|fm\.castbox\.audiobook\.radio\.podcast)/?(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'CastBox', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^Overcast/(?<client_version>[\d.]+)|^Overcast.*Apple Watch)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Overcast', version: "{client_version}"}
+
+-
+  regex: '.*(?:BeyondPod).*'
+  priority: -3
+  client: {type: mobile app, name: 'BeyondPod', version: ""}
+
+-
+  regex: '.*(?:Podcat/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podcat', version: "{client_version}"}
+
+-
+  regex: '.*(?:Pocket Casts(?:, (?:Android|iOS) v(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Pocket Casts', version: "{client_version}"}
+
+-
+  regex: '.*(?:Instacast(?:HD)?/(?<client_version>[\d\.abc]+) CFNetwork/([\d.]+) Darwin/([\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Instacast', version: "{client_version}"}
+
+-
+  regex: '.*\bLine[ /](?<client_version>[\d.]+).*'
+  priority: -3
+  client: {type: mobile app, name: 'Line', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:^com\.google\.android\.apps\.youtube\.music/|^YouTubeMusic(?:Dev)?/)(?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Youtube Music', version: "{client_version}"}
+
+-
+  regex: '.*(?:Telegram/(\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Telegram', version: ""}
+
+-
+  regex: '.*(?:ANWhatsApp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'AN WhatsApp', version: "{client_version}"}
+
+-
+  regex: '.*(?:YoYoWhatsApp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Yo WhatsApp', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:Yo)?GBWhatsApp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'GBWhatsApp', version: "{client_version}"}
+
+-
+  regex: '.*(?:YoFMWhatsApp(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'FM WhatsApp', version: "{client_version}"}
+
+-
+  regex: '.*(?:YoWhatsApp2Plus(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'WhatsApp+2', version: "{client_version}"}
+
+-
+  regex: '.*(?:WhatsApp(?:Electron|\-app|\-linux-app)?(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'WhatsApp', version: "{client_version}"}
+
+-
+  regex: '.*(?:WhatsApp/(?<client_version>[\d.]+).+CloudAPI).*'
+  priority: -3
+  client: {type: mobile app, name: 'WhatsApp Business', version: "{client_version}"}
+
+-
+  regex: '.*(?:Flipp-iOS/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Flipp', version: "{client_version}"}
+
+-
+  regex: '.*(?:Flipp-iOS/.+CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Flipp', version: ""}
+
+-
+  regex: '.*(?:Downcast/(?<client_version>\d+\.[\d.]+)?(?:.+(?:!Mac)|$)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Downcast', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.netflix\.mediaclient(?:/(?<client_version>\d+\.[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Netflix', version: "{client_version}"}
+
+-
+  regex: '.*(?:Rutube(?:TV)?BlackAndroid).*'
+  priority: -3
+  client: {type: mobile app, name: 'Rutube', version: ""}
+
+-
+  regex: '.*(?:YouTube/(?<client_version>[\d.]+)[JK]).*'
+  priority: -3
+  client: {type: mobile app, name: 'YouTube', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.google\.(?:android|ios)\.youtube(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'YouTube', version: "{client_version}"}
+
+-
+  regex: '.*(?:Podcatcher Deluxe).*'
+  priority: -3
+  client: {type: mobile app, name: 'Podcatcher Deluxe', version: ""}
+
+-
+  regex: '.*(?:Pinterest(?: for (?:Android(?: Tablet)?|iOS))?(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Pinterest', version: "{client_version}"}
+
+-
+  regex: '.*(?:.*__weibo__(?<client_version>[0-9.]+)__).*'
+  priority: -3
+  client: {type: mobile app, name: 'Sina Weibo', version: "{client_version}"}
+
+-
+  regex: '.*(?:DingTalk/(?<client_version>[0-9.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'DingTalk', version: "{client_version}"}
+
+-
+  regex: '.*(?:WeChatShareExtensionNew/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WeChat Share Extension', version: "{client_version}"}
+
+-
+  regex: '.*(?:WeChat/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WeChat', version: "{client_version}"}
+
+-
+  regex: '.*(?:MicroMessenger/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WeChat', version: "{client_version}"}
+
+-
+  regex: '.*(?:wxwork/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'WeCom', version: "{client_version}"}
+
+-
+  regex: '.*(?:GNews (?:Android|iOS)/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google News', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.google\.android\.googlequicksearchbox).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google', version: ""}
+
+-
+  regex: '.*(?:com\.google\.Maps/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Maps', version: "{client_version}"}
+
+-
+  regex: '.*(?:OPA/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Assistant', version: "{client_version}"}
+
+-
+  regex: '.*(?:Google\.DriveExtension(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Drive', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.google\.GooglePlus).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Plus', version: ""}
+
+-
+  regex: '.*(?:com\.google\.android\.apps\.magazines).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Play Newsstand', version: ""}
+
+-
+  regex: '.*(?:com\.google\.android\.apps\.photos).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Photos', version: ""}
+
+-
+  regex: '.*(?:NSTNWV(?:/(?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Go', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.google\.android\.apps\.searchlite).*'
+  priority: -3
+  client: {type: mobile app, name: 'Google Go', version: ""}
+
+-
+  regex: '.*(?:Barcelona[ /](?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Threads', version: "{client_version}"}
+
+-
+  regex: '.*(?:Instagram[ /](?<client_version>[\d.]+)?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Instagram', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:FBAN|FBSV|FBID|FBBV)/|MetaIAB).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook', version: ""}
+
+-
+  regex: '.*(?:(?:FBAV|com\.facebook\.katana|facebook-mobile/1\.0|facebook-mobile/|Facebook/)(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook', version: "{client_version}"}
+
+-
+  regex: '.*(?:FBAN/FBPageAdmin.+FBAV(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Meta Business Suite', version: "{client_version}"}
+
+-
+  regex: '.*(?:FBAN/EMA.+FBAV(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:GroupsForiOS).*(?:FBAV)(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook Groups', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:MessengerForiOS|(?:FB_IAB|FBAN)/Orca-Android)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook Messenger', version: ""}
+
+-
+  regex: '.*(?:(?:MessengerForiOS|MESSENGER|(?:FB_IAB|FBAN)/Orca-Android).*(?:FBAV)(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook Messenger', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:mLite|MessengerLite(?:ForiOS)?).*(?:FBAV)(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook Messenger Lite', version: "{client_version}"}
+
+-
+  regex: '.*(?:AudienceNetworkForAndroid.+(?:FBAV)(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Facebook Audience Network', version: "{client_version}"}
+
+-
+  regex: '.*(?:appletv\.client).*'
+  priority: -3
+  client: {type: mobile app, name: 'Apple TV', version: ""}
+
+-
+  regex: '.*(?:(?:Apple)?News(?:[ /][\d.]+)? Version(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Apple News', version: "{client_version}"}
+
+-
+  regex: '.*(?:AndroidDownloadManager(?:[ /](?<client_version>[\d.]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'AndroidDownloadManager', version: "{client_version}"}
+
+-
+  regex: '.*(?:Chrome/Soldier_(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Soldier', version: "{client_version}"}
+
+-
+  regex: '.*(?:NAVER\(inapp; naverdicapp; .+; (?<client_version>\d+[.\d]+)\)).*'
+  priority: -3
+  client: {type: mobile app, name: 'NAVER Dictionary', version: "{client_version}"}
+
+-
+  regex: '.*(?:NAVER\(inapp; search; .+; (?<client_version>\d+[.\d]+)\)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Naver', version: "{client_version}"}
+
+-
+  regex: '.*(?:NAVER\(inapp; search; .+; (?<client_version>\d+[.\d]+);.+\)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Naver', version: "{client_version}"}
+
+-
+  regex: '.*(?:NAVER/(?<client_version>\d+[.\d]+) CFNetwork).*'
+  priority: -3
+  client: {type: mobile app, name: 'Naver', version: "{client_version}"}
+
+-
+  regex: '.*(?:binu(?:/(\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: mobile app, name: 'Moya', version: ""}
+
+-
+  regex: '.*(?:CSDNApp/(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'CSDN', version: "{client_version}"}
+
+-
+  regex: '.*(?:jpameblo;(?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Ameba', version: "{client_version}"}
+
+-
+  regex: '.*(?:PodPuppy (?<client_version>\d+\.[.\d]+)).*'
+  priority: -3
+  client: {type: feed reader, name: 'PodPuppy', version: "{client_version}"}
+
+-
+  regex: '.*(?:Stringer).*'
+  priority: -3
+  client: {type: feed reader, name: 'Stringer', version: ""}
+
+-
+  regex: '.*(?:RSSOwl(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'RSSOwl', version: "{client_version}"}
+
+-
+  regex: '.*(?:RSS Junkie(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'RSS Junkie', version: "{client_version}"}
+
+-
+  regex: '.*(?:RSSBandit(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'RSS Bandit', version: "{client_version}"}
+
+-
+  regex: '.*(?:Reeder[/ ](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: feed reader, name: 'Reeder', version: "{client_version}"}
+
+-
+  regex: '.*(?:ReadKit(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'ReadKit', version: "{client_version}"}
+
+-
+  regex: '.*(?:Pulp[/ ](?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: feed reader, name: 'Pulp', version: "{client_version}"}
+
+-
+  regex: '.*(?:PritTorrent/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: feed reader, name: 'PritTorrent', version: "{client_version}"}
+
+-
+  regex: '.*(?:newsbeuter(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'Newsbeuter', version: "{client_version}"}
+
+-
+  regex: '.*(?:NewsBlur(?:/(?<client_version>\d+[.\d]+))).*'
+  priority: -3
+  client: {type: feed reader, name: 'NewsBlur', version: "{client_version}"}
+
+-
+  regex: '.*(?:NewsBlur (?:iPhone|iPad) App(?: v(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'NewsBlur Mobile App', version: "{client_version}"}
+
+-
+  regex: '.*(?:(?:NetNewsWire|Evergreen.+MacOS)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'NetNewsWire', version: "{client_version}"}
+
+-
+  regex: '.*(?:Liferea(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'Liferea', version: "{client_version}"}
+
+-
+  regex: '.*(?:JetBrains Omea Reader(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'JetBrains Omea Reader', version: "{client_version}"}
+
+-
+  regex: '.*(?:gPodder/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: feed reader, name: 'gPodder', version: "{client_version}"}
+
+-
+  regex: '.*(?:QuiteRSS(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'QuiteRSS', version: "{client_version}"}
+
+-
+  regex: '.*(?:Feeddler(?:RSS|PRO)(?:[/ ](?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'Feeddler RSS Reader', version: "{client_version}"}
+
+-
+  regex: '.*(?:FeedDemon(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'FeedDemon', version: "{client_version}"}
+
+-
+  regex: '.*(?:Breaker/v?(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: feed reader, name: 'Breaker', version: "{client_version}"}
+
+-
+  regex: '.*(?:BashPodder).*'
+  priority: -3
+  client: {type: feed reader, name: 'BashPodder', version: ""}
+
+-
+  regex: '.*(?:Apple-PubSub(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'Apple PubSub', version: "{client_version}"}
+
+-
+  regex: '.*(?:Akregator(?:/(?<client_version>\d+[.\d]+))?).*'
+  priority: -3
+  client: {type: feed reader, name: 'Akregator', version: "{client_version}"}

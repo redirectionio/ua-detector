@@ -1,0 +1,655 @@
+---
+
+# The client axis: an entry reads the token a client writes to name itself and says nothing
+# about the system or the device. Priority -2, above the platform axis and below every entry
+# that recognises a whole user agent.
+#
+# Ordered by how much each knows, least first: the last to match wins.
+
+# Where a user agent lands that has named no client at all. All at -4, below everything that
+# names one.
+
+-
+  regex: '.*Macintosh.*'
+  priority: -4
+  client: {type: browser, name: 'Safari', version: ""}
+  browser_family: 'Safari'
+
+-
+  regex: '.*(?:com\.apple\.WebKit\.Networking|com\.apple\.AuthenticationServicesCore\.AuthenticationServicesAgent|NetworkingExtension)/(?<client_version>\d+[.\d]+).+ (?:CF)?Network.*'
+  priority: -4
+  client: {type: browser, name: 'Safari', version: "{client_version}"}
+  browser_family: 'Safari'
+
+# Split in two for the version. The prefix is `(?<!SmartTV )` written out: a Samsung television
+# says `SmartTV Safari/531.2+` and is not a Safari.
+-
+  regex: '(?:|.*[^ ]|(?:|.*[^V]|(?:|.*[^T]|(?:|.*[^t]|(?:|.*[^r]|(?:|.*[^a]|(?:|.*[^m]|(?:|.*[^S])m)a)r)t)T)V) )Safari/?\d+.*'
+  priority: -4
+  client: {type: browser, name: 'Safari', version: ""}
+  browser_family: 'Safari'
+
+-
+  regex: '.*Version/(?<client_version>\d+\.[.\d]+) .*Safari/.*'
+  priority: -4
+  client: {type: browser, name: 'Safari', version: "{client_version}"}
+  browser_family: 'Safari'
+
+# An Apple platform that names no client runs the browser that comes with it. The token opens a
+# word and does not follow a space: `Tiphone T67`, `Apple-iPhone5C2` and `(Apple TV; U; CPU
+# iPhone OS ...)` are none of them an iPhone.
+-
+  regex: '(?:.*[^a-z0-9 _-])?(?:iPod|iPhone|iPad).*'
+  priority: -4
+  client: {type: browser, name: 'Mobile Safari', version: ""}
+  browser_family: 'Safari'
+
+# A Safari that says `Mobile` is the handheld one, whatever the platform claims: an iPad asked
+# for the desktop site sends `Macintosh` and `Mobile/15E148` in the same string.
+-
+  regex: '.*Mobile.*Safari/.*'
+  priority: -4
+  client: {type: browser, name: 'Mobile Safari', version: ""}
+  browser_family: 'Safari'
+
+-
+  regex: '.*Version/(?<client_version>\d+\.[.\d]+) .*Mobile.*Safari/.*'
+  priority: -4
+  client: {type: browser, name: 'Mobile Safari', version: "{client_version}"}
+  browser_family: 'Safari'
+
+-
+  regex: '.*NetworkingExtension/.+ Network/.+ iOS/(?<client_version>\d+[.\d]+).*'
+  priority: -4
+  client: {type: browser, name: 'Mobile Safari', version: "{client_version}"}
+  browser_family: 'Safari'
+
+-
+  regex: '.*(?:(?:iPod|iPad|iPhone).+Version|MobileSafari)/(?<client_version>[\d.]+).*'
+  priority: -4
+  client: {type: browser, name: 'Mobile Safari', version: "{client_version}"}
+  browser_family: 'Safari'
+
+# The token opens a word and does not follow ` like `, written out as every prefix that
+# satisfies both. The hyphen is a word character here: `Orca-Android` is a Messenger build.
+-
+  regex: '(?:|.*[^a-z0-9_ -]|(?:|.*[^e]|(?:|.*[^k]|(?:|.*[^i]|(?:|.*[^l]|(?:|.*[^ ])l)i)k)e) )Android(?:[^.].*|$)'
+  priority: -4
+  client: {type: browser, name: 'Android Browser', version: ""}
+  browser_family: 'Android Browser'
+
+# The token alone, with the version if it is there: `CHROME 152.0.0` is a Chrome. First of the
+# three so the two that read a version overwrite it. `(?!book)` is written out: a Chromebook is
+# a machine.
+-
+  regex: '.*Chrome(?:[^b].*|b(?:[^o].*|o(?:[^o].*|o(?:[^k].*|$)|$)|$)|$)'
+  priority: -2
+  client: {type: browser, name: 'Chrome', version: ""}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*Chrome/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Chrome', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*HeadlessChrome/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Headless Chrome', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*Chrome/(?<client_version>[\d.]+) Mobile.*'
+  priority: -2
+  client: {type: browser, name: 'Chrome Mobile', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+# A WebView says so either by `wv)` in the platform token or by the Version/ that the Android
+# system browser writes, whichever comes before the Chrome build.
+-
+  regex: '.*(?: wv\)|Version/[\d.]+ ).*Chrome/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Chrome Webview', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*(?:MQQBrowser|QQBrowser|MQBHD)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'QQ Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:MQQBrowser|QQBrowser|MQBHD)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'QQ Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*CriOS/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Chrome Mobile iOS', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*MSIE ?(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Internet Explorer', version: "{client_version}"}
+  browser_family: 'Internet Explorer'
+
+-
+  regex: '.*Trident/7\.0.*'
+  priority: -2
+  client: {type: browser, name: 'Internet Explorer', version: '11.0'}
+  browser_family: 'Internet Explorer'
+
+# Clients the traffic holds that the generated axis has, at -3, under the Chrome and Safari
+# entries above. Promoting matomo's thousand tokens wholesale costs more than it pays; these are
+# the ones that turn up often enough to be worth writing out.
+-
+  regex: '.*(?:UP\.Browser|Openwave)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Openwave Mobile Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:OPR|OPiOS)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Opera', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*SamsungBrowser/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Samsung Browser', version: "{client_version}"}
+  browser_family: 'Samsung Browser'
+
+# The apps last: one hosting a WebView is the app, not the browser inside it.
+
+-
+  regex: '.*(?:Opera[/ ]|OPR[/ ])(?:9\.80.*Version/)?(?<client_version>\d+[\d.]*).*'
+  priority: -2
+  client: {type: browser, name: 'Opera', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*Mobile.*OPR/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Opera Mobile', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*(?:Firefox|FxiOS)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Firefox', version: "{client_version}"}
+  browser_family: 'Firefox'
+
+-
+  regex: '.*(?:\bEdge|\bEdg|EdgA|EdgiOS)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Microsoft Edge', version: "{client_version}"}
+  browser_family: 'Internet Explorer'
+
+-
+  regex: '.*(?:Mobile|Tablet).*Firefox/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Firefox Mobile', version: "{client_version}"}
+  browser_family: 'Firefox'
+
+-
+  regex: '.*FxiOS/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Firefox Mobile iOS', version: "{client_version}"}
+  browser_family: 'Firefox'
+
+-
+  regex: '.*HeyTapBrowser/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'HeyTapBrowser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:MIUIBrowser|MiuiBrowser)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Mi Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*QIHU 360[ES]E.*'
+  priority: -2
+  client: {type: browser, name: '360 Secure Browser', version: ""}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*HuaweiBrowser/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Huawei Browser Mobile', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*UC ?(?:Browser|Mobile|WEB)[ /]?(?<client_version>[\d.]*).*'
+  priority: -2
+  client: {type: browser, name: 'UC Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:YaBrowser|Ya(?:ndex)?Search(?:App|Browser)?)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Yandex Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Viv(?:aldi)?/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Vivaldi', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*PHX/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Phoenix Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*VivoBrowser/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'vivo Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*OP(?:RG)?X/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Opera GX', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*Quark/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Quark', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*MicroMessenger/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'WeChat', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:musical_ly_|trill_|TikTok/)(?<client_version>\d+[\d.]*).*'
+  priority: -2
+  client: {type: mobile app, name: 'TikTok', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:GoogleApp|GSA|com\.google\.GoogleMobile)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Google Search App', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*WhatsApp(?:Electron|-app|-linux-app)?[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'WhatsApp', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Facebook Lite writes EMA where the full app writes FBIOS or FB4A, and its version still at FBAV.
+-
+  regex: '.*FBAN/EMA.+FBAV[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Facebook Lite', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:GoogleApp|GSA|com\.google\.GoogleMobile)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Google Search App', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*WhatsApp(?:Electron|-app|-linux-app)?[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'WhatsApp', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Facebook Lite writes EMA where the full app writes FBIOS or FB4A, its version still at FBAV.
+-
+  regex: '.*FBAN/EMA.+FBAV[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Facebook Lite', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*baiduboxapp/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Baidu Box App', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Snapchat/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Snapchat', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\[LinkedInApp\](?:/(?<client_version>[\d.]+))?.*'
+  priority: -2
+  client: {type: mobile app, name: 'LinkedIn', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*NAVER\(inapp; search; [^;]+; (?<client_version>\d+[\d.]*)[;)].*'
+  priority: -2
+  client: {type: mobile app, name: 'Naver', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:TwitterAndroid|Twitter for iPhone)/?(?<client_version>[\d.]*).*'
+  priority: -2
+  client: {type: mobile app, name: 'Twitter', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:musically_go|ultralite) app_version/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'TikTok Lite', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*HMSCore[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Huawei Mobile Services', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*DaumApps/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Daum', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*jp\.co\.yahoo\.(?:android\.yjtop|ipn\.appli)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Yahoo! Japan', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Barcelona[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Threads', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Klarna/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Klarna', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*NewsArticle/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'NewsArticle App', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*WordPress/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: library, name: 'WordPress', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Android-Gmail/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: pim, name: 'Gmail', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# The name comes out of the capture: the office applications write the same string with one word
+# changed.
+-
+  regex: '.*(?:Microsoft Office )?\b(?<app>Access|Excel|OneDrive for Business|OneNote|PowerPoint|Project|Publisher|Visio|Word)(?: 20\d{2})?[ /]\(?(?<client_version>\d+\.[\d.]*).*'
+  priority: -2
+  client: {type: mobile app, name: 'Microsoft Office {app}', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Instagram also talks with no Mozilla prefix of any kind.
+-
+  regex: 'Instagram (?<client_version>[\d.]+) \(.*'
+  priority: -2
+  client: {type: mobile app, name: 'Instagram', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\[Pinterest/\w+\].*'
+  priority: -2
+  client: {type: mobile app, name: 'Pinterest', version: ""}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:Bing)?Sapphire/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Microsoft Bing', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*NewsSapphire/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Microsoft Start', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# After TikTok: the lite build names itself at AppName rather than in the musical_ly token.
+-
+  regex: '.*(?:taobao_android|AliApp\(TB)[/ _](?<client_version>\d+[\d.]*).*'
+  priority: -2
+  client: {type: mobile app, name: 'Taobao', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# The `Safer(?!Surf)` branch of matomo's rule is dropped: the plain token and ASW are the two
+# that occur.
+-
+  regex: '.*(?:Avast(?:SecureBrowser)?|ASW)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Avast Secure Browser', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+# Above the plain Chrome entry, which the generated axis sits under.
+-
+  regex: '.*buscari/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Seekee', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Reddit/Version (?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Reddit', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Internet Explorer names its version with or without the space -- `MSIE 7.0` and `MSIE10.0` both
+# occur -- and the last two releases say only which Trident they run.
+-
+  regex: '.*Silk/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Mobile Silk', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\bUBrowser/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'UBrowser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*QtWebEngine/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'QtWebEngine', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:SeaMonkey|Iceape)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'SeaMonkey', version: "{client_version}"}
+  browser_family: 'Firefox'
+
+-
+  regex: '.*EdgW/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Edge WebView', version: "{client_version}"}
+  browser_family: 'Internet Explorer'
+
+# After the Internet Explorer entries above, which it would otherwise lose to.
+-
+  regex: '.*IEMobile[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'IE Mobile', version: "{client_version}"}
+  browser_family: 'Internet Explorer'
+
+-
+  regex: 'SafariViewService/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: library, name: 'Safari View Service', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*wxwork/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'WeCom', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# The clients that carry an MSIE token of their own, above the Internet Explorer entries.
+-
+  regex: '.*Acoo Browser.*'
+  priority: -2
+  client: {type: browser, name: 'Acoo Browser', version: ""}
+  browser_family: 'Internet Explorer'
+
+-
+  regex: '.*AOL (?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'AOL Explorer', version: "{client_version}"}
+  browser_family: 'Internet Explorer'
+
+-
+  regex: '.*Outlook-Express/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: pim, name: 'Outlook Express', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\b(?:Microsoft )?Outlook[ /](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: pim, name: 'Microsoft Outlook', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Each after the broader entry it has to beat, matomo's order reversed.
+-
+  regex: '.*UCTurbo[ /]?(?<client_version>[\d.]*).*'
+  priority: -2
+  client: {type: browser, name: 'UC Browser Turbo', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Chrome/(?<client_version>[\d.]+) .*AgentWeb.+UCBrowser.*'
+  priority: -2
+  client: {type: browser, name: 'CoolBrowser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*(?:baidubrowser|bdbrowser(?:(?:hd)?_i18n)?|FlyFlow|BaiduHD)[/ ](?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Baidu Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*YaBrowser/(?<client_version>[\d.]*).*corp.*'
+  priority: -2
+  client: {type: browser, name: 'Yandex Browser Corp', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Ecosia (?:android|ios)@(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Ecosia', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*OPT/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Opera Touch', version: "{client_version}"}
+  browser_family: 'Opera'
+
+# The Opera family, after the plain Opera entry above it. Matomo's two Opera Mobile rules
+# exclude `SymbOS; ` with a lookbehind the regex crate will not compile; dropped.
+-
+  regex: '.*Opera/(?<client_version>[\d.]+) .*Opera Mobi.*'
+  priority: -2
+  client: {type: browser, name: 'Opera Mobile', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*Opera ?Mini(?:/(?:att/)?|.+Version/)(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Opera Mini', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*\bOMI/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Opera Devices', version: "{client_version}"}
+  browser_family: 'Opera'
+
+-
+  regex: '.*(?:bd)?honorbrowser/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'HONOR Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Viber/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Viber', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Brave(?: Browser(?: Nightly)?| Chrome)?/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Brave', version: "{client_version}"}
+  browser_family: 'Chrome'
+
+-
+  regex: '.*(?:DuckDuckGo|Ddg|DDG-Android-|ddg_android/)/?(?<client_version>[\d.]*).*'
+  priority: -2
+  client: {type: browser, name: 'DuckDuckGo Privacy Browser', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Lilo/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'Lilo', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*QuarkPC/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: browser, name: 'QuarkPC', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*ZONApp/(?:iOS|Android)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'ZEIT ONLINE', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# `(?<!SmartTV )` said as: the word before the token does not end in a V. Wider than matomo's
+# and cheap. Priority -5, so anything that names itself beats it.
+-
+  regex: '.*(?:[^V] |[^ ])Safari/(?<client_version>[\d.]+).*'
+  priority: -5
+  client: {type: browser, name: 'Safari', version: "{client_version}"}
+  browser_family: 'Safari'
+
+# Anchored in matomo, and so left out of the generated axis.
+-
+  regex: 'PHP/?(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: library, name: 'PHP', version: "{client_version}"}
+  browser_family: 'Unknown'
+

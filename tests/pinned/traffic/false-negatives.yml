@@ -1,0 +1,216 @@
+# Where production is the one that is wrong.
+#
+# The dump `examples/traffic` reads was written by a device detector some years old. A row where
+# it disagrees with this library is not automatically a row to go and fix: it may name a client
+# released since, a bot it never knew, or nothing at all. An entry here says which rows to let
+# stand and why, so that a run stops only on what this library has to answer for.
+#
+# Every condition an entry states must hold, and an entry that states none is refused:
+#
+#   pattern:      a regex searched in the user agent, ignoring case
+#   says:         production's name for the row
+#   names_agree:  the two libraries give the same name and differ on the type alone
+#   we_say:       this library's name for it
+#   we_say_type:  this library's type for it -- 1 desktop, 2 mobile, 3 tool, 4 search bot
+#   reason:       why the row is excused, which is the only part a reader is here for
+
+- says: Generic Bot
+  we_say_type: 3
+  reason: >-
+    production's name for a bot it cannot name. Where this library names one and agrees that it
+    is a bot, it is only the newer of the two.
+
+- says: Amazon Bot
+  we_say_type: 3
+  reason: >-
+    production's name for the bots it attributes to Amazon without naming them, which says no
+    more than Generic Bot does.
+
+- says_nothing: true
+  reason: >-
+    a user agent production could name nothing at all, which the log injector writes into the
+    name column verbatim. It has no answer to hold this library to, and the type it wrote next
+    to it is a guess from a detection that found nothing either.
+
+# Names matomo has changed since the revision production runs. The corpus this library answers
+# is pinned to a later one, so the name here is the newer of the two and the row is production's
+# to catch up with, not this library's to fix.
+
+- says: Yandex Bot
+  we_say: YandexBot
+  reason: matomo dropped the space from the name of Yandex's crawler.
+
+- says: HTTPX
+  we_say: httpx
+  reason: matomo writes the ProjectDiscovery crawler in the case its own project uses.
+
+- says: Turnitin
+  we_say: TurnitinBot
+  reason: matomo names the crawler after the token it sends rather than after the company.
+
+- says: DuckAssistBot
+  we_say: DuckAssistBot
+  reason: >-
+    the same bot on both sides and only the category differs: matomo has since moved it out of
+    the search bots and into the AI assistants, which is a different column in the log injector.
+
+# Bots production predates, where it named the browser they dress themselves as.
+
+- pattern: 'GeedoShopProductFinder|GeedoProductSearch'
+  says: Chrome
+  reason: Geedo's shop crawler, which matomo learned after the revision production runs.
+
+- pattern: 'Google-BusinessLinkVerification'
+  says: Chrome
+  reason: one more of Google's own agents, added to matomo's Googlebot rule since.
+
+- says: Yandex Bot
+  we_say_type: 4
+  pattern: 'Yandex'
+  reason: >-
+    one of Yandex's crawlers by its own name -- the renderer, the image one -- where production
+    knew them all as the one they belong to.
+
+- says: IbouBot
+  we_say: IbouBot
+  reason: >-
+    the same bot on both sides: matomo has since moved it from the search bots to the AI search
+    crawlers, which the log injector counts in a different column.
+
+- says: Microsoft Edge
+  we_say: Headless Edge
+  reason: >-
+    matomo tells a headless Edge from the browser a person drives; production knew only the
+    Edge token in the string.
+
+- pattern: 'KAKAOTALK/'
+  we_say: KakaoTalk
+  reason: >-
+    matomo reads the messenger whether it writes a space or a slash before its version;
+    production knew only the space, and read the browser underneath instead.
+
+- says: Applebot
+  we_say: Applebot-Extended
+  reason: >-
+    Apple's crawler for training data, which matomo tells from the one that indexes and
+    production does not.
+
+- pattern: 'GNews (?:Android|iOS)/'
+  says: Mobile Safari
+  reason: matomo reads Google News by its own token; production read the browser it sits in.
+
+- pattern: 'com\.apple\.WebKit\.Networking'
+  says: Mobile Safari
+  we_say: Safari
+  reason: >-
+    matomo's rule for a WebKit networking process names plain Safari, whatever system the string
+    goes on to name. Production answered with the handheld one.
+
+# A user agent that names a desktop platform outright and a client both libraries agree on: what
+# is left to disagree about is the type, and production answering `mobile` to `Windows NT 10.0`
+# or `Macintosh` is production reading a token it should not -- the `android` in Ecosia's own
+# name, the `Touch` of a touchscreen laptop, the `desktop x64` of an Office build.
+- pattern: '(?:Windows NT [\d.]+|windows/[\d.]+|Macintosh|X11; Linux)'
+  names_agree: true
+  we_say_type: 1
+  reason: >-
+    the string names a desktop platform and both libraries name the same client; production
+    called it a handheld anyway.
+
+- says: Android Browser
+  names_agree: true
+  we_say_type: 3
+  reason: >-
+    a user agent whose only token is the word `android`, which matomo reads as the browser and
+    as no system at all. Production gave it a system too, and with it a type.
+
+
+- pattern: '^Client/\d'
+  says: Client
+  reason: >-
+    a user agent that says `Client` and a build number. Matomo has no rule for it and neither
+    has this library; production named it from its own additions.
+
+- pattern: 'ScalboostBrowser/'
+  says: ScalboostBrowser
+  reason: >-
+    a browser matomo does not know at the revision this library is pinned to, so the Chrome it
+    is built on is all there is to answer.
+
+- pattern: 'OperaGX/'
+  says: OperaGX
+  reason: >-
+    Opera's gaming build on iOS, which matomo does not know at the revision this library is
+    pinned to.
+
+- pattern: '^Messenger/[\d.]+ [AWi]$'
+  says: MessengerX
+  reason: >-
+    a Messenger that names itself and the platform letter and nothing else. Matomo reads the
+    Facebook applications by their `FBAN` token and has no rule for this shape.
+
+- pattern: '^WhatsApp/\d+$'
+  we_say: WhatsApp
+  reason: >-
+    a WhatsApp that names itself and a major version. Matomo reads its own token; production
+    answered with another messenger entirely.
+
+- pattern: 'MarketGoo|visionheight\.com'
+  we_say_type: 3
+  reason: >-
+    a crawler matomo knows and production does not, which answered with the browser it dresses
+    itself as.
+
+- pattern: 'Startpage'
+  we_say: Startpage
+  reason: matomo reads the browser's own token; production read the Safari it is built on.
+
+- pattern: 'GrokApp/'
+  says: Mobile Safari
+  reason: matomo reads xAI's application by its own token; production read the browser under it.
+
+- pattern: 'HMSCore/'
+  says: Huawei Mobile Services
+  we_say: Huawei Browser Mobile
+  reason: >-
+    matomo reads Huawei's services only where its browser is not also in the string, which is
+    what `HMSCore(?!.*HuaweiBrowser)` says. Production answered with the services either way.
+
+- pattern: '%2F5\.0\+%28'
+  reason: >-
+    a user agent that arrived percent-encoded, whole. Matomo reads what it is given and so does
+    this library: the `Linux` inside `X11%3B+Linux+x86_64` still names a desktop, and the
+    browser token, having lost its slash, no longer names anything.
+
+- pattern: 'Android \d+; [A-Za-z0-9]{10}; U; '
+  we_say: Avast Secure Browser
+  reason: >-
+    matomo reads Avast's randomised model token -- ten characters and a `U` where the model
+    goes -- as the browser that writes it. Production read the Chrome underneath.
+
+- pattern: '\(compatible; [A-Za-z][\w.-]*(?:/[\d.]+)?; ?\+?https?://'
+  we_say_type: 3
+  reason: >-
+    a crawler naming itself in the Mozilla compatibility comment, which this library reads and
+    matomo does not: production answered with the browser the string also carries.
+
+- pattern: '^curl '
+  says: curl
+  reason: >-
+    matomo tries the browsers before the libraries, so a string that says both `curl` and
+    `Chrome` is a Chrome. Production answered the other way round.
+
+- pattern: 'Odin/[\d.]+|Instabridge/|SecurityHeaders$'
+  reason: >-
+    clients matomo has no rule for at the revision this library is pinned to, where production
+    answered from additions of its own.
+
+- pattern: 'PlayStore-Google'
+  says: Chrome
+  reason: a crawler matomo names and production does not, which saw only the browser in the string.
+
+- pattern: 'OpenWave/'
+  says: Microsoft Edge
+  reason: >-
+    matomo reads `Openwave` as the browser of that name whatever else the string carries;
+    production answered with the Edge underneath.

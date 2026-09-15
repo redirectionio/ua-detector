@@ -1,0 +1,439 @@
+---
+
+-
+  regex: 'Mozilla/5\.0 \(X11; Linux x86_64\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) akregator/(?<client_version>[\d.]+) Safari/[\d.]+'
+  os:
+    name: GNU/Linux
+    version: ""
+    platform: x64
+  client:
+    type: feed reader
+    name: Akregator
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown
+
+-
+  regex: 'Akregator/(?<client_version>[\d.]+); syndication SUSE'
+  os:
+    name: SUSE
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: Akregator
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown
+
+-
+  regex: 'Akregator/(?<client_version>[\d.]+); librss/remnants'
+  client:
+    type: feed reader
+    name: Akregator
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'Apple-PubSub/(?<client_version>[\d.]+)'
+  client:
+    type: feed reader
+    name: Apple PubSub
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'FeedDemon/(?<client_version>[\d.]+) \(http://www\.feeddemon\.com/; Microsoft Windows(?: (?<os_version>XP))?\)'
+  os:
+    name: Windows
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: feed reader
+    name: FeedDemon
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: Windows
+  browser_family: Unknown
+
+# Apple clients report the iOS release through their CFNetwork build rather than directly
+-
+  regex: 'FeeddlerPro/(?<client_version>[\d.]+) CFNetwork/672\.0\.8 Darwin/[\d.]+'
+  os:
+    name: iOS
+    version: "7.0"
+    platform: ""
+  client:
+    type: feed reader
+    name: Feeddler RSS Reader
+    version: "{client_version}"
+  device:
+    type: ""
+    brand: Apple
+    model: ""
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'FeeddlerRSS/(?<client_version>[\d.]+) CFNetwork/548\.1\.4 Darwin/[\d.]+'
+  os:
+    name: iOS
+    version: "5.1"
+    platform: ""
+  client:
+    type: feed reader
+    name: Feeddler RSS Reader
+    version: "{client_version}"
+  device:
+    type: ""
+    brand: Apple
+    model: ""
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'FeeddlerRSS (?<client_version>[\d.]+) \(iPad; iPhone OS (?<os_version>[\d.]+); [a-z]{2}_[A-Z]{2}\)'
+  os:
+    name: iOS
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: feed reader
+    name: Feeddler RSS Reader
+    version: "{client_version}"
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Windows NT 6\.1\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) QuiteRSS/(?<client_version>[\d.]+) Safari/[\d.]+'
+  os:
+    name: Windows
+    version: "7"
+    platform: ""
+  client:
+    type: feed reader
+    name: QuiteRSS
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'JetBrains Omea Reader (?<client_version>[\d.]+) \(http://www\.jetbrains\.com/omea/reader/\)'
+  client:
+    type: feed reader
+    name: JetBrains Omea Reader
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+# Liferea release candidates are reported as the release they lead to
+-
+  regex: 'Liferea/(?<client_version>[\d.]+)(?:-RC\d+)? \(Linux; [\w.-]+; http://liferea\.sf\.net/\)(?: AppleWebKit \(KHTML, like Gecko\))?'
+  os:
+    name: GNU/Linux
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: Liferea
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown
+
+-
+  regex: 'Mozilla/5\.0 \(Macintosh; Intel Mac OS X (?<os_version>[\d_]+)\) AppleWebKit/[\d.]+ \(KHTML, like Gecko\) (?:Version/[\d.]+ )?NetNewsWire/(?<client_version>[\d.]+)'
+  os:
+    name: Mac
+    version: "{os_version|dots}"
+    platform: ""
+  client:
+    type: feed reader
+    name: NetNewsWire
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'Breaker/v(?<client_version>\d+) \(subscribers=\d+; feed-id=\d+; url=\S+\)'
+  client:
+    type: feed reader
+    name: Breaker
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'NetNewsWire/(?<client_version>[\d.]+) \(Mac OS X; http://netnewswireapp\.com/mac/; gzip-happy\)'
+  os:
+    name: Mac
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: NetNewsWire
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+# Evergreen was renamed NetNewsWire
+-
+  regex: '(?:Evergreen|NetNewsWire) \(macOS; RSS Reader; https://ranchero\.com/\w+/\)'
+  os:
+    name: Mac
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: NetNewsWire
+    version: ""
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'newsbeuter/(?<client_version>[\d.]+) \(Linux x86_64\)'
+  os:
+    name: GNU/Linux
+    version: ""
+    platform: x64
+  client:
+    type: feed reader
+    name: Newsbeuter
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown
+
+-
+  regex: 'newsbeuter/(?<client_version>[\d.]+) \(Linux [\w.-]+; i686; http://www\.newsbeuter\.org/\) libcurl/[\d.]+ GnuTLS/[\d.]+ zlib/[\d.]+ libidn/[\d.]+ librtmp/[\d.]+'
+  os:
+    name: GNU/Linux
+    version: ""
+    platform: x86
+  client:
+    type: feed reader
+    name: Newsbeuter
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown
+
+-
+  regex: 'NewsBlur iPhone App v(?<client_version>[\d.]+)'
+  os:
+    name: iOS
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: NewsBlur Mobile App
+    version: "{client_version}"
+  device:
+    type: smartphone
+    brand: Apple
+    model: iPhone
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'NewsBlur iPad App v(?<client_version>[\d.]+)'
+  os:
+    name: iOS
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: NewsBlur Mobile App
+    version: "{client_version}"
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: '(?<client_name>NewsBlur|Reeder)/(?<client_version>[\d.]+) CFNetwork/672\.1\.1[23] Darwin/[\d.]+'
+  os:
+    name: iOS
+    version: "7.1"
+    platform: ""
+  client:
+    type: feed reader
+    name: "{client_name}"
+    version: "{client_version}"
+  device:
+    type: ""
+    brand: Apple
+    model: ""
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Pulp/(?<client_version>[\d.]+) \(iPad; http://www\.acrylicapps\.com/pulp/\)'
+  os:
+    name: iOS
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: Pulp
+    version: "{client_version}"
+  device:
+    type: tablet
+    brand: Apple
+    model: iPad
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'ReadKit/(?<client_version>[\d.]+) \(Mac OS X Version (?<os_version>[\d.]+) \(Build \w+\)\)'
+  os:
+    name: Mac
+    version: "{os_version}"
+    platform: ""
+  client:
+    type: feed reader
+    name: ReadKit
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: ""
+  os_family: Mac
+  browser_family: Unknown
+
+# Darwin 13.1 is Mac OS X 10.9.2, and MacBookPro10,1 is the 15 inch retina model
+-
+  regex: 'ReadKit/(?<client_version>\d+) CFNetwork/[\d.]+ Darwin/13\.1\.0 \(x86_64\) \(MacBookPro10%2C1\)'
+  os:
+    name: Mac
+    version: "10.9.2"
+    platform: x64
+  client:
+    type: feed reader
+    name: ReadKit
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: Apple
+    model: 'MacBook Pro 15" (2012-2013)'
+  os_family: Mac
+  browser_family: Unknown
+
+-
+  regex: 'RssBandit/(?<client_version>[\d.]+)'
+  client:
+    type: feed reader
+    name: RSS Bandit
+    version: "{client_version}"
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'RssBandit/(?<client_version>[\d.]+) \(\.NET CLR [\d.]+; WinNT [\d.]+; http://www\.rssbandit\.org\)'
+  os:
+    name: Windows
+    version: "NT"
+    platform: ""
+  client:
+    type: feed reader
+    name: RSS Bandit
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'RSS Junkie Daemon'
+  client:
+    type: feed reader
+    name: RSS Junkie
+    version: ""
+  device: {}
+  os_family: Unknown
+  browser_family: Unknown
+
+-
+  regex: 'RSSOwl/(?<client_version>[\d.]+) \(Windows; U; [a-z]{2}\)'
+  os:
+    name: Windows
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: RSSOwl
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: Windows
+  browser_family: Unknown
+
+-
+  regex: 'RSSOwl/(?<client_version>[\d.]+) \(X11; U; [a-z]{2}\)'
+  os:
+    name: GNU/Linux
+    version: ""
+    platform: ""
+  client:
+    type: feed reader
+    name: RSSOwl
+    version: "{client_version}"
+  device:
+    type: desktop
+    brand: ""
+    model: ""
+  os_family: GNU/Linux
+  browser_family: Unknown

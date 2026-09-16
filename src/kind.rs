@@ -106,6 +106,27 @@ vocabulary! {
     }
 }
 
+impl DeviceKind {
+    /// Whether a device of this kind is carried, where the kind settles it on its own.
+    ///
+    /// `None` where it does not, which is matomo's answer as much as the other two: a desktop is
+    /// told from the operating system rather than from the device, and a peripheral, a wearable,
+    /// a car browser, a smart speaker or a camera says nothing either way. [`crate::Detection::is_mobile`]
+    /// is where the rest of the question is answered.
+    pub const fn is_mobile(self) -> Option<bool> {
+        match self {
+            DeviceKind::FeaturePhone
+            | DeviceKind::Smartphone
+            | DeviceKind::Tablet
+            | DeviceKind::Phablet
+            | DeviceKind::Camera
+            | DeviceKind::PortableMediaPlayer => Some(true),
+            DeviceKind::Tv | DeviceKind::SmartDisplay | DeviceKind::Console => Some(false),
+            _ => None,
+        }
+    }
+}
+
 vocabulary! {
     /// What kind of software a client is, which is matomo's parser said as a value: a feed
     /// reader, a mobile application, a media player, a personal information manager, a library,

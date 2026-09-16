@@ -29,6 +29,59 @@ pub struct Detection {
     pub bot: Option<Bot>,
 }
 
+impl Detection {
+    /// Whether a crawler sent this, in which case the bot is the whole answer and the other
+    /// fields are all empty. See the documentation of [`Detection`].
+    pub fn is_bot(&self) -> bool {
+        self.bot.is_some()
+    }
+
+    /// Whether the client is a browser no desktop has.
+    ///
+    /// Matomo's `usesMobileBrowser`, and the exception the two below are built on: a system that
+    /// runs on nothing but a desktop is still not one when what reads it is a browser only a
+    /// phone can run. `X11; Linux i686 ... Puffin/1.3.2665MS` is a phone having a server render
+    /// the page for it.
+    pub fn uses_mobile_only_browser(&self) -> bool {
+        self.client.as_ref().is_some_and(|client| mobile_only(client.kind, &client.name))
+    }
+
+    /// Whether this was sent from a desktop, by matomo's rule: the operating system is one of
+    /// the nine that run on nothing else, and the client is not a browser only a phone has.
+    ///
+    /// The device is not consulted. Matomo reads this off the system alone, and so does the
+    /// fallback that fills [`Device::kind`] in when no entry named the machine.
+    ///
+    /// A bot answers `false`, where matomo answers on a detection it expects nobody to ask.
+    pub fn is_desktop(&self) -> bool {
+        !self.is_bot()
+            && self.os.as_ref().is_some_and(|os| !os.name.is_empty())
+            && !self.uses_mobile_only_browser()
+            && DESKTOP_FAMILIES.contains(&self.os_family.as_str())
+    }
+
+    /// Whether this was sent from something carried, by matomo's rule: the device kind where it
+    /// settles the question, then the browser, and failing both, whatever is not a desktop.
+    ///
+    /// That last step is why this is not `!is_desktop()`: a television settles it the other way,
+    /// and a user agent naming no system at all is counted as mobile rather than as neither.
+    ///
+    /// A bot answers `false`. Matomo answers `true` there -- a crawler names no system, so
+    /// nothing rules the desktop in -- which is a reading of its own rule rather than an answer
+    /// about the traffic, and a caller asking this of a bot means the question, not the rule.
+    pub fn is_mobile(&self) -> bool {
+        if self.is_bot() {
+            return false;
+        }
+
+        if let Some(settled) = self.device.as_ref().and_then(|device| device.kind?.is_mobile()) {
+            return settled;
+        }
+
+        self.uses_mobile_only_browser() || !self.is_desktop()
+    }
+}
+
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Os {
@@ -486,6 +539,12 @@ pub const MOBILE_ONLY_BROWSERS: &[&str] = &[
     "xBrowser Pro Super Fast",
 ];
 
+/// Whether a client is a browser only a phone runs, which both [`Detection::is_mobile`] and the
+/// desktop fallback below have to ask, one of a finished detection and one part way through it.
+fn mobile_only(kind: Option<ClientKind>, name: &str) -> bool {
+    kind == Some(ClientKind::Browser) && MOBILE_ONLY_BROWSERS.contains(&name)
+}
+
 /// The operating systems matomo says run on nothing but a desktop, which is what it falls back
 /// on when nothing named the machine.
 const DESKTOP_FAMILIES: [&str; 9] =
@@ -529,8 +588,7 @@ impl From<Partial> for Detection {
         // the platform token, and cannot where they read something else -- `Microsoft-WebDAV-
         // MiniRedir/10.0.19045` names Windows and no machine at all.
         let handheld = partial.client.as_ref().is_some_and(|client| {
-            client.kind == Some(Some(ClientKind::Browser))
-                && client.name.as_deref().is_some_and(|name| MOBILE_ONLY_BROWSERS.contains(&name))
+            mobile_only(client.kind.flatten(), client.name.as_deref().unwrap_or_default())
         });
 
         if DESKTOP_FAMILIES.contains(&os_family.as_str())
@@ -572,6 +630,10 @@ mod tests {
         serde_yaml::from_str(yaml).expect("a valid entry")
     }
 
+    fn detection(yaml: &str) -> Detection {
+        serde_yaml::from_str(yaml).expect("a valid detection")
+    }
+
     #[test]
     fn resolves_the_placeholders_of_an_entry() {
         let entry = entry(
@@ -606,6 +668,57 @@ mod tests {
         names.dedup();
 
         assert_eq!(names, vec!["client_version", "os_version"]);
+    }
+
+    /// The three steps of matomo's `isMobile`, one test each: the kind settles it, the browser
+    /// settles it, and failing both, whatever is not a desktop.
+    #[test]
+    fn a_device_kind_settles_whether_it_is_carried() {
+        let phone = detection(r#"{device: {type: smartphone}, os_family: Android}"#);
+        let television = detection(r#"{device: {type: tv}, os_family: Android}"#);
+
+        assert!(phone.is_mobile() && !phone.is_desktop());
+        assert!(!television.is_mobile() && !television.is_desktop());
+    }
+
+    /// A system that runs on nothing but a desktop is still not one when what reads it is a
+    /// browser no desktop has -- matomo's own example, a phone having a server render the page.
+    #[test]
+    fn a_browser_only_a_phone_has_outranks_the_system() {
+        let puffin = detection(
+            r#"{client: {type: browser, name: Puffin Web Browser}, os: {name: GNU/Linux}, os_family: GNU/Linux}"#,
+        );
+
+        assert!(puffin.uses_mobile_only_browser());
+        assert!(puffin.is_mobile() && !puffin.is_desktop());
+    }
+
+    #[test]
+    fn a_desktop_system_and_an_ordinary_browser_is_a_desktop() {
+        let chrome = detection(
+            r#"{client: {type: browser, name: Chrome}, os: {name: Windows}, device: {type: desktop}, os_family: Windows}"#,
+        );
+
+        assert!(chrome.is_desktop() && !chrome.is_mobile());
+    }
+
+    /// Matomo's last step, and the reason this is not `!is_desktop()` written the other way
+    /// round: a user agent that names no system is counted as carried rather than as neither.
+    #[test]
+    fn what_names_no_system_counts_as_carried() {
+        let bare = detection(r#"{client: {type: library, name: curl}}"#);
+
+        assert!(bare.is_mobile() && !bare.is_desktop());
+    }
+
+    /// Where this library parts with matomo, which answers that a crawler is mobile because
+    /// nothing about it rules the desktop in.
+    #[test]
+    fn a_bot_is_neither_carried_nor_a_desktop() {
+        let bot = detection(r#"{bot: {name: Googlebot, category: Search bot}}"#);
+
+        assert!(bot.is_bot());
+        assert!(!bot.is_mobile() && !bot.is_desktop());
     }
 
     /// The distinction the merge is built on: saying nothing leaves the earlier value alone,

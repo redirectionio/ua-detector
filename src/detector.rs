@@ -708,8 +708,8 @@ fn read(directory: &str) -> Vec<(String, String)> {
             let source = path
                 .file_name()
                 .expect("a file that has a name")
-                .display()
-                .to_string();
+                .to_string_lossy()
+                .into_owned();
             let content = std::fs::read_to_string(&path)
                 .unwrap_or_else(|error| panic!("cannot read {}: {error}", path.display()));
 

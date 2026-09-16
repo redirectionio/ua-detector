@@ -13,7 +13,7 @@ categories = ["web-programming", "parser-implementations"]
 # The corpus this library is written against weighs forty megabytes and is of no use to anyone
 # depending on the crate. The examples go with it: every one of them is development tooling, and
 # most read either the fixtures or a dump of production traffic that is not here either.
-exclude = ["tests/", "benches/", "examples/", ".github/", "castor.php", "castor.composer.*", ".castor.stub.php"]
+exclude = ["tests/", "benches/", "examples/", ".github/", "castor.php", "castor.composer.*"]
 
 [features]
 # The database, built into the binary. On by default, because a crate that has to be handed a

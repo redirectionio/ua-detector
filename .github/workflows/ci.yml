@@ -2,9 +2,18 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A push over a branch that is still building has nothing to learn from the run it replaces, and
+# the corpus job is two minutes of it.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
   CARGO_TERM_COLOR: always
@@ -15,13 +24,13 @@ jobs:
     name: Build and unit tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
       - uses: Swatinem/rust-cache@v2
       - run: cargo build --release --examples
-      - run: cargo clippy --release --lib --examples --benches
+      - run: cargo clippy --release --all-targets
       - run: cargo test --release --lib
       # Hand written, and not covered by the corpus: the production user agents the corpus shows
       # once or not at all. See tests/pinned/production.rs.
@@ -31,7 +40,7 @@ jobs:
     name: The whole corpus
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       # Every one of the 38 030 fixture cases, one test each, read off disk. Twice: once against

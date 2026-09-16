@@ -66,11 +66,15 @@ fn agents() -> Vec<String> {
 
 /// A stride over the corpus, so that the sample keeps covering every typology in it.
 ///
-/// The user agents `src/warm.txt` ships are taken out first. They are a stride over the same
-/// corpus, so a sample that kept them would put the warmed detector below on exactly the user
-/// agents it was warmed for, and answer a question nobody asks. What is left is still drawn from
-/// the same corpus and still neighbours what the warm list holds, so the warmed row reads high
-/// against traffic that looks nothing like the corpus.
+/// The user agents `src/warm.txt` ships are taken out first, on the chance the dump they come
+/// from and the corpus name the same string: a warmed detector answering for what it was
+/// warmed on answers a question nobody asks.
+///
+/// What is left is the corpus, which is not traffic. It covers every device ever made in equal
+/// measure, where the shipped list is the heaviest two thousand rows of one service's requests,
+/// so `detect/warm` reads *low* here against what it is worth in production: 1.5 ms, against the
+/// 272 µs `cargo run --release --example warmlist` measures over the dump the list is drawn
+/// from. It still beats twenty thousand regexes spent blind, at a fifteenth of the memory.
 fn sample() -> Vec<String> {
     let warmed: std::collections::HashSet<&str> = common_user_agents().collect();
     let agents: Vec<String> =
@@ -150,9 +154,9 @@ fn detect(criterion: &mut Criterion) {
 
     // What `shared` does, and the comparison the budgets above are here for: the same question
     // asked of the user agents the crate ships with rather than of the shape of the index. It
-    // spends some 160 MiB, which is between the 5 000 and 20 000 rows.
+    // compiles 1 726 regexes for 28 MiB, between the 1 000 and 5 000 rows above.
     let mut warmed = Detector::new();
-    warmed.warm(common_user_agents(), Budget::bytes(400 << 20));
+    warmed.warm(common_user_agents(), Budget::bytes(128 << 20));
 
     time(criterion, "detect/warm", &agents, &warmed);
 }

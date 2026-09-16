@@ -1,5 +1,8 @@
 //! One row of the dump, and the RFC 4180 it is written in.
 
+// Read by `examples/warmlist` as well, which wants the fields and not the row around them.
+#![allow(dead_code)]
+
 use crate::injector::Kind;
 
 #[derive(Clone)]

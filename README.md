@@ -7,7 +7,7 @@ client it names.
 use device_detector::{Budget, Detector};
 
 let mut detector = Detector::new();
-detector.warm(device_detector::common_user_agents(), Budget::bytes(400 << 20));
+detector.warm(device_detector::common_user_agents(), Budget::bytes(128 << 20));
 
 let found = detector
     .detect("Mozilla/5.0 (Linux; Android 10; SM-G9650) AppleWebKit/537.36 \
@@ -117,20 +117,25 @@ agents from the corpus, on one machine:
 
 | budget | a detection | memory | to start |
 |---|---|---|---|
-| `Budget::none()` | 15.8 ms | +0 MiB | 0.8 s |
-| `Budget::regexes(5_000)` | 3.8 ms | +131 MiB | 1.5 s |
-| `Budget::regexes(20_000)` | 1.9 ms | +704 MiB | 3.7 s |
-| `warm(common_user_agents(), Budget::bytes(400 << 20))` | 1.0 ms | +278 MiB | 2.4 s |
+| `Budget::none()` | 16.4 ms | +0 MiB | 0.8 s |
+| `Budget::regexes(5_000)` | 4.0 ms | +131 MiB | 1.4 s |
+| `Budget::regexes(20_000)` | 2.1 ms | +704 MiB | 3.7 s |
+| `warm(common_user_agents(), Budget::bytes(128 << 20))` | 1.5 ms | +47 MiB | 1.6 s |
 
 A budget spent blind is mostly spent wrong: it buys the branches of the index that hold the most
 entries, which is not where a user agent goes. `Detector::warm` walks the index for user agents
 you hand it and pays for exactly the regexes they reach, which is why the last row beats the one
-above it on both counts.
+above it at a fifteenth of the memory.
 
-`common_user_agents()` is a thousand user agents the crate ships, taken at an even stride across
-the corpus -- the breadth of what the database answers rather than the shape of anyone's traffic,
-which is the most a library can guess for you. **A thousand of your own is worth more**, and
-`Detector::warm_from_path` reads them a line at a time from a dump.
+`common_user_agents()` is the two thousand heaviest user agents of a dump of redirection.io's
+traffic, in that order. It is one service's mix, which is the honest thing to say about it -- but
+real traffic resembles other real traffic far more than it resembles a corpus written to cover
+every device ever made, and the corpus row above is the unfavourable measurement for it. Over
+rows of the dump itself that the list does not hold it answers in 272 µs, and 944 µs across the
+long tail.
+
+**A dump of your own is worth more still**, and `Detector::warm_from_path` reads one a line at a
+time.
 
 A budget is said in the unit you have it in -- `Budget::regexes(20_000)` or `Budget::bytes(1 << 30)`
 -- and reads from text, so `--budget 900M` can come out of your own configuration.
@@ -145,7 +150,7 @@ them turns almost every request into a hash lookup:
 ```rust
 let detector = {
     let mut detector = Detector::new();
-    detector.warm_from_path("user-agents.txt", Budget::bytes(400 << 20))?;
+    detector.warm_from_path("user-agents.txt", Budget::bytes(128 << 20))?;
     detector.cache_answers(20_000);
     detector
 };

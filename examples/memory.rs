@@ -5,8 +5,8 @@
 //!
 //! A budget is a count of regexes, or a size: `20000`, `900M`, `1GiB`. Both columns are printed
 //! either way, which is the only thing that says whether a count of regexes came to what it was
-//! expected to. `warm:900M` spends the same budget on the user agents the crate ships with
-//! instead of on the shape of the index, which is the comparison worth making.
+//! expected to. `warm:128M` spends the budget on the user agents the crate ships with instead of
+//! on the shape of the index, which is the comparison worth making.
 //!
 //! One budget per process, because the allocator does not give a freed index back to the system:
 //! a second budget measured in the same process reuses what the first one released and reads far
@@ -36,7 +36,7 @@ fn main() {
     }
 
     let budgets = match arguments.is_empty() {
-        true => ["0", "2000", "20000", "900M", "warm:900M"].map(String::from).to_vec(),
+        true => ["0", "2000", "20000", "900M", "warm:128M"].map(String::from).to_vec(),
         false => arguments,
     };
 

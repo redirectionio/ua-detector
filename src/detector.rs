@@ -74,16 +74,21 @@ const PASSES: usize = 3;
 /// The user agents the crate ships with, for [`Detector::warm`] to spend a budget on where a
 /// caller has none of its own.
 ///
-/// An even stride across the corpus rather than a sample of anyone's requests: it covers the
-/// breadth of what the database answers rather than the shape of any one service's traffic. A
-/// caller holding a dump of its own should warm on that instead, which is worth a great deal
-/// more -- see [`Detector::warm_from_path`].
+/// The two thousand heaviest rows of a dump of redirection.io's traffic, in that order, each of
+/// which carries a great many requests. It is one service's mix and says so, but real traffic
+/// resembles other real traffic far more than it resembles anything drawn from a corpus written
+/// to cover every device ever made: what it reaches is Chrome, Safari, the Android WebView and
+/// the crawlers everyone gets.
+///
+/// Warming on all two thousand compiles 1 726 regexes and costs 28 MiB. A caller holding a dump
+/// of its own should warm on that instead -- see [`Detector::warm_from_path`]. `cargo run
+/// --release --example warmlist` is what writes this list, and what measured the figures above.
 ///
 /// ```
 /// use device_detector::{Budget, Detector, common_user_agents};
 ///
 /// let mut detector = Detector::new();
-/// detector.warm(common_user_agents(), Budget::bytes(400 << 20));
+/// detector.warm(common_user_agents(), Budget::bytes(128 << 20));
 ///
 /// let found = detector
 ///     .detect("Mozilla/5.0 (Linux; Android 10; SM-G9650) AppleWebKit/537.36 \
@@ -105,9 +110,11 @@ pub fn common_user_agents() -> impl Iterator<Item = &'static str> {
 ///
 /// Warmed on [`common_user_agents`] rather than given a budget to spend blind, because a budget
 /// spent blind is mostly spent wrong: it buys the branches of the index that hold the most
-/// entries, which is not where a user agent goes. This is the modest default a library can
-/// choose for a caller it knows nothing about, and a caller that knows its own traffic does far
-/// better with [`Detector::warm`] and a budget of its own.
+/// entries, which is not where a user agent goes. Twenty thousand regexes chosen that way cost
+/// 704 MiB and answer a corpus user agent in 2.1 ms; the shipped user agents cost 47 MiB and
+/// answer the same one in 1.5 ms, and a user agent of the kind they were drawn from in 272 µs.
+/// A caller that knows its own traffic does better still with [`Detector::warm`] and a budget of
+/// its own.
 pub fn shared() -> &'static Detector {
     static SHARED: LazyLock<Detector> = LazyLock::new(|| {
         let mut detector = Detector::new();
@@ -122,10 +129,11 @@ pub fn shared() -> &'static Detector {
     &SHARED
 }
 
-/// What [`shared`] spends. Enough to cover what the shipped user agents reach, and no more:
-/// warming stops of its own accord once it has paid for them, so the figure is a ceiling rather
-/// than an amount spent.
-const SHARED_BUDGET: u64 = 400 << 20;
+/// What [`shared`] spends. A ceiling rather than an amount: warming stops of its own accord
+/// once it has paid for the shipped user agents, which comes to 28 MiB, and the headroom is for
+/// a list rebuilt off a dump with more in it. `the_shipped_user_agents_fit_the_shared_budget`
+/// fails if it ever binds.
+const SHARED_BUDGET: u64 = 128 << 20;
 
 impl Detector {
     pub fn new() -> Detector {

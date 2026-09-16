@@ -21,7 +21,7 @@ use std::path::PathBuf;
 use std::time::Duration;
 
 use criterion::{BatchSize, BenchmarkId, Criterion, SamplingMode, Throughput, criterion_group, criterion_main};
-use device_detector::{Budget, Detector};
+use device_detector::{Budget, Detector, common_user_agents};
 
 /// What `Detector::cache` is given, in regexes compiled up front.
 ///
@@ -65,8 +65,16 @@ fn agents() -> Vec<String> {
 }
 
 /// A stride over the corpus, so that the sample keeps covering every typology in it.
+///
+/// The user agents `src/warm.txt` ships are taken out first. They are a stride over the same
+/// corpus, so a sample that kept them would put the warmed detector below on exactly the user
+/// agents it was warmed for, and answer a question nobody asks. What is left is still drawn from
+/// the same corpus and still neighbours what the warm list holds, so the warmed row reads high
+/// against traffic that looks nothing like the corpus.
 fn sample() -> Vec<String> {
-    let agents = agents();
+    let warmed: std::collections::HashSet<&str> = common_user_agents().collect();
+    let agents: Vec<String> =
+        agents().into_iter().filter(|agent| !warmed.contains(agent.as_str())).collect();
     let wanted = std::env::var("DETECT_SAMPLE")
         .ok()
         .and_then(|value| value.parse().ok())
@@ -137,20 +145,32 @@ fn detect(criterion: &mut Criterion) {
         let mut detector = Detector::new();
         detector.cache(Budget::regexes(budget));
 
-        let mut group = criterion.benchmark_group(format!("detect/{budget}"));
-        group
-            .sample_size(10)
-            .sampling_mode(SamplingMode::Flat)
-            .warm_up_time(Duration::from_secs(1))
-            .measurement_time(Duration::from_secs(5))
-            .throughput(Throughput::Elements(agents.len() as u64));
-
-        group.bench_function("detect", |bencher| {
-            bencher.iter(|| agents.iter().filter(|agent| detector.detect(agent).is_some()).count())
-        });
-
-        group.finish();
+        time(criterion, &format!("detect/{budget}"), &agents, &detector);
     }
+
+    // What `shared` does, and the comparison the budgets above are here for: the same question
+    // asked of the user agents the crate ships with rather than of the shape of the index. It
+    // spends some 160 MiB, which is between the 5 000 and 20 000 rows.
+    let mut warmed = Detector::new();
+    warmed.warm(common_user_agents(), Budget::bytes(400 << 20));
+
+    time(criterion, "detect/warm", &agents, &warmed);
+}
+
+fn time(criterion: &mut Criterion, name: &str, agents: &[String], detector: &Detector) {
+    let mut group = criterion.benchmark_group(name);
+    group
+        .sample_size(10)
+        .sampling_mode(SamplingMode::Flat)
+        .warm_up_time(Duration::from_secs(1))
+        .measurement_time(Duration::from_secs(5))
+        .throughput(Throughput::Elements(agents.len() as u64));
+
+    group.bench_function("detect", |bencher| {
+        bencher.iter(|| agents.iter().filter(|agent| detector.detect(agent).is_some()).count())
+    });
+
+    group.finish();
 }
 
 criterion_group!(benches, load, cache, detect);

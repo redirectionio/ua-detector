@@ -71,15 +71,32 @@ pub struct Detector {
 /// How many times [`Detector::trace`] runs what it measures plainly, keeping the quickest.
 const PASSES: usize = 3;
 
+/// The user agents the crate ships with, for [`Detector::warm`] to spend a budget on where a
+/// caller has none of its own.
+///
+/// An even stride across the corpus rather than a sample of anyone's requests: it covers the
+/// breadth of what the database answers rather than the shape of any one service's traffic. A
+/// caller holding a dump of its own should warm on that instead, which is worth a great deal
+/// more -- see [`Detector::warm_from_path`].
+pub fn common_user_agents() -> impl Iterator<Item = &'static str> {
+    include_str!("warm.txt").lines()
+}
+
 /// Shared detector, so callers do not pay for loading the entries more than once.
 ///
 /// One for the whole process, whatever the number of threads: detection reads and never writes,
 /// so nothing here contends, and a detector of its own per thread would multiply a hundred
 /// megabytes by the thread count.
+///
+/// Warmed on [`common_user_agents`] rather than given a budget to spend blind, because a budget
+/// spent blind is mostly spent wrong: it buys the branches of the index that hold the most
+/// entries, which is not where a user agent goes. This is the modest default a library can
+/// choose for a caller it knows nothing about, and a caller that knows its own traffic does far
+/// better with [`Detector::warm`] and a budget of its own.
 pub fn shared() -> &'static Detector {
     static SHARED: LazyLock<Detector> = LazyLock::new(|| {
         let mut detector = Detector::new();
-        detector.cache(Budget::regexes(2_000));
+        detector.warm(common_user_agents(), Budget::bytes(SHARED_BUDGET));
 
         #[cfg(feature = "cache")]
         detector.cache_answers(20_000);
@@ -89,6 +106,11 @@ pub fn shared() -> &'static Detector {
 
     &SHARED
 }
+
+/// What [`shared`] spends. Enough to cover what the shipped user agents reach, and no more:
+/// warming stops of its own accord once it has paid for them, so the figure is a ceiling rather
+/// than an amount spent.
+const SHARED_BUDGET: u64 = 400 << 20;
 
 impl Detector {
     pub fn new() -> Detector {
@@ -242,9 +264,9 @@ impl Detector {
     /// own traffic are worth more than any budget spent blind.
     ///
     /// Returns what was left unused, which can go to [`Detector::cache`] afterwards.
-    pub fn warm<'a>(
+    pub fn warm<A: AsRef<str>>(
         &mut self,
-        user_agents: impl IntoIterator<Item = &'a str>,
+        user_agents: impl IntoIterator<Item = A>,
         limit: Budget,
     ) -> Budget {
         let mut left = limit;
@@ -254,6 +276,7 @@ impl Detector {
                 break;
             }
 
+            let user_agent = user_agent.as_ref();
             left = self.tree.warm(user_agent, left);
 
             // And the entries it reached: reading one out compiles its regex, with no prefilter
@@ -268,6 +291,34 @@ impl Detector {
         }
 
         left
+    }
+
+    /// The same, over a file of user agents, one per line -- a dump of a service's own traffic,
+    /// heaviest first, being the best thing a budget can be spent on and the one thing an
+    /// application does not have at startup.
+    ///
+    /// Read a line at a time: a dump worth warming on is larger than the index it pays for.
+    pub fn warm_from_path(
+        &mut self,
+        path: impl AsRef<std::path::Path>,
+        limit: Budget,
+    ) -> std::io::Result<Budget> {
+        use std::io::BufRead;
+
+        let file = std::io::BufReader::new(std::fs::File::open(path)?);
+        let mut left = limit;
+
+        for line in file.lines() {
+            let line = line?;
+
+            if left.is_spent() {
+                break;
+            }
+
+            left = self.warm([line.as_str()], left);
+        }
+
+        Ok(left)
     }
 
     pub fn len(&self) -> usize {
@@ -772,6 +823,22 @@ mod tests {
             "an entry is still compiled at every lookup",
         );
         assert_eq!(trace.detection, shared().detect(user_agent), "warming changed the answer");
+    }
+
+    /// The list the crate ships is what [`shared`] spends its budget on, so the budget has to
+    /// cover it: warming stops where the budget does, and every lookup past that point compiles
+    /// again on the way out.
+    #[test]
+    fn the_shipped_user_agents_fit_the_shared_budget() {
+        let agents: Vec<&str> = common_user_agents().collect();
+
+        assert!(agents.len() > 500, "only {} user agents shipped", agents.len());
+        assert!(agents.iter().all(|agent| !agent.trim().is_empty()), "a blank line in warm.txt");
+
+        let mut detector = Detector::new();
+        let left = detector.warm(&agents, Budget::bytes(SHARED_BUDGET));
+
+        assert!(!left.is_spent(), "the shared budget does not cover what it is spent on");
     }
 
     /// A budget in bytes is a target rather than a bound -- what a regex costs is only known

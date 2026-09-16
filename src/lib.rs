@@ -8,7 +8,7 @@ mod regex_radix_tree;
 mod template;
 
 pub use budget::{Budget, UnreadableBudget};
-pub use detector::{DetectionTrace, Detector, RuleTrace, shared};
+pub use detector::{DetectionTrace, Detector, RuleTrace, common_user_agents, shared};
 pub use device::{Bot, Client, Detection, Device, MOBILE_ONLY_BROWSERS, Named, Os, Producer};
 pub use kind::{BotCategory, ClientKind, DeviceKind, UnknownKind};
 pub use regex::{MatchPath, Measure, RegexOptions};

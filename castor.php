@@ -48,4 +48,18 @@ function sync()
     }
 
     run("rm -rf $tempDir");
+
+    warm();
+}
+
+/**
+ * Rewrites `src/warm.txt`, the user agents the crate ships to warm itself on.
+ *
+ * An even stride across the corpus, so the corpus moving moves what is worth compiling with it.
+ * `matomo:sync` runs this; it is a task of its own for when the stride itself changes.
+ */
+#[AsTask(description: 'Rewrites the user agents the crate warms itself on', name: 'build', namespace: 'warm')]
+function warm()
+{
+    run('cargo run --release --no-default-features --example warmlist', context()->withWorkingDirectory(__DIR__));
 }

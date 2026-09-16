@@ -108,8 +108,11 @@ cargo bench                     # loading, compiling and detecting, per cache bu
 cargo run --release --example traffic -- <dump.csv>   # what production answers that this does not
 cargo run --release --example compare -- <dump.tsv>   # the same, over a dump of raw rows
 cargo run --release --example memory [budget...] # what the index costs to hold, per budget
+cargo run --release --example memory warm:400M  # the same, spent on the shipped user agents
+cargo run --release --example warmlist          # rewrites src/warm.txt off the corpus
 cargo run --release --example trace -- "<user agent>" # where one detection spends itself
-castor matomo:sync              # pull the fixtures again from the pinned revision
+castor matomo:sync              # pull the fixtures again, and rewrite src/warm.txt
+castor warm:build               # rewrite src/warm.txt alone
 ```
 
 Nothing about the corpus is compiled: `tests/corpus` reads the fixtures at startup and hands one
@@ -158,9 +161,24 @@ Warming beats a blind budget seven times over on memory and three times on speed
 beyond what the walk spends is free, so `warm(top_1000, 2_000)` and `warm(top_1000, 10_000)` are
 the same thing.
 
-The answers carry the rest: 93% of that stream never reaches the detector at all. `shared()` has
-no traffic to warm on, so it takes a modest blind budget; a caller with a dump of its own should
-build its own detector and warm it.
+The answers carry the rest: 93% of that stream never reaches the detector at all.
+
+`shared()` has no traffic of its own to warm on, so it warms on `src/warm.txt`: a thousand user
+agents taken at an even stride across the corpus, written by `castor warm:build` and embedded
+with `include_str!`. That covers the breadth of what the database answers rather than the shape
+of anyone's requests, which is the most a library can guess for a caller it knows nothing about,
+and it is still worth several times a budget spent blind -- over two hundred corpus user agents
+none of which are in the list:
+
+```
+budget 0                          15.8 ms   +0 MiB      0.8 s to start
+5 000 regexes                      3.8 ms   +131 MiB    1.5 s
+20 000 regexes                     1.9 ms   +704 MiB    3.7 s
+warmed on the shipped thousand     1.0 ms   +278 MiB    2.4 s
+```
+
+A caller with a dump of its own should still build its own detector and warm it on that:
+`Detector::warm_from_path` reads a file of user agents a line at a time.
 
 `tests/pinned/production.rs` is written by hand: it pins user agents the corpus shows once, or
 not at all. Add a case there when a production divergence is fixed, and check the case fails

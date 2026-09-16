@@ -443,3 +443,37 @@ fn a_token_at_the_end_of_the_string_still_counts() {
     assert!(wrong.is_empty(), "{}", wrong.join(""));
 }
 
+
+/// The compatibility comment names a page, and the page is written without a scheme.
+///
+/// `+imagesift.com` and `+redirection.io` are how a fair share of crawlers write the address, and
+/// the corpus holds one of them, under a name that answers before the generic entry is reached.
+/// What separates an address from the version number in the same position is the `+`, so the
+/// cases without one have to stay unread.
+#[test]
+fn a_crawler_names_a_page_without_a_scheme() {
+    let named = [
+        ("mozilla/5.0 (compatible; redirection-io/1.0; +redirection.io)", "redirection-io", "redirection.io"),
+        ("Mozilla/5.0 (compatible; Foobar/1.0; +example.co.uk/bot.html)", "Foobar", "example.co.uk/bot.html"),
+        ("Mozilla/5.0 (compatible; PR-CY.RU; + https://a.pr-cy.ru)", "PR-CY.RU", "https://a.pr-cy.ru"),
+    ];
+
+    for (user_agent, name, url) in named {
+        let bot = detect(user_agent).and_then(|detection| detection.bot);
+        let found = bot.map(|bot| (bot.name, bot.url)).unwrap_or_default();
+
+        assert_eq!(found, (name.to_owned(), url.to_owned()), "{user_agent}");
+    }
+
+    let unread = [
+        "Mozilla/4.0 (compatible; Foobar/1.0; 2.0.50727)",
+        "Mozilla/4.0 (compatible; Foobar; 1.2.3)",
+        "Mozilla/5.0 (compatible; Widget/1.0; +noscheme)",
+    ];
+
+    for user_agent in unread {
+        let bot = detect(user_agent).and_then(|detection| detection.bot);
+
+        assert_eq!(bot.map(|bot| bot.name), None, "read as a bot: {user_agent}");
+    }
+}

@@ -208,8 +208,12 @@
 # Last at this priority, so it beats the tokens above -- a name is worth more than the `bot` in
 # it -- and below every named bot, which spells it better. The address is required, and is what
 # keeps browsers out: no comment a browser writes names a page.
+#
+# The scheme is not: `+imagesift.com` and `+redirection.io` are written without one. What has to
+# be there is the `+`, which across the corpus appears in no comment outside this file, and which
+# is the only thing standing between a bare domain and a version number.
 -
-  regex: '.*\(compatible; (?<bot_name>[A-Za-z][\w.-]*)(?:/[\d.]+)?;\s*\+?(?<bot_url>https?://[^);\s]+).*'
+  regex: '.*\(compatible; (?<bot_name>[A-Za-z][\w.-]*)(?:/[\d.]+)?;\s*\+\s*(?<bot_url>https?://[^);\s]+|[\w.-]*\.[a-z]{2,}(?:/[^);\s]*)?).*'
   priority: -4
   bot:
     name: '{bot_name}'

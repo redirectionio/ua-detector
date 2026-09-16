@@ -17,10 +17,10 @@ assert_eq!(found.os.unwrap().version, "10");
 Detection {
     os: Some(Os { name: "Android", version: "10", platform: "" }),
     client: Some(Client {
-        kind: "browser", name: "Chrome", version: "80.0.3987.99",
+        kind: Some(Browser), name: "Chrome", version: "80.0.3987.99",
         engine: "Blink", engine_version: "80.0.3987.99",
     }),
-    device: Some(Device { kind: "smartphone", brand: "Samsung", model: "Galaxy S9+" }),
+    device: Some(Device { kind: Some(Smartphone), brand: "Samsung", model: "Galaxy S9+" }),
     os_family: "Android",
     browser_family: "Chrome",
     bot: None,

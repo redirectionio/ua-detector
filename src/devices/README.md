@@ -33,6 +33,22 @@ Filters transform what was captured, and chain left to right:
 
 `{model|spaces|title}` turns `ZOEY_SMART` into `Zoey Smart`.
 
+## The two `type:` fields
+
+`device.type` and `client.type` are not free text: they are the vocabularies matomo answers with,
+and anything else fails when the detector reads the file. Placeholders and filters do not apply
+to them.
+
+```
+device.type   desktop, smartphone, tablet, phablet, feature phone, console, tv, car browser,
+              smart display, smart speaker, camera, portable media player, wearable, peripheral
+client.type   browser, mobile app, mediaplayer, feed reader, pim, library
+```
+
+`bot.category` is the one vocabulary left open, because matomo adds to it -- the AI crawlers all
+arrived at once -- and a synchronisation that brings a new name must not leave the database
+unloadable. A name this library does not know reads back as `BotCategory::Other`.
+
 ## Headers
 
 An entry may also require request headers, which is where a browser puts the client hints that
@@ -82,6 +98,10 @@ Leaving a field out and writing `''` mean opposite things.
 device: {type: smartphone}              # says nothing about the brand: another entry may
 device: {type: smartphone, brand: ''}   # says the brand is empty, and overwrites one that was found
 ```
+
+That holds for `type:` as well, where `''` is how an entry says the thing has no kind -- a model
+token names a device without saying what kind of device it is -- and reads back as `None` rather
+than as a kind.
 
 An entry cut from a single user agent usually wants the second: it knows the whole answer and
 means the empty fields. An entry written for one axis wants the first, so the rest can be filled

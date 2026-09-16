@@ -7,7 +7,7 @@
 
 #![allow(dead_code)]
 
-use device_detector::{Detection, MOBILE_ONLY_BROWSERS};
+use device_detector::{BotCategory, ClientKind, Detection, DeviceKind, MOBILE_ONLY_BROWSERS};
 
 /// `DeviceType` of the log injector, whose numbers are what the column holds.
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]
@@ -42,7 +42,9 @@ impl Kind {
 /// What the log injector writes into the two columns, given a detection.
 pub fn classify(detection: &Detection, user_agent: &str) -> (Kind, String) {
     if let Some(bot) = &detection.bot {
-        let kind = if bot.category.to_lowercase().contains("search bot") {
+        // Production tested `category` for the text "search bot", which over the categories
+        // this database holds is the two `is_search_bot` names.
+        let kind = if bot.category.as_ref().is_some_and(BotCategory::is_search_bot) {
             Kind::Bot
         } else {
             Kind::Tool
@@ -66,27 +68,33 @@ pub fn classify(detection: &Detection, user_agent: &str) -> (Kind, String) {
 }
 
 fn is_tablet(detection: &Detection) -> bool {
-    detection.device.as_ref().is_some_and(|device| device.kind == "tablet")
+    detection.device.as_ref().is_some_and(|device| device.kind == Some(DeviceKind::Tablet))
 }
 
 fn is_desktop(detection: &Detection) -> bool {
-    detection.device.as_ref().is_some_and(|device| device.kind == "desktop")
+    detection.device.as_ref().is_some_and(|device| device.kind == Some(DeviceKind::Desktop))
 }
 
 /// rust-device-detector's `KnownDevice::is_mobile`, minus the client hints, which a dump of user
 /// agents alone cannot carry.
 fn is_mobile(detection: &Detection) -> bool {
     if let Some(device) = &detection.device {
-        match device.kind.as_str() {
-            "feature phone" | "smartphone" | "tablet" | "phablet" | "camera"
-            | "portable media player" => return true,
-            "tv" | "smart display" | "console" => return false,
+        match device.kind {
+            Some(
+                DeviceKind::FeaturePhone
+                | DeviceKind::Smartphone
+                | DeviceKind::Tablet
+                | DeviceKind::Phablet
+                | DeviceKind::Camera
+                | DeviceKind::PortableMediaPlayer,
+            ) => return true,
+            Some(DeviceKind::Tv | DeviceKind::SmartDisplay | DeviceKind::Console) => return false,
             _ => {}
         }
     }
 
     if let Some(client) = &detection.client
-        && client.kind == "browser"
+        && client.kind == Some(ClientKind::Browser)
         && MOBILE_ONLY_BROWSERS.contains(&client.name.as_str())
     {
         return true;

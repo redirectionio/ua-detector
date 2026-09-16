@@ -3,10 +3,20 @@
 //! The corpus shows these shapes once, or not at all, so it cannot catch a regression on them.
 //! Written by hand, unlike everything else under `tests/`.
 
-use device_detector::Detection;
+use device_detector::{ClientKind, Detection, DeviceKind};
 
 fn detect(user_agent: &str) -> Option<Detection> {
     device_detector::shared().detect_with_headers(user_agent, &[])
+}
+
+/// A kind as the fixtures write it. The cases below are tuples of text against tuples of text,
+/// and a kind reads there as it reads in the corpus.
+fn device_kind(kind: Option<DeviceKind>) -> &'static str {
+    kind.map_or("", DeviceKind::as_str)
+}
+
+fn client_kind(kind: Option<ClientKind>) -> &'static str {
+    kind.map_or("", ClientKind::as_str)
 }
 
 /// Calling a reader a crawler is the one error that costs something, so it gets its own test.
@@ -54,7 +64,7 @@ fn plain_chrome_names_the_desktop_under_it() {
         assert_eq!(
             (
                 detection.client.unwrap_or_default().name.as_str(),
-                device.kind.as_str(),
+                device_kind(device.kind),
                 os.name.as_str(),
                 os.version.as_str(),
                 os.platform.as_str(),
@@ -82,7 +92,7 @@ fn the_build_number_does_not_name_the_device() {
         assert_eq!(
             (
                 detection.client.unwrap_or_default().name.as_str(),
-                device.kind.as_str(),
+                device_kind(device.kind),
                 device.brand.as_str(),
                 device.model.as_str(),
                 detection.os.unwrap_or_default().version.as_str(),
@@ -118,7 +128,7 @@ fn android_is_readable_without_knowing_the_model() {
         assert_eq!(
             (
                 detection.client.unwrap_or_default().name.as_str(),
-                device.kind.as_str(),
+                device_kind(device.kind),
                 device.brand.as_str(),
                 device.model.as_str(),
                 detection.os.unwrap_or_default().version.as_str(),
@@ -156,9 +166,9 @@ fn instagram_names_itself_without_the_device() {
 
         assert_eq!(
             (
-                client.name.as_str(), client.kind.as_str(), client.version.as_str(),
+                client.name.as_str(), client_kind(client.kind), client.version.as_str(),
                 os.name.as_str(), os.version.as_str(),
-                device.kind.as_str(), device.brand.as_str(),
+                device_kind(device.kind), device.brand.as_str(),
             ),
             ("Instagram", "mobile app", version, os_name, os_version, kind, brand),
             "{user_agent}"
@@ -182,7 +192,7 @@ fn an_iphone_is_not_a_desktop_without_hints_saying_so() {
         };
         let os = detection.os.clone().unwrap_or_default();
 
-        assert_ne!(detection.device.unwrap_or_default().kind, "desktop", "{user_agent}");
+        assert_ne!(detection.device.unwrap_or_default().kind, Some(DeviceKind::Desktop), "{user_agent}");
         assert!(
             !matches!(os.name.as_str(), "GNU/Linux" | "Windows"),
             "reported {} for {user_agent}",
@@ -223,9 +233,9 @@ fn facebook_names_itself_in_every_shape_it_sends() {
 
         assert_eq!(
             (
-                client.name.as_str(), client.kind.as_str(), client.version.as_str(),
+                client.name.as_str(), client_kind(client.kind), client.version.as_str(),
                 os.name.as_str(), os.version.as_str(),
-                device.kind.as_str(), device.brand.as_str(),
+                device_kind(device.kind), device.brand.as_str(),
             ),
             ("Facebook", "mobile app", version, os_name, os_version, kind, brand),
             "{user_agent}"
@@ -257,7 +267,7 @@ fn entries_compose_across_axes() {
         assert_eq!(
             (
                 detection.client.unwrap_or_default().name.as_str(),
-                device.kind.as_str(),
+                device_kind(device.kind),
                 device.brand.as_str(),
                 device.model.as_str(),
             ),
@@ -393,8 +403,8 @@ fn the_type_follows_from_whatever_names_the_device() {
         .iter()
         .filter_map(|(user_agent, want)| {
             let got = detect(user_agent)
-                .map(|detection| detection.device.unwrap_or_default().kind)
-                .unwrap_or_else(|| String::from("<no entry matches>"));
+                .map(|detection| device_kind(detection.device.unwrap_or_default().kind))
+                .unwrap_or("<no entry matches>");
 
             (got != *want).then(|| format!("\n  {want} read as {got:?}\n    {user_agent}"))
         })

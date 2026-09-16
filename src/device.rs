@@ -9,6 +9,7 @@
 //! leaves it to whatever else matched; an entry that writes `version: ""` is saying this thing
 //! has no version, and overwrites. Collapsing the two is what the result type does last.
 
+use crate::kind::{BotCategory, ClientKind, DeviceKind};
 use crate::template::{fill, placeholders};
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
@@ -41,8 +42,8 @@ pub struct Os {
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Client {
-    #[serde(rename = "type")]
-    pub kind: String,
+    #[serde(rename = "type", default, deserialize_with = "crate::kind::kind")]
+    pub kind: Option<ClientKind>,
     pub name: String,
     #[serde(default)]
     pub version: String,
@@ -55,8 +56,8 @@ pub struct Client {
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Device {
-    #[serde(rename = "type", default)]
-    pub kind: String,
+    #[serde(rename = "type", default, deserialize_with = "crate::kind::kind")]
+    pub kind: Option<DeviceKind>,
     #[serde(default)]
     pub brand: String,
     #[serde(default)]
@@ -67,8 +68,8 @@ pub struct Device {
 #[serde(deny_unknown_fields)]
 pub struct Bot {
     pub name: String,
-    #[serde(default)]
-    pub category: String,
+    #[serde(default, deserialize_with = "crate::kind::kind")]
+    pub category: Option<BotCategory>,
     #[serde(default)]
     pub url: String,
     #[serde(default)]
@@ -116,8 +117,8 @@ pub struct PartialOs {
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct PartialClient {
-    #[serde(rename = "type", default)]
-    pub kind: Option<String>,
+    #[serde(rename = "type", default, deserialize_with = "crate::kind::said")]
+    pub kind: Option<Option<ClientKind>>,
     #[serde(default)]
     pub name: Option<String>,
     #[serde(default)]
@@ -131,8 +132,8 @@ pub struct PartialClient {
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct PartialDevice {
-    #[serde(rename = "type", default)]
-    pub kind: Option<String>,
+    #[serde(rename = "type", default, deserialize_with = "crate::kind::said")]
+    pub kind: Option<Option<DeviceKind>>,
     #[serde(default)]
     pub brand: Option<String>,
     #[serde(default)]
@@ -144,8 +145,8 @@ pub struct PartialDevice {
 pub struct PartialBot {
     #[serde(default)]
     pub name: Option<String>,
-    #[serde(default)]
-    pub category: Option<String>,
+    #[serde(default, deserialize_with = "crate::kind::said")]
+    pub category: Option<Option<BotCategory>>,
     #[serde(default)]
     pub url: Option<String>,
     #[serde(default)]
@@ -163,6 +164,9 @@ pub struct PartialProducer {
 
 /// Applies `f` to every text an entry holds, which is how an entry becomes a result: every
 /// `{placeholder}` is replaced by what the regex captured. A field the entry left out stays out.
+///
+/// The kinds are carried across untouched: they are drawn from a closed vocabulary rather than
+/// written, so no entry has a placeholder to fill in one.
 macro_rules! walk {
     ($partial:expr, $f:expr) => {{
         let partial: &Partial = $partial;
@@ -177,14 +181,14 @@ macro_rules! walk {
                 platform: g(&os.platform),
             }),
             client: partial.client.as_ref().map(|client| PartialClient {
-                kind: g(&client.kind),
+                kind: client.kind,
                 name: g(&client.name),
                 version: g(&client.version),
                 engine: g(&client.engine),
                 engine_version: g(&client.engine_version),
             }),
             device: partial.device.as_ref().map(|device| PartialDevice {
-                kind: g(&device.kind),
+                kind: device.kind,
                 brand: g(&device.brand),
                 model: g(&device.model),
             }),
@@ -192,7 +196,7 @@ macro_rules! walk {
             browser_family: g(&partial.browser_family),
             bot: partial.bot.as_ref().map(|bot| PartialBot {
                 name: g(&bot.name),
-                category: g(&bot.category),
+                category: bot.category.clone(),
                 url: g(&bot.url),
                 producer: bot.producer.as_ref().map(|producer| PartialProducer {
                     name: g(&producer.name),
@@ -204,7 +208,7 @@ macro_rules! walk {
 }
 
 /// Takes `from` when it has something to say, which is any value at all, empty included.
-fn take(into: &mut Option<String>, from: Option<String>) {
+fn take<T>(into: &mut Option<T>, from: Option<T>) {
     if from.is_some() {
         *into = from;
     }
@@ -502,7 +506,7 @@ impl From<Partial> for Detection {
             return Detection {
                 bot: Some(Bot {
                     name: text(bot.name),
-                    category: text(bot.category),
+                    category: bot.category.flatten(),
                     url: text(bot.url),
                     producer: bot.producer.map_or_else(Producer::default, |producer| Producer {
                         name: text(producer.name),
@@ -515,7 +519,7 @@ impl From<Partial> for Detection {
 
         let os_family = text(partial.os_family);
         let mut device = partial.device.map(|device| Device {
-            kind: text(device.kind),
+            kind: device.kind.flatten(),
             brand: text(device.brand),
             model: text(device.model),
         });
@@ -524,18 +528,17 @@ impl From<Partial> for Detection {
         // whatever the rest of the string left out. Entries say it themselves where they read
         // the platform token, and cannot where they read something else -- `Microsoft-WebDAV-
         // MiniRedir/10.0.19045` names Windows and no machine at all.
-        let handheld = partial
-            .client
-            .as_ref()
-            .is_some_and(|client| client.kind.as_deref() == Some("browser")
-                && client.name.as_deref().is_some_and(|name| MOBILE_ONLY_BROWSERS.contains(&name)));
+        let handheld = partial.client.as_ref().is_some_and(|client| {
+            client.kind == Some(Some(ClientKind::Browser))
+                && client.name.as_deref().is_some_and(|name| MOBILE_ONLY_BROWSERS.contains(&name))
+        });
 
         if DESKTOP_FAMILIES.contains(&os_family.as_str())
             && !handheld
-            && device.as_ref().is_none_or(|device| device.kind.is_empty())
+            && device.as_ref().is_none_or(|device| device.kind.is_none())
         {
             device = Some(Device {
-                kind: String::from("desktop"),
+                kind: Some(DeviceKind::Desktop),
                 ..device.unwrap_or_default()
             });
         }
@@ -547,7 +550,7 @@ impl From<Partial> for Detection {
                 platform: text(os.platform),
             }),
             client: partial.client.map(|client| Client {
-                kind: text(client.kind),
+                kind: client.kind.flatten(),
                 name: text(client.name),
                 version: text(client.version),
                 engine: text(client.engine),
@@ -625,6 +628,6 @@ mod tests {
 
         let device = Detection::from(merged).device.unwrap();
 
-        assert_eq!((device.kind.as_str(), device.brand.as_str()), ("tablet", "Xiaomi"));
+        assert_eq!((device.kind, device.brand.as_str()), (Some(DeviceKind::Tablet), "Xiaomi"));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace device_detector;
+namespace ua_detector;
 
 use Castor\Attribute\AsTask;
 

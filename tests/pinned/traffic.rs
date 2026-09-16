@@ -200,7 +200,7 @@ fn the_heaviest_traffic_reads_as_production_reads_it() {
         (r"Mozilla/5.0 (Linux; Android 13; SM-G988N Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/128.0.0.0 Whale/1.0.0.0 Crosswalk/29.128.0.31 Mobile Safari/537.36 NAVER(inapp; search; 2100; 12.23.1)", r"Naver", 2),
     ];
 
-    let detector = device_detector::shared();
+    let detector = ua_detector::shared();
     let wrong: Vec<String> = cases
         .iter()
         .filter_map(|(user_agent, name, kind)| {

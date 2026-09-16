@@ -13,7 +13,7 @@ mod fixtures;
 
 use std::sync::{Arc, OnceLock};
 
-use device_detector::{Budget, Detector};
+use ua_detector::{Budget, Detector};
 use libtest_mimic::{Arguments, Failed, Trial};
 
 /// Warmed on a stride across the corpus it is about to run, which pays for the regexes those

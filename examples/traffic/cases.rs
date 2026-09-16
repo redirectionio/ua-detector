@@ -119,7 +119,7 @@ fn the_heaviest_traffic_reads_as_production_reads_it() {
     out.push_str(
         r#"    ];
 
-    let detector = device_detector::shared();
+    let detector = ua_detector::shared();
     let wrong: Vec<String> = cases
         .iter()
         .filter_map(|(user_agent, name, kind)| {

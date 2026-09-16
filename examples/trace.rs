@@ -11,13 +11,13 @@
 
 use std::time::Duration;
 
-use device_detector::{DetectionTrace, MatchPath, RuleTrace, Trace};
+use ua_detector::{DetectionTrace, MatchPath, RuleTrace, Trace};
 
 fn main() {
     let mut arguments = std::env::args().skip(1);
     let mut user_agent = None;
     let mut headers = Vec::new();
-    let mut budget = device_detector::Budget::regexes(1_000);
+    let mut budget = ua_detector::Budget::regexes(1_000);
     let mut top = 10;
     let mut tree = false;
     let mut warm = false;
@@ -42,7 +42,7 @@ fn main() {
     let headers: Vec<(&str, &str)> =
         headers.iter().map(|(name, value)| (name.as_str(), value.as_str())).collect();
 
-    let mut detector = device_detector::Detector::new();
+    let mut detector = ua_detector::Detector::new();
     let left = if warm {
         detector.warm([user_agent.as_str()], budget)
     } else {
@@ -202,7 +202,7 @@ fn candidates(trace: &DetectionTrace, top: usize) {
 }
 
 /// The question this was written for: what the patterns opening on `.*` actually cost.
-fn wildcards(trace: &DetectionTrace, detector: &device_detector::Detector) {
+fn wildcards(trace: &DetectionTrace, detector: &ua_detector::Detector) {
     let opens = |regex: &str| regex.starts_with(".*");
     let (wild, rest): (Vec<&RuleTrace>, Vec<&RuleTrace>) =
         trace.rules.iter().partition(|rule| opens(&rule.regex));

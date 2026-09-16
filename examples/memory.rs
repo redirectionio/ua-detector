@@ -16,7 +16,7 @@
 //! property of the process rather than of an operation, so there is nothing for criterion to
 //! sample -- running the same allocation a hundred times measures the allocator, not the index.
 
-use device_detector::{Budget, Detector, common_user_agents};
+use ua_detector::{Budget, Detector, common_user_agents};
 
 fn resident() -> u64 {
     let status = std::fs::read_to_string("/proc/self/status").unwrap_or_default();

@@ -50,7 +50,7 @@ pub struct Detection {
 /// asked for.
 ///
 /// ```
-/// # use device_detector::{Detection, Named};
+/// # use ua_detector::{Detection, Named};
 /// # fn f(detection: &Detection) -> String {
 /// match detection.named() {
 ///     Named::Bot(bot) => bot.name.clone(),

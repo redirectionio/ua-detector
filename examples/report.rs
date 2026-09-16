@@ -5,7 +5,7 @@
 
 use std::collections::BTreeMap;
 
-use device_detector::Detection;
+use ua_detector::Detection;
 
 #[derive(serde::Deserialize)]
 struct Case {
@@ -25,7 +25,7 @@ fn main() {
     let content = std::fs::read_to_string(&path).unwrap_or_else(|e| panic!("{path}: {e}"));
     let cases: Vec<Case> = serde_yaml::from_str(&content).expect("a valid fixture");
 
-    let detector = device_detector::shared();
+    let detector = ua_detector::shared();
     let mut failures = Vec::new();
 
     for case in &cases {

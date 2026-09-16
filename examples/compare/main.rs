@@ -19,7 +19,7 @@ mod injector;
 use std::collections::HashMap;
 use std::process::ExitCode;
 
-use device_detector::Detector;
+use ua_detector::Detector;
 use injector::{Kind, classify};
 
 /// Which of the two columns disagree, which is also how the report is split.
@@ -131,7 +131,7 @@ fn main() -> ExitCode {
     };
 
     let mut detector = Detector::new();
-    detector.cache(device_detector::Budget::regexes(budget));
+    detector.cache(ua_detector::Budget::regexes(budget));
 
     let lines: Vec<&str> = dump.lines().take(limit).collect();
     let threads = std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1);

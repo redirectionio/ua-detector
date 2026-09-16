@@ -12,8 +12,8 @@ use std::process::ExitCode;
 use crate::fixtures::Case;
 
 fn main() -> ExitCode {
-    let mut detector = device_detector::Detector::new();
-    detector.cache(device_detector::Budget::regexes(200_000));
+    let mut detector = ua_detector::Detector::new();
+    detector.cache(ua_detector::Budget::regexes(200_000));
 
     let (mut total, mut failing) = (0usize, 0usize);
 
@@ -34,7 +34,7 @@ fn main() -> ExitCode {
     if failing == 0 { ExitCode::SUCCESS } else { ExitCode::FAILURE }
 }
 
-fn passes(detector: &device_detector::Detector, case: &Case) -> bool {
+fn passes(detector: &ua_detector::Detector, case: &Case) -> bool {
     let headers = case.headers();
     let headers: Vec<(&str, &str)> = headers
         .iter()

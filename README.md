@@ -1,13 +1,13 @@
-# device-detector
+# ua-detector
 
 Reads a user agent, and the client hints that go with it, into the device, operating system and
 client it names.
 
 ```rust
-use device_detector::{Budget, Detector};
+use ua_detector::{Budget, Detector};
 
 let mut detector = Detector::new();
-detector.warm(device_detector::common_user_agents(), Budget::bytes(128 << 20));
+detector.warm(ua_detector::common_user_agents(), Budget::bytes(128 << 20));
 
 let found = detector
     .detect("Mozilla/5.0 (Linux; Android 10; SM-G9650) AppleWebKit/537.36 \
@@ -19,7 +19,7 @@ assert_eq!(found.device.unwrap().model, "Galaxy S9+");
 assert_eq!(found.os.unwrap().version, "10");
 ```
 
-One detector for the whole process. `device_detector::shared()` is that detector built for you,
+One detector for the whole process. `ua_detector::shared()` is that detector built for you,
 warmed the same way, if you have nowhere better to keep one -- but see **What a lookup costs**
 below before you leave the budget to it.
 

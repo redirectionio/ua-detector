@@ -6,9 +6,9 @@
 // change.
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-env-changed=DEVICE_DETECTOR_DEVICES");
+    println!("cargo:rerun-if-env-changed=UA_DETECTOR_DEVICES");
 
-    if std::env::var("CARGO_FEATURE_EMBED").is_err() || std::env::var("DEVICE_DETECTOR_DEVICES").is_ok()
+    if std::env::var("CARGO_FEATURE_EMBED").is_err() || std::env::var("UA_DETECTOR_DEVICES").is_ok()
     {
         return;
     }

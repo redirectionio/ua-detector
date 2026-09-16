@@ -29,7 +29,7 @@ use std::io::{BufRead, BufReader, Write};
 use std::path::PathBuf;
 use std::time::Instant;
 
-use device_detector::{Budget, Detector};
+use ua_detector::{Budget, Detector};
 
 /// How many to keep, unless a second argument says otherwise. What each size buys, over the same
 /// dump: what ships, what warming on it compiles, what `shared()` then takes to answer its first

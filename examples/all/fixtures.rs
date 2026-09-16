@@ -10,7 +10,7 @@
 use std::collections::BTreeMap;
 use std::path::PathBuf;
 
-use device_detector::Detection;
+use ua_detector::Detection;
 
 pub const FIXTURES: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/tests/matomo-device-detector/fixtures");
 

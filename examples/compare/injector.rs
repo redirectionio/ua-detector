@@ -7,7 +7,7 @@
 
 #![allow(dead_code)]
 
-use device_detector::{BotCategory, ClientKind, Detection, DeviceKind, MOBILE_ONLY_BROWSERS};
+use ua_detector::{BotCategory, ClientKind, Detection, DeviceKind, MOBILE_ONLY_BROWSERS};
 
 /// `DeviceType` of the log injector, whose numbers are what the column holds.
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]
@@ -108,7 +108,7 @@ fn is_mobile(detection: &Detection) -> bool {
 }
 
 /// What the log injector would have written for a user agent, detection or no detection.
-pub fn read(detector: &device_detector::Detector, user_agent: &str) -> (Kind, String) {
+pub fn read(detector: &ua_detector::Detector, user_agent: &str) -> (Kind, String) {
     match detector.detect(user_agent) {
         Some(detection) => classify(&detection, user_agent),
         // What the log injector does with a detection error, and the closest thing to it.

@@ -1,16 +1,19 @@
 [package]
-name = "device-detector"
+name = "ua-detector"
 version = "0.1.0"
 edition = "2024"
 description = "Reads a user agent, and the client hints that go with it, into the device, operating system and client it names"
+# Edition 2024, and `Option::is_none_or`, which is the newest thing `src` reaches for.
+rust-version = "1.85"
 repository = "https://github.com/redirectionio/device-detector"
 license = "LGPL-3.0-or-later"
 readme = "README.md"
 keywords = ["user-agent", "device-detection", "client-hints", "browser", "bot"]
 categories = ["web-programming", "parser-implementations"]
-# The corpus this library is written against, and the tests generated from it, weigh forty
-# megabytes and are of no use to anyone depending on the crate.
-exclude = ["tests/", "benches/", ".github/", "castor.php", "castor.composer.*", ".castor.stub.php"]
+# The corpus this library is written against weighs forty megabytes and is of no use to anyone
+# depending on the crate. The examples go with it: every one of them is development tooling, and
+# most read either the fixtures or a dump of production traffic that is not here either.
+exclude = ["tests/", "benches/", "examples/", ".github/", "castor.php", "castor.composer.*", ".castor.stub.php"]
 
 [features]
 # The database, built into the binary. On by default, because a crate that has to be handed a

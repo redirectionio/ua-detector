@@ -85,7 +85,7 @@ const PASSES: usize = 3;
 /// --release --example warmlist` is what writes this list, and what measured the figures above.
 ///
 /// ```
-/// use device_detector::{Budget, Detector, common_user_agents};
+/// use ua_detector::{Budget, Detector, common_user_agents};
 ///
 /// let mut detector = Detector::new();
 /// detector.warm(common_user_agents(), Budget::bytes(128 << 20));
@@ -649,7 +649,7 @@ impl Default for Detector {
 /// Directory to read the database from instead of the copy built into the binary, which is what
 /// keeps a change to an entry from recompiling everything that links the library. `build.rs`
 /// stops watching the files while it is set.
-pub const DEVICES_DIRECTORY: &str = "DEVICE_DETECTOR_DEVICES";
+pub const DEVICES_DIRECTORY: &str = "UA_DETECTOR_DEVICES";
 
 fn load() -> Vec<(String, Entry)> {
     let mut files: Vec<(String, String)> = match std::env::var(DEVICES_DIRECTORY) {

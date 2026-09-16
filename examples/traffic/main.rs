@@ -35,7 +35,7 @@ use std::collections::HashMap;
 use std::io::{BufRead, BufReader};
 use std::process::ExitCode;
 
-use device_detector::{Budget, Detector};
+use ua_detector::{Budget, Detector};
 use indicatif::{ProgressBar, ProgressStyle};
 
 use crate::excuses::Excuses;

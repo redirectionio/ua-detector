@@ -124,7 +124,7 @@ The database is embedded with `include_dir!`, which registers every yaml with ru
 one-line change to a regex recompiles whatever links the library. Without the `embed` feature
 nothing is embedded and the files are read from `src/devices` at startup, which takes a change to
 an entry down to the second the detector spends loading -- four seconds against two minutes.
-`DEVICE_DETECTOR_DEVICES` names another directory to read, which works either way round;
+`UA_DETECTOR_DEVICES` names another directory to read, which works either way round;
 `build.rs` stops watching the yaml whenever what answers is not the embedded copy. Toggling the
 feature does rebuild, so stay on one side of it while working.
 

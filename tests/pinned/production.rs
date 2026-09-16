@@ -3,10 +3,10 @@
 //! The corpus shows these shapes once, or not at all, so it cannot catch a regression on them.
 //! Written by hand, unlike everything else under `tests/`.
 
-use device_detector::{ClientKind, Detection, DeviceKind};
+use ua_detector::{ClientKind, Detection, DeviceKind};
 
 fn detect(user_agent: &str) -> Option<Detection> {
-    device_detector::shared().detect_with_headers(user_agent, &[])
+    ua_detector::shared().detect_with_headers(user_agent, &[])
 }
 
 /// A kind as the fixtures write it. The cases below are tuples of text against tuples of text,

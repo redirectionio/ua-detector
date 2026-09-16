@@ -292,22 +292,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "460fbee9c2c2f33933d720630a6a0bac33ba7053db5344fac858d4b8952d77d5"
 
 [[package]]
-name = "device-detector"
-version = "0.1.0"
-dependencies = [
- "criterion",
- "include_dir",
- "indicatif",
- "libtest-mimic",
- "quick_cache",
- "regex",
- "regex-automata",
- "serde",
- "serde_yaml",
- "tracing",
-]
-
-[[package]]
 name = "either"
 version = "1.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -859,6 +843,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a04e24fab5c89c6a36eb8558c9656f30d81de51dfa4d3b45f26b21d61fa0a6c"
 dependencies = [
  "once_cell",
+]
+
+[[package]]
+name = "ua-detector"
+version = "0.1.0"
+dependencies = [
+ "criterion",
+ "include_dir",
+ "indicatif",
+ "libtest-mimic",
+ "quick_cache",
+ "regex",
+ "regex-automata",
+ "serde",
+ "serde_yaml",
+ "tracing",
 ]
 
 [[package]]

@@ -21,7 +21,7 @@ use std::path::PathBuf;
 use std::time::Duration;
 
 use criterion::{BatchSize, BenchmarkId, Criterion, SamplingMode, Throughput, criterion_group, criterion_main};
-use device_detector::{Budget, Detector, common_user_agents};
+use ua_detector::{Budget, Detector, common_user_agents};
 
 /// What `Detector::cache` is given, in regexes compiled up front.
 ///

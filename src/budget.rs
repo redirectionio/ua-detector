@@ -12,7 +12,7 @@ use crate::regex::LazyRegex;
 /// so both are offered and the accounting is kept in whichever was given.
 ///
 /// ```
-/// # use device_detector::{Budget, Detector};
+/// # use ua_detector::{Budget, Detector};
 /// let mut detector = Detector::new();
 /// detector.cache(Budget::bytes(1 << 30));
 /// ```

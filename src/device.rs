@@ -12,24 +12,82 @@
 use crate::kind::{BotCategory, ClientKind, DeviceKind};
 use crate::template::{fill, placeholders};
 
+/// What a user agent resolves to.
+///
+/// **A bot is the whole answer.** Where `bot` is set the other five fields are empty, always:
+/// an entry that names a crawler says nothing about the rest, and without the rule the platform
+/// axis would leave an Android version on a crawler that merely mentions Android. Nothing in the
+/// shape of the struct says so, so `if let Some(client) = detection.client` on a bot compiles and
+/// answers `None` without a word -- [`Detection::named`] is the same question asked in a way that
+/// cannot be got wrong.
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Detection {
+    /// The operating system, where one was named. Always `None` for a bot.
     #[serde(default)]
     pub os: Option<Os>,
+    /// The software that sent the request, where one was named. Always `None` for a bot.
     #[serde(default)]
     pub client: Option<Client>,
+    /// The machine it was sent from, where one was named. Always `None` for a bot.
     #[serde(default)]
     pub device: Option<Device>,
+    /// The family the operating system belongs to, `Android` for `Android` and for `Wear OS`
+    /// alike. Empty where none was named, and for a bot.
     #[serde(default)]
     pub os_family: String,
+    /// The family the browser belongs to, `Chrome` for `Chrome` and for `Opera` alike. Empty
+    /// where none was named, and for a bot.
     #[serde(default)]
     pub browser_family: String,
+    /// The crawler, where one was named -- and then it is the whole answer, the five fields
+    /// above being empty.
     #[serde(default)]
     pub bot: Option<Bot>,
 }
 
+/// A [`Detection`] read as the two things it can be, so that the one that is empty cannot be
+/// asked for.
+///
+/// ```
+/// # use device_detector::{Detection, Named};
+/// # fn f(detection: &Detection) -> String {
+/// match detection.named() {
+///     Named::Bot(bot) => bot.name.clone(),
+///     Named::Agent { client, .. } => client.map(|client| client.name.clone()).unwrap_or_default(),
+/// }
+/// # }
+/// ```
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Named<'a> {
+    /// A crawler, and nothing else: there is no system, client or device to ask for.
+    Bot(&'a Bot),
+    /// Software on a machine, any part of which the entries may have left unnamed.
+    Agent {
+        os: Option<&'a Os>,
+        client: Option<&'a Client>,
+        device: Option<&'a Device>,
+        os_family: &'a str,
+        browser_family: &'a str,
+    },
+}
+
 impl Detection {
+    /// What this names: a crawler, or software on a machine. The invariant [`Detection`]
+    /// describes, said in a way a `match` has to account for.
+    pub fn named(&self) -> Named<'_> {
+        match &self.bot {
+            Some(bot) => Named::Bot(bot),
+            None => Named::Agent {
+                os: self.os.as_ref(),
+                client: self.client.as_ref(),
+                device: self.device.as_ref(),
+                os_family: &self.os_family,
+                browser_family: &self.browser_family,
+            },
+        }
+    }
+
     /// Whether a crawler sent this, in which case the bot is the whole answer and the other
     /// fields are all empty. See the documentation of [`Detection`].
     pub fn is_bot(&self) -> bool {
@@ -65,6 +123,9 @@ impl Detection {
     ///
     /// That last step is why this is not `!is_desktop()`: a television settles it the other way,
     /// and a user agent naming no system at all is counted as mobile rather than as neither.
+    ///
+    /// Matomo's `isTouchEnabled` has no counterpart here: it looks for the token `Touch` in the
+    /// user agent, which a detection does not keep.
     ///
     /// A bot answers `false`. Matomo answers `true` there -- a crawler names no system, so
     /// nothing rules the desktop in -- which is a reading of its own rule rather than an answer
@@ -709,6 +770,20 @@ mod tests {
         let bare = detection(r#"{client: {type: library, name: curl}}"#);
 
         assert!(bare.is_mobile() && !bare.is_desktop());
+    }
+
+    /// The invariant the struct cannot state: a bot takes the platform axis with it, or a
+    /// crawler that merely mentions Android would carry an Android version.
+    #[test]
+    fn a_bot_is_the_whole_answer() {
+        let mut merged = entry(r#"os: {name: Android, version: "11"}"#);
+        merged.merge(entry(r#"bot: {name: Googlebot, category: Search bot}"#));
+
+        let found = Detection::from(merged);
+
+        assert!(matches!(found.named(), Named::Bot(bot) if bot.name == "Googlebot"));
+        assert_eq!((&found.os, &found.client, &found.device), (&None, &None, &None));
+        assert_eq!(found.os_family, "");
     }
 
     /// Where this library parts with matomo, which answers that a crawler is mobile because

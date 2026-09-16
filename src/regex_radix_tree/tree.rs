@@ -1,4 +1,5 @@
 use super::{item::Item, prefix::Cuts, trace::Trace};
+use crate::budget::Budget;
 use crate::regex::RegexOptions;
 use crate::regex_radix_tree::iter::{ItemIter, ItemIterMut};
 
@@ -67,6 +68,10 @@ impl<V> RegexTreeMap<V> {
         self.root.cached_len()
     }
 
+    pub fn cached_size(&self) -> u64 {
+        self.root.cached_size()
+    }
+
     pub fn is_empty(&self) -> bool {
         self.root.is_empty()
     }
@@ -86,17 +91,17 @@ impl<V> RegexTreeMap<V> {
         self.root.get_mut(regex)
     }
 
-    /// Spends `limit` compilations over the tree, a level at a time, handing what a level leaves
-    /// over to its branches in proportion to what each holds. See [`Node::cache`].
-    pub fn cache(&mut self, limit: u64) -> u64 {
+    /// Spends `limit` over the tree, a level at a time, handing what a level leaves over to its
+    /// branches in proportion to what each holds. See [`Node::cache`].
+    pub fn cache(&mut self, limit: Budget) -> Budget {
         let left = self.root.compile(limit);
 
         self.root.cache(left)
     }
 
-    /// Spends `limit` compilations on the regexes a lookup for `haystack` actually runs, and
-    /// on nothing else. See [`Detector::warm`](crate::Detector::warm).
-    pub fn warm(&mut self, haystack: &str, limit: u64) -> u64 {
+    /// Spends `limit` on the regexes a lookup for `haystack` actually runs, and on nothing
+    /// else. See [`Detector::warm`](crate::Detector::warm).
+    pub fn warm(&mut self, haystack: &str, limit: Budget) -> Budget {
         self.root.warm(haystack, limit)
     }
 
@@ -164,7 +169,7 @@ impl<V> UniqueRegexTreeMap<V> {
         self.tree.get_mut(regex).pop()
     }
 
-    pub fn cache(&mut self, limit: u64) -> u64 {
+    pub fn cache(&mut self, limit: Budget) -> Budget {
         self.tree.cache(limit)
     }
 

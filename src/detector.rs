@@ -6,6 +6,7 @@ use std::time::{Duration, Instant};
 #[cfg(feature = "embed")]
 use include_dir::{Dir, include_dir};
 
+use crate::budget::Budget;
 use crate::device::{Detection, Partial};
 use crate::regex::{LazyRegex, Measure, RegexOptions};
 use crate::regex_radix_tree::{RegexTreeMap, Trace};
@@ -78,7 +79,7 @@ const PASSES: usize = 3;
 pub fn shared() -> &'static Detector {
     static SHARED: LazyLock<Detector> = LazyLock::new(|| {
         let mut detector = Detector::new();
-        detector.cache(2_000);
+        detector.cache(Budget::regexes(2_000));
 
         #[cfg(feature = "cache")]
         detector.cache_answers(20_000);
@@ -181,16 +182,40 @@ impl Detector {
     /// 3. whatever is left, on the rest of the entries, the least text each requires first.
     ///
     /// [`Detector::warm`] does not have to guess. Returns what was left unused.
-    pub fn cache(&mut self, limit: u64) -> u64 {
-        let certain = limit / 2;
-        let left = limit - (certain - self.cache_rules(certain, 0));
+    ///
+    /// What a budget buys, over this database on one machine, `cargo run --release --example
+    /// memory`. The database on its own is 111 MiB, and the resident column is what the budget
+    /// adds to it:
+    ///
+    /// | budget | compiled | counted | resident |
+    /// |---|---|---|---|
+    /// | none | 0 | 0 | 0 |
+    /// | 2 000 regexes | 2 000 | 36 MiB | 43 MiB |
+    /// | 5 000 regexes | 5 000 | 95 MiB | 131 MiB |
+    /// | 20 000 regexes | 20 000 | 508 MiB | 704 MiB |
+    /// | 100 000 regexes | 89 959 | 3 471 MiB | 4 445 MiB |
+    /// | [`Budget::bytes`] 900 MiB | 34 459 | 973 MiB | 1 327 MiB |
+    ///
+    /// Which is the answer to what a count of regexes costs, and why it is not a good way to ask
+    /// the question: the average is 32 KiB and the spread around it is wide, so the only number
+    /// that holds is the one a budget in bytes states outright. Resident runs about a third above
+    /// what is counted, that third being the allocator and what is held around each regex.
+    ///
+    /// A small budget is worse than none: what it leaves out is compiled again at every lookup
+    /// that reaches it, and it has bought the memory anyway. Spend enough to cover what you
+    /// actually match, or [`Detector::warm`] on user agents of your own, which covers it at a
+    /// fraction of both.
+    pub fn cache(&mut self, limit: Budget) -> Budget {
+        let certain = limit.take(limit.remaining() / 2);
+        let spent = self.cache_rules(certain, 0).spent_from(certain);
+        let left = limit.take(limit.remaining().saturating_sub(spent));
         let left = self.tree.cache(left);
 
         self.cache_rules(left, usize::MAX)
     }
 
     /// Compiles the entries whose prefilter is no stronger than `strength`, weakest first.
-    fn cache_rules(&mut self, limit: u64, strength: usize) -> u64 {
+    fn cache_rules(&mut self, limit: Budget, strength: usize) -> Budget {
         let mut order: Vec<usize> = (0..self.rules.len())
             .filter(|index| self.rules[*index].regex.prefilter_strength() <= strength)
             .collect();
@@ -199,7 +224,7 @@ impl Detector {
         let mut left = limit;
 
         for index in order {
-            if left == 0 {
+            if left.is_spent() {
                 break;
             }
 
@@ -217,11 +242,15 @@ impl Detector {
     /// own traffic are worth more than any budget spent blind.
     ///
     /// Returns what was left unused, which can go to [`Detector::cache`] afterwards.
-    pub fn warm<'a>(&mut self, user_agents: impl IntoIterator<Item = &'a str>, limit: u64) -> u64 {
+    pub fn warm<'a>(
+        &mut self,
+        user_agents: impl IntoIterator<Item = &'a str>,
+        limit: Budget,
+    ) -> Budget {
         let mut left = limit;
 
         for user_agent in user_agents {
-            if left == 0 {
+            if left.is_spent() {
                 break;
             }
 
@@ -230,7 +259,7 @@ impl Detector {
             // And the entries it reached: reading one out compiles its regex, with no prefilter
             // in front of it to say otherwise.
             for index in self.reached_by(user_agent) {
-                if left == 0 {
+                if left.is_spent() {
                     break;
                 }
 
@@ -243,6 +272,39 @@ impl Detector {
 
     pub fn len(&self) -> usize {
         self.rules.len()
+    }
+
+    /// How many regexes are being held compiled, the index and the entries together. What a
+    /// budget came to, rather than what it was asked for.
+    pub fn compiled(&self) -> usize {
+        let rules: usize = self
+            .rules
+            .iter()
+            .map(|rule| {
+                usize::from(rule.regex.is_compiled())
+                    + rule.headers.iter().filter(|(_, regex)| regex.is_compiled()).count()
+            })
+            .sum();
+
+        self.tree.cached_len() + rules
+    }
+
+    /// What those cost to hold, in bytes. The automata and what hangs off them; see [`Budget`]
+    /// for what this does not count.
+    pub fn compiled_size(&self) -> u64 {
+        let rules: u64 = self
+            .rules
+            .iter()
+            .map(|rule| {
+                rule.headers
+                    .iter()
+                    .fold(rule.regex.compiled_size(), |total, (_, regex)| {
+                        total + regex.compiled_size()
+                    })
+            })
+            .sum();
+
+        self.tree.cached_size() + rules
     }
 
     /// How many keys the index holds: an alternation has no prefix and sits under one per
@@ -486,17 +548,17 @@ impl Rule {
         }
     }
 
-    fn cache(&mut self, mut left: u64) -> u64 {
+    fn cache(&mut self, mut left: Budget) -> Budget {
         let regexes = std::iter::once(&mut self.regex).chain(self.headers.iter_mut().map(|(_, regex)| regex));
 
         for regex in regexes {
-            if left == 0 {
+            if left.is_spent() {
                 break;
             }
 
             if !regex.is_compiled() {
                 *regex = regex.compile();
-                left -= 1;
+                left = left.pay(regex);
             }
         }
 
@@ -639,9 +701,9 @@ mod tests {
 
         assert!(detector.rules.iter().all(|rule| !rule.regex.is_compiled()));
 
-        let left = detector.cache(10);
+        let left = detector.cache(Budget::regexes(10));
 
-        assert_eq!(left, 0, "the whole budget should have been spent");
+        assert!(left.is_spent(), "the whole budget should have been spent");
     }
 
     /// The tree is an index, not a filter: narrowing a lookup down must never drop a rule that
@@ -696,10 +758,11 @@ mod tests {
         let user_agent = "Mozilla/5.0 (Linux; Android 13; SM-A536B) AppleWebKit/537.36 \
             (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36";
         let mut detector = Detector::new();
-        let left = detector.warm([user_agent], 10_000);
+        let budget = Budget::regexes(10_000);
+        let left = detector.warm([user_agent], budget);
 
-        assert!(left > 0, "one user agent should not exhaust a budget of ten thousand");
-        assert!(left < 10_000, "warming spent nothing at all");
+        assert!(!left.is_spent(), "one user agent should not exhaust a budget of ten thousand");
+        assert!(left.spent_from(budget) > 0, "warming spent nothing at all");
 
         let trace = detector.trace(user_agent, &[]);
 
@@ -711,6 +774,21 @@ mod tests {
         assert_eq!(trace.detection, shared().detect(user_agent), "warming changed the answer");
     }
 
+    /// A budget in bytes is a target rather than a bound -- what a regex costs is only known
+    /// once it has been compiled -- but the overshoot has to stay small, which is what carrying
+    /// a branch's overspend back to its siblings is for. It was a third of the budget without.
+    #[test]
+    fn a_budget_in_bytes_comes_to_about_what_it_asked_for() {
+        let budget = Budget::bytes(100 << 20);
+        let mut detector = Detector::new();
+        detector.cache(budget);
+
+        let held = detector.compiled_size();
+
+        assert!(held > 90 << 20, "{held} bytes held against a budget of 100 MiB");
+        assert!(held < 115 << 20, "{held} bytes held against a budget of 100 MiB");
+    }
+
     /// What a budget buys is only ever an optimisation: the answer is the same without one.
     #[test]
     fn a_budget_never_changes_an_answer() {
@@ -718,7 +796,7 @@ mod tests {
             (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
         let cold = Detector::new();
         let mut warmed = Detector::new();
-        warmed.cache(2_000);
+        warmed.cache(Budget::regexes(2_000));
 
         assert_eq!(cold.detect(user_agent), warmed.detect(user_agent));
     }

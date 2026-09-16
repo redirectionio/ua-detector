@@ -13,7 +13,7 @@ use crate::fixtures::Case;
 
 fn main() -> ExitCode {
     let mut detector = device_detector::Detector::new();
-    detector.cache(200_000);
+    detector.cache(device_detector::Budget::regexes(200_000));
 
     let (mut total, mut failing) = (0usize, 0usize);
 

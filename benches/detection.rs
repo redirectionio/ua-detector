@@ -21,7 +21,7 @@ use std::path::PathBuf;
 use std::time::Duration;
 
 use criterion::{BatchSize, BenchmarkId, Criterion, SamplingMode, Throughput, criterion_group, criterion_main};
-use device_detector::Detector;
+use device_detector::{Budget, Detector};
 
 /// What `Detector::cache` is given, in regexes compiled up front.
 ///
@@ -115,7 +115,7 @@ fn cache(criterion: &mut Criterion) {
         group.bench_with_input(BenchmarkId::from_parameter(budget), &budget, |bencher, &budget| {
             bencher.iter_batched(
                 Detector::new,
-                |mut detector| black_box(detector.cache(budget)),
+                |mut detector| black_box(detector.cache(Budget::regexes(budget))),
                 BatchSize::LargeInput,
             );
         });
@@ -135,7 +135,7 @@ fn detect(criterion: &mut Criterion) {
 
     for budget in BUDGETS {
         let mut detector = Detector::new();
-        detector.cache(budget);
+        detector.cache(Budget::regexes(budget));
 
         let mut group = criterion.benchmark_group(format!("detect/{budget}"));
         group

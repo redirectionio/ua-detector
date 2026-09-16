@@ -131,7 +131,7 @@ fn main() -> ExitCode {
     };
 
     let mut detector = Detector::new();
-    detector.cache(budget);
+    detector.cache(device_detector::Budget::regexes(budget));
 
     let lines: Vec<&str> = dump.lines().take(limit).collect();
     let threads = std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1);

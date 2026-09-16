@@ -17,7 +17,7 @@ fn main() {
     let mut arguments = std::env::args().skip(1);
     let mut user_agent = None;
     let mut headers = Vec::new();
-    let mut budget = 1_000;
+    let mut budget = device_detector::Budget::regexes(1_000);
     let mut top = 10;
     let mut tree = false;
     let mut warm = false;
@@ -53,8 +53,8 @@ fn main() {
     println!("user agent   {}", trace.user_agent);
     println!("entries      {}, indexed under {} keys", detector.len(), detector.keys());
     println!(
-        "budget       {} regexes compiled {}, {left} left over",
-        budget - left,
+        "budget       {} spent {}, {left} left over",
+        budget.take(left.spent_from(budget)),
         if warm { "on this user agent" } else { "blind" },
     );
 

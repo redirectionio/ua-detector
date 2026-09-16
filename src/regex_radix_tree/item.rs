@@ -1,4 +1,5 @@
 use super::{leaf::Leaf, node::Node, prefix::Cuts};
+use crate::budget::Budget;
 use crate::regex::RegexOptions;
 use crate::regex_radix_tree::iter::{ItemIter, ItemIterMut};
 
@@ -96,6 +97,14 @@ impl<V> Item<V> {
         }
     }
 
+    pub fn cached_size(&self) -> u64 {
+        match self {
+            Item::Empty(_) => 0,
+            Item::Node(node) => node.cached_size(),
+            Item::Leaf(leaf) => leaf.cached_size(),
+        }
+    }
+
     pub fn is_empty(&self) -> bool {
         match self {
             Item::Empty(_) => true,
@@ -150,9 +159,9 @@ impl<V> Item<V> {
     /// Implementation must retain at which level this node is build and not do any caching
     /// if we are not on the current level
     /// Compiles this item's own regex -- a node's or a leaf's -- and nothing under it.
-    pub fn compile(&mut self, left: u64) -> u64 {
-        if left == 0 {
-            return 0;
+    pub fn compile(&mut self, left: Budget) -> Budget {
+        if left.is_spent() {
+            return left;
         }
 
         match self {
@@ -163,9 +172,9 @@ impl<V> Item<V> {
     }
 
     /// Compiles what a lookup for `haystack` would have had to compile.
-    pub fn warm(&mut self, haystack: &str, left: u64) -> u64 {
-        if left == 0 {
-            return 0;
+    pub fn warm(&mut self, haystack: &str, left: Budget) -> Budget {
+        if left.is_spent() {
+            return left;
         }
 
         match self {
@@ -177,9 +186,9 @@ impl<V> Item<V> {
 
     /// Spends a budget over what is under this item. A leaf has nothing under it: its own regex
     /// was compiled by [`Item::compile`], along with the rest of its level.
-    pub fn cache(&mut self, left: u64) -> u64 {
-        if left == 0 {
-            return 0;
+    pub fn cache(&mut self, left: Budget) -> Budget {
+        if left.is_spent() {
+            return left;
         }
 
         match self {

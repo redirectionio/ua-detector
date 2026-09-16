@@ -584,6 +584,12 @@ impl LazyRegex {
         }
     }
 
+    /// What the compiled copy costs to hold, in bytes, or nothing where there is none. The
+    /// automata and what hangs off them; the lazy DFA caches belong to the thread that searches.
+    pub fn compiled_size(&self) -> u64 {
+        self.compiled.as_ref().map_or(0, |regex| regex.memory_usage() as u64)
+    }
+
     pub fn compile(&self) -> Self {
         let compiled = self.create_regex();
 

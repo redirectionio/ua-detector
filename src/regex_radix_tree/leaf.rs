@@ -6,6 +6,7 @@ use super::{
     node::Node,
     prefix::{Cuts, get_prefix_with_char_size},
 };
+use crate::budget::Budget;
 use crate::regex::{LazyRegex, RegexOptions};
 
 #[derive(Debug)]
@@ -128,6 +129,10 @@ impl<V> Leaf<V> {
         0
     }
 
+    pub fn cached_size(&self) -> u64 {
+        self.regex.compiled_size()
+    }
+
     pub fn is_empty(&self) -> bool {
         self.values.is_empty()
     }
@@ -137,14 +142,15 @@ impl<V> Leaf<V> {
     }
 
     /// Compiles this leaf's regex, but only if answering `haystack` would need it.
-    pub fn warm(&mut self, haystack: &str, left: u64) -> u64 {
-        if left == 0 || self.regex.compiled.is_some() || !self.regex.needs_regex_for(haystack) {
+    pub fn warm(&mut self, haystack: &str, left: Budget) -> Budget {
+        if left.is_spent() || self.regex.compiled.is_some() || !self.regex.needs_regex_for(haystack)
+        {
             return left;
         }
 
         self.regex = Arc::new(self.regex.compile());
 
-        if self.regex.compiled.is_some() { left - 1 } else { left }
+        left.pay(&self.regex)
     }
 
     /// Cache current regex according to a limit and a level
@@ -158,7 +164,7 @@ impl<V> Leaf<V> {
     /// Level argument allow to build cache on first level of the tree by priority
     /// Implementation must retain at which level this node is build and not do any caching
     /// if we are not on the current level
-    pub fn cache(&mut self, left: u64) -> u64 {
+    pub fn cache(&mut self, left: Budget) -> Budget {
         // Already cached, or never in need of it: a pattern the literals answer on their own
         // never reaches the regex engine, so a compiled copy of it would go unread.
         if self.regex.compiled.is_some() || self.regex.matches_without_a_regex() {
@@ -167,10 +173,6 @@ impl<V> Leaf<V> {
 
         self.regex = Arc::new(self.regex.compile());
 
-        if self.regex.compiled.is_some() {
-            return left - 1;
-        }
-
-        left
+        left.pay(&self.regex)
     }
 }

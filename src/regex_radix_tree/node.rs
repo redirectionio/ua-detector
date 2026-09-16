@@ -5,6 +5,7 @@ use super::{
     leaf::Leaf,
     prefix::{Cuts, get_prefix_with_char_size},
 };
+use crate::budget::Budget;
 use crate::regex::LazyRegex;
 
 #[derive(Debug)]
@@ -190,6 +191,12 @@ impl<V> Node<V> {
         count
     }
 
+    pub fn cached_size(&self) -> u64 {
+        self.children
+            .iter()
+            .fold(self.regex.compiled_size(), |total, child| total + child.cached_size())
+    }
+
     pub fn is_empty(&self) -> bool {
         for child in &self.children {
             if !child.is_empty() {
@@ -201,25 +208,24 @@ impl<V> Node<V> {
     }
 
     /// Compiles this node's own regex, and nothing under it.
-    pub fn compile(&mut self, left: u64) -> u64 {
-        if left == 0 || self.regex.compiled.is_some() || self.regex.matches_without_a_regex() {
+    pub fn compile(&mut self, left: Budget) -> Budget {
+        if left.is_spent() || self.regex.compiled.is_some() || self.regex.matches_without_a_regex()
+        {
             return left;
         }
 
         self.regex = Arc::new(self.regex.compile());
 
-        if self.regex.compiled.is_some() { left - 1 } else { left }
+        left.pay(&self.regex)
     }
 
     /// Compiles what a lookup for `haystack` would have had to compile, here and under this
     /// node: the same walk as [`Node::find`], paying as it goes.
-    pub fn warm(&mut self, haystack: &str, mut left: u64) -> u64 {
-        if left > 0 && self.regex.compiled.is_none() && self.regex.needs_regex_for(haystack) {
+    pub fn warm(&mut self, haystack: &str, mut left: Budget) -> Budget {
+        if !left.is_spent() && self.regex.compiled.is_none() && self.regex.needs_regex_for(haystack)
+        {
             self.regex = Arc::new(self.regex.compile());
-
-            if self.regex.compiled.is_some() {
-                left -= 1;
-            }
+            left = left.pay(&self.regex);
         }
 
         if !self.regex.is_match(haystack) {
@@ -227,8 +233,8 @@ impl<V> Node<V> {
         }
 
         for child in &mut self.children {
-            if left == 0 {
-                return 0;
+            if left.is_spent() {
+                return left;
             }
 
             left = child.warm(haystack, left);
@@ -250,7 +256,7 @@ impl<V> Node<V> {
     /// whichever order they happened to have been built in. A branch holding nine rules in ten is
     /// where nine haystacks in ten end up, and is worth nine compilations in ten rather than
     /// whatever is left when its turn comes round.
-    pub fn cache(&mut self, mut left: u64) -> u64 {
+    pub fn cache(&mut self, mut left: Budget) -> Budget {
         // Within the level, whatever the literals cannot rule out goes first. A pattern that
         // requires no text of a haystack is run by every lookup that reaches it; one that
         // requires a long run of it is usually settled without the regex ever being reached.
@@ -259,15 +265,15 @@ impl<V> Node<V> {
         level.sort_unstable_by_key(|index| self.children[*index].prefilter_strength());
 
         for index in level {
-            if left == 0 {
-                return 0;
+            if left.is_spent() {
+                return left;
             }
 
             left = self.children[index].compile(left);
         }
 
-        if left == 0 {
-            return 0;
+        if left.is_spent() {
+            return left;
         }
 
         // Counted once here rather than once per share: `len` walks a whole subtree.
@@ -278,15 +284,19 @@ impl<V> Node<V> {
         let mut rules_left: u64 = sizes.iter().sum();
 
         for index in order {
-            if left == 0 || rules_left == 0 {
+            if left.is_spent() || rules_left == 0 {
                 break;
             }
 
             // Rounded up, so a branch too small to be worth a whole compilation still gets one.
-            let share = (left * sizes[index]).div_ceil(rules_left).min(left);
+            let amount = (left.remaining() * sizes[index]).div_ceil(rules_left);
+            let share = left.take(amount.min(left.remaining()));
             let unused = self.children[index].cache(share);
 
-            left -= share - unused;
+            // What a branch overspent comes off its siblings rather than off nobody: a share is
+            // handed out before the cost of the regexes under it is known, and without this the
+            // overshoot of every branch in the tree lands on the budget at once.
+            left = left.take(left.remaining().saturating_sub(unused.spent_from(share)));
             rules_left -= sizes[index];
         }
 

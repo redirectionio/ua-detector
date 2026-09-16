@@ -13,7 +13,7 @@ mod fixtures;
 
 use std::sync::{Arc, OnceLock};
 
-use device_detector::Detector;
+use device_detector::{Budget, Detector};
 use libtest_mimic::{Arguments, Failed, Trial};
 
 /// Warmed on a stride across the corpus it is about to run, which pays for the regexes those
@@ -31,7 +31,7 @@ fn detector() -> &'static Detector {
             .map(|case| case.user_agent)
             .collect();
 
-        detector.warm(agents.iter().map(String::as_str), 1_000);
+        detector.warm(agents.iter().map(String::as_str), Budget::regexes(1_000));
 
         detector
     })

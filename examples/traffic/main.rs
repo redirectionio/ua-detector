@@ -17,7 +17,7 @@
 //!     --false-negatives P  what to excuse production for
 //!     --cases P            where the failing rows accumulate
 //!     --tests P            the test generated from them
-//!     --budget N           regexes to compile up front (default 20000)
+//!     --budget N           regexes to compile up front, or a size such as 900M (default 20000)
 //!     --warm N             rows to spend that budget on, the heaviest first (default 5000)
 //!     --limit N            stop after N rows
 //!     --keep-going         survey every divergence rather than stopping at the first, and
@@ -35,7 +35,7 @@ use std::collections::HashMap;
 use std::io::{BufRead, BufReader};
 use std::process::ExitCode;
 
-use device_detector::Detector;
+use device_detector::{Budget, Detector};
 use indicatif::{ProgressBar, ProgressStyle};
 
 use crate::excuses::Excuses;
@@ -52,7 +52,7 @@ struct Options {
     false_negatives: String,
     cases: String,
     tests: String,
-    budget: u64,
+    budget: Budget,
     warm: usize,
     limit: usize,
     keep_going: bool,
@@ -174,7 +174,7 @@ fn options() -> Option<Options> {
         false_negatives: String::from("tests/pinned/traffic/false-negatives.yml"),
         cases: String::from("tests/pinned/traffic/cases.csv"),
         tests: String::from("tests/pinned/traffic.rs"),
-        budget: 100_000,
+        budget: Budget::regexes(100_000),
         warm: 0,
         limit: usize::MAX,
         keep_going: false,
@@ -189,7 +189,7 @@ fn options() -> Option<Options> {
             "--false-negatives" => options.false_negatives = text("--false-negatives"),
             "--cases" => options.cases = text("--cases"),
             "--tests" => options.tests = text("--tests"),
-            "--budget" => options.budget = text("--budget").parse().expect("a number"),
+            "--budget" => options.budget = text("--budget").parse().expect("a budget"),
             "--warm" => options.warm = text("--warm").parse().expect("a number"),
             "--limit" => options.limit = text("--limit").parse().expect("a number"),
             "--keep-going" => options.keep_going = true,
@@ -205,7 +205,7 @@ fn options() -> Option<Options> {
 
 /// Spends the budget on the user agents the traffic actually holds, which is the whole point of
 /// having them in order: the heaviest rows are the ones every later row is measured against.
-fn warm(detector: &mut Detector, options: &Options) -> std::io::Result<u64> {
+fn warm(detector: &mut Detector, options: &Options) -> std::io::Result<Budget> {
     if options.warm == 0 {
         return Ok(detector.cache(options.budget));
     }

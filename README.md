@@ -14,9 +14,9 @@ let found = detector
              (KHTML, like Gecko) Chrome/80.0.3987.99 Safari/537.36")
     .unwrap();
 
+assert!(found.is_mobile());
 assert_eq!(found.device.unwrap().model, "Galaxy S9+");
 assert_eq!(found.os.unwrap().version, "10");
-assert!(found.is_mobile());
 ```
 
 One detector for the whole process. `device_detector::shared()` is that detector built for you,

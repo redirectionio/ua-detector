@@ -78,6 +78,21 @@ const PASSES: usize = 3;
 /// breadth of what the database answers rather than the shape of any one service's traffic. A
 /// caller holding a dump of its own should warm on that instead, which is worth a great deal
 /// more -- see [`Detector::warm_from_path`].
+///
+/// ```
+/// use device_detector::{Budget, Detector, common_user_agents};
+///
+/// let mut detector = Detector::new();
+/// detector.warm(common_user_agents(), Budget::bytes(400 << 20));
+///
+/// let found = detector
+///     .detect("Mozilla/5.0 (Linux; Android 10; SM-G9650) AppleWebKit/537.36 \
+///              (KHTML, like Gecko) Chrome/80.0.3987.99 Safari/537.36")
+///     .unwrap();
+///
+/// assert!(found.is_mobile());
+/// assert_eq!(found.device.unwrap().model, "Galaxy S9+");
+/// ```
 pub fn common_user_agents() -> impl Iterator<Item = &'static str> {
     include_str!("warm.txt").lines()
 }

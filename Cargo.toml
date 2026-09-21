@@ -1,6 +1,6 @@
 [package]
 name = "ua-detector"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Reads a user agent, and the client hints that go with it, into the device, operating system and client it names"
 # Edition 2024, and `Option::is_none_or`, which is the newest thing `src` reaches for.

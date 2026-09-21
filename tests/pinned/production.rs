@@ -477,3 +477,149 @@ fn a_crawler_names_a_page_without_a_scheme() {
         assert_eq!(bot.map(|bot| bot.name), None, "read as a bot: {user_agent}");
     }
 }
+
+/// The crawlers, probes and agents production reads as `Generic Bot`, or cannot read at all.
+///
+/// One case per entry written from the traffic of 2026-09-21. The corpus does not hold any of
+/// these strings, so nothing else pins them; each names the bot and the category the entry
+/// gives it, since the category is what the log injector turns into a type.
+#[test]
+fn the_traffic_of_2026_09_21_names_its_crawlers() {
+    let cases = [
+        // Health probes and monitors.
+        ("kube-probe/1.35+", "kube-probe", "Site Monitor"),
+        ("Edge Health Probe", "Edge Health Probe", "Site Monitor"),
+        ("zabbix", "Zabbix", "Site Monitor"),
+        ("Blackbox-Exporter/0.28.0", "Blackbox Exporter", "Site Monitor"),
+        ("Gatus/1.0", "Gatus", "Site Monitor"),
+        ("Telegraf/1.39.3 Go/1.26.5", "Telegraf", "Site Monitor"),
+        ("updown.io daemon 2.11", "updown.io", "Site Monitor"),
+        ("LogicMonitor SiteMonitor/1.0", "LogicMonitor", "Site Monitor"),
+        ("LogicMonitor InternalService", "LogicMonitor", "Site Monitor"),
+        ("YAUT monitoring", "Yaut", "Site Monitor"),
+        ("mozilla/5.0 (compatible; yaut/1.0; yaut monitoring; local;+https://yaut.jolicode.com)", "Yaut", "Site Monitor"),
+        // Something a platform sends on its own behalf.
+        ("Amazon CloudFront", "Amazon CloudFront", "Service Agent"),
+        ("Amazon Simple Notification Service Agent", "Amazon Simple Notification Service", "Service Agent"),
+        ("Google-Cloud-Tasks", "Google Cloud Tasks", "Service Agent"),
+        ("cert-manager-challenges/v1.21.2 (linux/amd64) cert-manager/922a06aa49ee4bb802db268ef72a174af70edd32", "cert-manager", "Service Agent"),
+        ("symbolicator/26.9.0", "Symbolicator", "Service Agent"),
+        ("WinHttp-Autoproxy-Service/5.1", "WinHTTP Web Proxy Auto-Discovery Service", "Service Agent"),
+        ("redirection-io-agent/3.3.0", "redirection.io Agent", "Service Agent"),
+        ("redirection-io-agent-proxy/agent-proxy-v3", "redirection.io Agent", "Service Agent"),
+        ("Mozilla/5.0 (compatible; Cloudinary/1.0)", "Cloudinary", "Service Agent"),
+        ("ias-va/3.3 (former https://www.admantx.com + https://integralads.com/about-ias/)", "ADmantX Service Fetcher", "Service Agent"),
+        // Search, and the crawlers that feed an answer rather than an index.
+        ("YisouSpider", "YisouSpider", "Search bot"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; KeenableBot/1.0; +https://keenable.ai/)", "KeenableBot", "AI Search Crawler"),
+        ("LinkupBot/1.0 (LinkupBot for web indexing; https://linkup.so/bot; bot@linkup.so)", "LinkupBot", "AI Search Crawler"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; AzureAI-SearchBot/1.0;", "AzureAI-SearchBot", "AI Search Crawler"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Reflectionbot/1.0; +https://reflection.ai/bot) Chrome/151.0.0.0 Safari/537.36", "Reflectionbot", "AI Data Scraper"),
+        ("quillbot.com", "QuillBot", "AI Assistant"),
+        // The rest of the crawlers.
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; SemjiBot/1.0; +http://semji.com) Chrome/91.0.4472.106 Safari/537.36", "SemjiBot", "Crawler"),
+        ("Mozilla/5.0 (compatible; EchoboxBot/1.0; hash/w4mwnpbXf3MFAbxOkJRw; +http://www.echobox.com)", "EchoboxBot", "Crawler"),
+        ("Mozilla/5.0 (Windows NT 6.3;compatible; Leikibot/1.0; +http://www.leiki.com)", "Leikibot", "Crawler"),
+        ("billigerbot/1.0 (https://www.solutions.billiger.de/de/bot)", "billigerbot", "Crawler"),
+        ("Mozilla/5.0 (compatible; idealo-bot inventory-image-downloader; https://partner.idealo.com/de/bot)", "idealo Bot", "Crawler"),
+        ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 (compatible; AmazonProductDiscovery/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)", "AmazonProductDiscovery", "Crawler"),
+        ("SEBot-WA", "SEBot-WA", "Crawler"),
+        ("Mozilla/5.0 (compatible; Funnelback)", "Funnelback", "Crawler"),
+        ("Mozilla/5.0 (compatible; INA dlweb; +https://www.ina.fr/collecte-du-depot-legal-web)", "INA dlweb", "Crawler"),
+        ("tphotobot/0.1 (+https://crawler.estidraft.com/bot)", "tphotobot", "Crawler"),
+        ("Mozilla/5.0 (compatible; CorporateResearch/1.0; history research; +https://climatax.org/contact/research-bot/; research@climatax.org)", "ClimaTax Research Bot", "Crawler"),
+        // Scanners and load generators.
+        ("intrinsec easm vulnerability scanner", "Intrinsec EASM", "Security Checker"),
+        ("Mozilla/5.0 - research.hadrian.io", "Hadrian", "Security Checker"),
+        ("oha/1.8.0", "oha", "Benchmark"),
+        ("k6-performance-test", "K6", ""),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, category)| {
+            let found = detect(user_agent)
+                .and_then(|detection| detection.bot)
+                .map(|bot| {
+                    (bot.name, bot.category.map(|category| category.as_str().to_owned()).unwrap_or_default())
+                })
+                .unwrap_or_default();
+
+            (found != ((*name).to_owned(), (*category).to_owned()))
+                .then(|| format!("\n  wanted {name:?} {category:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
+}
+
+/// The strings of that same dump that name nothing, and have to go on naming nothing.
+///
+/// Each is a crawler -- a scraper someone wrote for themselves, a research bot with no page
+/// behind it, a front end of one customer's own -- and `Generic Bot`, or no answer at all, is
+/// the whole of what is known about it. An entry naming any of these would be a guess, and a
+/// guess here reads a person as a crawler on every site this library answers for.
+#[test]
+fn a_crawler_the_web_cannot_place_stays_generic() {
+    let unnamed = [
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 (compatible; AionBot/1.0)",
+        "[SEOBot]",
+        "SSI-Nutch/1.23 (SSI broad web crawler; https://ssi.inc/; adi@ssi.inc)",
+        "PatteBlancheBot/0.1 (+https://patteblanche.fr/robots; claire.vandesype@patteblanche.io) respecte-robots-txt; opt-out-48h",
+        "MathPicDatasetCrawler/0.1 (+research)",
+        "QuiverRasterResearch/1.0",
+        "RetroDocumentResearch/0.1",
+        "AtelierAgentsSDR/1.0 (+public research; no outreach)",
+        "AmazonCFR-SitemapMonitor/1.0 (+research)",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AldiScraper/1.0",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 ExitChecker/1.0.0",
+        "netcheck-probe/13.0.2.fa7b625f (HEAD, go1.24.13, linux/amd64)",
+    ];
+
+    for user_agent in unnamed {
+        let bot = detect(user_agent).and_then(|detection| detection.bot);
+
+        assert_eq!(
+            bot.map(|bot| bot.name).as_deref(),
+            Some("Generic Bot"),
+            "no longer generic: {user_agent}"
+        );
+    }
+}
+
+/// The applications and the libraries of that same dump, which production read as nothing.
+///
+/// The client and only the client: nothing in `GoCityAndroid/10.2.0` or in an Android package
+/// name says which system it runs on, and the entry that reads them sits in the client axis,
+/// which has no business inventing one.
+#[test]
+fn the_traffic_of_2026_09_21_names_its_applications() {
+    let cases = [
+        ("MAXEDA/PraxisApp;", "Praxis", "", "mobile app"),
+        ("apodiscounter 10.5.2(11716) IOS Version 26.6.2 (Build 23G90)", "apodiscounter", "10.5.2", "mobile app"),
+        ("apotheke.at 10.5.1(10705) IOS Version 26.6.1 (Build 23G83)", "apotheke.at", "10.5.1", "mobile app"),
+        ("apo.com 10.6.0(11765) IOS Version 26.6.2 (Build 23G90)", "apo.com", "10.6.0", "mobile app"),
+        ("GoCityAndroid/10.4.1", "Go City", "10.4.1", "mobile app"),
+        ("GoCity/48 CFNetwork/3860.700.2 Darwin/25.6.0", "Go City", "48", "mobile app"),
+        ("ginlemon.flowerfree/6.6 build 020/true", "Smart Launcher", "6.6", "mobile app"),
+        ("Symfony BrowserKit", "Symfony BrowserKit", "", "library"),
+        ("Zeep/4.3.3 (www.python-zeep.org)", "Zeep", "4.3.3", "library"),
+        ("MWFeedParser", "MWFeedParser", "", "library"),
+        ("rss-parser", "rss-parser", "", "library"),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, version, kind)| {
+            let client = detect(user_agent).and_then(|detection| detection.client);
+            let found = client
+                .map(|client| (client.name, client.version, client_kind(client.kind).to_owned()))
+                .unwrap_or_default();
+            let want = ((*name).to_owned(), (*version).to_owned(), (*kind).to_owned());
+
+            (found != want).then(|| format!("\n  wanted {want:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
+}

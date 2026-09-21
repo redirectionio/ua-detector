@@ -214,3 +214,11 @@
   reason: >-
     matomo reads `Openwave` as the browser of that name whatever else the string carries;
     production answered with the Edge underneath.
+
+- pattern: 'YisouSpider'
+  says: Generic Bot
+  we_say_type: 4
+  reason: >-
+    Shenma's crawler, which matomo does not name at the revision this library is pinned to. It
+    feeds a search index, so the category it is given lands it in the log injector's search-bot
+    column rather than the tool one production counted it in.

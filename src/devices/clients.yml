@@ -653,3 +653,65 @@
   client: {type: library, name: 'PHP', version: "{client_version}"}
   browser_family: 'Unknown'
 
+
+# Applications and libraries read from a dump of redirection.io's production traffic, which the
+# corpus does not show. The client, and only the client: the system a string does not name is
+# left to whatever else in the database can read it.
+
+-
+  regex: '.*MAXEDA/PraxisApp.*'
+  priority: -2
+  client: {type: mobile app, name: 'Praxis', version: ""}
+  browser_family: 'Unknown'
+
+# The four online pharmacies of the apo.com Group, which share one application and write its
+# name as the domain they sell under.
+-
+  regex: '(?<app>apodiscounter|apotheke\.at|apotheke\.de|apo\.com) (?<client_version>[\d.]+)\(\d+\) IOS Version .*'
+  priority: -2
+  client: {type: mobile app, name: "{app}", version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\bGoCityAndroid/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Go City', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# The iOS build names itself and the CFNetwork under it, which is what tells it from a word.
+-
+  regex: '.*\bGoCity/(?<client_version>[\d.]+) (?:CF)?Network/.*'
+  priority: -2
+  client: {type: mobile app, name: 'Go City', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Smart Launcher writes its Android package name rather than its own.
+-
+  regex: '.*\bginlemon\.flower(?:free|pro)/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Smart Launcher', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*Symfony BrowserKit.*'
+  priority: -2
+  client: {type: library, name: 'Symfony BrowserKit', version: ""}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\bZeep/(?<client_version>[\d.]+) \(www\.python-zeep\.org\).*'
+  priority: -2
+  client: {type: library, name: 'Zeep', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\bMWFeedParser\b.*'
+  priority: -2
+  client: {type: library, name: 'MWFeedParser', version: ""}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\brss-parser\b.*'
+  priority: -2
+  client: {type: library, name: 'rss-parser', version: ""}
+  browser_family: 'Unknown'

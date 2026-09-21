@@ -586,3 +586,40 @@ fn a_crawler_the_web_cannot_place_stays_generic() {
         );
     }
 }
+
+/// The applications and the libraries of that same dump, which production read as nothing.
+///
+/// The client and only the client: nothing in `GoCityAndroid/10.2.0` or in an Android package
+/// name says which system it runs on, and the entry that reads them sits in the client axis,
+/// which has no business inventing one.
+#[test]
+fn the_traffic_of_2026_09_21_names_its_applications() {
+    let cases = [
+        ("MAXEDA/PraxisApp;", "Praxis", "", "mobile app"),
+        ("apodiscounter 10.5.2(11716) IOS Version 26.6.2 (Build 23G90)", "apodiscounter", "10.5.2", "mobile app"),
+        ("apotheke.at 10.5.1(10705) IOS Version 26.6.1 (Build 23G83)", "apotheke.at", "10.5.1", "mobile app"),
+        ("apo.com 10.6.0(11765) IOS Version 26.6.2 (Build 23G90)", "apo.com", "10.6.0", "mobile app"),
+        ("GoCityAndroid/10.4.1", "Go City", "10.4.1", "mobile app"),
+        ("GoCity/48 CFNetwork/3860.700.2 Darwin/25.6.0", "Go City", "48", "mobile app"),
+        ("ginlemon.flowerfree/6.6 build 020/true", "Smart Launcher", "6.6", "mobile app"),
+        ("Symfony BrowserKit", "Symfony BrowserKit", "", "library"),
+        ("Zeep/4.3.3 (www.python-zeep.org)", "Zeep", "4.3.3", "library"),
+        ("MWFeedParser", "MWFeedParser", "", "library"),
+        ("rss-parser", "rss-parser", "", "library"),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, version, kind)| {
+            let client = detect(user_agent).and_then(|detection| detection.client);
+            let found = client
+                .map(|client| (client.name, client.version, client_kind(client.kind).to_owned()))
+                .unwrap_or_default();
+            let want = ((*name).to_owned(), (*version).to_owned(), (*kind).to_owned());
+
+            (found != want).then(|| format!("\n  wanted {want:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
+}

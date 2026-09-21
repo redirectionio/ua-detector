@@ -6623,3 +6623,314 @@
     name: WireReaderBot
     category: Feed Fetcher
     url: https://wirereader.app/
+
+# Below here: entries written by hand from a dump of redirection.io's production traffic, where
+# the crawler is newer than the revision of matomo the rest of this file is generated from. Each
+# is anchored on the token its operator documents, and the `url` is the page that documents it.
+
+- regex: '.*kube-probe/[\d.]+\+?.*'
+  bot:
+    name: kube-probe
+    category: Site Monitor
+    url: https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/
+    producer:
+      name: The Kubernetes Authors
+      url: https://kubernetes.io/
+- regex: .*Edge Health Probe.*
+  bot:
+    name: Edge Health Probe
+    category: Site Monitor
+    url: https://learn.microsoft.com/en-us/azure/frontdoor/health-probes
+    producer:
+      name: Microsoft Corporation
+      url: https://www.microsoft.com/
+- regex: '.*\bZabbix\b.*'
+  bot:
+    name: Zabbix
+    category: Site Monitor
+    url: https://www.zabbix.com/documentation/current/en/manual/web_monitoring
+    producer:
+      name: Zabbix LLC
+      url: https://www.zabbix.com/
+- regex: '.*Blackbox[_-]Exporter/[\d.]+.*'
+  bot:
+    name: Blackbox Exporter
+    category: Site Monitor
+    url: https://github.com/prometheus/blackbox_exporter
+    producer:
+      name: The Prometheus Authors
+      url: https://prometheus.io/
+- regex: '.*\bGatus/[\d.]+.*'
+  bot:
+    name: Gatus
+    category: Site Monitor
+    url: https://github.com/TwiN/gatus
+- regex: '.*Telegraf/[\d.]+.*'
+  bot:
+    name: Telegraf
+    category: Site Monitor
+    url: https://github.com/influxdata/telegraf/blob/master/plugins/inputs/http_response/README.md
+    producer:
+      name: InfluxData Inc.
+      url: https://www.influxdata.com/
+- regex: '.*updown\.io daemon [\d.]+.*'
+  bot:
+    name: updown.io
+    category: Site Monitor
+    url: https://updown.io/about
+- regex: '.*LogicMonitor (?:SiteMonitor/[\d.]+|InternalService).*'
+  bot:
+    name: LogicMonitor
+    category: Site Monitor
+    url: https://www.logicmonitor.com/support/data-monitored-for-websites
+    producer:
+      name: LogicMonitor, Inc.
+      url: https://www.logicmonitor.com/
+# JoliCode's own monitor, which writes its name alone as often as it writes the whole comment.
+- regex: '.*\byaut(?:/[\d.]+| monitoring)\b.*'
+  bot:
+    name: Yaut
+    category: Site Monitor
+    url: https://yaut.jolicode.com/
+    producer:
+      name: JoliCode
+      url: https://jolicode.com/
+- regex: .*Amazon CloudFront.*
+  bot:
+    name: Amazon CloudFront
+    category: Service Agent
+    url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html
+    producer:
+      name: Amazon.com, Inc.
+      url: https://aws.amazon.com/cloudfront/
+- regex: .*Amazon Simple Notification Service Agent.*
+  bot:
+    name: Amazon Simple Notification Service
+    category: Service Agent
+    url: https://docs.aws.amazon.com/sns/latest/dg/http-header.html
+    producer:
+      name: Amazon.com, Inc.
+      url: https://aws.amazon.com/sns/
+- regex: .*Google-Cloud-Tasks.*
+  bot:
+    name: Google Cloud Tasks
+    category: Service Agent
+    url: https://cloud.google.com/tasks/docs/creating-http-target-tasks
+    producer:
+      name: Google Inc.
+      url: https://www.google.com
+- regex: '.*cert-manager-challenges/v[\d.]+.*'
+  bot:
+    name: cert-manager
+    category: Service Agent
+    url: https://cert-manager.io/docs/concepts/acme-orders-challenges/
+    producer:
+      name: The cert-manager Authors
+      url: https://cert-manager.io/
+- regex: '.*\bsymbolicator/[\d.]+.*'
+  bot:
+    name: Symbolicator
+    category: Service Agent
+    url: https://github.com/getsentry/symbolicator
+    producer:
+      name: Functional Software, Inc.
+      url: https://sentry.io/
+- regex: '.*WinHttp-Autoproxy-Service/[\d.]+.*'
+  bot:
+    name: WinHTTP Web Proxy Auto-Discovery Service
+    category: Service Agent
+    url: https://learn.microsoft.com/en-us/windows/win32/winhttp/winhttp-autoproxy-support
+    producer:
+      name: Microsoft Corporation
+      url: https://www.microsoft.com/
+- regex: '.*redirection-io-agent(?:-proxy)?/[\w.-]+.*'
+  bot:
+    name: redirection.io Agent
+    category: Service Agent
+    url: https://redirection.io/documentation/agent-documentation
+    producer:
+      name: redirection.io
+      url: https://redirection.io/
+- regex: '.*Cloudinary/[\d.]+.*'
+  bot:
+    name: Cloudinary
+    category: Service Agent
+    url: https://cloudinary.com/documentation/fetch_remote_images
+    producer:
+      name: Cloudinary Ltd.
+      url: https://cloudinary.com/
+# Integral Ad Science's content fetcher, renamed from ADmantX in the string itself. Below the
+# `/3.1` entry matomo already holds, which answers for the one version it names.
+- regex: '.*ias-va/[\d.]+.*'
+  priority: -1
+  bot:
+    name: ADmantX Service Fetcher
+    category: Service Agent
+    url: https://integralads.com/about-ias/
+    producer:
+      name: Integral Ad Science, Inc.
+      url: https://integralads.com/
+- regex: .*YisouSpider.*
+  bot:
+    name: YisouSpider
+    category: Search bot
+    url: https://sm.cn/
+    producer:
+      name: UC Shenma Search
+      url: https://sm.cn/
+- regex: '.*KeenableBot/[\d.]+.*'
+  bot:
+    name: KeenableBot
+    category: AI Search Crawler
+    url: https://keenable.ai/
+    producer:
+      name: Keenable
+      url: https://keenable.ai/
+- regex: '.*LinkupBot/[\d.]+.*'
+  bot:
+    name: LinkupBot
+    category: AI Search Crawler
+    url: https://www.linkup.so/bot
+    producer:
+      name: Linkup
+      url: https://www.linkup.so/
+# No page of Microsoft's own documents it, so the entry names what the token names and stops.
+- regex: '.*AzureAI-SearchBot/[\d.]+.*'
+  bot:
+    name: AzureAI-SearchBot
+    category: AI Search Crawler
+    producer:
+      name: Microsoft Corporation
+      url: https://www.microsoft.com/
+- regex: '.*Reflectionbot/[\d.]+.*'
+  bot:
+    name: Reflectionbot
+    category: AI Data Scraper
+    url: https://reflection.ai/bot
+    producer:
+      name: Reflection AI
+      url: https://reflection.ai/
+- regex: '.*\bquillbot[.-]com\b.*'
+  bot:
+    name: QuillBot
+    category: AI Assistant
+    url: https://quillbot.com/
+    producer:
+      name: Learneo, Inc.
+      url: https://www.learneo.com/
+- regex: '.*SemjiBot/[\d.]+.*'
+  bot:
+    name: SemjiBot
+    category: Crawler
+    url: https://help.semji.com/en/en/all-you-need-to-know-about-semjibot
+    producer:
+      name: Semji
+      url: https://semji.com/
+- regex: '.*EchoboxBot/[\d.]+.*'
+  bot:
+    name: EchoboxBot
+    category: Crawler
+    url: http://www.echobox.com
+    producer:
+      name: Echobox Ltd.
+      url: https://www.echobox.com/
+- regex: '.*Leikibot/[\d.]+.*'
+  bot:
+    name: Leikibot
+    category: Crawler
+    url: http://www.leiki.com
+    producer:
+      name: DoubleVerify, Inc.
+      url: https://doubleverify.com/
+- regex: '.*billigerbot/[\d.]+.*'
+  bot:
+    name: billigerbot
+    category: Crawler
+    url: https://www.solutions.billiger.de/de/bot
+    producer:
+      name: solute GmbH
+      url: https://www.solute.de/
+- regex: '.*\bidealo-bot\b.*'
+  bot:
+    name: idealo Bot
+    category: Crawler
+    url: https://partner.idealo.com/de/bot
+    producer:
+      name: idealo internet GmbH
+      url: https://www.idealo.de/
+- regex: '.*AmazonProductDiscovery/[\d.]+.*'
+  bot:
+    name: AmazonProductDiscovery
+    category: Crawler
+    url: https://vendorcentral.amazon.com/support/amazonproductbot
+    producer:
+      name: Amazon.com, Inc.
+      url: https://www.amazon.com/
+- regex: '.*\bSEBot-WA\b.*'
+  bot:
+    name: SEBot-WA
+    category: Crawler
+    url: https://help.seranking.com/hc/en-us/articles/16335355751196-Verifying-SE-Ranking-Crawler-FAQ
+    producer:
+      name: SE Ranking
+      url: https://seranking.com/
+# Squiz's site-search crawler dresses itself as a browser and names itself only in the
+# compatibility comment, which is the whole of its default string.
+- regex: '.*\(compatible; Funnelback[^)]*\).*'
+  bot:
+    name: Funnelback
+    category: Crawler
+    url: https://docs.squiz.net/funnelback/docs/latest/build/data-sources/web/web-crawler.html
+    producer:
+      name: Squiz
+      url: https://www.squiz.net/
+- regex: '.*\bINA dlweb\b.*'
+  bot:
+    name: INA dlweb
+    category: Crawler
+    url: https://www.ina.fr/collecte-du-depot-legal-web
+    producer:
+      name: Institut national de l'audiovisuel
+      url: https://www.ina.fr/
+- regex: '.*tphotobot/[\d.]+.*'
+  bot:
+    name: tphotobot
+    category: Crawler
+    url: https://crawler.estidraft.com/bot
+# `CorporateResearch` on its own would read half the research crawlers there are, so the entry
+# asks for the address the operator publishes alongside it.
+- regex: '.*CorporateResearch/[\d.]+.*climatax\.org.*'
+  bot:
+    name: ClimaTax Research Bot
+    category: Crawler
+    url: https://climatax.org/contact/research-bot/
+    producer:
+      name: ClimaTax
+      url: https://climatax.org/
+- regex: .*intrinsec easm vulnerability scanner.*
+  bot:
+    name: Intrinsec EASM
+    category: Security Checker
+    url: https://www.intrinsec.com/en/easm-external-attack-surface-management/
+    producer:
+      name: Intrinsec
+      url: https://www.intrinsec.com/
+- regex: '.*research\.hadrian\.io.*'
+  bot:
+    name: Hadrian
+    category: Security Checker
+    url: https://hadrian.io/
+    producer:
+      name: Hadrian Security
+      url: https://hadrian.io/
+# The load generator writing a name of its own instead of the `k6/<version>` matomo reads, so
+# the answer is matomo's name for it and nothing more.
+- regex: '.*\bk6-performance-test\b.*'
+  bot:
+    name: K6
+    url: https://k6.io/
+- regex: '.*\boha/[\d.]+.*'
+  bot:
+    name: oha
+    category: Benchmark
+    url: https://github.com/hatoo/oha

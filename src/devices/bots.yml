@@ -1746,7 +1746,8 @@
     producer:
       name: Barracuda Networks, Inc.
       url: https://www.barracudanetworks.com/
-- regex: .*Zeno.*
+# matomo's `^Zeno$`: the name alone, or Blackview's Zeno tablets read as the crawler.
+- regex: Zeno
   bot:
     name: Zeno
     category: Crawler

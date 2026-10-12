@@ -222,3 +222,12 @@
     Shenma's crawler, which matomo does not name at the revision this library is pinned to. It
     feeds a search index, so the category it is given lands it in the log injector's search-bot
     column rather than the tool one production counted it in.
+
+- pattern: 'SofyaBot/|NikyBot/'
+  says: Generic Bot
+  we_say_type: 4
+  reason: >-
+    crawlers of two independent search engines, Sofya and Nikysearch, which matomo does not name
+    at the revision this library is pinned to. Each feeds an index of its own, so the category
+    lands it in the log injector's search-bot column rather than the tool one production counted
+    it in.

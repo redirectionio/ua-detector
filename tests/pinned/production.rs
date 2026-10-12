@@ -696,3 +696,30 @@ fn the_traffic_of_2026_09_21_names_its_applications() {
 
     assert!(wrong.is_empty(), "{}", wrong.join(""));
 }
+
+/// The applications and the libraries of the traffic of 2026-10-12.
+#[test]
+fn the_traffic_of_2026_10_12_names_its_applications() {
+    let cases = [
+        ("Orpiaroundme/1 CFNetwork/3860.700.2 Darwin/25.6.0", "ORPI around me", "1", "mobile app"),
+        ("microsoft office powerpoint 2014", "Microsoft Office PowerPoint", "", "mobile app"),
+        ("R (4.5.2 x86_64-apple-darwin20 x86_64 darwin20)", "R", "4.5.2", "library"),
+        ("Deluge", "Deluge", "", "library"),
+        ("Jersey/2.35 (HttpUrlConnection 11.0.32)", "Jersey", "2.35", "library"),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, version, kind)| {
+            let client = detect(user_agent).and_then(|detection| detection.client);
+            let found = client
+                .map(|client| (client.name, client.version, client_kind(client.kind).to_owned()))
+                .unwrap_or_default();
+            let want = ((*name).to_owned(), (*version).to_owned(), (*kind).to_owned());
+
+            (found != want).then(|| format!("\n  wanted {want:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
+}

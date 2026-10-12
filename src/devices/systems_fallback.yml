@@ -1079,7 +1079,7 @@
   os: {name: 'HELIX OS'}
   os_family: 'Android'
 -
-  regex: '.*(?:SerenityOS|Ladybird/).*'
+  regex: '.*SerenityOS.*'
   priority: -4
   os: {name: 'SerenityOS'}
   os_family: 'GNU/Linux'
@@ -1328,3 +1328,13 @@
   priority: -4
   os: {name: 'SteamOS'}
   os_family: 'Mobile Gaming Console'
+-
+  regex: '.*(?:YNDX-|Yandex).+ TV.*'
+  priority: -4
+  os: {name: 'YaOS'}
+  os_family: 'Android'
+-
+  regex: '.*RES102(?:[);/ ].*)?'
+  priority: -4
+  os: {name: 'YodaOS-Master'}
+  os_family: 'Android'

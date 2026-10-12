@@ -195,7 +195,7 @@
 # frameworks, and the architectures name something nobody carries. Two rungs above the entry
 # for the handheld, since the generated one that reads any Darwin as a Mac sits between them.
 -
-  regex: '(?:(?:com\.apple\.WebKit\.Networking|NetworkingExtension|Safari|com\.apple\.Safari\.SearchHelper).*Darwin[/;].*|.*(?:CFNetwork|Mana|StudioDisplay)/.+Darwin(?:/|; )[\d.]+.*(?:x86_64|i386|Power%20Macintosh|PowerMac).*|.*CFNetwork/macOS/.+Darwin/.*|.*(?:x86_64-apple-)?darwin[\d.]+.*|.*C?Python.*Darwin.*)'
+  regex: '(?:(?:com\.apple\.WebKit\.Networking|NetworkingExtension|Safari|com\.apple\.Safari\.SearchHelper).*Darwin[/;].*|.+Darwin(?:/|;? )[\d.]+.*(?:x86_64|i386|Power%20Macintosh|PowerMac).*|.*CFNetwork/macOS/.+Darwin/.*|.*(?:x86_64-apple-)?darwin[\d.]+.*|.*C?Python.*Darwin.*)'
   priority: -2
   os: {name: 'Mac'}
   device: {type: 'desktop'}

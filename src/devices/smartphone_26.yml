@@ -3903,7 +3903,7 @@
   device:
     type: smartphone
     brand: Fairphone
-    model: FP3
+    model: '3'
   os_family: Android
   browser_family: Chrome
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HTC 10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36

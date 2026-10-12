@@ -3057,7 +3057,7 @@
   device:
     type: smartphone
     brand: Vivo
-    model: Y31s
+    model: Y31s 5G
   os_family: Android
   browser_family: Internet Explorer
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); T776H\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36

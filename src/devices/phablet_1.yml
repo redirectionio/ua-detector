@@ -6147,3 +6147,308 @@
     model: Redmi Note 15 5G
   os_family: Android
   browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TECNO LK7k Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: Tecno Mobile
+    model: Pova Curve 2 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2436A\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 VivoBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: vivo Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Vivo
+    model: X Fold 5
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SCG41\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F9710 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Lark/(?<client_version>[\d.]+) LarkLocale/zh_CN ChannelName/Feishu appid/482431; appname/Feishu;
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Lark
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F971B Build/[\w.-]+; en-in\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Puffin/(?<client_version>[\d.]+)AP
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Puffin Web Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F971N Build/[\w.-]+; ko-kr\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Puffin/(?<client_version>[\d.]+)AP
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Puffin Web Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F971Q Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Sleipnir/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sleipnir
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14710101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-F971U Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F971U1 Build/[\w.-]+; en-us\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Puffin/(?<client_version>[\d.]+)AP
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Puffin Web Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F971W Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Safari/537\.36 Flipboard/(?<client_version>[\d.]+)/5514,4\.3\.61\.5514
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Flipboard App
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F971C Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Ojxvms/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F9660 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Safari/537\.36 Xiaoyuzhou/(?<client_version>[\d.]+) Android/16 StatusBarHeight/89 xyzTheme/defaultLight
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: XiaoYuZhou
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F966B Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Grindr/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Grindr
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F966N; BP2A\.250605\.031\.A3; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Viber/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Viber
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F966Q Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Sleipnir/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sleipnir
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F966U Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Grindr/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Grindr
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: iHeartRadio/(?<client_version>[\d.]+) \(Android (?<os_version>[\d.]+); SM-F966U1 Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iHeartRadio
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14630101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-F966W Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-F966Z Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Sleipnir/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sleipnir
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: Samsung
+    model: Galaxy Z Fold 7
+  os_family: Android
+  browser_family: Unknown

@@ -692,3 +692,16 @@
     model: Apollo {model} Pro
   os_family: Android
   browser_family: Chrome
+
+# Reduced user agents, named by the model hint alone
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Safari/537\.36'
+  headers:
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-model: '^(?<model>uis8581a2h10_Automotive)$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: car browser, brand: "", model: "{model}"}
+  os_family: Android
+  browser_family: Chrome

@@ -1,6 +1,6 @@
 //! The fixtures, read as they are rather than compiled into a test.
 //!
-//! `tests/matomo-device-detector/fixtures/*.yml` is the specification: 38 030 user agents and
+//! `tests/matomo-device-detector/fixtures/*.yml` is the specification: 38 301 user agents and
 //! what each one means. Generating a `#[test]` per case out of them cost forty megabytes of rust
 //! and two minutes of build for every change to an entry; reading them at startup costs the
 //! second the yaml takes to parse.

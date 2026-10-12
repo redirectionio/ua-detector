@@ -225,9 +225,73 @@
   browser_family: Unknown
 
 -
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,12); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Ultra 3}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,13|7,15); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch SE (Gen 3) 40mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,14|7,16); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch SE (Gen 3) 44mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,17|7,19); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Series 11 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:7,18|7,20); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Series 11 46mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:8,1); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Ultra 4}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:8,2|8,4); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Series 12 42mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
+  regex: 'Darwin/[\d.]+ \(Watch(?:8,3|8,5); watchOS (?<os_version>[\d.]+)\) MatomoTrackerSDK/(?<client_version>[\d.]+)'
+  os: {name: watchOS, version: "{os_version}", platform: ARM}
+  client: {type: library, name: MatomoTracker, version: "{client_version}"}
+  device: {type: wearable, brand: Apple, model: Watch Series 12 46mm}
+  os_family: iOS
+  browser_family: Unknown
+
+-
   regex: 'AppleCoreMedia/[\w.]+ \(Apple Watch; U; CPU OS (?<os_version>[\d_]+) like Mac OS X; [a-z]{2}_[a-z]{2}\)'
   os: {name: iOS, version: "{os_version|dots}", platform: ""}
-  client: {type: library, name: iOS Application, version: ""}
+  client: {type: library, name: Apple Core Media, version: ""}
   device: {type: wearable, brand: Apple, model: Watch}
   os_family: iOS
   browser_family: Unknown
@@ -840,8 +904,8 @@
   browser_family: Unknown
 
 -
-  regex: 'Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RES102 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36'
-  os: {name: Android, version: "{os_version}", platform: ""}
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; RES102 Build/[\w.]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36'
+  os: {name: YodaOS-Master, version: "", platform: ""}
   client: {type: browser, name: Yandex Browser Lite, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
   device: {type: wearable, brand: Rokid, model: Station}
   os_family: Android

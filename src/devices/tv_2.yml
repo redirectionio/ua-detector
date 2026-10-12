@@ -648,8 +648,8 @@
   browser_family: Chrome
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YandexModule2-00001 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36
   os:
-    name: Android
-    version: '{os_version}'
+    name: YaOS
+    version: ''
     platform: ''
   client:
     type: browser
@@ -665,8 +665,8 @@
   browser_family: Unknown
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YNDX-00071 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36
   os:
-    name: Android
-    version: '{os_version}'
+    name: YaOS
+    version: ''
     platform: ''
   client:
     type: browser
@@ -682,8 +682,8 @@
   browser_family: Unknown
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YNDX-00072 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36
   os:
-    name: Android
-    version: '{os_version}'
+    name: YaOS
+    version: ''
     platform: ''
   client:
     type: browser
@@ -699,8 +699,8 @@
   browser_family: Unknown
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YNDX-00073 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36
   os:
-    name: Android
-    version: '{os_version}'
+    name: YaOS
+    version: ''
     platform: ''
   client:
     type: browser
@@ -4889,7 +4889,7 @@
   device:
     type: tv
     brand: Apple
-    model: Apple TV 4
+    model: Apple TV 4 HD
   os_family: iOS
   browser_family: Unknown
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); BAFF43YFHD Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36

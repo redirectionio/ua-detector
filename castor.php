@@ -14,7 +14,7 @@ use function Castor\run;
  * library answers. How matomo goes about answering it is its own business, and its regexes are
  * under a licence we do not want to carry.
  */
-const MATOMO_REVISION = '5a6f5d0184b5a867c1db9c0733f6b89686c5c47b';
+const MATOMO_REVISION = 'e83ce7a97f05d8ee3e1eee7ea77a73b3bdfebd9a';
 
 #[AsTask(description: 'Syncs the matomo device-detector test fixtures', name: 'sync', namespace: 'matomo')]
 function sync()

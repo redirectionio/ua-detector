@@ -9,7 +9,7 @@
     platform: ""
   client:
     type: library
-    name: iOS Application
+    name: Apple Core Media
     version: ""
   device:
     type: smart speaker
@@ -454,3 +454,16 @@
     model: "{model}"
   os_family: Unknown
   browser_family: Unknown
+
+# Reduced user agents, named by the model hint alone
+-
+  regex: 'Mozilla/5\.0 \(Linux; Android [\d.]+; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36'
+  headers:
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+    sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
+    sec-ch-ua-model: '^theloop_ROW$'
+  os: {name: Android, version: "{os_version}", platform: ""}
+  client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
+  device: {type: smart speaker, brand: LoopDL, model: loop}
+  os_family: Android
+  browser_family: Chrome

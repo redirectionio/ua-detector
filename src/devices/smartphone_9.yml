@@ -4119,8 +4119,8 @@
     engine_version: ''
   device:
     type: smartphone
-    brand: Mpman
-    model: PH350
+    brand: Philco
+    model: PH350B
   os_family: Android
   browser_family: Android Browser
 - regex: Mozilla/5\.0 \(Linux; U; Android 2\.3\.6; fr-ch; PH350 Build/MocorDroid(?<os_version>[\d.]+)\) AppleWebKit/533\.1 \(KHTML, like Gecko\) Version/4\.0 Mobile Safari/(?<engine_version>[\d.]+)

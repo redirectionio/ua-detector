@@ -231,3 +231,11 @@
     at the revision this library is pinned to. Each feeds an index of its own, so the category
     lands it in the log injector's search-bot column rather than the tool one production counted
     it in.
+
+- pattern: 'Bytespider|MJ12bot'
+  names_agree: true
+  we_say_type: 3
+  reason: >-
+    matomo files ByteDance's crawler and Majestic's under Search bot, which put them in the log
+    injector's search-bot column. One collects training data and the other maps links for an SEO
+    index, so `tests/corrections.yml` gives them a category that lands them in the tool one.

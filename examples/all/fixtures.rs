@@ -14,6 +14,39 @@ use ua_detector::Detection;
 
 pub const FIXTURES: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/tests/matomo-device-detector/fixtures");
 
+pub const CORRECTIONS: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/tests/corrections.yml");
+
+/// A category this library gives a bot against what the fixtures say, from `tests/corrections.yml`.
+#[derive(serde::Deserialize)]
+pub struct Correction {
+    pub bot: String,
+    pub category: String,
+    pub source: String,
+    pub reason: String,
+}
+
+pub fn corrections() -> &'static [Correction] {
+    static CORRECTIONS_READ: std::sync::OnceLock<Vec<Correction>> = std::sync::OnceLock::new();
+
+    CORRECTIONS_READ.get_or_init(|| {
+        let content = std::fs::read_to_string(CORRECTIONS)
+            .unwrap_or_else(|error| panic!("cannot read {CORRECTIONS}: {error}"));
+
+        serde_yaml::from_str(&content).unwrap_or_else(|error| panic!("cannot parse {CORRECTIONS}: {error}"))
+    })
+}
+
+/// The corrections no fixture case names a bot for, which have nothing left to correct.
+pub fn unused_corrections() -> Vec<&'static str> {
+    let named: std::collections::HashSet<String> = files()
+        .iter()
+        .flat_map(|path| read(path))
+        .filter_map(|case| case.expected.get("bot")?.get("name")?.as_str().map(str::to_owned))
+        .collect();
+
+    corrections().iter().filter(|correction| !named.contains(&correction.bot)).map(|correction| correction.bot.as_str()).collect()
+}
+
 #[derive(serde::Deserialize)]
 pub struct Case {
     pub user_agent: String,
@@ -77,6 +110,14 @@ fn expected_of(value: &serde_yaml::Value) -> Detection {
 
     if let serde_yaml::Value::Mapping(mapping) = &mut value {
         mapping.remove("headers");
+
+        if let Some(serde_yaml::Value::Mapping(bot)) = mapping.get_mut("bot") {
+            let name = bot.get("name").and_then(|name| name.as_str()).unwrap_or_default();
+
+            if let Some(correction) = corrections().iter().find(|correction| correction.bot == name) {
+                bot.insert("category".into(), correction.category.clone().into());
+            }
+        }
 
         // A fixture writes an absent result as null, or as an empty list.
         for key in ["os", "client", "device"] {

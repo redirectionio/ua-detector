@@ -1,6 +1,7 @@
 //! Every user agent the fixtures name, one case at a time.
 //!
-//! `tests/matomo-device-detector/fixtures/*.yml` is the specification. The cases are read at
+//! `tests/matomo-device-detector/fixtures/*.yml` is the specification, less the few bot
+//! categories `tests/corrections.yml` overrules. The cases are read at
 //! startup and handed to the harness by `libtest-mimic`, so nothing about the corpus is
 //! compiled and the names and filters read as a `#[test]` would:
 //!
@@ -52,6 +53,15 @@ fn main() {
             trials.push(Trial::test(format!("{name}::{}", index + 1), move || check(&cases[index])));
         }
     }
+
+    trials.push(Trial::test("corrections::every_one_still_applies", || {
+        let unused = fixtures::unused_corrections();
+
+        match unused.is_empty() {
+            true => Ok(()),
+            false => Err(format!("no fixture names {unused:?} any more: drop it from tests/corrections.yml").into()),
+        }
+    }));
 
     libtest_mimic::run(&arguments, trials).exit();
 }

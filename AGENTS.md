@@ -13,6 +13,12 @@ That corpus, pinned to one revision of matomo-org/device-detector in `castor.php
 specification. A change is right when the tests pass and wrong when they do not; there is no other
 authority to appeal to.
 
+With one exception, kept as short as it can be: `tests/corrections.yml` overrules the category
+the fixtures give a bot, where the operator's own page or the evidence says otherwise -- matomo's
+Search bot for a crawler that feeds no search engine. Each correction carries its source, applies
+to every case naming that bot, and fails the corpus once no case names it, so it goes when matomo
+agrees. A category is the only thing it may correct.
+
 Matomo's own regexes are not vendored, but they may be read: this library is LGPL-3.0-or-later,
 the same family as matomo's, so there is nothing to keep out. Read them for what they say about
 *which* tokens carry meaning -- that is the question the fixtures answer only by example, one

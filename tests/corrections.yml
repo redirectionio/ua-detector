@@ -1,0 +1,30 @@
+# Where this library answers differently from the fixtures on purpose: a category matomo gives a
+# bot that the bot's operator, or the evidence, contradicts. Each correction replaces what every
+# fixture case naming that bot expects, and one that no case names any more fails the corpus,
+# so it is dropped once matomo agrees.
+#
+# Keep it this short. A correction is a claim against the specification, so it carries the page
+# that makes it.
+
+- bot: Bytespider
+  category: AI Data Scraper
+  source: https://github.com/ai-robots-txt/ai.robots.txt
+  reason: >-
+    ByteDance documents nothing, and once told the press the crawler served search. Every
+    tracker since reads it as the collector of the corpora ByteDance trains its models on, at a
+    volume no search index it runs would explain.
+
+- bot: MJ12 Bot
+  category: Crawler
+  source: https://mj12bot.com/
+  reason: >-
+    Majestic's crawler maps links for an SEO backlink index; "a full text search engine is
+    currently in the research phase". The crawlers of Semrush and DataForSEO, which do the same,
+    are Crawler already.
+
+- bot: Meta-ExternalAgent
+  category: AI Data Scraper
+  source: https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
+  reason: >-
+    Meta writes that it "crawls the web for use cases such as training foundation AI models".
+    What fetches on a user's behalf is Meta-ExternalFetcher.

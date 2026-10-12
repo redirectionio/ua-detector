@@ -4263,7 +4263,7 @@
     engine_version: '{client_version}'
   device:
     type: smartphone
-    brand: Shift Phones
+    brand: SHIFT
     model: SHIFT6m
   os_family: Android
   browser_family: Chrome

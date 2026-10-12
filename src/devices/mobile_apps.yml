@@ -213,7 +213,7 @@
 -
   regex: 'RoboForm/[\d.]+ CFNetwork/711\.1\.16 Darwin/[\d.]+'
   os: {name: iOS, version: "8.1", platform: ""}
-  client: {type: mobile app, name: RoboForm, version: ""}
+  client: {type: mobile app, name: RoboForm Passwort Manager, version: ""}
   device: {type: "", brand: Apple, model: ""}
   os_family: iOS
   browser_family: Unknown

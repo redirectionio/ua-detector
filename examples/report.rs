@@ -3,38 +3,24 @@
 //!     cargo run --example report -- smart_display          # only what fails
 //!     cargo run --example report -- smart_display --shapes # failures grouped by shape
 
+#[path = "all/fixtures.rs"]
+mod fixtures;
+
 use std::collections::BTreeMap;
-
-use ua_detector::Detection;
-
-#[derive(serde::Deserialize)]
-struct Case {
-    user_agent: String,
-    #[serde(default)]
-    headers: BTreeMap<String, serde_yaml::Value>,
-    #[serde(flatten)]
-    expected: serde_yaml::Value,
-}
 
 fn main() {
     let mut args = std::env::args().skip(1);
     let name = args.next().expect("usage: report <fixture> [--shapes]");
     let shapes = args.any(|arg| arg == "--shapes");
 
-    let path = format!("tests/matomo-device-detector/fixtures/{name}.yml");
-    let content = std::fs::read_to_string(&path).unwrap_or_else(|e| panic!("{path}: {e}"));
-    let cases: Vec<Case> = serde_yaml::from_str(&content).expect("a valid fixture");
+    let cases = fixtures::read(std::path::Path::new(&format!("{}/{name}.yml", fixtures::FIXTURES)));
 
     let detector = ua_detector::shared();
     let mut failures = Vec::new();
 
     for case in &cases {
-        let expected: Detection = expected_of(&case.expected);
-        let headers: Vec<(String, String)> = case
-            .headers
-            .iter()
-            .map(|(name, value)| (name.clone(), header_of(value)))
-            .collect();
+        let expected = case.expected();
+        let headers = case.headers();
         let headers: Vec<(&str, &str)> =
             headers.iter().map(|(name, value)| (name.as_str(), value.as_str())).collect();
         let detected = detector.detect_with_headers(&case.user_agent, &headers);
@@ -71,42 +57,6 @@ fn main() {
     }
 
     println!("{}/{} case(s) failing", failures.len(), cases.len());
-}
-
-/// A few fixtures give a brand list as a structure rather than as the header text a browser
-/// actually sends. Render it back to the wire form.
-fn header_of(value: &serde_yaml::Value) -> String {
-    match value {
-        serde_yaml::Value::String(text) => text.clone(),
-        serde_yaml::Value::Sequence(brands) => brands
-            .iter()
-            .map(|brand| {
-                let text = |key| brand.get(key).and_then(|v| v.as_str()).unwrap_or_default();
-
-                format!("\"{}\";v=\"{}\"", text("brand"), text("version"))
-            })
-            .collect::<Vec<String>>()
-            .join(", "),
-        _ => String::new(),
-    }
-}
-
-/// A fixture spells an undetected operating system as an empty list and an undetected client
-/// as null, neither of which our entry format uses.
-fn expected_of(value: &serde_yaml::Value) -> Detection {
-    let mut value = value.clone();
-
-    if let serde_yaml::Value::Mapping(mapping) = &mut value {
-        mapping.remove("headers");
-
-        for key in ["os", "client", "device"] {
-            if mapping.get(key).is_some_and(|value| value.is_null() || value.is_sequence()) {
-                mapping.remove(key);
-            }
-        }
-    }
-
-    serde_yaml::from_value(value).expect("a fixture our types can hold")
 }
 
 /// Strips the parts of a user agent that vary between otherwise identical cases, so failures

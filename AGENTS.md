@@ -8,10 +8,16 @@ agent needs to know before touching anything.
 
 ## The specification is the fixtures, and only the fixtures
 
-`tests/matomo-device-detector/fixtures/*.yml` says what every one of 38 030 user agents means.
+`tests/matomo-device-detector/fixtures/*.yml` says what every one of 38 301 user agents means.
 That corpus, pinned to one revision of matomo-org/device-detector in `castor.php`, is the whole
 specification. A change is right when the tests pass and wrong when they do not; there is no other
 authority to appeal to.
+
+With one exception, kept as short as it can be: `tests/corrections.yml` overrules the category
+the fixtures give a bot, where the operator's own page or the evidence says otherwise -- matomo's
+Search bot for a crawler that feeds no search engine. Each correction carries its source, applies
+to every case naming that bot, and fails the corpus once no case names it, so it goes when matomo
+agrees. A category is the only thing it may correct.
 
 Matomo's own regexes are not vendored, but they may be read: this library is LGPL-3.0-or-later,
 the same family as matomo's, so there is nothing to keep out. Read them for what they say about
@@ -130,7 +136,7 @@ feature does rebuild, so stay on one side of it while working.
 
 `cargo bench` is criterion, so it keeps the last run and tells you what moved; `--save-baseline`
 and `--baseline` name one to keep. It detects over a stride across the corpus rather than all
-38 030 agents, because at a budget of zero a lookup costs about six milliseconds against half a
+38 301 agents, because at a budget of zero a lookup costs about six milliseconds against half a
 millisecond cached, and ten samples of the whole corpus at that rate is most of an hour. That
 makes the default good for comparing two runs and not for quoting on its own; `DETECT_SAMPLE`
 raises it when a number has to stand by itself. Criterion sizes a run by the measurement time it

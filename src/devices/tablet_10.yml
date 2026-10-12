@@ -7089,7 +7089,7 @@
   device:
     type: tablet
     brand: NextBook
-    model: Ares A10
+    model: Ares 10A
   os_family: Android
   browser_family: Chrome
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NX16A11264\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
@@ -7106,7 +7106,7 @@
   device:
     type: tablet
     brand: NextBook
-    model: Ares A11
+    model: Ares 11A
   os_family: Android
   browser_family: Chrome
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); NX16A8116K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36
@@ -7123,7 +7123,7 @@
   device:
     type: tablet
     brand: NextBook
-    model: Ares A8
+    model: Ares 8A
   os_family: Android
   browser_family: Chrome
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); ZUR70016\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36

@@ -8,9 +8,9 @@
 # short ones read inside other strings often enough to cost more than they pay.
 
 -
-  regex: '.*AppleCoreMedia/1\.0\.0.*'
+  regex: '.*AppleCoreMedia.*'
   priority: -2
-  client: {type: library, name: 'iOS Application', version: ""}
+  client: {type: library, name: 'Apple Core Media', version: ""}
 -
   regex: '.*Cypress/(?<client_version>\d+[.\d]+).*'
   priority: -2
@@ -104,7 +104,7 @@
   priority: -2
   client: {type: browser, name: 'LieBaoFast', version: "{client_version}"}
 -
-  regex: '.*Chrome(?:/(?<client_version>\d+\.[.\d]+) )?.*Iron.*'
+  regex: '.*Chrome(?:/(?<client_version>\d+\.[.\d]+) )?.*Iron Safari.*'
   priority: -2
   client: {type: browser, name: 'Iron', version: "{client_version}"}
 -
@@ -653,6 +653,11 @@
   regex: '.*(?:aria2(?:/(?<client_version>\d+[.\d]+))?).*'
   priority: -2
   client: {type: library, name: 'Aria2', version: "{client_version}"}
+# matomo's `aria2(?!App)`, said as an ordering.
+-
+  regex: '.*Aria2App/(?<client_version>[\d.]+).*'
+  priority: -2
+  client: {type: mobile app, name: 'Aria2App', version: "{client_version}"}
 -
   regex: '.*(?:LeBrowser(?:/(?<client_version>\d+[.\d]+))?).*'
   priority: -2

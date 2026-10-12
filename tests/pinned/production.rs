@@ -574,6 +574,13 @@ fn a_crawler_the_web_cannot_place_stays_generic() {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AldiScraper/1.0",
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 ExitChecker/1.0.0",
         "netcheck-probe/13.0.2.fa7b625f (HEAD, go1.24.13, linux/amd64)",
+        "AmazonSelectionExplorerBot",
+        "Mozilla/5.0 (compatible; WP-Safe-Scanner/1.0)",
+        "MetadataScraper",
+        "Pumoxbot",
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; SFbot/1.0; +http://www.salesforce.com/bot.html) Chrome/W.X.Y.Z Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko, Yokohama Institute of Information Security  https://www.iisec.ac.jp) Chrome/124.0.0.0 Safari/537.36",
+        "SSLPing-Checker/1.0",
     ];
 
     for user_agent in unnamed {
@@ -585,6 +592,72 @@ fn a_crawler_the_web_cannot_place_stays_generic() {
             "no longer generic: {user_agent}"
         );
     }
+}
+
+/// The crawlers, monitors and agents of the traffic of 2026-10-12, one case per entry.
+#[test]
+fn the_traffic_of_2026_10_12_names_its_crawlers() {
+    let cases = [
+        // Search, and the crawlers that feed an answer rather than an index.
+        ("SofyaBot/1.0 (+https://sofya.co/bot)", "SofyaBot", "Search bot"),
+        ("NikyBot/0.1 (prototipo NikySearch; +https://nikysearch.it/nikybot.html)", "NikyBot", "Search bot"),
+        ("AIWebIndex/2.0 (+https://lyrenth.com/bot; AI-readable web index)", "AIWebIndex", "AI Search Crawler"),
+        ("mozilla/5.0 (linux; android 14; pixel 8 pro) applewebkit/537.36 (khtml, like gecko) chrome/149.0.0.0 mobile safari/537.36 (compatible; dola-searchbot; dola-searchbot-feedback@bytedance.com)", "Dola SearchBot", "AI Search Crawler"),
+        ("BeansLLM-CorpusBot/1.1 (+https://scrape.beansllm.ai/bot; respects robots.txt)", "BeansLLM-CorpusBot", "AI Data Scraper"),
+        ("amazon-Quick-on-behalf-of-ded61f40", "Amazon Quick", "AI Assistant"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0", "Shap-User", "AI Assistant"),
+        // Monitors.
+        ("checkmk-active-httpv2/2.5.0", "Checkmk", "Site Monitor"),
+        ("mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) distillwebmonitor/4.1.1-beta chrome/140.0.7339.249 electron/38.5.0 safari/537.36", "Distill Web Monitor", "Site Monitor"),
+        ("HetrixTools Uptime Monitoring Bot. https://hetrix.tools/uptime-monitoring-bot.html", "HetrixTools", "Site Monitor"),
+        ("Mozilla/5.0 (compatible; PingBreak Free monitoring; +https://pingbreak.com/)", "PingBreak", "Site Monitor"),
+        ("Mozilla/4.0 (compatible; ipMonitor 11.1.1)", "ipMonitor", "Site Monitor"),
+        ("solarwinds/1.0 (www.solarwinds.com/solarwinds-observability)", "SolarWinds Observability", "Site Monitor"),
+        // Something a platform sends on its own behalf, or on a merchant's.
+        ("Photon/1.0", "Jetpack Photon", "Service Agent"),
+        ("Stripe/1.0 (+https://stripe.com/docs/webhooks)", "Stripe Webhooks", "Service Agent"),
+        ("Adyen HttpClient 1.0", "Adyen", "Service Agent"),
+        ("sendcloud/1.0 (magento_v2; https://www.sendcloud.sc)", "Sendcloud", "Service Agent"),
+        ("Shopify Webfile Service. http://www.shopify.com/contact", "Shopify Webfile Service", "Service Agent"),
+        ("cert-manager/v1.7.1 (clean)", "cert-manager", "Service Agent"),
+        // Link checkers.
+        ("Overture-Maps-LinkChecker/1.0 (+https://overturemaps.org)", "Overture Maps LinkChecker", "Validator"),
+        ("EPiServer Link Checker", "EPiServer Link Checker", "Validator"),
+        // The rest of the crawlers.
+        ("Caliperbot/1.0 (+http://www.conductor.com/caliperbot)", "Caliperbot", "Crawler"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; SEOJuice-SearchBot/1.0; +https://seojuice.io/bot", "SEOJuice-SearchBot", "Crawler"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; SEOGetsBot/1.0; +https://seogets.com/bot)", "SEOGetsBot", "Crawler"),
+        ("oseox/1.0", "Oseox", "Crawler"),
+        ("PeecAudit/1.0 (+https://peec.ai)", "PeecAudit", "Crawler"),
+        ("Mozilla/5.0 (compatible; SenderBot/1.0; Sender Online Marketing GmbH; +https://sender-marketing.de/bot)", "SenderBot", "Crawler"),
+        ("Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentAdBot; +http://www.audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36", "AudigentAdBot", "Crawler"),
+        ("captify-crawler", "Captify", "Crawler"),
+        ("Java 1.7 Apache HttpClient (Linux x86_64) / GnowitNewsbot / Contact information at http://www.gnowit.com", "GnowitNewsbot", "Crawler"),
+        ("PressEngineBot (+http://pressengine.net/crawl-policy)", "PressEngineBot", "Crawler"),
+        ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36 CookieInformationScanner", "Cookie Information Scanner", "Crawler"),
+        ("wine-searcherbot (+https://www.wine-searcher.com/technology; crawler@wine-searcher.com)", "Wine-Searcher", "Crawler"),
+        ("Mozilla/5.0 (compatible; BOT guenstiger.de)", "guenstiger.de", "Crawler"),
+        ("cardpulsebot/0.1 (+https://cardpulse.nl)", "CardPulse", "Crawler"),
+        ("rajahinta-crawler/1.0 (+https://rajahinta.fi)", "Rajahinta", "Crawler"),
+        ("feedparser/6.0.8 +https://github.com/kurtmckee/feedparser/", "UniversalFeedParser", "Feed Fetcher"),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, category)| {
+            let found = detect(user_agent)
+                .and_then(|detection| detection.bot)
+                .map(|bot| {
+                    (bot.name, bot.category.map(|category| category.as_str().to_owned()).unwrap_or_default())
+                })
+                .unwrap_or_default();
+
+            (found != ((*name).to_owned(), (*category).to_owned()))
+                .then(|| format!("\n  wanted {name:?} {category:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
 }
 
 /// The applications and the libraries of that same dump, which production read as nothing.
@@ -606,6 +679,33 @@ fn the_traffic_of_2026_09_21_names_its_applications() {
         ("Zeep/4.3.3 (www.python-zeep.org)", "Zeep", "4.3.3", "library"),
         ("MWFeedParser", "MWFeedParser", "", "library"),
         ("rss-parser", "rss-parser", "", "library"),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, version, kind)| {
+            let client = detect(user_agent).and_then(|detection| detection.client);
+            let found = client
+                .map(|client| (client.name, client.version, client_kind(client.kind).to_owned()))
+                .unwrap_or_default();
+            let want = ((*name).to_owned(), (*version).to_owned(), (*kind).to_owned());
+
+            (found != want).then(|| format!("\n  wanted {want:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
+}
+
+/// The applications and the libraries of the traffic of 2026-10-12.
+#[test]
+fn the_traffic_of_2026_10_12_names_its_applications() {
+    let cases = [
+        ("Orpiaroundme/1 CFNetwork/3860.700.2 Darwin/25.6.0", "ORPI around me", "1", "mobile app"),
+        ("microsoft office powerpoint 2014", "Microsoft Office PowerPoint", "", "mobile app"),
+        ("R (4.5.2 x86_64-apple-darwin20 x86_64 darwin20)", "R", "4.5.2", "library"),
+        ("Deluge", "Deluge", "", "library"),
+        ("Jersey/2.35 (HttpUrlConnection 11.0.32)", "Jersey", "2.35", "library"),
     ];
 
     let wrong: Vec<String> = cases

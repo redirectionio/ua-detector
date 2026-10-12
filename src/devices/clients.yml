@@ -9,8 +9,9 @@
 # Where a user agent lands that has named no client at all. All at -4, below everything that
 # names one.
 
+# The token opens a word, as matomo's `\bMacintosh`: `Power%20Macintosh` is an architecture.
 -
-  regex: '.*Macintosh.*'
+  regex: '(?:.*[^a-z0-9_])?Macintosh.*'
   priority: -4
   client: {type: browser, name: 'Safari', version: ""}
   browser_family: 'Safari'
@@ -714,4 +715,39 @@
   regex: '.*\brss-parser\b.*'
   priority: -2
   client: {type: library, name: 'rss-parser', version: ""}
+  browser_family: 'Unknown'
+
+# From the traffic of 2026-10-12, read the same way.
+
+-
+  regex: '.*\bOrpiaroundme/(?<client_version>[\d.]+) .*'
+  priority: -2
+  client: {type: mobile app, name: 'ORPI around me', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# An import from a URL, where PowerPoint writes the year of the application and no version.
+-
+  regex: 'Microsoft Office PowerPoint 20\d{2}'
+  priority: -2
+  client: {type: mobile app, name: 'Microsoft Office PowerPoint', version: ""}
+  browser_family: 'Unknown'
+
+# R's `HTTPUserAgent` option, which is the version and the platform and nothing else.
+-
+  regex: 'R \((?<client_version>\d+\.[\d.]+) [^)]+\)'
+  priority: -2
+  client: {type: library, name: 'R', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+# Deluge's downloader writes its name alone, and a word that common only counts as the whole string.
+-
+  regex: 'Deluge'
+  priority: -2
+  client: {type: library, name: 'Deluge', version: ""}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*\bJersey/(?<client_version>[\d.]+) \(HttpUrlConnection [\w.]+\).*'
+  priority: -2
+  client: {type: library, name: 'Jersey', version: "{client_version}"}
   browser_family: 'Unknown'

@@ -7542,6 +7542,6 @@
   device:
     type: smartphone
     brand: Fairphone
-    model: FP4
+    model: '4'
   os_family: Android
   browser_family: Chrome

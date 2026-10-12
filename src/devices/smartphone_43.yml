@@ -1237,3 +1237,2655 @@
     model: X7e
   os_family: Android
   browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android [\d.]+; [a-z\d]{10}; U; [\w-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?HMD Fusion"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<engine_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Avast Secure Browser
+    version: ''
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: HMD
+    model: Fusion
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?TMRV085G"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: T-Mobile
+    model: REVVL 8 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TMRV08P5G Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: T-Mobile
+    model: REVVL 8 Pro 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); TWL M10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: TWL Mobile
+    model: M10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5108 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: P4x 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RMX5057\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.45\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: '14 Pro 5G'
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?RMX5074"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: '14T 5G'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5107 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: P4 Power 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5171 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: '16 5G'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?RMX5266"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: P4R 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5256\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: C83 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5258 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: C100 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5264 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: Narzo 90x 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); RMX5353 Build/[\w.-]+; \) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: C100
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RMX5366\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.47\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: C100x
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?SHIFTphone 8"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: SHIFT
+    model: SHIFTphone 8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Spectra J1 PRO"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: SPECTRA
+    model: J1 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Spectra_J2"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: SPECTRA
+    model: J2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Spectra_J2_Pro"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: SPECTRA
+    model: J2 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Spectra_J3_MTN"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: SPECTRA
+    model: J3
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?LENIX Pro"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: LENIX
+    model: Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); LLY-NX1-N31\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Pawxy
+    version: ''
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Honor
+    model: '200 Lite'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Fairphone 6"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<engine_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: DuckDuckGo Privacy Browser
+    version: ''
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Fairphone
+    model: '6'
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?artfone SMART_500"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: artfone
+    model: smart 500
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Astech S8"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: ASTECH
+    model: S8
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Astech S9"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chromium
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: ASTECH
+    model: S9
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Astech IRIS"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: ASTECH
+    model: IRIS
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Awadjidje"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: MTN
+    model: Awadjidje
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?BOLD K20"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Blu
+    model: Bold K20
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?BOLD K30"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Blu
+    model: Bold K30
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?BOLD N4"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Blu
+    model: Bold N4
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?BOLD K5"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Blu
+    model: Bold K5
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?BOLD K12"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Blu
+    model: Bold K12
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?BUZZ 6 Pro"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Ace
+    model: Buzz 6 Pro
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?HMD Aura"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: HMD
+    model: Aura
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?HMD KEY"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: HMD
+    model: Key
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Konnect 660"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Danew
+    model: Konnect 660
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Konnect_557"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Danew
+    model: Konnect 557
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Panther2"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: LAGENIO
+    model: Panther 2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); SERIE_M_100 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera Mini
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: DAMASCO
+    model: M100
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?SERIE_M_200"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: DAMASCO
+    model: M200
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?SERIE_M_300"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: DAMASCO
+    model: M300
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Stealth 5"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"DuckDuckGo";v="(?<engine_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: DuckDuckGo Privacy Browser
+    version: ''
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: UltraX Privacy
+    model: Stealth 5
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?Stellar-M6"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Crosscall
+    model: Stellar-M6
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Stellar-M6E Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Crosscall
+    model: Stellar-M6E
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36 \(Ecosia android@143\.0\.0\.0\)
+  headers:
+    sec-ch-ua-model: '^"?Stellar-M6 Chamonix Mont-Blanc"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Ecosia
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Crosscall
+    model: Stellar-M6 Chamonix Mont-Blanc
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?TIOK S20"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: TIOK
+    model: S20
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36 EdgA/131\.0\.0\.0
+  headers:
+    sec-ch-ua-model: '^"?U572AA"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Microsoft Edge
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: AT&T
+    model: Vista 2
+  os_family: Android
+  browser_family: Internet Explorer
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); U655AA Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: OH Private Browser
+    version: ''
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: AT&T
+    model: Propel 2 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?U656AA"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: AT&T
+    model: Propel 3 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?U656AC"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Cricket
+    model: Icon (2026)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?UE010"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Unnecto
+    model: Eco 10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?UB101"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Unnecto
+    model: Bolt 10
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?UB202"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Chromium";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Unnecto
+    model: Bolt 20
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android 10; K\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/[\d.]+ Mobile Safari/537\.36
+  headers:
+    sec-ch-ua-model: '^"?UB501"?$'
+    sec-ch-ua-platform-version: '^"?(?<os_version>[\d.]+)"?$'
+    sec-ch-ua: '"Google Chrome";v="(?<client_version>[\d.]+)"'
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Unnecto
+    model: Bolt 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SN509A Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPX/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera GX
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: AT&T
+    model: Motivate Pro 5G
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SN512A Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: AT&T
+    model: Motivate Pro 2 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SN512C Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Cricket
+    model: Icon Pro (2026)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SN333C Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Cricket
+    model: Icon Plus (2026)
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SN333A Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: AT&T
+    model: Verge 2 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2509A Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: X300
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SOG16 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 10 VII
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SOG15 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 1 VII
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SOG14 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 10 VI
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SO-52F Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 10 VII
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SO-51F Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 1 VII
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SCG38\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26+
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SCG33 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A25 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SCG30 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S24 FE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SCG31 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SCG32 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 Ultra
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); STYLO MARVEL Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Stylo
+    model: Marvel
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); FLAT 2C Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: OSCAL
+    model: Flat 2C
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); COOLMINTT NIU Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Mintt
+    model: CoolMintt NIU
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SO-53D\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaApp_Android/(?<client_version>[\d.]+) YaSearchBrowser/26\.60\.1 BroPP/1\.0 Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 5 V
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; V2571A Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: S60
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); zh-CN; V2520A Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Quark/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Quark
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: iQOO Neo 11
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); A069P\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Nothing
+    model: Phone 4a Pro
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); A069\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Nothing
+    model: Phone 4a
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); A024\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Nothing
+    model: Phone 3
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); A001T\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.61\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Nothing
+    model: Phone 3a Lite
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); 2602BRT18C\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Xiaomi
+    model: Redmi Turbo 5 Max
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); UNIWA_F400\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: UNIWA
+    model: F400
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); motorola edge 70 ultra\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Motorola
+    model: Edge 70 Ultra
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2578 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: Y11d
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2565\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 VivoBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: vivo Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: Y05
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2562\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 VivoBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: vivo Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: X300 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2561\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 VivoBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: vivo Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: X200T
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); DuoQin F22; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Sapphire/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Microsoft Bing
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: QIN
+    model: F22
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); RMX5112\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Realme
+    model: '15T'
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HMD CREST MAX Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: HMD
+    model: Crest Max
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); V2536A\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.61\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: iQOO Z11 Turbo
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); L5510 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: FiGO
+    model: Fierce
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); V2546A Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 VivoBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: vivo Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Vivo
+    model: iQOO 15 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A266B Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 \[FB_IAB/FB4A;FBAV/(?<client_version>[\d.]+);IABMV/1;\] FBNV/500
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Facebook
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A26 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A266M Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPX/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera GX
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A26 5G
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A266U Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPX/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Opera GX
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A26 5G
+  os_family: Android
+  browser_family: Opera
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A266U1 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36 MinuteMaid
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A26 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); en-us; SM-S266V Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Hawk/QuickBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Hawk Quick Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A26 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-A1760\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.47\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A17 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A176U Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A17 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-A176U1\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.47\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A17 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A176W Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 BingWeb/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Microsoft Bing
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A17 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A176B Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 \[FB_IAB/FB4A;FBAV/(?<client_version>[\d.]+);IABMV/1;\] FBNV/500
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Facebook
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A17 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A576B Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Instagram (?<client_version>[\d.]+) Android \(36/16; 450dpi; 1080x2340; samsung; SM-A576B; a57x; s5e8865; en_IE; 1061744234; IABMV/1\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Instagram
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A5760 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 XWEB/1460217 MMWEBSDK/20260502 MMWEBID/6975 REV/83997a05f4e4d0a3109307f040f3ace3af51e162 MicroMessenger/(?<client_version>[\d.]+)\(0x28004A3A\) WeChat/arm64 Weixin
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: mobile app
+    name: WeChat
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A576U; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 newsbreak/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: NewsBreak
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A576U1 Build/[\w.-]+;\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Zalo android/260801903 ZaloTheme/light ZaloLanguage/en
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Zalo
+    version: ''
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A576Q Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Sleipnir/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sleipnir
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A576W Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36 hexinFont/normal hexinTheme/1 hexinLang/0 hexinLanguage/en hexinChgColor/0 hexinDeviceName/SM-A576W environment/production bundleName/StockScreener GLHBD/5\.3\.4\.0 \(Royal Flush\) hxtheme/1 scheme/lighthorse innerversion/LHSG037\.08\.47205\.3\.4\.0 userid/1883043363
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; U; Android (?<os_version>[\d.]+); ja-jp; SM-A576Z Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Hawk/QuickBrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Hawk Quick Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S731N Build/[\w.-]+; ko-kr\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Puffin/(?<client_version>[\d.]+)AP
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Puffin Web Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 FE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S731U Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Grindr/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Grindr
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 FE
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14630101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-S731U1 Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 FE
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14560101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-S731B Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 FE
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S731W Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36 com\.ionicframework\.tornv2301860
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 FE
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SC-51F Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.ybrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yahoo! Japan Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SC-52F Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S25 Ultra
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SC-51G Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SC-54G Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A57 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S9420 Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S942Q Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Sleipnir/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sleipnir
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14560101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-S942U Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14630101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-S942U1 Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14560101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-S942W Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S942Z Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 Sleipnir/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Sleipnir
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S942B Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Grindr/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Grindr
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-S942N Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 T7/15\.42 SP-engine/3\.55\.0 bd_dvt/0 baiduboxapp/(?<client_version>[\d.]+) \(Baidu; P1 16\) NABar/1\.0
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Baidu Box App
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy S26
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A166L\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy Buddy 4
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); SM-A176L\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaSearchBrowser/(?<client_version>[\d.]+) BroPP/1\.0 YaSearchApp/26\.47\.1 webOmni Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy Buddy 5
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A1660 Build/[\w.-]+; wv\) AppleWebKit/(?<engine_version>[\d.]+) \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 Midori/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Midori
+    version: '{client_version}'
+    engine: WebKit
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A16 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Callpod Keeper for Android 1\.0 \(app (?<client_version>[\d.]+)/14550101\) Dalvik/2\.1\.0 \(Linux; U; Android (?<os_version>[\d.]+); SM-A166B Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Keeper
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A16 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: com\.sidhbalitech\.ninexplayer/30 \(Linux; U; Android (?<os_version>[\d.]+); es_US; SM-A166M; Build/[\w.-]+; Cronet/140\.0\.7289\.0\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: XP IPTV
+    version: ''
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A16 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: iHeartRadio/(?<client_version>[\d.]+) \(Android (?<os_version>[\d.]+); SM-A166U Build/[\w.-]+\)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: iHeartRadio
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A16 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A166U1 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Grindr/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Grindr
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A16 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SM-A166W Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 \[FB_IAB/FB4A;FBAV/(?<client_version>[\d.]+);IABMV/1;\]
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Facebook
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Samsung
+    model: Galaxy A16 5G
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SH-M25 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sharp
+    model: Aquos Wish 3
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SH-M33 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sharp
+    model: Aquos Sense 10
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); SH-53E Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sharp
+    model: Aquos Sense 9
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); A402SO Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/[\d.]+ Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.yjtop/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: mobile app
+    name: Yahoo! Japan
+    version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Sony
+    model: Xperia 10 VI
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HPPL67A Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Hot Pepper
+    model: Datil
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HPPL62A Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Hot Pepper
+    model: Tabasco
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HPPH88C Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Hot Pepper
+    model: Cascabel
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); HPPH88L Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Hot Pepper
+    model: Verde
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); F-52E Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 YJApp-ANDROID jp\.co\.yahoo\.android\.ybrowser/(?<client_version>[\d.]+)
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Yahoo! Japan Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Fujitsu
+    model: Arrows We 2
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); F-51F Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Fujitsu
+    model: Arrows Alpha F-51F
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Infinix X6840 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: Infinix
+    model: Smart 20
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; arm_64; Android (?<os_version>[\d.]+); Infinix X6840B\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ARM
+  client:
+    type: browser
+    name: Yandex Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: smartphone
+    brand: Infinix
+    model: Smart 20
+  os_family: Android
+  browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); CPH2735\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Mobile
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: OPPO
+    model: A5 5G
+  os_family: Android
+  browser_family: Chrome
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); CPH2763 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: Android
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: Chrome Webview
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{client_version}'
+  device:
+    type: smartphone
+    brand: OPPO
+    model: F31 Pro 5G
+  os_family: Android
+  browser_family: Chrome

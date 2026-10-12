@@ -199,7 +199,7 @@
     sec-ch-ua-model: '^A302SH$'
   os: {name: Android, version: "{os_version}", platform: ""}
   client: {type: browser, name: Chrome Mobile, version: "{client_version}", engine: Blink, engine_version: "{client_version}"}
-  device: {type: smartphone, brand: Sharp, model: Aquos wish3}
+  device: {type: smartphone, brand: Sharp, model: Aquos Wish 3}
   os_family: Android
   browser_family: Chrome
 
@@ -1117,7 +1117,7 @@
     http-x-requested-with: '^AlohaBrowser$'
     sec-ch-ua-platform-version: '^(?<os_version>[\d.]+)$'
     sec-ch-ua-full-version: '^(?<engine_version>[\d.]+)$'
-    sec-ch-ua-model: '^Fairphone (?<model>FP\d+)$'
+    sec-ch-ua-model: '^Fairphone (?:FP)?(?<model>\d+)$'
   os: {name: Android, version: "{os_version}", platform: ""}
   client: {type: browser, name: Aloha Browser, version: "{client_version}", engine: Blink, engine_version: "{engine_version}"}
   device: {type: smartphone, brand: Fairphone, model: "{model}"}

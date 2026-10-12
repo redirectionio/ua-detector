@@ -4118,8 +4118,8 @@
   browser_family: Unknown
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YNDX-00076 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36
   os:
-    name: Android
-    version: '{os_version}'
+    name: YaOS
+    version: ''
     platform: ''
   client:
     type: browser
@@ -4135,8 +4135,8 @@
   browser_family: Unknown
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); YNDX-00074 Build/[\w.-]+; wv\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Version/4\.0 Chrome/(?<engine_version>[\d.]+) YaBrowser/(?<client_version>[\d.]+) \(lite\) TV Safari/537\.36
   os:
-    name: Android
-    version: '{os_version}'
+    name: YaOS
+    version: ''
     platform: ''
   client:
     type: browser
@@ -8813,3 +8813,20 @@
     model: YNDX-00077
   os_family: Android
   browser_family: Chrome
+- regex: Mozilla/5\.0 \(Web0S; Linux/SmartTV\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chr0me/(?<engine_version>[\d.]+) Safari/537\.36 LG Browser/(?<client_version>[\d.]+)\(LGE; 65QNED756RB; 13\.40\.97; 0x00000001; DTV_W23M\); webOS\.TV-2022; LG NetCast\.TV-2013 Compatible \(LGE, 65QNED756RB, wireless\)
+  os:
+    name: webOS
+    version: '23'
+    platform: ''
+  client:
+    type: browser
+    name: LG Browser
+    version: '{client_version}'
+    engine: Blink
+    engine_version: '{engine_version}'
+  device:
+    type: tv
+    brand: LG
+    model: 65QNED756RB
+  os_family: Other Mobile
+  browser_family: Unknown

@@ -1746,7 +1746,8 @@
     producer:
       name: Barracuda Networks, Inc.
       url: https://www.barracudanetworks.com/
-- regex: .*Zeno.*
+# matomo's `^Zeno$`: the name alone, or Blackview's Zeno tablets read as the crawler.
+- regex: Zeno
   bot:
     name: Zeno
     category: Crawler
@@ -3675,7 +3676,7 @@
 - regex: .*Bytespider.*
   bot:
     name: Bytespider
-    category: Search bot
+    category: AI Data Scraper
     url: https://bytedance.com/
     producer:
       name: ByteDance Ltd.
@@ -5288,7 +5289,7 @@
 - regex: '.*(?:MJ12bot).*'
   bot:
     name: MJ12 Bot
-    category: Search bot
+    category: Crawler
     url: http://majestic12.co.uk/bot.php
     producer:
       name: Majestic-12
@@ -5611,6 +5612,13 @@
     producer:
       name: Google Inc.
       url: https://www.google.com/
+- regex: .*google-xrawler.*
+  bot:
+    name: google-xrawler
+    category: Search bot
+    producer:
+      name: Google Inc.
+      url: https://www.google.com/
 - regex: .*SentiBot.*
   bot:
     name: SentiBot
@@ -5900,7 +5908,7 @@
 - regex: '.*meta-externalagent.*'
   bot:
     name: Meta-ExternalAgent
-    category: AI Assistant
+    category: AI Data Scraper
     url: https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
     producer:
       name: Meta Platforms, Inc.
@@ -6719,7 +6727,7 @@
     producer:
       name: Google Inc.
       url: https://www.google.com
-- regex: '.*cert-manager-challenges/v[\d.]+.*'
+- regex: '.*cert-manager(?:-challenges)?/v[\d.]+.*'
   bot:
     name: cert-manager
     category: Service Agent
@@ -6934,3 +6942,303 @@
     name: oha
     category: Benchmark
     url: https://github.com/hatoo/oha
+
+# From the traffic of 2026-10-12, read the same way.
+
+# Search engines that build an index of their own and serve it in public.
+- regex: '.*\bSofyaBot/[\d.]+.*'
+  bot:
+    name: SofyaBot
+    category: Search bot
+    url: https://sofya.co/bot
+    producer:
+      name: Sofya
+      url: https://sofya.co/
+- regex: '.*\bNikyBot/[\d.]+.*'
+  bot:
+    name: NikyBot
+    category: Search bot
+    url: https://nikysearch.it/nikybot.html
+    producer:
+      name: Nikysearch
+      url: https://nikysearch.it/
+- regex: '.*\bAIWebIndex/[\d.]+.*'
+  bot:
+    name: AIWebIndex
+    category: AI Search Crawler
+    url: https://lyrenth.com/bot
+    producer:
+      name: Lyrenth
+      url: https://lyrenth.com/
+# ByteDance publishes no page for it; the address in the string is the whole of what says whose
+# it is.
+- regex: '.*\bdola-searchbot\b.*'
+  bot:
+    name: Dola SearchBot
+    category: AI Search Crawler
+    producer:
+      name: ByteDance
+      url: https://www.bytedance.com/
+- regex: '.*\bBeansLLM-CorpusBot/[\d.]+.*'
+  bot:
+    name: BeansLLM-CorpusBot
+    category: AI Data Scraper
+    url: https://scrape.beansllm.ai/bot
+    producer:
+      name: BeansLLM
+      url: https://beansllm.ai/
+# The suffix is a customer's identifier, so the token alone names the crawler.
+- regex: '.*\bamazon-Quick-on-behalf-of-[0-9a-f-]+.*'
+  bot:
+    name: Amazon Quick
+    category: AI Assistant
+    url: https://docs.aws.amazon.com/quick/latest/userguide/web-crawler-integration.html
+    producer:
+      name: Amazon.com, Inc.
+      url: https://aws.amazon.com/
+- regex: '.*\bShap-User/[\d.]+.*'
+  bot:
+    name: Shap-User
+    category: AI Assistant
+    url: https://parallel.ai/ai/parallel-web-systems-bots
+    producer:
+      name: Parallel Web Systems Inc.
+      url: https://parallel.ai/
+
+# Monitors.
+- regex: '.*\bcheckmk-active-httpv2/[\w.]+.*'
+  bot:
+    name: Checkmk
+    category: Site Monitor
+    url: https://checkmk.com/integrations/check_httpv2
+    producer:
+      name: Checkmk GmbH
+      url: https://checkmk.com/
+- regex: '.*\bDistillWebMonitor/[\w.-]+.*'
+  bot:
+    name: Distill Web Monitor
+    category: Site Monitor
+    url: https://distill.io/kb/help/cloud-local-monitors
+    producer:
+      name: Distill.io
+      url: https://distill.io/
+- regex: .*HetrixTools Uptime Monitoring Bot.*
+  bot:
+    name: HetrixTools
+    category: Site Monitor
+    url: https://hetrixtools.com/uptime-monitor-bot/
+    producer:
+      name: HetrixTools
+      url: https://hetrixtools.com/
+- regex: '.*\(compatible; PingBreak[^)]*\).*'
+  bot:
+    name: PingBreak
+    category: Site Monitor
+    url: https://pingbreak.com/
+- regex: '.*\(compatible; ipMonitor [\d.]+\).*'
+  bot:
+    name: ipMonitor
+    category: Site Monitor
+    url: https://documentation.solarwinds.com/en/success_center/ipmonitor/content/introduction.htm
+    producer:
+      name: SolarWinds
+      url: https://www.solarwinds.com/
+- regex: '.*\bsolarwinds/[\d.]+ \([^)]*solarwinds-observability\).*'
+  bot:
+    name: SolarWinds Observability
+    category: Site Monitor
+    url: https://documentation.solarwinds.com/en/success_center/observability/content/intro/websites/custom-user-agent-headers-guidelines.htm
+    producer:
+      name: SolarWinds
+      url: https://www.solarwinds.com/
+
+# Something a platform sends on its own behalf, or on a merchant's.
+# Jetpack's image CDN writes nothing but this, and `Photon` alone names too much else.
+- regex: 'Photon/[\d.]+'
+  bot:
+    name: Jetpack Photon
+    category: Service Agent
+    url: https://jetpack.com/support/site-accelerator/
+    producer:
+      name: Automattic Inc.
+      url: https://automattic.com/
+- regex: '.*\bStripe/[\d.]+ \(\+https://stripe\.com/docs/webhooks\).*'
+  bot:
+    name: Stripe Webhooks
+    category: Service Agent
+    url: https://docs.stripe.com/webhooks
+    producer:
+      name: Stripe, Inc.
+      url: https://stripe.com/
+- regex: .*Adyen HttpClient [\d.]+.*
+  bot:
+    name: Adyen
+    category: Service Agent
+    url: https://radar.cloudflare.com/bots/directory/adyen
+    producer:
+      name: Adyen N.V.
+      url: https://www.adyen.com/
+- regex: '.*\bSendCloud/[\d.]+ \([^)]*sendcloud\.sc\).*'
+  bot:
+    name: Sendcloud
+    category: Service Agent
+    url: https://support.sendcloud.com/hc/en-gb/articles/35936346704017-Self-hosted-Shop-Systems-Troubleshooting-Integration-Issues
+    producer:
+      name: Sendcloud
+      url: https://www.sendcloud.com/
+- regex: .*Shopify Webfile Service.*
+  bot:
+    name: Shopify Webfile Service
+    category: Service Agent
+    producer:
+      name: Shopify Inc.
+      url: https://www.shopify.com/
+
+# Link checkers.
+- regex: '.*\bOverture-Maps-LinkChecker/[\d.]+.*'
+  bot:
+    name: Overture Maps LinkChecker
+    category: Validator
+    url: https://overturemaps.org/
+    producer:
+      name: Overture Maps Foundation
+      url: https://overturemaps.org/
+- regex: .*EPiServer Link Checker.*
+  bot:
+    name: EPiServer Link Checker
+    category: Validator
+    url: https://docs.optimizely.com/cms-12/docs/link-validation
+    producer:
+      name: Optimizely
+      url: https://www.optimizely.com/
+
+# The rest of the crawlers.
+- regex: '.*\bCaliperbot/[\d.]+.*'
+  bot:
+    name: Caliperbot
+    category: Crawler
+    url: http://www.conductor.com/caliperbot
+    producer:
+      name: Conductor
+      url: https://www.conductor.com/
+- regex: '.*\bSEOJuice-SearchBot/[\d.]+.*'
+  bot:
+    name: SEOJuice-SearchBot
+    category: Crawler
+    url: https://seojuice.com/bot
+    producer:
+      name: SEOJuice
+      url: https://seojuice.com/
+- regex: '.*\bSEOGetsBot/[\d.]+.*'
+  bot:
+    name: SEOGetsBot
+    category: Crawler
+    url: https://seogets.com/bot
+    producer:
+      name: SEO Gets
+      url: https://seogets.com/
+- regex: '.*\bOseox/[\d.]+.*'
+  bot:
+    name: Oseox
+    category: Crawler
+    url: https://radar.cloudflare.com/bots/directory/oseox
+    producer:
+      name: Oseox
+      url: https://tool.oseox.com/
+- regex: '.*\bPeecAudit/[\d.]+.*'
+  bot:
+    name: PeecAudit
+    category: Crawler
+    url: https://peec.ai/
+    producer:
+      name: Peec AI
+      url: https://peec.ai/
+- regex: '.*\bSenderBot/[\d.]+.*'
+  bot:
+    name: SenderBot
+    category: Crawler
+    url: https://sender-marketing.de/bot
+    producer:
+      name: Sender Online Marketing GmbH
+      url: https://sender-marketing.de/
+- regex: '.*\bAudigentAdBot\b.*'
+  bot:
+    name: AudigentAdBot
+    category: Crawler
+    url: https://audigent.com/bot.html
+    producer:
+      name: Audigent
+      url: https://audigent.com/
+- regex: '.*\bcaptify-crawler\b.*'
+  bot:
+    name: Captify
+    category: Crawler
+    url: https://knownagents.com/agents/captify-crawler
+    producer:
+      name: Captify
+      url: https://www.captifytechnologies.com/
+- regex: '.*\bGnowitNewsbot\b.*'
+  bot:
+    name: GnowitNewsbot
+    category: Crawler
+    url: https://darkvisitors.com/agents/gnowitnewsbot
+    producer:
+      name: Gnowit
+      url: https://www.gnowit.com/
+- regex: '.*\bPressEngineBot\b.*'
+  bot:
+    name: PressEngineBot
+    category: Crawler
+    url: https://pressengine.net/crawl-policy
+    producer:
+      name: PressEngine
+      url: https://pressengine.net/
+- regex: '.*\bCookieInformationScanner\b.*'
+  bot:
+    name: Cookie Information Scanner
+    category: Crawler
+    url: https://support.cookieinformation.com/en/articles/5374116-all-you-need-to-know-about-the-scanner
+    producer:
+      name: Cookie Information
+      url: https://cookieinformation.com/
+# The price comparison sites, which name themselves in the string and publish no page for the
+# crawler that fills them.
+- regex: '.*\bwine-searcherbot\b.*'
+  bot:
+    name: Wine-Searcher
+    category: Crawler
+    url: https://www.wine-searcher.com/technology
+    producer:
+      name: Wine-Searcher
+      url: https://www.wine-searcher.com/
+- regex: '.*\(compatible; BOT guenstiger\.de\).*'
+  bot:
+    name: guenstiger.de
+    category: Crawler
+    producer:
+      name: guenstiger.de GmbH
+      url: https://www.guenstiger.de/
+- regex: '.*\bcardpulsebot/[\d.]+.*'
+  bot:
+    name: CardPulse
+    category: Crawler
+    producer:
+      name: CardPulse
+      url: https://cardpulse.nl/
+- regex: '.*\brajahinta-crawler/[\d.]+.*'
+  bot:
+    name: Rajahinta
+    category: Crawler
+    producer:
+      name: Rajahinta
+      url: https://rajahinta.fi/
+
+# feedparser 6 names itself in lower case, which the `UniversalFeedParser` rule above does not read.
+- regex: '.*\bfeedparser/[\d.]+.*'
+  bot:
+    name: UniversalFeedParser
+    category: Feed Fetcher
+    url: https://github.com/kurtmckee/feedparser
+    producer:
+      name: Kurt McKee
+      url: https://github.com/kurtmckee

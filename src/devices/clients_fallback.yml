@@ -12,6 +12,11 @@
 # enough to turn up inside another string, so they only answer where nothing else does.
 
 -
+  regex: '.*(?:ocaml-cohttp/(?<client_version>\d+[.\d]+)).*'
+  priority: -3
+  client: {type: library, name: 'ocaml-cohttp', version: "{client_version}"}
+
+-
   regex: '.*(?:nscurl).*'
   priority: -3
   client: {type: library, name: 'nscurl', version: ""}
@@ -157,9 +162,9 @@
   client: {type: library, name: 'cpp-httplib', version: "{client_version}"}
 
 -
-  regex: '.*(?:AppleCoreMedia/1\.0\.0).*'
+  regex: '.*(?:AppleCoreMedia).*'
   priority: -3
-  client: {type: library, name: 'iOS Application', version: ""}
+  client: {type: library, name: 'Apple Core Media', version: ""}
 
 -
   regex: '.*(?:OkDownload/(?<client_version>[\d.]+)).*'
@@ -1032,7 +1037,7 @@
   client: {type: browser, name: 'Chrome Mobile', version: "{client_version}"}
 
 -
-  regex: '.*(?:(?: wv\)|Version/).* Chrome(?:/(?<client_version>\d+[.\d]+))?).*'
+  regex: '.*(?:(?: wv\)|(?:Version|Ojxvms)/).* Chrome(?:/(?<client_version>\d+[.\d]+))?).*'
   priority: -3
   client: {type: browser, name: 'Chrome Webview', version: "{client_version}"}
 
@@ -1327,7 +1332,7 @@
   client: {type: browser, name: 'Iron', version: "{client_version}"}
 
 -
-  regex: '.*(?:Chrome(?:/(?<client_version>\d+\.[.\d]+) )?.*Iron).*'
+  regex: '.*(?:Chrome(?:/(?<client_version>\d+\.[.\d]+) )?.*Iron Safari).*'
   priority: -3
   client: {type: browser, name: 'Iron', version: "{client_version}"}
 
@@ -3502,6 +3507,16 @@
   client: {type: browser, name: 'Fulldive', version: "{client_version}"}
 
 -
+  regex: '.*(?:BLACKBERRY-WorkConnect/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: pim, name: 'BlackBerry Work', version: "{client_version}"}
+
+-
+  regex: '.*(?:WorxMail/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: pim, name: 'Citrix Secure Mail', version: "{client_version}"}
+
+-
   regex: '.*(?:Android-Gmail).*'
   priority: -3
   client: {type: pim, name: 'Gmail', version: ""}
@@ -3860,6 +3875,46 @@
   regex: '.*(?:Audacious(?:[ /](?<client_version>[\d.]+))?).*'
   priority: -3
   client: {type: mediaplayer, name: 'Audacious', version: "{client_version}"}
+
+-
+  regex: '.*(?:dogtorance/[\d.]+).*'
+  priority: -3
+  client: {type: mobile app, name: 'Dogtorance', version: ""}
+
+-
+  regex: '.*(?:Xiaoyuzhou/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'XiaoYuZhou', version: "{client_version}"}
+
+-
+  regex: '.*(?:com\.sidhbalitech\.ninexplayer).*'
+  priority: -3
+  client: {type: mobile app, name: 'XP IPTV', version: ""}
+
+-
+  regex: '.*(?:Aria2App/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Aria2App', version: "{client_version}"}
+
+-
+  regex: '.*(?:Grindr/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'Grindr', version: "{client_version}"}
+
+-
+  regex: '.*(?:newsbreak/(?<client_version>[\d.]+)).*'
+  priority: -3
+  client: {type: mobile app, name: 'NewsBreak', version: "{client_version}"}
+
+-
+  regex: '.*(?:Lotus Notes Traveler (?:Nokia|WM) (?<client_version>[\d.]+)|SyncML(?: HTTP)? Client).*'
+  priority: -3
+  client: {type: mobile app, name: 'Lotus Notes Traveler', version: "{client_version}"}
+
+-
+  regex: '.*(?:FOX Sports GO).*'
+  priority: -3
+  client: {type: mobile app, name: 'FOX Sports GO', version: ""}
 
 -
   regex: '.*(?:boohee/(?<client_version>[\d.]+)).*'
@@ -5454,7 +5509,7 @@
 -
   regex: '.*(?:RoboForm/(\d+[.\d]+) CFNetwork).*'
   priority: -3
-  client: {type: mobile app, name: 'RoboForm', version: ""}
+  client: {type: mobile app, name: 'RoboForm Passwort Manager', version: ""}
 
 -
   regex: '.*(?:Papers/(?<client_version>\d+[.\d]+) CFNetwork).*'
@@ -5610,6 +5665,11 @@
   regex: '.*(?:Skyeng Teachers/(?<client_version>[\d.]+)).*'
   priority: -3
   client: {type: mobile app, name: 'Skyeng Teachers', version: "{client_version}"}
+
+-
+  regex: '.*(?:Callpod Keeper for Android 1\.0 \((?:app )?(?<client_version>[\d.]+)/).*'
+  priority: -3
+  client: {type: mobile app, name: 'Keeper', version: "{client_version}"}
 
 -
   regex: '.*(?:Keeper/(?<client_version>[\d.]+)).*'

@@ -9,8 +9,9 @@
 # Where a user agent lands that has named no client at all. All at -4, below everything that
 # names one.
 
+# The token opens a word, as matomo's `\bMacintosh`: `Power%20Macintosh` is an architecture.
 -
-  regex: '.*Macintosh.*'
+  regex: '(?:.*[^a-z0-9_])?Macintosh.*'
   priority: -4
   client: {type: browser, name: 'Safari', version: ""}
   browser_family: 'Safari'

@@ -239,3 +239,11 @@
     matomo files ByteDance's crawler and Majestic's under Search bot, which put them in the log
     injector's search-bot column. One collects training data and the other maps links for an SEO
     index, so `tests/corrections.yml` gives them a category that lands them in the tool one.
+
+- names_agree: true
+  we_say_type: 3
+  reason: >-
+    the log injector counts a client as a person only where it is a browser, an application or a
+    PIM and the string names its platform, and answers tool for everything else: the libraries
+    above all, which the dump was written before, when one naming no system read as mobile and
+    one naming Android or Linux as the machine under it.

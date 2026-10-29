@@ -52,6 +52,9 @@ Detection {
 - `bot` is set for a crawler, and then **it is the whole answer**: the other five fields are
   empty. `Detection::named()` hands that back as an enum, so a `match` cannot read a client where
   there is none. `bot.category` is a `BotCategory`, with `is_search_bot()` on it.
+- `is_headless()` says whether the client is a browser run by a program -- Headless Chrome,
+  Headless Edge, Lightpanda. Matomo reads them as browsers, and so does this library: the
+  detection stays the same, and this is for a caller who counts visitors to leave them out.
 - The text fields are empty rather than absent when nothing was found.
 
 ## Client hints

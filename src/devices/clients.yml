@@ -100,6 +100,16 @@
   client: {type: browser, name: 'Headless Chrome', version: "{client_version}"}
   browser_family: 'Chrome'
 
+# A headless Chrome whose user agent was made to read as a plain one still says so in its brands.
+# `[^s]` leaves a user agent that says HeadlessChrome itself to the entry above, and its version.
+-
+  regex: '.*[^s]Chrome/(?<engine_version>[\d.]+).*'
+  headers:
+    sec-ch-ua: '"HeadlessChrome";v="(?<major>\d+)"'
+  priority: -2
+  client: {type: browser, name: 'Headless Chrome', version: "{major}.0", engine_version: "{engine_version}"}
+  browser_family: 'Chrome'
+
 -
   regex: '.*Chrome/(?<client_version>[\d.]+) Mobile.*'
   priority: -2

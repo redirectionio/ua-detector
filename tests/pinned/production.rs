@@ -40,6 +40,45 @@ fn human_traffic_is_never_a_bot() {
     }
 }
 
+/// A browser that says it runs under a program stays the browser matomo names, on the desktop it
+/// names, and says so on top; a Chrome that does not say so, or a crawler dressed in one, does
+/// not.
+#[test]
+fn a_headless_browser_is_still_a_browser() {
+    let headless = [
+        ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/146.0.0.0 Safari/537.36", &[][..], "Headless Chrome"),
+        ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/127.0.2651.74 Safari/537.36 HeadlessEdg/127.0.2651.74", &[][..], "Headless Edge"),
+        ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.63 Safari/537.36", &[("sec-ch-ua", r#""HeadlessChrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24""#)][..], "Headless Chrome"),
+        ("Lightpanda/1.0", &[][..], "Lightpanda"),
+    ];
+
+    for (user_agent, headers, name) in headless {
+        let detection = ua_detector::shared()
+            .detect_with_headers(user_agent, headers)
+            .unwrap_or_else(|| panic!("no entry matches {user_agent}"));
+
+        assert_eq!(detection.client.as_ref().map(|client| client.name.as_str()), Some(name), "{user_agent}");
+        assert!(detection.is_headless(), "not headless: {user_agent}");
+        assert_eq!(detection.bot, None, "read as a bot: {user_agent}");
+    }
+
+    // The brands carry the major version alone, and matomo answers it as such.
+    let hinted = ua_detector::shared()
+        .detect_with_headers(headless[2].0, headless[2].1)
+        .and_then(|detection| detection.client)
+        .unwrap_or_default();
+    assert_eq!((hinted.version.as_str(), hinted.engine.as_str(), hinted.engine_version.as_str()), ("113.0", "Blink", "113.0.5672.63"));
+
+    let driven_by_a_person_or_a_crawler = [
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/89.0.4389.82 Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+    ];
+
+    for user_agent in driven_by_a_person_or_a_crawler {
+        assert!(!detect(user_agent).is_some_and(|detection| detection.is_headless()), "headless: {user_agent}");
+    }
+}
+
 /// The plainest string Chrome sends, on the desktops it sends it from: the build number moves
 /// and nothing else does.
 #[test]

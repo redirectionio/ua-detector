@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
-      # Every one of the 38 301 fixture cases, one test each, read off disk. Twice: once against
+      # Every one of the 38 383 fixture cases, one test each, read off disk. Twice: once against
       # the database as it ships, embedded, and once against the files, which is how it is run
       # while working.
       - run: cargo test --release --test corpus

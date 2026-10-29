@@ -8,7 +8,7 @@ agent needs to know before touching anything.
 
 ## The specification is the fixtures, and only the fixtures
 
-`tests/matomo-device-detector/fixtures/*.yml` says what every one of 38 301 user agents means.
+`tests/matomo-device-detector/fixtures/*.yml` says what every one of 38 383 user agents means.
 That corpus, pinned to one revision of matomo-org/device-detector in `castor.php`, is the whole
 specification. A change is right when the tests pass and wrong when they do not; there is no other
 authority to appeal to.
@@ -136,7 +136,7 @@ feature does rebuild, so stay on one side of it while working.
 
 `cargo bench` is criterion, so it keeps the last run and tells you what moved; `--save-baseline`
 and `--baseline` name one to keep. It detects over a stride across the corpus rather than all
-38 301 agents, because at a budget of zero a lookup costs about six milliseconds against half a
+38 383 agents, because at a budget of zero a lookup costs about six milliseconds against half a
 millisecond cached, and ten samples of the whole corpus at that rate is most of an hour. That
 makes the default good for comparing two runs and not for quoting on its own; `DETECT_SAMPLE`
 raises it when a number has to stand by itself. Criterion sizes a run by the measurement time it

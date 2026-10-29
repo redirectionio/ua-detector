@@ -33,10 +33,10 @@
   browser_family: Unknown
 
 -
-  regex: 'WhatsApp/(?<client_version>[\d.]+) iPhone_OS/(?<os_version>[\d.]+) Device/iPhone_\d+'
+  regex: 'WhatsApp/(?<client_version>[\d.]+) iPhone_OS/(?<os_version>[\d.]+) Device/iPhone_(?<n>\d+)'
   os: {name: iOS, version: "{os_version}", platform: ""}
   client: {type: mobile app, name: WhatsApp, version: "{client_version}"}
-  device: {type: smartphone, brand: Apple, model: iPhone}
+  device: {type: smartphone, brand: Apple, model: "iPhone {n}"}
   os_family: iOS
   browser_family: Unknown
 

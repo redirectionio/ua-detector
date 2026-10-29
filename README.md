@@ -15,7 +15,7 @@ assert_eq!(found.os.unwrap().version, "10");
 ```
 
 This library is based on the [matomo device detector library](https://github.com/matomo-org/device-detector):
-its test fixtures, 38 301 user agents and what each one means, are the specification this database
+its test fixtures, 38 383 user agents and what each one means, are the specification this database
 is written against. Matomo's own regexes are not vendored and none of them is copied here.
 
 The main change is how the parsing is done, with a specific structure to ensure better speed with

@@ -6452,3 +6452,343 @@
     model: Galaxy Z Fold 7
   os_family: Android
   browser_family: Unknown
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note 13R Pro Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/(?<client_version>[\d.]+)-gn
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Mi Browser'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 13R Pro'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note 13 Pro\+ Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/(?<client_version>[\d.]+)-gn
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Mi Browser'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 13 Pro+'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note 12 Turbo Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/(?<client_version>[\d.]+)-gn
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Mi Browser'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 12 Turbo'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note12 Pro 5G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/(?<client_version>[\d.]+)-gn
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Mi Browser'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 12 Pro 5G'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note 11 Pro Plus\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 11 Pro+'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note10 Pro Max\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Chrome Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 10 Pro Max'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note10 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 EdgA/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Microsoft Edge'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 10 Pro'
+  os_family: 'Android'
+  browser_family: 'Internet Explorer'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note10 Lite\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Chrome Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 10 Lite'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note10 JE\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 10 JE'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note10 5G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 10 5G'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note9S Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 9S Pro'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note9 Pro\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Chrome Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 9 Pro'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note9 Pro 5G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 9 Pro 5G'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note9\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 9'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note9 5G\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 EdgA/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Microsoft Edge'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 9 5G'
+  os_family: 'Android'
+  browser_family: 'Internet Explorer'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Mi Note10 Lite\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Chrome Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Mi Note 10 Lite'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Mi Note10\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 OPR/(?<client_version>[\d.]+)
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Opera Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Mi Note 10'
+  os_family: 'Android'
+  browser_family: 'Opera'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); Redmi Note 12 Pro\+; Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Mobile Safari/537\.36
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Chrome Mobile'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{client_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 12 Pro+'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); REDMI Note 15 Pro\+ 5G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/(?<client_version>[\d.]+)-gn
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Mi Browser'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 15 Pro+ 5G'
+  os_family: 'Android'
+  browser_family: 'Chrome'
+- regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); REDMI Note 15 5G Build/[\w.-]+\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<engine_version>[\d.]+) Mobile Safari/537\.36 XiaoMi/MiuiBrowser/(?<client_version>[\d.]+)-gn
+  os:
+    name: 'Android'
+    version: '{os_version}'
+    platform: ''
+  client:
+    type: browser
+    name: 'Mi Browser'
+    version: '{client_version}'
+    engine: 'Blink'
+    engine_version: '{engine_version}'
+  device:
+    type: phablet
+    brand: 'Xiaomi'
+    model: 'Redmi Note 15 5G'
+  os_family: 'Android'
+  browser_family: 'Chrome'

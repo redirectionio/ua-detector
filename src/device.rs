@@ -141,6 +141,19 @@ impl Detection {
 
         self.uses_mobile_only_browser() || !self.is_desktop()
     }
+
+    /// Whether the client is a browser driven by a program rather than a person: Puppeteer,
+    /// Playwright, a prerenderer, a test runner.
+    ///
+    /// Matomo has no counterpart and reads these as browsers, on purpose: they render with a real
+    /// engine. This says nothing against that, it adds what the name already holds. Only a
+    /// browser that declares itself headless is caught; one driven with its usual user agent
+    /// cannot be told apart from a person, and a crawler naming itself is a bot instead.
+    pub fn is_headless(&self) -> bool {
+        self.client
+            .as_ref()
+            .is_some_and(|client| client.kind == Some(ClientKind::Browser) && HEADLESS_BROWSERS.contains(&client.name.as_str()))
+    }
 }
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, serde::Deserialize)]
@@ -602,6 +615,10 @@ pub const MOBILE_ONLY_BROWSERS: &[&str] = &[
 
 /// Whether a client is a browser only a phone runs, which both [`Detection::is_mobile`] and the
 /// desktop fallback below have to ask, one of a finished detection and one part way through it.
+/// The browsers that run without a window, under a program: the ones matomo names, by the name
+/// this library answers with.
+pub const HEADLESS_BROWSERS: &[&str] = &["Headless Chrome", "Headless Edge", "Lightpanda"];
+
 fn mobile_only(kind: Option<ClientKind>, name: &str) -> bool {
     kind == Some(ClientKind::Browser) && MOBILE_ONLY_BROWSERS.contains(&name)
 }

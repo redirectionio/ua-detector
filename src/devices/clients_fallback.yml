@@ -5947,6 +5947,11 @@
   client: {type: mobile app, name: 'WhatsApp', version: "{client_version}"}
 
 -
+  regex: '.*(?:WhatsApp/(?<client_version>[\d.]+) N)'
+  priority: -3
+  client: {type: mobile app, name: 'WhatsApp Web', version: "{client_version}"}
+
+-
   regex: '.*(?:WhatsApp/(?<client_version>[\d.]+).+CloudAPI).*'
   priority: -3
   client: {type: mobile app, name: 'WhatsApp Business', version: "{client_version}"}

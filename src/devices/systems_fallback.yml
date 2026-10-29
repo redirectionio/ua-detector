@@ -214,7 +214,7 @@
   os: {name: 'Fuchsia'}
   os_family: 'GNU/Linux'
 -
-  regex: '.*(?:Darwin|Macintosh|Mac[ _]PowerPC|PPC|iMac|MacBook|.*macOS|AppleExchangeWebServices|com\.apple\.trustd|Sonos/.+\(MDCR_|WhatsApp/.*N$|nook browser).*'
+  regex: '.*(?:Darwin|Macintosh|Mac[ _]PowerPC|PPC|iMac|MacBook|.*macOS|AppleExchangeWebServices|com\.apple\.trustd|Sonos/.+\(MDCR_|nook browser).*'
   priority: -4
   os: {name: 'Mac'}
   os_family: 'Mac'
@@ -1324,7 +1324,7 @@
   os: {name: 'FortiOS', version: "{os_version}", platform: ""}
   os_family: 'GNU/Linux'
 -
-  regex: '.*Steam.*'
+  regex: '.*(?:SteamDeck|Valve Steam).*'
   priority: -4
   os: {name: 'SteamOS'}
   os_family: 'Mobile Gaming Console'

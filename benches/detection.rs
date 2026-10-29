@@ -2,7 +2,7 @@
 //!
 //!     cargo bench
 //!     cargo bench -- detect/20000        # one group of it
-//!     DETECT_SAMPLE=38301 cargo bench    # the whole corpus, and a long wait
+//!     DETECT_SAMPLE=38383 cargo bench    # the whole corpus, and a long wait
 //!
 //! The memory side of the same question is `cargo run --release --example memory`. Criterion
 //! cannot answer it: resident size is a property of the process rather than of an operation, and

@@ -100,6 +100,16 @@
   client: {type: browser, name: 'Headless Chrome', version: "{client_version}"}
   browser_family: 'Chrome'
 
+# A headless Chrome whose user agent was made to read as a plain one still says so in its brands.
+# `[^s]` leaves a user agent that says HeadlessChrome itself to the entry above, and its version.
+-
+  regex: '.*[^s]Chrome/(?<engine_version>[\d.]+).*'
+  headers:
+    sec-ch-ua: '"HeadlessChrome";v="(?<major>\d+)"'
+  priority: -2
+  client: {type: browser, name: 'Headless Chrome', version: "{major}.0", engine_version: "{engine_version}"}
+  browser_family: 'Chrome'
+
 -
   regex: '.*Chrome/(?<client_version>[\d.]+) Mobile.*'
   priority: -2
@@ -310,6 +320,12 @@
   regex: '.*WhatsApp(?:Electron|-app|-linux-app)?[ /](?<client_version>[\d.]+).*'
   priority: -2
   client: {type: mobile app, name: 'WhatsApp', version: "{client_version}"}
+  browser_family: 'Unknown'
+
+-
+  regex: '.*WhatsApp/(?<client_version>[\d.]+) N'
+  priority: -2
+  client: {type: mobile app, name: 'WhatsApp Web', version: "{client_version}"}
   browser_family: 'Unknown'
 
 # Facebook Lite writes EMA where the full app writes FBIOS or FB4A, its version still at FBAV.

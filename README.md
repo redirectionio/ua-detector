@@ -15,7 +15,7 @@ assert_eq!(found.os.unwrap().version, "10");
 ```
 
 This library is based on the [matomo device detector library](https://github.com/matomo-org/device-detector):
-its test fixtures, 38 301 user agents and what each one means, are the specification this database
+its test fixtures, 38 383 user agents and what each one means, are the specification this database
 is written against. Matomo's own regexes are not vendored and none of them is copied here.
 
 The main change is how the parsing is done, with a specific structure to ensure better speed with
@@ -52,6 +52,9 @@ Detection {
 - `bot` is set for a crawler, and then **it is the whole answer**: the other five fields are
   empty. `Detection::named()` hands that back as an enum, so a `match` cannot read a client where
   there is none. `bot.category` is a `BotCategory`, with `is_search_bot()` on it.
+- `is_headless()` says whether the client is a browser run by a program -- Headless Chrome,
+  Headless Edge, Lightpanda. Matomo reads them as browsers, and so does this library: the
+  detection stays the same, and this is for a caller who counts visitors to leave them out.
 - The text fields are empty rather than absent when nothing was found.
 
 ## Client hints

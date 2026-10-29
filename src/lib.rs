@@ -9,7 +9,7 @@ mod template;
 
 pub use budget::{Budget, UnreadableBudget};
 pub use detector::{DetectionTrace, Detector, RuleTrace, common_user_agents, shared};
-pub use device::{Bot, Client, Detection, Device, MOBILE_ONLY_BROWSERS, Named, Os, Producer};
+pub use device::{Bot, Client, Detection, Device, HEADLESS_BROWSERS, MOBILE_ONLY_BROWSERS, Named, Os, Producer};
 pub use kind::{BotCategory, ClientKind, DeviceKind, UnknownKind};
 pub use regex::{MatchPath, Measure, RegexOptions};
 pub use regex_radix_tree::{RegexTreeMap, Trace, UniqueRegexTreeMap};

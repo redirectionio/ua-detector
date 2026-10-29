@@ -40,6 +40,45 @@ fn human_traffic_is_never_a_bot() {
     }
 }
 
+/// A browser that says it runs under a program stays the browser matomo names, on the desktop it
+/// names, and says so on top; a Chrome that does not say so, or a crawler dressed in one, does
+/// not.
+#[test]
+fn a_headless_browser_is_still_a_browser() {
+    let headless = [
+        ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/146.0.0.0 Safari/537.36", &[][..], "Headless Chrome"),
+        ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/127.0.2651.74 Safari/537.36 HeadlessEdg/127.0.2651.74", &[][..], "Headless Edge"),
+        ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.63 Safari/537.36", &[("sec-ch-ua", r#""HeadlessChrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24""#)][..], "Headless Chrome"),
+        ("Lightpanda/1.0", &[][..], "Lightpanda"),
+    ];
+
+    for (user_agent, headers, name) in headless {
+        let detection = ua_detector::shared()
+            .detect_with_headers(user_agent, headers)
+            .unwrap_or_else(|| panic!("no entry matches {user_agent}"));
+
+        assert_eq!(detection.client.as_ref().map(|client| client.name.as_str()), Some(name), "{user_agent}");
+        assert!(detection.is_headless(), "not headless: {user_agent}");
+        assert_eq!(detection.bot, None, "read as a bot: {user_agent}");
+    }
+
+    // The brands carry the major version alone, and matomo answers it as such.
+    let hinted = ua_detector::shared()
+        .detect_with_headers(headless[2].0, headless[2].1)
+        .and_then(|detection| detection.client)
+        .unwrap_or_default();
+    assert_eq!((hinted.version.as_str(), hinted.engine.as_str(), hinted.engine_version.as_str()), ("113.0", "Blink", "113.0.5672.63"));
+
+    let driven_by_a_person_or_a_crawler = [
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/89.0.4389.82 Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+    ];
+
+    for user_agent in driven_by_a_person_or_a_crawler {
+        assert!(!detect(user_agent).is_some_and(|detection| detection.is_headless()), "headless: {user_agent}");
+    }
+}
+
 /// The plainest string Chrome sends, on the desktops it sends it from: the build number moves
 /// and nothing else does.
 #[test]
@@ -581,6 +620,11 @@ fn a_crawler_the_web_cannot_place_stays_generic() {
         "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; SFbot/1.0; +http://www.salesforce.com/bot.html) Chrome/W.X.Y.Z Safari/537.36",
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko, Yokohama Institute of Information Security  https://www.iisec.ac.jp) Chrome/124.0.0.0 Safari/537.36",
         "SSLPing-Checker/1.0",
+        "MochiImageCrawler/0.1",
+        "Mozilla/5.0 (compatible; symfony-scanner)",
+        "BLP_bbot/0.1",
+        "ThreadLabsResearch (+research crawl; honours X-Robots-Tag noai)",
+        "[NVIDIA]-[PSIRT@nvidia.com]-[NSPECT-I05S-FIEU]-[NVIDIABOT]",
     ];
 
     for user_agent in unnamed {
@@ -640,6 +684,41 @@ fn the_traffic_of_2026_10_12_names_its_crawlers() {
         ("cardpulsebot/0.1 (+https://cardpulse.nl)", "CardPulse", "Crawler"),
         ("rajahinta-crawler/1.0 (+https://rajahinta.fi)", "Rajahinta", "Crawler"),
         ("feedparser/6.0.8 +https://github.com/kurtmckee/feedparser/", "UniversalFeedParser", "Feed Fetcher"),
+    ];
+
+    let wrong: Vec<String> = cases
+        .iter()
+        .filter_map(|(user_agent, name, category)| {
+            let found = detect(user_agent)
+                .and_then(|detection| detection.bot)
+                .map(|bot| {
+                    (bot.name, bot.category.map(|category| category.as_str().to_owned()).unwrap_or_default())
+                })
+                .unwrap_or_default();
+
+            (found != ((*name).to_owned(), (*category).to_owned()))
+                .then(|| format!("\n  wanted {name:?} {category:?}, got {found:?}\n    {user_agent}"))
+        })
+        .collect();
+
+    assert!(wrong.is_empty(), "{}", wrong.join(""));
+}
+
+/// The crawlers, monitors and agents of the traffic of 2026-10-29, one case per entry.
+#[test]
+fn the_traffic_of_2026_10_29_names_its_crawlers() {
+    let cases = [
+        ("Mozilla/5.0 (compatible; TalarionSearchBot/1.0; research; contact: contact@talarion.tech)", "TalarionSearchBot", "AI Search Crawler"),
+        ("ElevenlabsBot/1.0", "ElevenlabsBot", "AI Assistant"),
+        ("aikido-scan-agent/1.0", "Aikido Security", "Security Checker"),
+        ("centreon::plugins::backend::http::useragent", "Centreon", "Site Monitor"),
+        ("kinsta-bot", "Kinsta", "Site Monitor"),
+        ("contentsquare static resource scraper", "Contentsquare Static Resource Scraper", "Service Agent"),
+        ("Svix-Webhooks/1.101.0", "Svix", "Service Agent"),
+        ("cert-manager-challenges/canary (linux/amd64) cert-manager/", "cert-manager", "Service Agent"),
+        ("eplictabot/1.0 (+https://eplicta.se/bot/)", "EplictaBot", "Crawler"),
+        ("ClueWeb-Crawler/1.0 (+https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/; mailto:cmu-clueweb-crawler@andrew.cmu.edu)", "ClueWeb Crawler", "Crawler"),
+        ("topicsearch-crawler/0.1 (+https://fatgrid.com/crawler; contact: max@xamsor.com)", "FatGrid TopicSearch", "Crawler"),
     ];
 
     let wrong: Vec<String> = cases

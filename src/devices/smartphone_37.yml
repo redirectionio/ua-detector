@@ -5409,7 +5409,7 @@
   device:
     type: smartphone
     brand: Honor
-    model: X9b
+    model: X9b 5G
   os_family: Android
   browser_family: Chrome
 - regex: Mozilla/5\.0 \(Linux; Android (?<os_version>[\d.]+); VER-AN00\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/(?<client_version>[\d.]+) Safari/537\.36

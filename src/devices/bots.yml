@@ -6759,7 +6759,8 @@
     producer:
       name: Google Inc.
       url: https://www.google.com
-- regex: '.*cert-manager(?:-challenges)?/v[\d.]+.*'
+# A build cut from no tag says `canary` where a release says its version.
+- regex: '.*cert-manager(?:-challenges)?/(?:v[\d.]+|canary\b).*'
   bot:
     name: cert-manager
     category: Service Agent
@@ -7264,6 +7265,86 @@
     producer:
       name: Rajahinta
       url: https://rajahinta.fi/
+- regex: '.*\baikido-scan-agent/[\d.]+.*'
+  bot:
+    name: Aikido Security
+    category: Security Checker
+    url: https://help.aikido.dev/dast-surface-monitoring/miscellaneous/allowing-ip-addresses-for-dast-surface-monitoring
+    producer:
+      name: Aikido Security
+      url: https://www.aikido.dev/
+- regex: '.*\bElevenlabsBot/[\d.]+.*'
+  bot:
+    name: ElevenlabsBot
+    category: AI Assistant
+    url: https://elevenlabs.io/docs/bots
+    producer:
+      name: ElevenLabs
+      url: https://elevenlabs.io/
+- regex: '.*\bEplictaBot/[\d.]+.*'
+  bot:
+    name: EplictaBot
+    category: Crawler
+    url: https://eplicta.se/bot/
+    producer:
+      name: Eplicta
+      url: https://eplicta.se/
+- regex: '.*\bTalarionSearchBot/[\d.]+.*'
+  bot:
+    name: TalarionSearchBot
+    category: AI Search Crawler
+    url: https://knownagents.com/agents/talarionsearchbot
+    producer:
+      name: Talarion
+      url: https://talarion.com/
+- regex: '.*\bClueWeb-Crawler/[\d.]+.*'
+  bot:
+    name: ClueWeb Crawler
+    category: Crawler
+    url: https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/
+    producer:
+      name: Carnegie Mellon University
+      url: https://www.cmu.edu/
+- regex: '.*\btopicsearch-crawler/[\d.]+.*'
+  bot:
+    name: FatGrid TopicSearch
+    category: Crawler
+    url: https://fatgrid.com/crawler
+    producer:
+      name: FatGrid
+      url: https://fatgrid.com/
+- regex: '.*centreon::plugins::.*'
+  bot:
+    name: Centreon
+    category: Site Monitor
+    url: https://github.com/centreon/centreon-plugins
+    producer:
+      name: Centreon
+      url: https://www.centreon.com/
+- regex: '.*\bkinsta-bot\b.*'
+  bot:
+    name: Kinsta
+    category: Site Monitor
+    url: https://kinsta.com/docs/wordpress-hosting/wordpress-monitoring/uptime-monitoring/
+    producer:
+      name: Kinsta Inc.
+      url: https://kinsta.com/
+- regex: '.*contentsquare static resource scraper.*'
+  bot:
+    name: Contentsquare Static Resource Scraper
+    category: Service Agent
+    url: https://docs.contentsquare.com/en/web/static-assets-scraping
+    producer:
+      name: Contentsquare
+      url: https://contentsquare.com/
+- regex: '.*\bSvix-Webhooks/[\d.]+.*'
+  bot:
+    name: Svix
+    category: Service Agent
+    url: https://www.svix.com/http-sender/
+    producer:
+      name: Svix
+      url: https://www.svix.com/
 
 # feedparser 6 names itself in lower case, which the `UniversalFeedParser` rule above does not read.
 - regex: '.*\bfeedparser/[\d.]+.*'

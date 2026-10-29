@@ -180,6 +180,30 @@
   bot:
     name: WATCrawler
     category: Crawler
+- regex: .*TuneIn-DirMon.*
+  bot:
+    name: TuneIn-DirMon
+    category: Service Agent
+    url: https://tunein.com/
+    producer:
+      name: TuneIn, Inc.
+      url: https://tunein.com/
+- regex: .*IsonAI-User.*
+  bot:
+    name: IsonAI-User
+    category: AI Assistant
+    url: https://docs.isonai.com/en/bots/
+    producer:
+      name: PT Epithre Teknologi Indonesia
+      url: https://www.epithre.com/
+- regex: .*IsonSearchBot.*
+  bot:
+    name: IsonSearchBot
+    category: Search bot
+    url: https://search.isonai.com/bot
+    producer:
+      name: PT Epithre Teknologi Indonesia
+      url: https://www.epithre.com/
 - regex: .*MyCellar.*
   bot:
     name: MyCellar
@@ -6514,6 +6538,14 @@
     producer:
       name: Aboundex.com
       url: http://www.aboundex.com
+- regex: .*\b9bot/.*
+  bot:
+    name: 9bot
+    category: Crawler
+    url: https://9bot.com.br/en/9bot-docs
+    producer:
+      name: 9bot
+      url: https://9bot.com.br
 - regex: '.*360Spider.*'
   bot:
     name: 360Spider

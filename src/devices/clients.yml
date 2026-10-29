@@ -312,6 +312,12 @@
   client: {type: mobile app, name: 'WhatsApp', version: "{client_version}"}
   browser_family: 'Unknown'
 
+-
+  regex: '.*WhatsApp/(?<client_version>[\d.]+) N'
+  priority: -2
+  client: {type: mobile app, name: 'WhatsApp Web', version: "{client_version}"}
+  browser_family: 'Unknown'
+
 # Facebook Lite writes EMA where the full app writes FBIOS or FB4A, its version still at FBAV.
 -
   regex: '.*FBAN/EMA.+FBAV[ /](?<client_version>[\d.]+).*'

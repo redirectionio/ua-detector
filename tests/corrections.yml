@@ -28,3 +28,10 @@
   reason: >-
     Meta writes that it "crawls the web for use cases such as training foundation AI models".
     What fetches on a user's behalf is Meta-ExternalFetcher.
+
+- bot: Qwantbot
+  category: Search bot
+  source: https://help.qwant.com/bot/
+  reason: >-
+    Qwantbot crawls for the index behind Qwant's own search engine, built with Ecosia since
+    2023. The crawlers of every other search engine in the fixtures are Search bot.

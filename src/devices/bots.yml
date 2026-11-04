@@ -5045,7 +5045,7 @@
 - regex: '.*(?:Qwantify|Qwantbot).*'
   bot:
     name: Qwantbot
-    category: Crawler
+    category: Search bot
     url: https://help.qwant.com/bot/
     producer:
       name: Qwant Corporation
